@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/play-java-hello-world-web.iml" filepath="$PROJECT_DIR$/.idea/modules/play-java-hello-world-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/rest-o-matic.iml" filepath="$PROJECT_DIR$/.idea/modules/rest-o-matic.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/root-build.iml" filepath="$PROJECT_DIR$/.idea/modules/root-build.iml" />
     </modules>

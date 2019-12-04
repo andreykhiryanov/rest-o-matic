@@ -1,4 +1,13 @@
-[0m[[0m[31merror[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\createrestaurant.scala.html:11:53: value save is not a member of controllers.ReverseHomeController[0m
-[0m[[0m[31merror[0m] [0m[0m        @helper.form(action = routes.HomeController.save()) {[0m
-[0m[[0m[31merror[0m] [0m[0m                                                    ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\createrestaurant.scala.html:12:30: method implicitJavaMessages in object PlayMagicForJava is deprecated (since 2.7.0): See https://www.playframework.com/documentation/latest/JavaHttpContextMigration27[0m
+[0m[[0m[33mwarn[0m] [0m[0m            @helper.inputText(restaurantForm("RestaurantName"))[0m
+[0m[[0m[33mwarn[0m] [0m[0m                             ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\createrestaurant.scala.html:13:30: method implicitJavaMessages in object PlayMagicForJava is deprecated (since 2.7.0): See https://www.playframework.com/documentation/latest/JavaHttpContextMigration27[0m
+[0m[[0m[33mwarn[0m] [0m[0m            @helper.inputText(restaurantForm("LegalName"))[0m
+[0m[[0m[33mwarn[0m] [0m[0m                             ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\createrestaurant.scala.html:14:30: method implicitJavaMessages in object PlayMagicForJava is deprecated (since 2.7.0): See https://www.playframework.com/documentation/latest/JavaHttpContextMigration27[0m
+[0m[[0m[33mwarn[0m] [0m[0m            @helper.inputText(restaurantForm("INN"))[0m
+[0m[[0m[33mwarn[0m] [0m[0m                             ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\createrestaurant.scala.html:15:30: method implicitJavaMessages in object PlayMagicForJava is deprecated (since 2.7.0): See https://www.playframework.com/documentation/latest/JavaHttpContextMigration27[0m
+[0m[[0m[33mwarn[0m] [0m[0m            @helper.inputText(restaurantForm("Address"))[0m
+[0m[[0m[33mwarn[0m] [0m[0m                             ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mfour warnings found[0m

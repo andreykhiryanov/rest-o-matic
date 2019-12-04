@@ -5,11 +5,10 @@
 GET /   controllers.HomeController.greetings()
 
 
-GET /restaurant/create/ controllers.HomeController.create()
-
 GET /restaurant/:id controllers.HomeController.show(id : Integer)
 GET /restaurant/edit/:id controllers.HomeController.edit(id : Integer)
 POST /restaurant/edit controllers.HomeController.update()
+GET /restaurant/create/ controllers.HomeController.create()
 POST /restaurant/create/ controllers.HomeController.save()
 GET /restaurant/delete/:id controllers.HomeController.destroy(id : Integer)
 

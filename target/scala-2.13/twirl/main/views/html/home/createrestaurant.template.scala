@@ -41,10 +41,10 @@ Seq[Any](format.raw/*1.36*/("""
         <h1>Create New Restaurant</h1>
 
         """),_display_(/*11.10*/helper/*11.16*/.form(action = routes.HomeController.save())/*11.60*/ {_display_(Seq[Any](format.raw/*11.62*/("""
-            """),_display_(/*12.14*/helper/*12.20*/.inputText(restaurantForm("restaurantName"))),format.raw/*12.64*/("""
-            """),_display_(/*13.14*/helper/*13.20*/.inputText(restaurantForm("legalName"))),format.raw/*13.59*/("""
-            """),_display_(/*14.14*/helper/*14.20*/.inputText(restaurantForm("inn"))),format.raw/*14.53*/("""
-            """),_display_(/*15.14*/helper/*15.20*/.inputText(restaurantForm("address"))),format.raw/*15.57*/("""
+            """),_display_(/*12.14*/helper/*12.20*/.inputText(restaurantForm("RestaurantName"))),format.raw/*12.64*/("""
+            """),_display_(/*13.14*/helper/*13.20*/.inputText(restaurantForm("LegalName"))),format.raw/*13.59*/("""
+            """),_display_(/*14.14*/helper/*14.20*/.inputText(restaurantForm("INN"))),format.raw/*14.53*/("""
+            """),_display_(/*15.14*/helper/*15.20*/.inputText(restaurantForm("Address"))),format.raw/*15.57*/("""
 
             """),format.raw/*17.13*/("""<br>
 
@@ -68,9 +68,9 @@ Seq[Any](format.raw/*1.36*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-04T16:38:12.605
+                  DATE: 2019-12-04T18:35:19.568
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/createrestaurant.scala.html
-                  HASH: dbf5d9f6a34f03e768862fc66493a8b0199f101c
+                  HASH: 384ff485aee4a9b9c73aa60ad1359858b1ff4e30
                   MATRIX: 974->1|1081->38|1126->35|1154->55|1182->57|1344->192|1359->198|1412->242|1452->244|1494->259|1509->265|1574->309|1616->324|1631->330|1691->369|1733->384|1748->390|1802->423|1844->438|1859->444|1917->481|1961->497|2074->579|2107->585
                   LINES: 28->1|31->2|34->1|35->3|36->4|43->11|43->11|43->11|43->11|44->12|44->12|44->12|45->13|45->13|45->13|46->14|46->14|46->14|47->15|47->15|47->15|49->17|52->20|53->21
                   -- GENERATED --
