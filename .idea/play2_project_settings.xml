@@ -10,6 +10,13 @@
             </ProjectSettingsEntry>
           </value>
         </entry>
+        <entry key="play-java-hello-world-web">
+          <value>
+            <ProjectSettingsEntry>
+              <option name="playDistrPath" value="$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/com/typesafe/play/play_2.13/2.7.3/play_2.13-2.7.3.jar" />
+            </ProjectSettingsEntry>
+          </value>
+        </entry>
         <entry key="rest-o-matic">
           <value>
             <ProjectSettingsEntry>
@@ -20,7 +27,7 @@
         <entry key="root">
           <value>
             <ProjectSettingsEntry>
-              <option name="sourceDir" value="D:\Java\Projects\play-example\app" />
+              <option name="sourceDir" value="D:\Java\Projects\rest-o-matic\app" />
               <option name="confDir" value="D:\Java\Projects\rest-o-matic\app" />
               <option name="templateImports">
                 <list>
