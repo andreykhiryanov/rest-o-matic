@@ -1,13 +1,26 @@
-@()
+@(restaurants : Set[Restaurant])
 
 <html>
     <head>
         <title>Welcome!</title>
     </head>
     <body>
+
         <h1>Welcome to the Rest-o-matic!</h1>
+
+        <h2>All Restaurants</h2>
+
+        @for(restaurant <- restaurants) {
+            <a href="#">@restaurant.getRestaurantName</a>
+            <p>Legal Name: @restaurant.getLegalName</p>
+            <p>INN: @restaurant.getInn</p>
+            <p>Address: @restaurant.getAddress</p>
+        }
+
     </body>
 
+    <br>
 
+    <input value="Add New Restaurant" type="button" onclick="create()"/>
 
 </html>

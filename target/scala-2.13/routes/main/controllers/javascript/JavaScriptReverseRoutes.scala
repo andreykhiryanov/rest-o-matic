@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Wed Dec 04 14:11:48 GMT+03:00 2019
+// @DATE:Wed Dec 04 14:56:23 GMT+03:00 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -18,6 +18,66 @@ package controllers.javascript {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:9
+    def edit: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.edit",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "restaurant/edit/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Integer]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
+  
+    // @LINE:11
+    def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.create",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "restaurant/create/"})
+        }
+      """
+    )
+  
+    // @LINE:8
+    def show: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.show",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "restaurant/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Integer]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
+  
+    // @LINE:13
+    def destroy: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.destroy",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "restaurant/delete/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Integer]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
+  
+    // @LINE:12
+    def save: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.save",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "restaurant/create/"})
+        }
+      """
+    )
+  
+    // @LINE:10
+    def update: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.update",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "restaurant/edit"})
+        }
+      """
+    )
   
     // @LINE:5
     def greetings: JavaScriptReverseRoute = JavaScriptReverseRoute(
