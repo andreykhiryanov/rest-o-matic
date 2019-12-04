@@ -13,8 +13,8 @@ import java.util.Set;
 
 public class HomeController extends Controller {
 
-    private Set<Restaurant> restaurants = new HashSet<>();
-    private Set<Visitor> visitors = new HashSet<>();
+    private Set<Restaurant> allRestaurants = new HashSet<>();
+    private Set<Visitor> allVisitors = new HashSet<>();
 
     @Inject
     FormFactory formFactory;
@@ -22,23 +22,27 @@ public class HomeController extends Controller {
     // Greetings
     public Result greetings() {
 
-        restaurants.add(new Restaurant("Astoria", "ZAO GK Astoria", 783801001, "Bolshaya Morskaya, 39"));
-        restaurants.add(new Restaurant("Legran", "OOO Legran", 784101001, "Millionnaya, 4/1"));
-        restaurants.add(new Restaurant("Letuchiy Gollandec", "OOO Letuchiy Gollandec", 780101001, "Maliy, 63"));
+        allRestaurants.add(new Restaurant("Astoria", "ZAO GK Astoria", 783801001, "Bolshaya Morskaya, 39"));
+        allRestaurants.add(new Restaurant("Legran", "OOO Legran", 784101001, "Millionnaya, 4/1"));
+        allRestaurants.add(new Restaurant("Letuchiy Gollandec", "OOO Letuchiy Gollandec", 780101001, "Maliy, 63"));
 
-        return ok(index.render(restaurants));
+        return ok(index.render(allRestaurants));
     }
 
     // Create new restaurant button
     public Result create() {
         Form<Restaurant> restaurantForm = formFactory.form(Restaurant.class);
-
         return ok(createrestaurant.render(restaurantForm));
     }
 
-    // To save book.
     public Result save() {
-        return null;
+
+        // TODO: remove deprecated method bindFromRequest
+        Form<Restaurant> restaurantForm = formFactory.form(Restaurant.class).bindFromRequest();
+        allRestaurants.add(restaurantForm.get());
+
+        return redirect(routes.HomeController.greetings());
+
     }
 
     public Result edit(Integer id) {
