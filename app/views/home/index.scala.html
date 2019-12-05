@@ -43,19 +43,19 @@
         @for(visitor <- visitors) {
             <table border="1px solid grey">
                 <tr>
-                    <th>@visitor.getFirstName</th>
-                    <th>Information</th>
+                    <td>First Name</td>
+                    <td>@visitor.getFirstName</td>
                 </tr>
                 <tr>
-                    <td>Legal Name</td>
+                    <td>Last Name</td>
                     <td>@visitor.getLastName</td>
                 </tr>
                 <tr>
-                    <td>INN</td>
+                    <td>Email</td>
                     <td>@visitor.getEmail</td>
                 </tr>
                 <tr>
-                    <td>Address</td>
+                    <td>Phone</td>
                     <td>@visitor.getPhoneNumber</td>
                 </tr>
             </table>
