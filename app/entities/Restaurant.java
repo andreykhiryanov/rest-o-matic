@@ -58,4 +58,27 @@ public class Restaurant {
         return visitors;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Restaurant that = (Restaurant) o;
+
+        if (inn != that.inn) return false;
+        if (!restaurantName.equals(that.restaurantName)) return false;
+        if (!legalName.equals(that.legalName)) return false;
+        if (!address.equals(that.address)) return false;
+        return visitors.equals(that.visitors);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = restaurantName.hashCode();
+        result = 31 * result + legalName.hashCode();
+        result = 31 * result + inn;
+        result = 31 * result + address.hashCode();
+        result = 31 * result + visitors.hashCode();
+        return result;
+    }
 }

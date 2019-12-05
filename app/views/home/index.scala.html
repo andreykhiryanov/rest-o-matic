@@ -1,5 +1,6 @@
 @import entities.Restaurant
-@(restaurants : Set[Restaurant])
+@import entities.Visitor
+@(restaurants : Set[Restaurant])(visitors : Set[Visitor])
 @import helper._
 
 <html>
@@ -11,6 +12,9 @@
         <h1>Welcome to the Rest-o-matic!</h1>
 
         <h2>All Restaurants</h2>
+
+        <input value="Add New Restaurant" type="submit" onclick=""/> <input value="Add New Visitor" type="submit" onclick=""/>
+        <br><br>
 
         @for(restaurant <- restaurants) {
             <table border="1px solid grey">
@@ -34,10 +38,30 @@
             <br>
             }
 
+        <h2>All Visitors</h2>
+
+        @for(visitor <- visitors) {
+            <table border="1px solid grey">
+                <tr>
+                    <th>@visitor.getFirstName</th>
+                    <th>Information</th>
+                </tr>
+                <tr>
+                    <td>Legal Name</td>
+                    <td>@visitor.getLastName</td>
+                </tr>
+                <tr>
+                    <td>INN</td>
+                    <td>@visitor.getEmail</td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>@visitor.getPhoneNumber</td>
+                </tr>
+            </table>
+            <br>
+            }
+
     </body>
-
-    <br>
-
-    <input value="Add New Restaurant" type="submit" onclick="createRestaurant()"/>
 
 </html>

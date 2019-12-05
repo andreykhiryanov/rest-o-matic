@@ -1,7 +1,6 @@
 package controllers;
 
 import entities.Restaurant;
-import entities.Visitor;
 import models.Manager;
 import play.data.Form;
 import play.data.FormFactory;
@@ -10,16 +9,11 @@ import play.mvc.Result;
 import views.html.home.createrestaurant;
 import views.html.home.editrestaurant;
 import views.html.home.index;
-
 import javax.inject.Inject;
-import java.util.Set;
 
 public class HomeController extends Controller {
 
     Manager manager = Manager.getManager();
-
-    private Set<Restaurant> allRestaurants = manager.getAllRestaurants();
-    private Set<Visitor> allVisitors = manager.getAllVisitors();
 
     @Inject
     FormFactory formFactory;
@@ -28,12 +22,14 @@ public class HomeController extends Controller {
     public Result greetings() {
 
         // Fill with test data.
-        manager.fillTestData();
+        manager.fillTestRestaurants();
+        manager.fillTestVisitors();
 
-        return ok(index.render(allRestaurants));
+        return ok(index.render(manager.getAllRestaurants(), manager.getAllVisitors()));
     }
 
-    // Create new restaurant button
+    // Restaurants' actions
+
     public Result createRestaurant() {
         Form<Restaurant> restaurantForm = formFactory.form(Restaurant.class);
         return ok(createrestaurant.render(restaurantForm));
@@ -41,9 +37,12 @@ public class HomeController extends Controller {
 
     public Result saveChanges() {
 
+        // Getting created restaurant from the previous form.
         // TODO: remove deprecated method bindFromRequest
         Form<Restaurant> restaurantForm = formFactory.form(Restaurant.class).bindFromRequest();
-        allRestaurants.add(restaurantForm.get());
+
+        // Transferring new restaurant to the manager for storage in the collection.
+        manager.addNewRestaurant(restaurantForm.get());
 
         return redirect(routes.HomeController.greetings());
 
@@ -51,8 +50,10 @@ public class HomeController extends Controller {
 
     public Result editRestaurant(String restaurantName) {
 
+        // Searching requested restaurant
         Restaurant restaurant = manager.getRestByName(restaurantName);
 
+        // If the requested restaurant was not found, the method 'getRestByName' returns null.
         if (restaurant == null) {
             return notFound("Restaurant not found!");
         }
@@ -73,5 +74,7 @@ public class HomeController extends Controller {
     public Result show(String restaurantName) {
         return null;
     }
+
+    // Visitors' actions
 
 }

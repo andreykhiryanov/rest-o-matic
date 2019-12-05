@@ -27,10 +27,12 @@ public class Manager {
         return allVisitors;
     }
 
-    public void fillTestData() {
-        createNewRestaurant("Astoria", "ZAO GK Astoria", 783801001, "Bolshaya Morskaya, 39");
-        createNewRestaurant("Legran", "OOO Legran", 784101001, "Millionnaya, 4/1");
-        createNewRestaurant("Letuchiy Gollandec", "OOO Letuchiy Gollandec", 780101001, "Maliy, 63");
+    // Restaurants' methods.
+
+    public void fillTestRestaurants() {
+        addNewRestaurant("Astoria", "ZAO GK Astoria", 783801001, "Bolshaya Morskaya, 39");
+        addNewRestaurant("Legran", "OOO Legran", 784101001, "Millionnaya, 4/1");
+        addNewRestaurant("Letuchiy Gollandec", "OOO Letuchiy Gollandec", 780101001, "Maliy, 63");
     }
 
     public Restaurant getRestByName(String requestedRestaurant) {
@@ -44,8 +46,31 @@ public class Manager {
         return null;
     }
 
-    public void createNewRestaurant(String restaurantName, String legalName, int inn, String address) {
+    public void addNewRestaurant(String restaurantName, String legalName, int inn, String address) {
         allRestaurants.add(new Restaurant(restaurantName, legalName, inn, address));
+    }
+
+    public void addNewRestaurant(Restaurant newRestaurant) {
+        allRestaurants.add(newRestaurant);
+    }
+
+    // Visitors' methods.
+
+    public void fillTestVisitors() {
+        addNewVisitor("Zitella", "Menendes", "zmenendes0@bing.com", "239-924-2788");
+        addNewVisitor("Nico", "Drivers", "ndrivers0@buzzfeed.com", "693-566-8984");
+        addNewVisitor("Roderich", "Caulton", "rcaulton1@tripadvisor.com", "191-729-0261");
+        addNewVisitor("Deana", "Rodder", "drodder2@smugmug.com", "184-853-9441");
+        addNewVisitor("Shelby", "Gori", "sgori3@blogspot.com", "365-555-8407");
+        addNewVisitor("Myron", "Zannuto", "mzannuto4@usatoday.com", "233-524-4742");
+    }
+
+    public void addNewVisitor(String firstName, String lastName, String email, String phoneNumber) {
+        allVisitors.add(new Visitor(firstName, lastName, email, phoneNumber));
+    }
+
+    public void addNewVisitor(Visitor newVisitor) {
+        allVisitors.add(newVisitor);
     }
 
 }

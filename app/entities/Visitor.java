@@ -1,7 +1,5 @@
 package entities;
 
-import entities.Restaurant;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -10,19 +8,17 @@ public class Visitor {
     private String firstName;
     private String lastName;
     private String email;
-    private int phoneNumber;
-    private int id;
+    private String phoneNumber;
     private Set<Restaurant> restaurants;
 
     public Visitor() {
     }
 
-    public Visitor(String firstName, String lastName, String email, int phoneNumber, int id) {
+    public Visitor(String firstName, String lastName, String email, String phoneNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phoneNumber = phoneNumber;
-        this.id = id;
         restaurants = new HashSet<>();
     }
 
@@ -50,24 +46,39 @@ public class Visitor {
         this.email = email;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public Set<Restaurant> getRestaurants() {
         return restaurants;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Visitor visitor = (Visitor) o;
+
+        if (!firstName.equals(visitor.firstName)) return false;
+        if (!lastName.equals(visitor.lastName)) return false;
+        if (!email.equals(visitor.email)) return false;
+        if (!phoneNumber.equals(visitor.phoneNumber)) return false;
+        return restaurants.equals(visitor.restaurants);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = firstName.hashCode();
+        result = 31 * result + lastName.hashCode();
+        result = 31 * result + email.hashCode();
+        result = 31 * result + phoneNumber.hashCode();
+        result = 31 * result + restaurants.hashCode();
+        return result;
+    }
 }

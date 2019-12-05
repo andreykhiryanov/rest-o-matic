@@ -10,10 +10,10 @@
         <h1>Create New Restaurant</h1>
 
         @helper.form(action = routes.HomeController.saveChanges()) {
-            @helper.inputText(restaurantForm("RestaurantName"))
-            @helper.inputText(restaurantForm("LegalName"))
-            @helper.inputText(restaurantForm("INN"))
-            @helper.inputText(restaurantForm("Address"))
+            @helper.inputText(restaurantForm("restaurantName"))
+            @helper.inputText(restaurantForm("legalName"))
+            @helper.inputText(restaurantForm("inn"))
+            @helper.inputText(restaurantForm("address"))
 
             <br>
 
