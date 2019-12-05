@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Wed Dec 04 14:56:23 GMT+03:00 2019
+// @DATE:Wed Dec 04 19:01:30 GMT+03:00 2019
 
 package router
 
@@ -38,7 +38,7 @@ class Routes(
   def documentation = List(
     ("""GET""", this.prefix, """controllers.HomeController.greetings()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/""" + "$" + """id<[^/]+>""", """controllers.HomeController.show(id:Integer)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/edit/""" + "$" + """id<[^/]+>""", """controllers.HomeController.edit(id:Integer)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/edit/""" + "$" + """restaurantName<[^/]+>""", """controllers.HomeController.edit(restaurantName:String)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/edit""", """controllers.HomeController.update()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/create/""", """controllers.HomeController.create()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/create/""", """controllers.HomeController.save()"""),
@@ -88,17 +88,17 @@ class Routes(
 
   // @LINE:9
   private[this] lazy val controllers_HomeController_edit2_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("restaurant/edit/"), DynamicPart("id", """[^/]+""",true)))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("restaurant/edit/"), DynamicPart("restaurantName", """[^/]+""",true)))
   )
   private[this] lazy val controllers_HomeController_edit2_invoker = createInvoker(
-    HomeController_0.edit(fakeValue[Integer]),
+    HomeController_0.edit(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
       "edit",
-      Seq(classOf[Integer]),
+      Seq(classOf[String]),
       "GET",
-      this.prefix + """restaurant/edit/""" + "$" + """id<[^/]+>""",
+      this.prefix + """restaurant/edit/""" + "$" + """restaurantName<[^/]+>""",
       """""",
       Seq()
     )
@@ -193,8 +193,8 @@ class Routes(
   
     // @LINE:9
     case controllers_HomeController_edit2_route(params@_) =>
-      call(params.fromPath[Integer]("id", None)) { (id) =>
-        controllers_HomeController_edit2_invoker.call(HomeController_0.edit(id))
+      call(params.fromPath[String]("restaurantName", None)) { (restaurantName) =>
+        controllers_HomeController_edit2_invoker.call(HomeController_0.edit(restaurantName))
       }
   
     // @LINE:10

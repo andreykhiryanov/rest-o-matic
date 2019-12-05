@@ -1,4 +1,6 @@
-package models;
+package entities;
+
+import entities.Restaurant;
 
 import java.util.HashSet;
 import java.util.Set;

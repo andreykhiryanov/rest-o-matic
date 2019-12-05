@@ -23,7 +23,7 @@ import play.data._
 import play.core.j.PlayFormsMagicForJava._
 /*1.2*/import entities.Restaurant
 
-object createrestaurant extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[Form[Restaurant],play.twirl.api.HtmlFormat.Appendable] {
+object editrestaurant extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[Form[Restaurant],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
   def apply/*2.2*/(restaurantForm: Form[Restaurant]):play.twirl.api.HtmlFormat.Appendable = {
@@ -36,12 +36,12 @@ Seq[Any](format.raw/*2.36*/("""
 """),format.raw/*4.1*/("""
 """),format.raw/*5.1*/("""<html>
     <head>
-        <title>New Restaurant</title>
+        <title>Edit Restaurant</title>
     </head>
     <body>
-        <h1>Create New Restaurant</h1>
+        <h1>Edit Restaurant</h1>
 
-        """),_display_(/*12.10*/helper/*12.16*/.form(action = routes.HomeController.save())/*12.60*/ {_display_(Seq[Any](format.raw/*12.62*/("""
+        """),_display_(/*12.10*/helper/*12.16*/.form(action = routes.HomeController.update())/*12.62*/ {_display_(Seq[Any](format.raw/*12.64*/("""
             """),_display_(/*13.14*/helper/*13.20*/.inputText(restaurantForm("RestaurantName"))),format.raw/*13.64*/("""
             """),_display_(/*14.14*/helper/*14.20*/.inputText(restaurantForm("LegalName"))),format.raw/*14.59*/("""
             """),_display_(/*15.14*/helper/*15.20*/.inputText(restaurantForm("INN"))),format.raw/*15.53*/("""
@@ -49,7 +49,7 @@ Seq[Any](format.raw/*2.36*/("""
 
             """),format.raw/*18.13*/("""<br>
 
-            <input type="submit" value="Create Restaurant">
+            <input type="submit" value="Edit Restaurant">
             """)))}),format.raw/*21.14*/("""
     """),format.raw/*22.5*/("""</body>
 
@@ -69,10 +69,10 @@ Seq[Any](format.raw/*2.36*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-05T07:41:20.846
-                  SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/createrestaurant.scala.html
-                  HASH: 6aa03455e1ea3dcff8c4717b93122cf13583dab8
-                  MATRIX: 656->1|1008->30|1115->67|1160->64|1188->84|1216->86|1378->221|1393->227|1446->271|1486->273|1528->288|1543->294|1608->338|1650->353|1665->359|1725->398|1767->413|1782->419|1836->452|1878->467|1893->473|1951->510|1995->526|2108->608|2141->614
+                  DATE: 2019-12-05T07:41:20.856
+                  SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/editrestaurant.scala.html
+                  HASH: 267cf89421e73b51b0be97fd98f79a71b7a0a45f
+                  MATRIX: 656->1|1006->30|1113->67|1158->64|1186->84|1214->86|1371->216|1386->222|1441->268|1481->270|1523->285|1538->291|1603->335|1645->350|1660->356|1720->395|1762->410|1777->416|1831->449|1873->464|1888->470|1946->507|1990->523|2101->603|2134->609
                   LINES: 24->1|29->2|32->3|35->2|36->4|37->5|44->12|44->12|44->12|44->12|45->13|45->13|45->13|46->14|46->14|46->14|47->15|47->15|47->15|48->16|48->16|48->16|50->18|53->21|54->22
                   -- GENERATED --
               */

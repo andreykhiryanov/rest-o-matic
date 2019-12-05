@@ -6,7 +6,7 @@ GET /   controllers.HomeController.greetings()
 
 
 GET /restaurant/:id controllers.HomeController.show(id : Integer)
-GET /restaurant/edit/:id controllers.HomeController.edit(id : Integer)
+GET /restaurant/edit/:restaurantName controllers.HomeController.edit(restaurantName : String)
 POST /restaurant/edit controllers.HomeController.update()
 GET /restaurant/create/ controllers.HomeController.create()
 POST /restaurant/create/ controllers.HomeController.save()

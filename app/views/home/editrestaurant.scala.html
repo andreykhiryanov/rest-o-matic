@@ -4,12 +4,12 @@
 
 <html>
     <head>
-        <title>New Restaurant</title>
+        <title>Edit Restaurant</title>
     </head>
     <body>
-        <h1>Create New Restaurant</h1>
+        <h1>Edit Restaurant</h1>
 
-        @helper.form(action = routes.HomeController.save()) {
+        @helper.form(action = routes.HomeController.update()) {
             @helper.inputText(restaurantForm("RestaurantName"))
             @helper.inputText(restaurantForm("LegalName"))
             @helper.inputText(restaurantForm("INN"))
@@ -17,7 +17,7 @@
 
             <br>
 
-            <input type="submit" value="Create Restaurant">
+            <input type="submit" value="Edit Restaurant">
             }
     </body>
 

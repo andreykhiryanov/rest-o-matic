@@ -1,20 +1,24 @@
 package controllers;
 
-import models.Restaurant;
-import models.Visitor;
+import entities.Restaurant;
+import entities.Visitor;
+import models.Manager;
 import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.home.*;
+import views.html.home.createrestaurant;
+import views.html.home.index;
+
 import javax.inject.Inject;
-import java.util.HashSet;
 import java.util.Set;
 
 public class HomeController extends Controller {
 
-    private Set<Restaurant> allRestaurants = new HashSet<>();
-    private Set<Visitor> allVisitors = new HashSet<>();
+    Manager manager = Manager.getManager();
+
+    private Set<Restaurant> allRestaurants = manager.getAllRestaurants();
+    private Set<Visitor> allVisitors = manager.getAllVisitors();
 
     @Inject
     FormFactory formFactory;
@@ -45,7 +49,7 @@ public class HomeController extends Controller {
 
     }
 
-    public Result edit(Integer id) {
+    public Result edit(String restaurantName) {
         return null;
     }
 

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Wed Dec 04 14:56:23 GMT+03:00 2019
+// @DATE:Wed Dec 04 19:01:30 GMT+03:00 2019
 
 import play.api.mvc.Call
 
@@ -19,9 +19,9 @@ package controllers {
 
   
     // @LINE:9
-    def edit(id:Integer): Call = {
+    def edit(restaurantName:String): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + "restaurant/edit/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Integer]].unbind("id", id)))
+      Call("GET", _prefix + { _defaultPrefix } + "restaurant/edit/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("restaurantName", restaurantName)))
     }
   
     // @LINE:11
