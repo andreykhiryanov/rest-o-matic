@@ -70,7 +70,7 @@ Seq[Any](format.raw/*2.33*/("""
 
     <br>
 
-    <input value="Add New Restaurant" type="submit" onclick="create()"/>
+    <input value="Add New Restaurant" type="submit" onclick="createRestaurant()"/>
 
 </html>"""))
       }
@@ -88,9 +88,9 @@ Seq[Any](format.raw/*2.33*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-05T07:41:20.865
+                  DATE: 2019-12-05T12:55:38.120
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/index.scala.html
-                  HASH: ac882d494a181cefc8372c1aba188e377835be5d
+                  HASH: f80ba1a590c804d45e901887d4d226bfbdb3a7c1
                   MATRIX: 656->1|996->30|1100->64|1145->61|1173->81|1201->83|1402->257|1448->287|1488->289|1530->303|1637->383|1656->393|1695->411|1882->571|1901->581|1935->594|2073->705|2092->715|2120->722|2262->837|2281->847|2313->858|2427->941|2462->949
                   LINES: 24->1|29->2|32->3|35->2|36->4|37->5|47->15|47->15|47->15|48->16|50->18|50->18|50->18|55->23|55->23|55->23|59->27|59->27|59->27|63->31|63->31|63->31|67->35|69->37
                   -- GENERATED --

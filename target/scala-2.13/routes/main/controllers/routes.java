@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Wed Dec 04 19:01:30 GMT+03:00 2019
+// @DATE:Thu Dec 05 12:55:37 GMT+03:00 2019
 
 package controllers;
 

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Wed Dec 04 19:01:30 GMT+03:00 2019
+// @DATE:Thu Dec 05 12:55:37 GMT+03:00 2019
 
 import play.api.mvc.Call
 
@@ -18,34 +18,22 @@ package controllers {
     }
 
   
-    // @LINE:9
-    def edit(restaurantName:String): Call = {
+    // @LINE:12
+    def saveChanges(): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + "restaurant/edit/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("restaurantName", restaurantName)))
-    }
-  
-    // @LINE:11
-    def create(): Call = {
-      
-      Call("GET", _prefix + { _defaultPrefix } + "restaurant/create/")
-    }
-  
-    // @LINE:8
-    def show(id:Integer): Call = {
-      
-      Call("GET", _prefix + { _defaultPrefix } + "restaurant/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Integer]].unbind("id", id)))
+      Call("POST", _prefix + { _defaultPrefix } + "restaurant/create/")
     }
   
     // @LINE:13
-    def destroy(id:Integer): Call = {
+    def destroy(restaurantName:String): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + "restaurant/delete/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Integer]].unbind("id", id)))
+      Call("GET", _prefix + { _defaultPrefix } + "restaurant/delete/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("restaurantName", restaurantName)))
     }
   
-    // @LINE:12
-    def save(): Call = {
+    // @LINE:8
+    def show(restaurantName:String): Call = {
       
-      Call("POST", _prefix + { _defaultPrefix } + "restaurant/create/")
+      Call("GET", _prefix + { _defaultPrefix } + "restaurant/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("restaurantName", restaurantName)))
     }
   
     // @LINE:10
@@ -54,10 +42,22 @@ package controllers {
       Call("POST", _prefix + { _defaultPrefix } + "restaurant/edit")
     }
   
+    // @LINE:11
+    def createRestaurant(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "restaurant/create/")
+    }
+  
     // @LINE:5
     def greetings(): Call = {
       
       Call("GET", _prefix)
+    }
+  
+    // @LINE:9
+    def editRestaurant(restaurantName:String): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "restaurant/edit/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("restaurantName", restaurantName)))
     }
   
   }

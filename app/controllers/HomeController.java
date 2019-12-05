@@ -8,6 +8,7 @@ import play.data.FormFactory;
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.home.createrestaurant;
+import views.html.home.editrestaurant;
 import views.html.home.index;
 
 import javax.inject.Inject;
@@ -26,20 +27,19 @@ public class HomeController extends Controller {
     // Greetings
     public Result greetings() {
 
-        allRestaurants.add(new Restaurant("Astoria", "ZAO GK Astoria", 783801001, "Bolshaya Morskaya, 39"));
-        allRestaurants.add(new Restaurant("Legran", "OOO Legran", 784101001, "Millionnaya, 4/1"));
-        allRestaurants.add(new Restaurant("Letuchiy Gollandec", "OOO Letuchiy Gollandec", 780101001, "Maliy, 63"));
+        // Fill with test data.
+        manager.fillTestData();
 
         return ok(index.render(allRestaurants));
     }
 
     // Create new restaurant button
-    public Result create() {
+    public Result createRestaurant() {
         Form<Restaurant> restaurantForm = formFactory.form(Restaurant.class);
         return ok(createrestaurant.render(restaurantForm));
     }
 
-    public Result save() {
+    public Result saveChanges() {
 
         // TODO: remove deprecated method bindFromRequest
         Form<Restaurant> restaurantForm = formFactory.form(Restaurant.class).bindFromRequest();
@@ -49,19 +49,28 @@ public class HomeController extends Controller {
 
     }
 
-    public Result edit(String restaurantName) {
-        return null;
+    public Result editRestaurant(String restaurantName) {
+
+        Restaurant restaurant = manager.getRestByName(restaurantName);
+
+        if (restaurant == null) {
+            return notFound("Restaurant not found!");
+        }
+
+        Form<Restaurant> restaurantForm = formFactory.form(Restaurant.class).fill(restaurant);
+        return ok(editrestaurant.render(restaurantForm));
+
     }
 
     public Result update() {
         return null;
     }
 
-    public Result destroy(Integer id) {
+    public Result destroy(String restaurantName) {
         return null;
     }
 
-    public Result show(Integer id) {
+    public Result show(String restaurantName) {
         return null;
     }
 

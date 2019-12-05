@@ -1,0 +1,43 @@
+@import entities.Restaurant
+@(restaurants : Set[Restaurant])
+@import helper._
+
+<html>
+    <head>
+        <title>Welcome!</title>
+    </head>
+    <body>
+
+        <h1>Welcome to the Rest-o-matic!</h1>
+
+        <h2>All Restaurants</h2>
+
+        @for(restaurant <- restaurants) {
+            <table border="1px solid grey">
+                <tr>
+                    <th>@restaurant.getRestaurantName</th>
+                    <th>Information</th>
+                </tr>
+                <tr>
+                    <td>Legal Name</td>
+                    <td>@restaurant.getLegalName</td>
+                </tr>
+                <tr>
+                    <td>INN</td>
+                    <td>@restaurant.getInn</td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>@restaurant.getAddress</td>
+                </tr>
+            </table>
+            <br>
+            }
+
+    </body>
+
+    <br>
+
+    <input value="Add New Restaurant" type="submit" onclick="create()"/>
+
+</html>
