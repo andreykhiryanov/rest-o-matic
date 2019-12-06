@@ -9,7 +9,7 @@ public class Visitor {
     private String lastName;
     private String email;
     private String phoneNumber;
-    private Set<Restaurant> restaurants;
+    private Set<Restaurant> visitedRestaurants;
 
     public Visitor() {
     }
@@ -19,7 +19,7 @@ public class Visitor {
         this.lastName = lastName;
         this.email = email;
         this.phoneNumber = phoneNumber;
-        restaurants = new HashSet<>();
+        visitedRestaurants = new HashSet<>();
     }
 
     public String getFirstName() {
@@ -54,8 +54,8 @@ public class Visitor {
         this.phoneNumber = phoneNumber;
     }
 
-    public Set<Restaurant> getRestaurants() {
-        return restaurants;
+    public Set<Restaurant> getVisitedRestaurants() {
+        return visitedRestaurants;
     }
 
     @Override
@@ -69,7 +69,7 @@ public class Visitor {
         if (!lastName.equals(visitor.lastName)) return false;
         if (!email.equals(visitor.email)) return false;
         if (!phoneNumber.equals(visitor.phoneNumber)) return false;
-        return restaurants.equals(visitor.restaurants);
+        return visitedRestaurants.equals(visitor.visitedRestaurants);
     }
 
     @Override
@@ -78,7 +78,11 @@ public class Visitor {
         result = 31 * result + lastName.hashCode();
         result = 31 * result + email.hashCode();
         result = 31 * result + phoneNumber.hashCode();
-        result = 31 * result + restaurants.hashCode();
+        result = 31 * result + visitedRestaurants.hashCode();
         return result;
+    }
+
+    public void visitRestaurant(Restaurant newRestaurant) {
+        visitedRestaurants.add(newRestaurant);
     }
 }

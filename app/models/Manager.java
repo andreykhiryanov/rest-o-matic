@@ -35,10 +35,9 @@ public class Manager {
         addNewRestaurant("Letuchiy Gollandec", "OOO Letuchiy Gollandec", 780101001, "Maliy, 63");
     }
 
-    public Restaurant getRestByName(String requestedRestaurant) {
-
+    public Restaurant getRestaurantByName(String requestedRestaurantName) {
         for (Restaurant restaurant : allRestaurants) {
-            if (restaurant.getRestaurantName().equals(requestedRestaurant)) {
+            if (restaurant.getRestaurantName().equals(requestedRestaurantName)) {
                 return restaurant;
             }
         }
@@ -63,6 +62,16 @@ public class Manager {
         addNewVisitor("Deana", "Rodder", "drodder2@smugmug.com", "184-853-9441");
         addNewVisitor("Shelby", "Gori", "sgori3@blogspot.com", "365-555-8407");
         addNewVisitor("Myron", "Zannuto", "mzannuto4@usatoday.com", "233-524-4742");
+    }
+
+    public Visitor getVisitorByName(String requestedVisitorName) {
+        for (Visitor visitor  : allVisitors) {
+            if (visitor.getFirstName().equals(requestedVisitorName)) {
+                return visitor;
+            }
+        }
+
+        return null;
     }
 
     public void addNewVisitor(String firstName, String lastName, String email, String phoneNumber) {

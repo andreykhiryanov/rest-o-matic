@@ -43,58 +43,87 @@ Seq[Any](format.raw/*3.58*/("""
 
         <h1>Welcome to the Rest-o-matic!</h1>
 
-        <h2>All Restaurants</h2>
+        <h2>All restaurants</h2>
 
-        <input value="Add New Restaurant" type="submit" onclick=""/> <input value="Add New Visitor" type="submit" onclick=""/>
+        <input value="New restaurant" type="submit" onclick=""/> <input value="New visitor" type="submit" onclick=""/>
         <br><br>
 
         """),_display_(/*19.10*/for(restaurant <- restaurants) yield /*19.40*/ {_display_(Seq[Any](format.raw/*19.42*/("""
-            """),format.raw/*20.13*/("""<table border="1px solid grey">
+            """),format.raw/*20.13*/("""<table border="1px solid grey" style="border-collapse: collapse">
                 <tr>
-                    <th>"""),_display_(/*22.26*/restaurant/*22.36*/.getRestaurantName),format.raw/*22.54*/("""</th>
-                    <th>Information</th>
+                    <th colspan="5" style="text-align:center">Restaurant</th>
+                </tr>
+
+                <tr>
+                    <td>Name</td>
+                    <th style="text-align:left">"""),_display_(/*27.50*/restaurant/*27.60*/.getRestaurantName),format.raw/*27.78*/("""</th>
                 </tr>
                 <tr>
                     <td>Legal Name</td>
-                    <td>"""),_display_(/*27.26*/restaurant/*27.36*/.getLegalName),format.raw/*27.49*/("""</td>
+                    <td>"""),_display_(/*31.26*/restaurant/*31.36*/.getLegalName),format.raw/*31.49*/("""</td>
                 </tr>
                 <tr>
                     <td>INN</td>
-                    <td>"""),_display_(/*31.26*/restaurant/*31.36*/.getInn),format.raw/*31.43*/("""</td>
+                    <td>"""),_display_(/*35.26*/restaurant/*35.36*/.getInn),format.raw/*35.43*/("""</td>
                 </tr>
                 <tr>
                     <td>Address</td>
-                    <td>"""),_display_(/*35.26*/restaurant/*35.36*/.getAddress),format.raw/*35.47*/("""</td>
+                    <td>"""),_display_(/*39.26*/restaurant/*39.36*/.getAddress),format.raw/*39.47*/("""</td>
                 </tr>
-            </table>
+
+                <tr>
+                    <th colspan="5" style="text-align:center">Visitors</th>
+                </tr>
+
+                """),_display_(/*46.18*/for(visitor <- restaurant.getAcceptedVisitors) yield /*46.64*/ {_display_(Seq[Any](format.raw/*46.66*/("""
+                    """),format.raw/*47.21*/("""<tr>
+                        <td>"""),_display_(/*48.30*/visitor/*48.37*/.getFirstName),format.raw/*48.50*/("""</td>
+                        <td>"""),_display_(/*49.30*/visitor/*49.37*/.getLastName),format.raw/*49.49*/("""</td>
+                    </tr>
+                """)))}),format.raw/*51.18*/("""
+            """),format.raw/*52.13*/("""</table>
             <br>
-            """)))}),format.raw/*39.14*/("""
+            """)))}),format.raw/*54.14*/("""
 
-        """),format.raw/*41.9*/("""<h2>All Visitors</h2>
+        """),format.raw/*56.9*/("""<h2>All visitors</h2>
 
-        """),_display_(/*43.10*/for(visitor <- visitors) yield /*43.34*/ {_display_(Seq[Any](format.raw/*43.36*/("""
-            """),format.raw/*44.13*/("""<table border="1px solid grey">
+        """),_display_(/*58.10*/for(visitor <- visitors) yield /*58.34*/ {_display_(Seq[Any](format.raw/*58.36*/("""
+            """),format.raw/*59.13*/("""<table border="1px solid grey" style="border-collapse: collapse">
+                <tr>
+                    <th colspan="5" style="text-align:center">Visitor</th>
+                </tr>
+
                 <tr>
                     <td>First Name</td>
-                    <td>"""),_display_(/*47.26*/visitor/*47.33*/.getFirstName),format.raw/*47.46*/("""</td>
+                    <th style="text-align:left">"""),_display_(/*66.50*/visitor/*66.57*/.getFirstName),format.raw/*66.70*/("""</th>
                 </tr>
                 <tr>
                     <td>Last Name</td>
-                    <td>"""),_display_(/*51.26*/visitor/*51.33*/.getLastName),format.raw/*51.45*/("""</td>
+                    <td>"""),_display_(/*70.26*/visitor/*70.33*/.getLastName),format.raw/*70.45*/("""</td>
                 </tr>
                 <tr>
                     <td>Email</td>
-                    <td>"""),_display_(/*55.26*/visitor/*55.33*/.getEmail),format.raw/*55.42*/("""</td>
+                    <td>"""),_display_(/*74.26*/visitor/*74.33*/.getEmail),format.raw/*74.42*/("""</td>
                 </tr>
                 <tr>
                     <td>Phone</td>
-                    <td>"""),_display_(/*59.26*/visitor/*59.33*/.getPhoneNumber),format.raw/*59.48*/("""</td>
+                    <td>"""),_display_(/*78.26*/visitor/*78.33*/.getPhoneNumber),format.raw/*78.48*/("""</td>
                 </tr>
-            </table>
-            <br>
-            """)))}),format.raw/*63.14*/("""
 
-    """),format.raw/*65.5*/("""</body>
+                <tr>
+                    <th colspan="5" style="text-align:center">Visited restaurants</th>
+                </tr>
+
+                """),_display_(/*85.18*/for(restaurant <- visitor.getVisitedRestaurants) yield /*85.66*/ {_display_(Seq[Any](format.raw/*85.68*/("""
+                    """),format.raw/*86.21*/("""<tr>
+                        <td colspan="5" style="text-align:center">"""),_display_(/*87.68*/restaurant/*87.78*/.getRestaurantName),format.raw/*87.96*/("""</td>
+                    </tr>
+                """)))}),format.raw/*89.18*/("""
+            """),format.raw/*90.13*/("""</table>
+            <br>
+            """)))}),format.raw/*92.14*/("""
+
+    """),format.raw/*94.5*/("""</body>
 
 </html>"""))
       }
@@ -112,11 +141,11 @@ Seq[Any](format.raw/*3.58*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-05T18:54:47.093
+                  DATE: 2019-12-06T11:42:42.679
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/index.scala.html
-                  HASH: 7545fc365f2a4e313d40c52e7f8c059cb13152fd
-                  MATRIX: 656->1|690->30|1040->56|1169->115|1214->112|1242->132|1270->134|1619->456|1665->486|1705->488|1747->502|1854->582|1873->592|1912->610|2099->770|2118->780|2152->793|2290->904|2309->914|2337->921|2479->1036|2498->1046|2530->1057|2644->1140|2683->1152|2744->1186|2784->1210|2824->1212|2866->1226|3014->1347|3030->1354|3064->1367|3208->1484|3224->1491|3257->1503|3397->1616|3413->1623|3443->1632|3583->1745|3599->1752|3635->1767|3749->1850|3784->1858
-                  LINES: 24->1|25->2|30->3|33->4|36->3|37->5|38->6|51->19|51->19|51->19|52->20|54->22|54->22|54->22|59->27|59->27|59->27|63->31|63->31|63->31|67->35|67->35|67->35|71->39|73->41|75->43|75->43|75->43|76->44|79->47|79->47|79->47|83->51|83->51|83->51|87->55|87->55|87->55|91->59|91->59|91->59|95->63|97->65
+                  HASH: 7d46210f8210acc7dbd4c5526647925e1788a6ee
+                  MATRIX: 656->1|690->30|1040->56|1169->115|1214->112|1242->132|1270->134|1611->448|1657->478|1697->480|1739->494|2065->793|2084->803|2123->821|2268->939|2287->949|2321->962|2459->1073|2478->1083|2506->1090|2648->1205|2667->1215|2699->1226|2899->1399|2961->1445|3001->1447|3051->1469|3113->1504|3129->1511|3163->1524|3226->1560|3242->1567|3275->1579|3357->1630|3399->1644|3471->1685|3510->1697|3571->1731|3611->1755|3651->1757|3693->1771|4022->2073|4038->2080|4072->2093|4216->2210|4232->2217|4265->2229|4405->2342|4421->2349|4451->2358|4591->2471|4607->2478|4643->2493|4854->2677|4918->2725|4958->2727|5008->2749|5108->2822|5127->2832|5166->2850|5248->2901|5290->2915|5362->2956|5397->2964
+                  LINES: 24->1|25->2|30->3|33->4|36->3|37->5|38->6|51->19|51->19|51->19|52->20|59->27|59->27|59->27|63->31|63->31|63->31|67->35|67->35|67->35|71->39|71->39|71->39|78->46|78->46|78->46|79->47|80->48|80->48|80->48|81->49|81->49|81->49|83->51|84->52|86->54|88->56|90->58|90->58|90->58|91->59|98->66|98->66|98->66|102->70|102->70|102->70|106->74|106->74|106->74|110->78|110->78|110->78|117->85|117->85|117->85|118->86|119->87|119->87|119->87|121->89|122->90|124->92|126->94
                   -- GENERATED --
               */
           

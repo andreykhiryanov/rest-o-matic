@@ -1,6 +1,7 @@
 package controllers;
 
 import entities.Restaurant;
+import entities.Visitor;
 import models.Manager;
 import play.data.Form;
 import play.data.FormFactory;
@@ -10,22 +11,40 @@ import views.html.home.createrestaurant;
 import views.html.home.editrestaurant;
 import views.html.home.index;
 import javax.inject.Inject;
+import java.util.Iterator;
+import java.util.Set;
 
 public class HomeController extends Controller {
 
-    Manager manager = Manager.getManager();
+    private Manager manager = Manager.getManager();
 
     @Inject
     FormFactory formFactory;
 
-    // Greetings
     public Result greetings() {
 
-        // Fill with test data.
+        fillTestData();
+
+        return ok(index.render(manager.getAllRestaurants(), manager.getAllVisitors()));
+    }
+
+    private void fillTestData() {
+        // Fill with test entities.
         manager.fillTestRestaurants();
         manager.fillTestVisitors();
 
-        return ok(index.render(manager.getAllRestaurants(), manager.getAllVisitors()));
+        Restaurant astoria = manager.getRestaurantByName("Astoria");
+        Visitor zitella = manager.getVisitorByName("Zitella");
+
+        // All visitors go to the restaurant Astoria.
+        astoria.getAcceptedVisitors().addAll(manager.getAllVisitors());
+        // Zitella visits all restaurants.
+        zitella.getVisitedRestaurants().addAll(manager.getAllRestaurants());
+
+        // TODO: Find out why it does not work.
+//        for (Visitor visitor : manager.getAllVisitors()) {
+//            visitor.visitRestaurant(astoria);
+//        }
     }
 
     // Restaurants' actions
@@ -51,9 +70,9 @@ public class HomeController extends Controller {
     public Result editRestaurant(String restaurantName) {
 
         // Searching requested restaurant
-        Restaurant restaurant = manager.getRestByName(restaurantName);
+        Restaurant restaurant = manager.getRestaurantByName(restaurantName);
 
-        // If the requested restaurant was not found, the method 'getRestByName' returns null.
+        // If the requested restaurant was not found, the method 'getRestaurantByName' returns null.
         if (restaurant == null) {
             return notFound("Restaurant not found!");
         }
