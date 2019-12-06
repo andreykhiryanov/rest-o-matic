@@ -27,6 +27,11 @@ public class Manager {
         return allVisitors;
     }
 
+    public void visitRestaurant(Visitor visitor, Restaurant restaurant) {
+        visitor.visitRestaurant(restaurant);
+        restaurant.acceptVisitor(visitor);
+    }
+
     // Restaurants' methods.
 
     public void fillTestRestaurants() {

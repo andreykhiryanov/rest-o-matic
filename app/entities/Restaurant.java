@@ -58,29 +58,29 @@ public class Restaurant {
         return acceptedVisitors;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Restaurant that = (Restaurant) o;
-
-        if (inn != that.inn) return false;
-        if (!restaurantName.equals(that.restaurantName)) return false;
-        if (!legalName.equals(that.legalName)) return false;
-        if (!address.equals(that.address)) return false;
-        return acceptedVisitors.equals(that.acceptedVisitors);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = restaurantName.hashCode();
-        result = 31 * result + legalName.hashCode();
-        result = 31 * result + inn;
-        result = 31 * result + address.hashCode();
-        result = 31 * result + acceptedVisitors.hashCode();
-        return result;
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//
+//        Restaurant that = (Restaurant) o;
+//
+//        if (inn != that.inn) return false;
+//        if (!restaurantName.equals(that.restaurantName)) return false;
+//        if (!legalName.equals(that.legalName)) return false;
+//        if (!address.equals(that.address)) return false;
+//        return acceptedVisitors.equals(that.acceptedVisitors);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        int result = restaurantName.hashCode();
+//        result = 31 * result + legalName.hashCode();
+//        result = 31 * result + inn;
+//        result = 31 * result + address.hashCode();
+//        result = 31 * result + acceptedVisitors.hashCode();
+//        return result;
+//    }
 
     public void acceptVisitor(Visitor newVisitor) {
         acceptedVisitors.add(newVisitor);

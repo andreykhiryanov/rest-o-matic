@@ -33,18 +33,15 @@ public class HomeController extends Controller {
         manager.fillTestRestaurants();
         manager.fillTestVisitors();
 
-        Restaurant astoria = manager.getRestaurantByName("Astoria");
         Visitor zitella = manager.getVisitorByName("Zitella");
+        Restaurant astoria = manager.getRestaurantByName("Astoria");
 
         // All visitors go to the restaurant Astoria.
         astoria.getAcceptedVisitors().addAll(manager.getAllVisitors());
-        // Zitella visits all restaurants.
-        zitella.getVisitedRestaurants().addAll(manager.getAllRestaurants());
 
-        // TODO: Find out why it does not work.
-//        for (Visitor visitor : manager.getAllVisitors()) {
-//            visitor.visitRestaurant(astoria);
-//        }
+        for (Visitor visitor : manager.getAllVisitors()) {
+            manager.visitRestaurant(visitor, astoria);
+        }
     }
 
     // Restaurants' actions
