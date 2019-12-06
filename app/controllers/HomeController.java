@@ -33,7 +33,6 @@ public class HomeController extends Controller {
         manager.fillTestRestaurants();
         manager.fillTestVisitors();
 
-        Visitor zitella = manager.getVisitorByName("Zitella");
         Restaurant astoria = manager.getRestaurantByName("Astoria");
 
         // All visitors go to the restaurant Astoria.
