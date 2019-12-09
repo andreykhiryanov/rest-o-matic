@@ -82,7 +82,20 @@ public class HomeController extends Controller {
     }
 
     public Result updateRestaurant() {
-        return null;
+
+        Restaurant restaurant = formFactory.form(Restaurant.class).bindFromRequest().get();
+        Restaurant oldRestaurant = manager.getRestaurantByName(restaurant.getRestaurantName());
+
+        if (oldRestaurant == null) {
+            return notFound("You cannot change the name of the restaurant yet!");
+        }
+
+        oldRestaurant.setRestaurantName(restaurant.getRestaurantName());
+        oldRestaurant.setLegalName(restaurant.getLegalName());
+        oldRestaurant.setInn(restaurant.getInn());
+        oldRestaurant.setAddress(restaurant.getAddress());
+
+        return redirect(routes.HomeController.showRestaurantCard(restaurant.getRestaurantName()));
     }
 
     public Result destroyRestaurant(String restaurantName) {
@@ -159,14 +172,26 @@ public class HomeController extends Controller {
     }
 
     public Result updateVisitor() {
-        return null;
+
+        Visitor visitor = formFactory.form(Visitor.class).bindFromRequest().get();
+        Visitor oldVisitor = manager.getVisitorByName(visitor.getFirstName());
+
+        if (oldVisitor == null) {
+            return notFound("You cannot change the name of the visitor yet!");
+        }
+
+        oldVisitor.setFirstName(visitor.getFirstName());
+        oldVisitor.setLastName(visitor.getLastName());
+        oldVisitor.setEmail(visitor.getEmail());
+        oldVisitor.setPhoneNumber(visitor.getPhoneNumber());
+
+        return redirect(routes.HomeController.showVisitorCard(visitor.getFirstName()));
     }
 
     public Result destroyVisitor(String visitorName) {
 
         Visitor destroyingVisitor = manager.getVisitorByName(visitorName);
 
-        //
         for (Restaurant restaurant : manager.getAllRestaurants()) {
             restaurant.getAcceptedVisitors().remove(destroyingVisitor);
         }
