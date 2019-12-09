@@ -26,7 +26,7 @@
             </tr>
             @for(restaurant <- restaurants) {
                 <tr>
-                    <td style="text-align:center"><a href="#">@restaurant.getRestaurantName</a></td>
+                    <td style="text-align:center"><a href="@routes.HomeController.showRestaurantCard(restaurant.getRestaurantName)">@restaurant.getRestaurantName</a></td>
                 </tr>
                 }
         </table>
@@ -39,7 +39,7 @@
             </tr>
             @for(visitor <- visitors) {
                 <tr>
-                    <td style="text-align:center"><a href="#">@visitor.getFirstName @visitor.getLastName</a></td>
+                    <td style="text-align:center"><a href="@routes.HomeController.showVisitorCard(visitor.getFirstName)">@visitor.getFirstName @visitor.getLastName</a></td>
                 </tr>
             }
         </table>

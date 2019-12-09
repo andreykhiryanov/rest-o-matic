@@ -57,7 +57,7 @@ Seq[Any](format.raw/*5.58*/("""
             </tr>
             """),_display_(/*27.14*/for(restaurant <- restaurants) yield /*27.44*/ {_display_(Seq[Any](format.raw/*27.46*/("""
                 """),format.raw/*28.17*/("""<tr>
-                    <td style="text-align:center"><a href="#">"""),_display_(/*29.64*/restaurant/*29.74*/.getRestaurantName),format.raw/*29.92*/("""</a></td>
+                    <td style="text-align:center"><a href=""""),_display_(/*29.61*/routes/*29.67*/.HomeController.showRestaurantCard(restaurant.getRestaurantName)),format.raw/*29.131*/("""">"""),_display_(/*29.134*/restaurant/*29.144*/.getRestaurantName),format.raw/*29.162*/("""</a></td>
                 </tr>
                 """)))}),format.raw/*31.18*/("""
         """),format.raw/*32.9*/("""</table>
@@ -70,7 +70,7 @@ Seq[Any](format.raw/*5.58*/("""
             </tr>
             """),_display_(/*40.14*/for(visitor <- visitors) yield /*40.38*/ {_display_(Seq[Any](format.raw/*40.40*/("""
                 """),format.raw/*41.17*/("""<tr>
-                    <td style="text-align:center"><a href="#">"""),_display_(/*42.64*/visitor/*42.71*/.getFirstName),format.raw/*42.84*/(""" """),_display_(/*42.86*/visitor/*42.93*/.getLastName),format.raw/*42.105*/("""</a></td>
+                    <td style="text-align:center"><a href=""""),_display_(/*42.61*/routes/*42.67*/.HomeController.showVisitorCard(visitor.getFirstName)),format.raw/*42.120*/("""">"""),_display_(/*42.123*/visitor/*42.130*/.getFirstName),format.raw/*42.143*/(""" """),_display_(/*42.145*/visitor/*42.152*/.getLastName),format.raw/*42.164*/("""</a></td>
                 </tr>
             """)))}),format.raw/*44.14*/("""
         """),format.raw/*45.9*/("""</table>
@@ -93,11 +93,11 @@ Seq[Any](format.raw/*5.58*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-09T15:24:54.290
+                  DATE: 2019-12-09T15:33:58.209
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/index.scala.html
-                  HASH: 6cc801dea8d092fec9d144deb644fd2aca2606c8
-                  MATRIX: 656->1|690->30|721->56|1063->76|1214->132|1244->136|1881->746|1927->776|1967->778|2013->796|2109->865|2128->875|2167->893|2249->944|2286->954|2518->1159|2558->1183|2598->1185|2644->1203|2740->1272|2756->1279|2790->1292|2819->1294|2835->1301|2869->1313|2947->1360|2984->1370
-                  LINES: 24->1|25->2|26->3|31->5|36->5|38->7|58->27|58->27|58->27|59->28|60->29|60->29|60->29|62->31|63->32|71->40|71->40|71->40|72->41|73->42|73->42|73->42|73->42|73->42|73->42|75->44|76->45
+                  HASH: 002cac724905653a8759078882286bf916daa92f
+                  MATRIX: 656->1|690->30|721->56|1063->76|1214->132|1244->136|1881->746|1927->776|1967->778|2013->796|2106->862|2121->868|2207->932|2238->935|2258->945|2298->963|2380->1014|2417->1024|2649->1229|2689->1253|2729->1255|2775->1273|2868->1339|2883->1345|2958->1398|2989->1401|3006->1408|3041->1421|3071->1423|3088->1430|3122->1442|3200->1489|3237->1499
+                  LINES: 24->1|25->2|26->3|31->5|36->5|38->7|58->27|58->27|58->27|59->28|60->29|60->29|60->29|60->29|60->29|60->29|62->31|63->32|71->40|71->40|71->40|72->41|73->42|73->42|73->42|73->42|73->42|73->42|73->42|73->42|73->42|75->44|76->45
                   -- GENERATED --
               */
           
