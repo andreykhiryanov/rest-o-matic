@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Fri Dec 06 14:55:12 GMT+03:00 2019
+// @DATE:Mon Dec 09 15:18:44 GMT+03:00 2019
 
 package router
 
@@ -43,6 +43,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/create/""", """controllers.HomeController.createRestaurant()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/create/""", """controllers.HomeController.saveChanges()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/delete/""" + "$" + """restaurantName<[^/]+>""", """controllers.HomeController.destroy(restaurantName:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/""" + "$" + """visitorName<[^/]+>""", """controllers.HomeController.showVisitorCard(visitorName:String)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -176,6 +177,24 @@ class Routes(
     )
   )
 
+  // @LINE:15
+  private[this] lazy val controllers_HomeController_showVisitorCard7_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("visitor/"), DynamicPart("visitorName", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_HomeController_showVisitorCard7_invoker = createInvoker(
+    HomeController_0.showVisitorCard(fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "showVisitorCard",
+      Seq(classOf[String]),
+      "GET",
+      this.prefix + """visitor/""" + "$" + """visitorName<[^/]+>""",
+      """""",
+      Seq()
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
@@ -219,6 +238,12 @@ class Routes(
     case controllers_HomeController_destroy6_route(params@_) =>
       call(params.fromPath[String]("restaurantName", None)) { (restaurantName) =>
         controllers_HomeController_destroy6_invoker.call(HomeController_0.destroy(restaurantName))
+      }
+  
+    // @LINE:15
+    case controllers_HomeController_showVisitorCard7_route(params@_) =>
+      call(params.fromPath[String]("visitorName", None)) { (visitorName) =>
+        controllers_HomeController_showVisitorCard7_invoker.call(HomeController_0.showVisitorCard(visitorName))
       }
   }
 }

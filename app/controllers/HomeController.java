@@ -7,10 +7,7 @@ import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.home.createrestaurant;
-import views.html.home.editrestaurant;
-import views.html.home.index;
-import views.html.home.restaurantcard;
+import views.html.home.*;
 
 import javax.inject.Inject;
 
@@ -99,5 +96,17 @@ public class HomeController extends Controller {
     }
 
     // Visitors' actions
+
+    public Result showVisitorCard(String visitorName) {
+
+        Visitor visitor = manager.getVisitorByName(visitorName);
+
+        if (visitor == null) {
+            return notFound("Visitor not found!");
+        }
+
+        return ok(visitorcard.render(visitor));
+
+    }
 
 }

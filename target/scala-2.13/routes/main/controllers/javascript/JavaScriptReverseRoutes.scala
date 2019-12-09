@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Fri Dec 06 14:55:12 GMT+03:00 2019
+// @DATE:Mon Dec 09 15:18:44 GMT+03:00 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -35,6 +35,16 @@ package controllers.javascript {
       """
         function(restaurantName0) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "restaurant/delete/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("restaurantName", restaurantName0))})
+        }
+      """
+    )
+  
+    // @LINE:15
+    def showVisitorCard: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.showVisitorCard",
+      """
+        function(visitorName0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "visitor/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("visitorName", visitorName0))})
         }
       """
     )

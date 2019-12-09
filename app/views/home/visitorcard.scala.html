@@ -1,49 +1,49 @@
 @import entities.Visitor
 @import helper._
 
-@(visitors : Set[Visitor])
+@(visitor : Visitor)
 
 <html>
 
+    <head>
+        <title>@visitor.getFirstName</title>
+    </head>
+
     <body>
 
-        <h2>All visitors</h2>
+        <h2>@visitor.getFirstName</h2>
 
-        @for(visitor <- visitors) {
-            <table border="1px solid grey" style="border-collapse: collapse">
-                <tr>
-                    <th colspan="5" style="text-align:center">Visitor</th>
-                </tr>
+        <input value="Add restaurant" type="submit" onclick=""/> <input value="Remove restaurant" type="submit" onclick=""/>
 
-                <tr>
-                    <td>First Name</td>
-                    <th style="text-align:left">@visitor.getFirstName</th>
-                </tr>
-                <tr>
-                    <td>Last Name</td>
-                    <td>@visitor.getLastName</td>
-                </tr>
-                <tr>
-                    <td>Email</td>
-                    <td>@visitor.getEmail</td>
-                </tr>
-                <tr>
-                    <td>Phone</td>
-                    <td>@visitor.getPhoneNumber</td>
-                </tr>
+        <br><br>
 
-                <tr>
-                    <th colspan="5" style="text-align:center">Visited restaurants</th>
-                </tr>
+        <table border="1px solid grey" style="border-collapse: collapse">
+            <tr>
+                <th colspan="5" style="text-align:center">Information</th>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td>@visitor.getLastName</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>@visitor.getEmail</td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td>@visitor.getPhoneNumber</td>
+            </tr>
 
-                @for(restaurant <- visitor.getVisitedRestaurants) {
-                    <tr>
-                        <td colspan="5" style="text-align:center">@restaurant.getRestaurantName</td>
-                    </tr>
-                }
-            </table>
-            <br>
+            <tr>
+                <th colspan="5" style="text-align:center">Visited restaurants</th>
+            </tr>
+
+            @for(restaurant <- visitor.getVisitedRestaurants) {
+                <tr>
+                    <td colspan="5" style="text-align:center">@restaurant.getRestaurantName</td>
+                </tr>
             }
+        </table>
 
     </body>
 

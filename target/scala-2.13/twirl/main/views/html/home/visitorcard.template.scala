@@ -24,68 +24,68 @@ import play.core.j.PlayFormsMagicForJava._
 /*1.2*/import entities.Visitor
 /*2.2*/import helper._
 
-object visitorcard extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[Set[Visitor],play.twirl.api.HtmlFormat.Appendable] {
+object visitorcard extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[Visitor,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*4.2*/(visitors : Set[Visitor]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*4.2*/(visitor : Visitor):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*4.27*/("""
+Seq[Any](format.raw/*4.21*/("""
 
 """),format.raw/*6.1*/("""<html>
 
+    <head>
+        <title>"""),_display_(/*9.17*/visitor/*9.24*/.getFirstName),format.raw/*9.37*/("""</title>
+    </head>
+
     <body>
 
-        <h2>All visitors</h2>
+        <h2>"""),_display_(/*14.14*/visitor/*14.21*/.getFirstName),format.raw/*14.34*/("""</h2>
 
-        """),_display_(/*12.10*/for(visitor <- visitors) yield /*12.34*/ {_display_(Seq[Any](format.raw/*12.36*/("""
-            """),format.raw/*13.13*/("""<table border="1px solid grey" style="border-collapse: collapse">
-                <tr>
-                    <th colspan="5" style="text-align:center">Visitor</th>
-                </tr>
+        <input value="Add restaurant" type="submit" onclick=""/> <input value="Remove restaurant" type="submit" onclick=""/>
 
-                <tr>
-                    <td>First Name</td>
-                    <th style="text-align:left">"""),_display_(/*20.50*/visitor/*20.57*/.getFirstName),format.raw/*20.70*/("""</th>
-                </tr>
-                <tr>
-                    <td>Last Name</td>
-                    <td>"""),_display_(/*24.26*/visitor/*24.33*/.getLastName),format.raw/*24.45*/("""</td>
-                </tr>
-                <tr>
-                    <td>Email</td>
-                    <td>"""),_display_(/*28.26*/visitor/*28.33*/.getEmail),format.raw/*28.42*/("""</td>
-                </tr>
-                <tr>
-                    <td>Phone</td>
-                    <td>"""),_display_(/*32.26*/visitor/*32.33*/.getPhoneNumber),format.raw/*32.48*/("""</td>
-                </tr>
+        <br><br>
 
-                <tr>
-                    <th colspan="5" style="text-align:center">Visited restaurants</th>
+        <table border="1px solid grey" style="border-collapse: collapse">
+            <tr>
+                <th colspan="5" style="text-align:center">Information</th>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td>"""),_display_(/*26.22*/visitor/*26.29*/.getLastName),format.raw/*26.41*/("""</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>"""),_display_(/*30.22*/visitor/*30.29*/.getEmail),format.raw/*30.38*/("""</td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td>"""),_display_(/*34.22*/visitor/*34.29*/.getPhoneNumber),format.raw/*34.44*/("""</td>
+            </tr>
+
+            <tr>
+                <th colspan="5" style="text-align:center">Visited restaurants</th>
+            </tr>
+
+            """),_display_(/*41.14*/for(restaurant <- visitor.getVisitedRestaurants) yield /*41.62*/ {_display_(Seq[Any](format.raw/*41.64*/("""
+                """),format.raw/*42.17*/("""<tr>
+                    <td colspan="5" style="text-align:center">"""),_display_(/*43.64*/restaurant/*43.74*/.getRestaurantName),format.raw/*43.92*/("""</td>
                 </tr>
+            """)))}),format.raw/*45.14*/("""
+        """),format.raw/*46.9*/("""</table>
 
-                """),_display_(/*39.18*/for(restaurant <- visitor.getVisitedRestaurants) yield /*39.66*/ {_display_(Seq[Any](format.raw/*39.68*/("""
-                    """),format.raw/*40.21*/("""<tr>
-                        <td colspan="5" style="text-align:center">"""),_display_(/*41.68*/restaurant/*41.78*/.getRestaurantName),format.raw/*41.96*/("""</td>
-                    </tr>
-                """)))}),format.raw/*43.18*/("""
-            """),format.raw/*44.13*/("""</table>
-            <br>
-            """)))}),format.raw/*46.14*/("""
-
-    """),format.raw/*48.5*/("""</body>
+    </body>
 
 </html>"""))
       }
     }
   }
 
-  def render(visitors:Set[Visitor]): play.twirl.api.HtmlFormat.Appendable = apply(visitors)
+  def render(visitor:Visitor): play.twirl.api.HtmlFormat.Appendable = apply(visitor)
 
-  def f:((Set[Visitor]) => play.twirl.api.HtmlFormat.Appendable) = (visitors) => apply(visitors)
+  def f:((Visitor) => play.twirl.api.HtmlFormat.Appendable) = (visitor) => apply(visitor)
 
   def ref: this.type = this
 
@@ -94,11 +94,11 @@ Seq[Any](format.raw/*4.27*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-06T13:36:17.178
+                  DATE: 2019-12-09T15:23:34.148
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/visitorcard.scala.html
-                  HASH: 1053623bbe56553444bec67efda636b8103cd9ee
-                  MATRIX: 656->1|687->27|1019->47|1139->72|1169->76|1262->142|1302->166|1342->168|1384->182|1713->484|1729->491|1763->504|1907->621|1923->628|1956->640|2096->753|2112->760|2142->769|2282->882|2298->889|2334->904|2545->1088|2609->1136|2649->1138|2699->1160|2799->1233|2818->1243|2857->1261|2939->1312|2981->1326|3053->1367|3088->1375
-                  LINES: 24->1|25->2|30->4|35->4|37->6|43->12|43->12|43->12|44->13|51->20|51->20|51->20|55->24|55->24|55->24|59->28|59->28|59->28|63->32|63->32|63->32|70->39|70->39|70->39|71->40|72->41|72->41|72->41|74->43|75->44|77->46|79->48
+                  HASH: 61f02e7e9d4b6de5f77194736bc1605808a6f3f2
+                  MATRIX: 656->1|687->27|1014->47|1128->66|1158->70|1222->108|1237->115|1270->128|1349->180|1365->187|1399->200|1846->620|1862->627|1895->639|2019->736|2035->743|2065->752|2189->849|2205->856|2241->871|2432->1035|2496->1083|2536->1085|2582->1103|2678->1172|2697->1182|2736->1200|2810->1243|2847->1253
+                  LINES: 24->1|25->2|30->4|35->4|37->6|40->9|40->9|40->9|45->14|45->14|45->14|57->26|57->26|57->26|61->30|61->30|61->30|65->34|65->34|65->34|72->41|72->41|72->41|73->42|74->43|74->43|74->43|76->45|77->46
                   -- GENERATED --
               */
           

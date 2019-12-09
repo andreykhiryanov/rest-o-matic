@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Fri Dec 06 14:55:12 GMT+03:00 2019
+// @DATE:Mon Dec 09 15:18:44 GMT+03:00 2019
 
 import play.api.mvc.Call
 
@@ -28,6 +28,12 @@ package controllers {
     def destroy(restaurantName:String): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "restaurant/delete/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("restaurantName", restaurantName)))
+    }
+  
+    // @LINE:15
+    def showVisitorCard(visitorName:String): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "visitor/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("visitorName", visitorName)))
     }
   
     // @LINE:8

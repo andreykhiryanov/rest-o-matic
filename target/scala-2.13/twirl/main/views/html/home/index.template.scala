@@ -43,7 +43,10 @@ Seq[Any](format.raw/*5.58*/("""
 
         <h1>Welcome to the Rest-o-matic!</h1>
 
-        <input value="New restaurant" type="submit" onclick=""/> <input value="New visitor" type="submit" onclick=""/>
+        <input value="New restaurant" type="submit" onclick=""/> <input value="Remove restaurant" type="submit" onclick=""/>
+        <br><br>
+
+        <input value="New visitor" type="submit" onclick=""/> <input value="Remove visitor" type="submit" onclick=""/>
         <br>
 
         <h2>All restaurants</h2>
@@ -52,12 +55,12 @@ Seq[Any](format.raw/*5.58*/("""
             <tr>
                 <th>Restaurants</th>
             </tr>
-            """),_display_(/*24.14*/for(restaurant <- restaurants) yield /*24.44*/ {_display_(Seq[Any](format.raw/*24.46*/("""
-                """),format.raw/*25.17*/("""<tr>
-                    <td style="text-align:center"><a href="#">"""),_display_(/*26.64*/restaurant/*26.74*/.getRestaurantName),format.raw/*26.92*/("""</a></td>
+            """),_display_(/*27.14*/for(restaurant <- restaurants) yield /*27.44*/ {_display_(Seq[Any](format.raw/*27.46*/("""
+                """),format.raw/*28.17*/("""<tr>
+                    <td style="text-align:center"><a href="#">"""),_display_(/*29.64*/restaurant/*29.74*/.getRestaurantName),format.raw/*29.92*/("""</a></td>
                 </tr>
-                """)))}),format.raw/*28.18*/("""
-        """),format.raw/*29.9*/("""</table>
+                """)))}),format.raw/*31.18*/("""
+        """),format.raw/*32.9*/("""</table>
 
         <h2>All visitors</h2>
 
@@ -65,12 +68,12 @@ Seq[Any](format.raw/*5.58*/("""
             <tr>
                 <th>Visitors</th>
             </tr>
-            """),_display_(/*37.14*/for(visitor <- visitors) yield /*37.38*/ {_display_(Seq[Any](format.raw/*37.40*/("""
-                """),format.raw/*38.17*/("""<tr>
-                    <td style="text-align:center"><a href="#">"""),_display_(/*39.64*/visitor/*39.71*/.getFirstName),format.raw/*39.84*/(""" """),_display_(/*39.86*/visitor/*39.93*/.getLastName),format.raw/*39.105*/("""</a></td>
+            """),_display_(/*40.14*/for(visitor <- visitors) yield /*40.38*/ {_display_(Seq[Any](format.raw/*40.40*/("""
+                """),format.raw/*41.17*/("""<tr>
+                    <td style="text-align:center"><a href="#">"""),_display_(/*42.64*/visitor/*42.71*/.getFirstName),format.raw/*42.84*/(""" """),_display_(/*42.86*/visitor/*42.93*/.getLastName),format.raw/*42.105*/("""</a></td>
                 </tr>
-            """)))}),format.raw/*41.14*/("""
-        """),format.raw/*42.9*/("""</table>
+            """)))}),format.raw/*44.14*/("""
+        """),format.raw/*45.9*/("""</table>
 
     </body>
 
@@ -90,11 +93,11 @@ Seq[Any](format.raw/*5.58*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-06T13:38:14.914
+                  DATE: 2019-12-09T15:24:54.290
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/index.scala.html
-                  HASH: c51719eb4a77b8b0cfe872541159e2536d888564
-                  MATRIX: 656->1|690->30|721->56|1063->76|1214->132|1244->136|1735->600|1781->630|1821->632|1867->650|1963->719|1982->729|2021->747|2103->798|2140->808|2372->1013|2412->1037|2452->1039|2498->1057|2594->1126|2610->1133|2644->1146|2673->1148|2689->1155|2723->1167|2801->1214|2838->1224
-                  LINES: 24->1|25->2|26->3|31->5|36->5|38->7|55->24|55->24|55->24|56->25|57->26|57->26|57->26|59->28|60->29|68->37|68->37|68->37|69->38|70->39|70->39|70->39|70->39|70->39|70->39|72->41|73->42
+                  HASH: 6cc801dea8d092fec9d144deb644fd2aca2606c8
+                  MATRIX: 656->1|690->30|721->56|1063->76|1214->132|1244->136|1881->746|1927->776|1967->778|2013->796|2109->865|2128->875|2167->893|2249->944|2286->954|2518->1159|2558->1183|2598->1185|2644->1203|2740->1272|2756->1279|2790->1292|2819->1294|2835->1301|2869->1313|2947->1360|2984->1370
+                  LINES: 24->1|25->2|26->3|31->5|36->5|38->7|58->27|58->27|58->27|59->28|60->29|60->29|60->29|62->31|63->32|71->40|71->40|71->40|72->41|73->42|73->42|73->42|73->42|73->42|73->42|75->44|76->45
                   -- GENERATED --
               */
           
