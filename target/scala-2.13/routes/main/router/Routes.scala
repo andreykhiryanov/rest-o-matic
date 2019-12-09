@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Mon Dec 09 15:18:44 GMT+03:00 2019
+// @DATE:Mon Dec 09 15:56:18 GMT+03:00 2019
 
 package router
 
@@ -41,9 +41,11 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/edit/""" + "$" + """restaurantName<[^/]+>""", """controllers.HomeController.editRestaurant(restaurantName:String)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/edit""", """controllers.HomeController.update()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/create/""", """controllers.HomeController.createRestaurant()"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/create/""", """controllers.HomeController.saveChanges()"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/create/""", """controllers.HomeController.saveRestaurantChanges()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/delete/""" + "$" + """restaurantName<[^/]+>""", """controllers.HomeController.destroy(restaurantName:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/""" + "$" + """visitorName<[^/]+>""", """controllers.HomeController.showVisitorCard(visitorName:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/create/""", """controllers.HomeController.createVisitor()"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/create/""", """controllers.HomeController.saveVisitorChanges()"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -142,15 +144,15 @@ class Routes(
   )
 
   // @LINE:12
-  private[this] lazy val controllers_HomeController_saveChanges5_route = Route("POST",
+  private[this] lazy val controllers_HomeController_saveRestaurantChanges5_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("restaurant/create/")))
   )
-  private[this] lazy val controllers_HomeController_saveChanges5_invoker = createInvoker(
-    HomeController_0.saveChanges(),
+  private[this] lazy val controllers_HomeController_saveRestaurantChanges5_invoker = createInvoker(
+    HomeController_0.saveRestaurantChanges(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
-      "saveChanges",
+      "saveRestaurantChanges",
       Nil,
       "POST",
       this.prefix + """restaurant/create/""",
@@ -195,6 +197,42 @@ class Routes(
     )
   )
 
+  // @LINE:16
+  private[this] lazy val controllers_HomeController_createVisitor8_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("visitor/create/")))
+  )
+  private[this] lazy val controllers_HomeController_createVisitor8_invoker = createInvoker(
+    HomeController_0.createVisitor(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "createVisitor",
+      Nil,
+      "GET",
+      this.prefix + """visitor/create/""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:17
+  private[this] lazy val controllers_HomeController_saveVisitorChanges9_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("visitor/create/")))
+  )
+  private[this] lazy val controllers_HomeController_saveVisitorChanges9_invoker = createInvoker(
+    HomeController_0.saveVisitorChanges(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "saveVisitorChanges",
+      Nil,
+      "POST",
+      this.prefix + """visitor/create/""",
+      """""",
+      Seq()
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
@@ -229,9 +267,9 @@ class Routes(
       }
   
     // @LINE:12
-    case controllers_HomeController_saveChanges5_route(params@_) =>
+    case controllers_HomeController_saveRestaurantChanges5_route(params@_) =>
       call { 
-        controllers_HomeController_saveChanges5_invoker.call(HomeController_0.saveChanges())
+        controllers_HomeController_saveRestaurantChanges5_invoker.call(HomeController_0.saveRestaurantChanges())
       }
   
     // @LINE:13
@@ -244,6 +282,18 @@ class Routes(
     case controllers_HomeController_showVisitorCard7_route(params@_) =>
       call(params.fromPath[String]("visitorName", None)) { (visitorName) =>
         controllers_HomeController_showVisitorCard7_invoker.call(HomeController_0.showVisitorCard(visitorName))
+      }
+  
+    // @LINE:16
+    case controllers_HomeController_createVisitor8_route(params@_) =>
+      call { 
+        controllers_HomeController_createVisitor8_invoker.call(HomeController_0.createVisitor())
+      }
+  
+    // @LINE:17
+    case controllers_HomeController_saveVisitorChanges9_route(params@_) =>
+      call { 
+        controllers_HomeController_saveVisitorChanges9_invoker.call(HomeController_0.saveVisitorChanges())
       }
   }
 }

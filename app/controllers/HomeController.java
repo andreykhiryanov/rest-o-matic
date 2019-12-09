@@ -47,7 +47,7 @@ public class HomeController extends Controller {
         return ok(createrestaurant.render(restaurantForm));
     }
 
-    public Result saveChanges() {
+    public Result saveRestaurantChanges() {
 
         // Getting created restaurant from the previous form.
         // TODO: remove deprecated method bindFromRequest
@@ -96,6 +96,23 @@ public class HomeController extends Controller {
     }
 
     // Visitors' actions
+
+    public Result createVisitor() {
+        Form<Visitor> visitorForm = formFactory.form(Visitor.class);
+        return ok(createvisitor.render(visitorForm));
+    }
+
+    public Result saveVisitorChanges() {
+
+        // Getting created visitor from the previous form.
+        // TODO: remove deprecated method bindFromRequest
+        Form<Visitor> visitorForm = formFactory.form(Visitor.class).bindFromRequest();
+
+        // Transferring new restaurant to the manager for storage in the collection.
+        manager.addNewVisitor(visitorForm.get());
+
+        return redirect(routes.HomeController.greetings());
+    }
 
     public Result showVisitorCard(String visitorName) {
 

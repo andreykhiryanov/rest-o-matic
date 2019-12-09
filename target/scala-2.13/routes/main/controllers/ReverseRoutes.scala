@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Mon Dec 09 15:18:44 GMT+03:00 2019
+// @DATE:Mon Dec 09 15:56:18 GMT+03:00 2019
 
 import play.api.mvc.Call
 
@@ -18,10 +18,16 @@ package controllers {
     }
 
   
-    // @LINE:12
-    def saveChanges(): Call = {
+    // @LINE:17
+    def saveVisitorChanges(): Call = {
       
-      Call("POST", _prefix + { _defaultPrefix } + "restaurant/create/")
+      Call("POST", _prefix + { _defaultPrefix } + "visitor/create/")
+    }
+  
+    // @LINE:16
+    def createVisitor(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "visitor/create/")
     }
   
     // @LINE:13
@@ -52,6 +58,12 @@ package controllers {
     def createRestaurant(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "restaurant/create/")
+    }
+  
+    // @LINE:12
+    def saveRestaurantChanges(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "restaurant/create/")
     }
   
     // @LINE:5

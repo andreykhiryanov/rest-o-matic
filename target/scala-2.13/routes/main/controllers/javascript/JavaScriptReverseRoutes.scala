@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Mon Dec 09 15:18:44 GMT+03:00 2019
+// @DATE:Mon Dec 09 15:56:18 GMT+03:00 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -19,12 +19,22 @@ package controllers.javascript {
     }
 
   
-    // @LINE:12
-    def saveChanges: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.saveChanges",
+    // @LINE:17
+    def saveVisitorChanges: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.saveVisitorChanges",
       """
         function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "restaurant/create/"})
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "visitor/create/"})
+        }
+      """
+    )
+  
+    // @LINE:16
+    def createVisitor: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.createVisitor",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "visitor/create/"})
         }
       """
     )
@@ -75,6 +85,16 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "restaurant/create/"})
+        }
+      """
+    )
+  
+    // @LINE:12
+    def saveRestaurantChanges: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.saveRestaurantChanges",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "restaurant/create/"})
         }
       """
     )

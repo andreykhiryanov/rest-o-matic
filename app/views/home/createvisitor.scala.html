@@ -1,0 +1,24 @@
+@import entities.Visitor
+@(visitorForm: Form[Visitor])
+@import helper._
+
+<html>
+    <head>
+        <title>New Visitor</title>
+    </head>
+    <body>
+        <h1>Create New Visitor</h1>
+
+        @helper.form(action = routes.HomeController.saveVisitorChanges()) {
+            @helper.inputText(visitorForm("firstName"))
+            @helper.inputText(visitorForm("lastName"))
+            @helper.inputText(visitorForm("email"))
+            @helper.inputText(visitorForm("phoneNumber"))
+
+            <br>
+
+            <input type="submit" value="Create Visitor">
+            }
+    </body>
+
+</html>

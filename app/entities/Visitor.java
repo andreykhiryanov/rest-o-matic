@@ -9,7 +9,7 @@ public class Visitor {
     private String lastName;
     private String email;
     private String phoneNumber;
-    private Set<Restaurant> visitedRestaurants;
+    private Set<Restaurant> visitedRestaurants = new HashSet<>();
 
     public Visitor() {
     }
@@ -19,7 +19,6 @@ public class Visitor {
         this.lastName = lastName;
         this.email = email;
         this.phoneNumber = phoneNumber;
-        visitedRestaurants = new HashSet<>();
     }
 
     public String getFirstName() {
@@ -83,6 +82,6 @@ public class Visitor {
 //    }
 
     public void visitRestaurant(Restaurant newRestaurant) {
-        visitedRestaurants.add(newRestaurant);
+        if (newRestaurant != null) visitedRestaurants.add(newRestaurant);
     }
 }
