@@ -13,7 +13,7 @@
 
         <h2>@visitor.getFirstName</h2>
 
-        <input value="Visit restaurant" type="submit" onclick=""/> <input value="Remove restaurant" type="submit" onclick=""/>
+        <input value="Remove this visitor" type="submit" onclick="window.location.href='@routes.HomeController.destroyVisitor(visitor.getFirstName)'"/>
 
         <br><br>
 
@@ -44,6 +44,9 @@
                 </tr>
             }
         </table>
+
+        <br>
+        <input value="Visit restaurant" type="button" onclick=""/> <input value="Remove restaurant" type="submit" onclick=""/>
 
     </body>
 

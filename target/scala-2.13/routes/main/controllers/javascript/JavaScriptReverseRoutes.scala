@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Mon Dec 09 15:56:18 GMT+03:00 2019
+// @DATE:Mon Dec 09 17:44:58 GMT+03:00 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -40,8 +40,8 @@ package controllers.javascript {
     )
   
     // @LINE:13
-    def destroy: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.destroy",
+    def destroyRestaurant: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.destroyRestaurant",
       """
         function(restaurantName0) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "restaurant/delete/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("restaurantName", restaurantName0))})
@@ -55,6 +55,16 @@ package controllers.javascript {
       """
         function(visitorName0) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "visitor/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("visitorName", visitorName0))})
+        }
+      """
+    )
+  
+    // @LINE:18
+    def destroyVisitor: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.destroyVisitor",
+      """
+        function(visitorName0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "visitor/delete/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("visitorName", visitorName0))})
         }
       """
     )

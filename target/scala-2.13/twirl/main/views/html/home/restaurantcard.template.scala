@@ -43,7 +43,7 @@ Seq[Any](format.raw/*3.27*/("""
 
         <h2>"""),_display_(/*13.14*/restaurant/*13.24*/.getRestaurantName),format.raw/*13.42*/("""</h2>
 
-        <input value="Add visitor" type="submit" onclick=""/> <input value="Remove visitor" type="submit" onclick=""/>
+        <input value="Remove this restaurant" type="button" onclick="window.location.href='"""),_display_(/*15.93*/routes/*15.99*/.HomeController.destroyRestaurant(restaurant.getRestaurantName)),format.raw/*15.162*/("""'"/>
 
         <br><br>
 
@@ -70,11 +70,13 @@ Seq[Any](format.raw/*3.27*/("""
 
             """),_display_(/*40.14*/for(visitor <- restaurant.getAcceptedVisitors) yield /*40.60*/ {_display_(Seq[Any](format.raw/*40.62*/("""
                 """),format.raw/*41.17*/("""<tr>
-                    <td>"""),_display_(/*42.26*/visitor/*42.33*/.getFirstName),format.raw/*42.46*/("""</td>
-                    <td>"""),_display_(/*43.26*/visitor/*43.33*/.getLastName),format.raw/*43.45*/("""</td>
+                    <td colspan="5" style="text-align:center">"""),_display_(/*42.64*/visitor/*42.71*/.getFirstName),format.raw/*42.84*/(""" """),_display_(/*42.86*/visitor/*42.93*/.getLastName),format.raw/*42.105*/("""</td>
                 </tr>
-            """)))}),format.raw/*45.14*/("""
-        """),format.raw/*46.9*/("""</table>
+            """)))}),format.raw/*44.14*/("""
+        """),format.raw/*45.9*/("""</table>
+
+        <br>
+        <input value="Add visitor" type="submit" onclick=""/> <input value="Remove visitor" type="button" onclick="window.location.href='"""),_display_(/*48.139*/routes/*48.145*/.HomeController.createRestaurant()),format.raw/*48.179*/("""'"/>
 
     </body>
 
@@ -94,11 +96,11 @@ Seq[Any](format.raw/*3.27*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-09T15:50:15.826
+                  DATE: 2019-12-09T17:33:15.478
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/restaurantcard.scala.html
-                  HASH: fa1733ed90eeae754f4ea1d4885a0ef5d7934b94
-                  MATRIX: 656->1|1000->32|1120->57|1150->61|1214->99|1232->109|1270->127|1349->179|1368->189|1407->207|1848->621|1867->631|1901->644|2023->739|2042->749|2070->756|2196->855|2215->865|2247->876|2427->1029|2489->1075|2529->1077|2575->1095|2633->1126|2649->1133|2683->1146|2742->1178|2758->1185|2791->1197|2865->1240|2902->1250
-                  LINES: 24->1|29->3|34->3|36->5|39->8|39->8|39->8|44->13|44->13|44->13|56->25|56->25|56->25|60->29|60->29|60->29|64->33|64->33|64->33|71->40|71->40|71->40|72->41|73->42|73->42|73->42|74->43|74->43|74->43|76->45|77->46
+                  HASH: 7a6336eec006f01fffb4d277d7903a08b2399654
+                  MATRIX: 656->1|1000->32|1120->57|1150->61|1214->99|1232->109|1270->127|1349->179|1368->189|1407->207|1535->308|1550->314|1635->377|1953->668|1972->678|2006->691|2128->786|2147->796|2175->803|2301->902|2320->912|2352->923|2532->1076|2594->1122|2634->1124|2680->1142|2776->1211|2792->1218|2826->1231|2855->1233|2871->1240|2905->1252|2979->1295|3016->1305|3208->1469|3224->1475|3280->1509
+                  LINES: 24->1|29->3|34->3|36->5|39->8|39->8|39->8|44->13|44->13|44->13|46->15|46->15|46->15|56->25|56->25|56->25|60->29|60->29|60->29|64->33|64->33|64->33|71->40|71->40|71->40|72->41|73->42|73->42|73->42|73->42|73->42|73->42|75->44|76->45|79->48|79->48|79->48
                   -- GENERATED --
               */
           

@@ -13,6 +13,8 @@ import javax.inject.Inject;
 
 public class HomeController extends Controller {
 
+    private boolean hasStarted = false;
+
     private Manager manager = Manager.getManager();
 
     @Inject
@@ -20,7 +22,11 @@ public class HomeController extends Controller {
 
     public Result greetings() {
 
-        fillTestData();
+        // Fill in the test data only once.
+        if (!hasStarted) {
+            fillTestData();
+            hasStarted = true;
+        }
 
         return ok(index.render(manager.getAllRestaurants(), manager.getAllVisitors()));
     }
@@ -79,8 +85,10 @@ public class HomeController extends Controller {
         return null;
     }
 
-    public Result destroy(String restaurantName) {
-        return null;
+    public Result destroyRestaurant(String restaurantName) {
+
+        manager.getAllRestaurants().remove(manager.getRestaurantByName(restaurantName));
+        return redirect(routes.HomeController.greetings());
     }
 
     public Result showRestaurantCard(String restaurantName) {
@@ -124,6 +132,12 @@ public class HomeController extends Controller {
 
         return ok(visitorcard.render(visitor));
 
+    }
+
+    public Result destroyVisitor(String visitorName) {
+
+        manager.getAllVisitors().remove(manager.getVisitorByName(visitorName));
+        return redirect(routes.HomeController.greetings());
     }
 
 }

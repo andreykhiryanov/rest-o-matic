@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Mon Dec 09 15:56:18 GMT+03:00 2019
+// @DATE:Mon Dec 09 17:44:58 GMT+03:00 2019
 
 package router
 
@@ -42,10 +42,11 @@ class Routes(
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/edit""", """controllers.HomeController.update()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/create/""", """controllers.HomeController.createRestaurant()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/create/""", """controllers.HomeController.saveRestaurantChanges()"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/delete/""" + "$" + """restaurantName<[^/]+>""", """controllers.HomeController.destroy(restaurantName:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/delete/""" + "$" + """restaurantName<[^/]+>""", """controllers.HomeController.destroyRestaurant(restaurantName:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/""" + "$" + """visitorName<[^/]+>""", """controllers.HomeController.showVisitorCard(visitorName:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/create/""", """controllers.HomeController.createVisitor()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/create/""", """controllers.HomeController.saveVisitorChanges()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/delete/""" + "$" + """visitorName<[^/]+>""", """controllers.HomeController.destroyVisitor(visitorName:String)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -162,15 +163,15 @@ class Routes(
   )
 
   // @LINE:13
-  private[this] lazy val controllers_HomeController_destroy6_route = Route("GET",
+  private[this] lazy val controllers_HomeController_destroyRestaurant6_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("restaurant/delete/"), DynamicPart("restaurantName", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_HomeController_destroy6_invoker = createInvoker(
-    HomeController_0.destroy(fakeValue[String]),
+  private[this] lazy val controllers_HomeController_destroyRestaurant6_invoker = createInvoker(
+    HomeController_0.destroyRestaurant(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
-      "destroy",
+      "destroyRestaurant",
       Seq(classOf[String]),
       "GET",
       this.prefix + """restaurant/delete/""" + "$" + """restaurantName<[^/]+>""",
@@ -233,6 +234,24 @@ class Routes(
     )
   )
 
+  // @LINE:18
+  private[this] lazy val controllers_HomeController_destroyVisitor10_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("visitor/delete/"), DynamicPart("visitorName", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_HomeController_destroyVisitor10_invoker = createInvoker(
+    HomeController_0.destroyVisitor(fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "destroyVisitor",
+      Seq(classOf[String]),
+      "GET",
+      this.prefix + """visitor/delete/""" + "$" + """visitorName<[^/]+>""",
+      """""",
+      Seq()
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
@@ -273,9 +292,9 @@ class Routes(
       }
   
     // @LINE:13
-    case controllers_HomeController_destroy6_route(params@_) =>
+    case controllers_HomeController_destroyRestaurant6_route(params@_) =>
       call(params.fromPath[String]("restaurantName", None)) { (restaurantName) =>
-        controllers_HomeController_destroy6_invoker.call(HomeController_0.destroy(restaurantName))
+        controllers_HomeController_destroyRestaurant6_invoker.call(HomeController_0.destroyRestaurant(restaurantName))
       }
   
     // @LINE:15
@@ -294,6 +313,12 @@ class Routes(
     case controllers_HomeController_saveVisitorChanges9_route(params@_) =>
       call { 
         controllers_HomeController_saveVisitorChanges9_invoker.call(HomeController_0.saveVisitorChanges())
+      }
+  
+    // @LINE:18
+    case controllers_HomeController_destroyVisitor10_route(params@_) =>
+      call(params.fromPath[String]("visitorName", None)) { (visitorName) =>
+        controllers_HomeController_destroyVisitor10_invoker.call(HomeController_0.destroyVisitor(visitorName))
       }
   }
 }
