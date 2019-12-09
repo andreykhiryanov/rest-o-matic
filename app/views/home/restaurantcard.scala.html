@@ -1,1 +1,50 @@
-@()
+@import entities.Restaurant
+
+@(restaurant : Restaurant)
+
+<html>
+
+    <head>
+        <title>@restaurant.getRestaurantName</title>
+    </head>
+
+    <body>
+
+        <h2>@restaurant.getRestaurantName</h2>
+
+        <input value="Add visitor" type="submit" onclick=""/> <input value="Remove visitor" type="submit" onclick=""/>
+
+        <br><br>
+
+        <table border="1px solid grey" style="border-collapse: collapse">
+            <tr>
+                <th colspan="5" style="text-align:center">Information</th>
+            </tr>
+            <tr>
+                <td>Legal Name</td>
+                <td>@restaurant.getLegalName</td>
+            </tr>
+            <tr>
+                <td>INN</td>
+                <td>@restaurant.getInn</td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>@restaurant.getAddress</td>
+            </tr>
+
+            <tr>
+                <th colspan="5" style="text-align:center">Visitors</th>
+            </tr>
+
+            @for(visitor <- restaurant.getAcceptedVisitors) {
+                <tr>
+                    <td>@visitor.getFirstName</td>
+                    <td>@visitor.getLastName</td>
+                </tr>
+            }
+        </table>
+
+    </body>
+
+</html>

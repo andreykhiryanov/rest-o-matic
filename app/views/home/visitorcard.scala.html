@@ -1,1 +1,50 @@
-@()
+@import entities.Visitor
+@import helper._
+
+@(visitors : Set[Visitor])
+
+<html>
+
+    <body>
+
+        <h2>All visitors</h2>
+
+        @for(visitor <- visitors) {
+            <table border="1px solid grey" style="border-collapse: collapse">
+                <tr>
+                    <th colspan="5" style="text-align:center">Visitor</th>
+                </tr>
+
+                <tr>
+                    <td>First Name</td>
+                    <th style="text-align:left">@visitor.getFirstName</th>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td>@visitor.getLastName</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>@visitor.getEmail</td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>@visitor.getPhoneNumber</td>
+                </tr>
+
+                <tr>
+                    <th colspan="5" style="text-align:center">Visited restaurants</th>
+                </tr>
+
+                @for(restaurant <- visitor.getVisitedRestaurants) {
+                    <tr>
+                        <td colspan="5" style="text-align:center">@restaurant.getRestaurantName</td>
+                    </tr>
+                }
+            </table>
+            <br>
+            }
+
+    </body>
+
+</html>

@@ -10,9 +10,9 @@ import play.mvc.Result;
 import views.html.home.createrestaurant;
 import views.html.home.editrestaurant;
 import views.html.home.index;
+import views.html.home.restaurantcard;
+
 import javax.inject.Inject;
-import java.util.Iterator;
-import java.util.Set;
 
 public class HomeController extends Controller {
 
@@ -86,8 +86,16 @@ public class HomeController extends Controller {
         return null;
     }
 
-    public Result show(String restaurantName) {
-        return null;
+    public Result showRestaurantCard(String restaurantName) {
+
+        // Searching requested restaurant
+        Restaurant restaurant = manager.getRestaurantByName(restaurantName);
+
+        if (restaurant == null) {
+            return notFound("Restaurant not found!");
+        }
+
+        return ok(restaurantcard.render(restaurant));
     }
 
     // Visitors' actions

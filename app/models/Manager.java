@@ -2,7 +2,6 @@ package models;
 
 import entities.Restaurant;
 import entities.Visitor;
-
 import java.util.HashSet;
 import java.util.Set;
 

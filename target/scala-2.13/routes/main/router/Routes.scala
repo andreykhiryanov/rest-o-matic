@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Thu Dec 05 12:55:37 GMT+03:00 2019
+// @DATE:Fri Dec 06 14:55:12 GMT+03:00 2019
 
 package router
 
@@ -37,7 +37,7 @@ class Routes(
 
   def documentation = List(
     ("""GET""", this.prefix, """controllers.HomeController.greetings()"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/""" + "$" + """restaurantName<[^/]+>""", """controllers.HomeController.show(restaurantName:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/""" + "$" + """restaurantName<[^/]+>""", """controllers.HomeController.showRestaurantCard(restaurantName:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/edit/""" + "$" + """restaurantName<[^/]+>""", """controllers.HomeController.editRestaurant(restaurantName:String)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/edit""", """controllers.HomeController.update()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/create/""", """controllers.HomeController.createRestaurant()"""),
@@ -69,15 +69,15 @@ class Routes(
   )
 
   // @LINE:8
-  private[this] lazy val controllers_HomeController_show1_route = Route("GET",
+  private[this] lazy val controllers_HomeController_showRestaurantCard1_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("restaurant/"), DynamicPart("restaurantName", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_HomeController_show1_invoker = createInvoker(
-    HomeController_0.show(fakeValue[String]),
+  private[this] lazy val controllers_HomeController_showRestaurantCard1_invoker = createInvoker(
+    HomeController_0.showRestaurantCard(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
-      "show",
+      "showRestaurantCard",
       Seq(classOf[String]),
       "GET",
       this.prefix + """restaurant/""" + "$" + """restaurantName<[^/]+>""",
@@ -186,9 +186,9 @@ class Routes(
       }
   
     // @LINE:8
-    case controllers_HomeController_show1_route(params@_) =>
+    case controllers_HomeController_showRestaurantCard1_route(params@_) =>
       call(params.fromPath[String]("restaurantName", None)) { (restaurantName) =>
-        controllers_HomeController_show1_invoker.call(HomeController_0.show(restaurantName))
+        controllers_HomeController_showRestaurantCard1_invoker.call(HomeController_0.showRestaurantCard(restaurantName))
       }
   
     // @LINE:9
