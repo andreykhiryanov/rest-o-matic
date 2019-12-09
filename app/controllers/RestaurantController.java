@@ -96,4 +96,33 @@ public class RestaurantController extends Controller {
         return ok(restaurantcard.render(restaurant));
     }
 
+    public Result acceptVisitor(String visitorName) {
+
+        Restaurant restaurant = formFactory.form(Restaurant.class).bindFromRequest().get();
+        Visitor visitor = manager.getVisitorByName(visitorName);
+
+        if (visitor == null) {
+            return notFound("Visitor not found!");
+        }
+
+        manager.visitRestaurant(visitor, restaurant);
+
+        return redirect(routes.RestaurantController.showRestaurantCard(restaurant.getRestaurantName()));
+    }
+
+    public Result kickVisitor(String visitorName) {
+
+        Restaurant restaurant = formFactory.form(Restaurant.class).bindFromRequest().get();
+        Visitor visitor = manager.getVisitorByName(visitorName);
+
+        if (visitor == null) {
+            return notFound("Visitor not found!");
+        }
+
+        manager.unvisitRestaurant(visitor, restaurant);
+
+        return redirect(routes.RestaurantController.showRestaurantCard(restaurant.getRestaurantName()));
+
+    }
+
 }

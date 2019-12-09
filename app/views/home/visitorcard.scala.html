@@ -34,19 +34,34 @@
                 <td>@visitor.getPhoneNumber</td>
             </tr>
 
-            <tr>
-                <th colspan="5" style="text-align:center">Visited restaurants</th>
-            </tr>
+            @*<tr>*@
+                @*<th colspan="5" style="text-align:center">Visited restaurants</th>*@
+            @*</tr>*@
 
             @for(restaurant <- visitor.getVisitedRestaurants) {
-                <tr>
-                    <td colspan="5" style="text-align:center"><a href="@routes.RestaurantController.showRestaurantCard(restaurant.getRestaurantName)">@restaurant.getRestaurantName</a></td>
-                </tr>
+                @*<tr>*@
+                    @*<td colspan="5" style="text-align:center"><a href="@routes.RestaurantController.showRestaurantCard(restaurant.getRestaurantName)">@restaurant.getRestaurantName</a></td>*@
+                @*</tr>*@
             }
         </table>
 
-        <br>
-        <input value="Visit restaurant" type="button" onclick=""/> <input value="Remove restaurant" type="submit" onclick=""/>
+        <h3>Visited restaurants</h3>
+
+        <form name="restaurants" method="post">
+            <select name='restaurants' multiple size="5">
+            @for(restaurant <- visitor.getVisitedRestaurants) {
+                <option value=@restaurant.getRestaurantName>@restaurant.getRestaurantName</option>
+            }
+            </select>
+            <br><br>
+            <input type="submit" value="Remove restaurant">
+        </form>
+
+        <h3>Not visited restaurants</h3>
+
+
+        <input value="Visit restaurant" type="button" onclick=""/>
+
 
     </body>
 

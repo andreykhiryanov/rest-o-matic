@@ -27,8 +27,13 @@ public class Manager {
     }
 
     public void visitRestaurant(Visitor visitor, Restaurant restaurant) {
-        visitor.visitRestaurant(restaurant);
-        restaurant.acceptVisitor(visitor);
+        visitor.getVisitedRestaurants().add(restaurant);
+        restaurant.getAcceptedVisitors().add(visitor);
+    }
+
+    public void unvisitRestaurant(Visitor visitor, Restaurant restaurant) {
+        visitor.getVisitedRestaurants().remove(restaurant);
+        restaurant.getAcceptedVisitors().remove(visitor);
     }
 
     // Restaurants' methods.

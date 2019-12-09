@@ -80,9 +80,4 @@ public class Restaurant {
 //        result = 31 * result + acceptedVisitors.hashCode();
 //        return result;
 //    }
-
-    public void acceptVisitor(Visitor newVisitor) {
-        if (newVisitor != null) acceptedVisitors.add(newVisitor);
-    }
-
 }

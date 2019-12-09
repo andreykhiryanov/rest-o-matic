@@ -22,28 +22,29 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 /*1.2*/import entities.Restaurant
+/*2.2*/import helper._
 
 object restaurantcard extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[Restaurant,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*3.2*/(restaurant : Restaurant):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*4.2*/(restaurant : Restaurant):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*3.27*/("""
+Seq[Any](format.raw/*4.27*/("""
 
-"""),format.raw/*5.1*/("""<html>
+"""),format.raw/*6.1*/("""<html>
 
     <head>
-        <title>"""),_display_(/*8.17*/restaurant/*8.27*/.getRestaurantName),format.raw/*8.45*/("""</title>
+        <title>"""),_display_(/*9.17*/restaurant/*9.27*/.getRestaurantName),format.raw/*9.45*/("""</title>
     </head>
 
     <body>
 
-        <h2>"""),_display_(/*13.14*/restaurant/*13.24*/.getRestaurantName),format.raw/*13.42*/("""</h2>
+        <h2>"""),_display_(/*14.14*/restaurant/*14.24*/.getRestaurantName),format.raw/*14.42*/("""</h2>
 
-        <input value="Edit restaurant" type="button" onclick="window.location.href='"""),_display_(/*15.86*/routes/*15.92*/.RestaurantController.editRestaurant(restaurant.getRestaurantName)),format.raw/*15.158*/("""'"/> <input value="Remove restaurant" type="button" onclick="window.location.href='"""),_display_(/*15.242*/routes/*15.248*/.RestaurantController.destroyRestaurant(restaurant.getRestaurantName)),format.raw/*15.317*/("""'"/>
+        <input value="Edit restaurant" type="button" onclick="window.location.href='"""),_display_(/*16.86*/routes/*16.92*/.RestaurantController.editRestaurant(restaurant.getRestaurantName)),format.raw/*16.158*/("""'"/> <input value="Remove restaurant" type="button" onclick="window.location.href='"""),_display_(/*16.242*/routes/*16.248*/.RestaurantController.destroyRestaurant(restaurant.getRestaurantName)),format.raw/*16.317*/("""'"/>
 
         <br><br>
 
@@ -53,30 +54,33 @@ Seq[Any](format.raw/*3.27*/("""
             </tr>
             <tr>
                 <td>Last Name</td>
-                <td>"""),_display_(/*25.22*/restaurant/*25.32*/.getLegalName),format.raw/*25.45*/("""</td>
+                <td>"""),_display_(/*26.22*/restaurant/*26.32*/.getLegalName),format.raw/*26.45*/("""</td>
             </tr>
             <tr>
                 <td>INN</td>
-                <td>"""),_display_(/*29.22*/restaurant/*29.32*/.getInn),format.raw/*29.39*/("""</td>
+                <td>"""),_display_(/*30.22*/restaurant/*30.32*/.getInn),format.raw/*30.39*/("""</td>
             </tr>
             <tr>
                 <td>Address</td>
-                <td>"""),_display_(/*33.22*/restaurant/*33.32*/.getAddress),format.raw/*33.43*/("""</td>
+                <td>"""),_display_(/*34.22*/restaurant/*34.32*/.getAddress),format.raw/*34.43*/("""</td>
             </tr>
+        </table>
 
-            <tr>
-                <th colspan="5" style="text-align:center">Visitors</th>
-            </tr>
+        <h3>Accepted visitors</h3>
 
-            """),_display_(/*40.14*/for(visitor <- restaurant.getAcceptedVisitors) yield /*40.60*/ {_display_(Seq[Any](format.raw/*40.62*/("""
-                """),format.raw/*41.17*/("""<tr>
-                    <td colspan="5" style="text-align:center"><a href=""""),_display_(/*42.73*/routes/*42.79*/.VisitorController.showVisitorCard(visitor.getFirstName)),format.raw/*42.135*/("""">"""),_display_(/*42.138*/visitor/*42.145*/.getFirstName),format.raw/*42.158*/(""" """),_display_(/*42.160*/visitor/*42.167*/.getLastName),format.raw/*42.179*/("""</a></td>
-                </tr>
-            """)))}),format.raw/*44.14*/("""
-        """),format.raw/*45.9*/("""</table>
+        <form name="kick" method="post">
+            <select name='visitors' multiple size="5">
+                """),_display_(/*42.18*/for(visitor <- restaurant.getAcceptedVisitors) yield /*42.64*/ {_display_(Seq[Any](format.raw/*42.66*/("""
+                    """),format.raw/*43.21*/("""<option value="""),_display_(/*43.36*/visitor/*43.43*/.getFirstName),format.raw/*43.56*/(""">"""),_display_(/*43.58*/visitor/*43.65*/.getFirstName),format.raw/*43.78*/(""" """),_display_(/*43.80*/visitor/*43.87*/.getLastName),format.raw/*43.99*/("""</option>
+                """)))}),format.raw/*44.18*/("""
+            """),format.raw/*45.13*/("""</select>
+            <br><br>
+            <input type="submit" value="Kick visitor">
+        </form>
 
-        <br>
-        <input value="Add visitor" type="submit" onclick=""/> <input value="Remove visitor" type="button" onclick=""/>
+        <h3>Have not visited</h3>
+
+        <input value="Accept visitor" type="button" onclick=""/>
 
     </body>
 
@@ -96,11 +100,11 @@ Seq[Any](format.raw/*3.27*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-09T20:28:41.823
+                  DATE: 2019-12-09T22:30:25.858
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/restaurantcard.scala.html
-                  HASH: ac3289b9744efe9747923fccab9542804633152c
-                  MATRIX: 656->1|1000->32|1120->57|1150->61|1214->99|1232->109|1270->127|1349->179|1368->189|1407->207|1528->301|1543->307|1631->373|1743->457|1759->463|1850->532|2168->823|2187->833|2221->846|2343->941|2362->951|2390->958|2516->1057|2535->1067|2567->1078|2747->1231|2809->1277|2849->1279|2895->1297|3000->1375|3015->1381|3093->1437|3124->1440|3141->1447|3176->1460|3206->1462|3223->1469|3257->1481|3335->1528|3372->1538
-                  LINES: 24->1|29->3|34->3|36->5|39->8|39->8|39->8|44->13|44->13|44->13|46->15|46->15|46->15|46->15|46->15|46->15|56->25|56->25|56->25|60->29|60->29|60->29|64->33|64->33|64->33|71->40|71->40|71->40|72->41|73->42|73->42|73->42|73->42|73->42|73->42|73->42|73->42|73->42|75->44|76->45
+                  HASH: c37d795c6bc69fbdcd688aa685d7632a004bfcad
+                  MATRIX: 656->1|690->30|1023->50|1143->75|1173->79|1237->117|1255->127|1293->145|1372->197|1391->207|1430->225|1551->319|1566->325|1654->391|1766->475|1782->481|1873->550|2191->841|2210->851|2244->864|2366->959|2385->969|2413->976|2539->1075|2558->1085|2590->1096|2816->1295|2878->1341|2918->1343|2968->1365|3010->1380|3026->1387|3060->1400|3089->1402|3105->1409|3139->1422|3168->1424|3184->1431|3217->1443|3276->1471|3318->1485
+                  LINES: 24->1|25->2|30->4|35->4|37->6|40->9|40->9|40->9|45->14|45->14|45->14|47->16|47->16|47->16|47->16|47->16|47->16|57->26|57->26|57->26|61->30|61->30|61->30|65->34|65->34|65->34|73->42|73->42|73->42|74->43|74->43|74->43|74->43|74->43|74->43|74->43|74->43|74->43|74->43|75->44|76->45
                   -- GENERATED --
               */
           

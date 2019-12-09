@@ -1,2 +1,4 @@
-[0m[[0m[0minfo[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\controllers\RestaurantController.java: Some input files use or override a deprecated API.[0m
-[0m[[0m[0minfo[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\controllers\RestaurantController.java: Recompile with -Xlint:deprecation for details.[0m
+[0m[[0m[31merror[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\restaurantcard.scala.html:50:66: not found: value value[0m
+[0m[[0m[31merror[0m] [0m[0m        <form action="@routes.RestaurantController.acceptVisitor(value)" method="post" name="form1">[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

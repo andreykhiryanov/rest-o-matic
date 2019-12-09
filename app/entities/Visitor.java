@@ -80,8 +80,4 @@ public class Visitor {
 //        result = 31 * result + visitedRestaurants.hashCode();
 //        return result;
 //    }
-
-    public void visitRestaurant(Restaurant newRestaurant) {
-        if (newRestaurant != null) visitedRestaurants.add(newRestaurant);
-    }
 }

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Mon Dec 09 20:26:49 GMT+03:00 2019
+// @DATE:Mon Dec 09 22:00:37 GMT+03:00 2019
 
 package router
 
@@ -18,7 +18,7 @@ class Routes(
   HomeController_1: controllers.HomeController,
   // @LINE:8
   RestaurantController_2: controllers.RestaurantController,
-  // @LINE:15
+  // @LINE:16
   VisitorController_0: controllers.VisitorController,
   val prefix: String
 ) extends GeneratedRouter {
@@ -29,7 +29,7 @@ class Routes(
     HomeController_1: controllers.HomeController,
     // @LINE:8
     RestaurantController_2: controllers.RestaurantController,
-    // @LINE:15
+    // @LINE:16
     VisitorController_0: controllers.VisitorController
   ) = this(errorHandler, HomeController_1, RestaurantController_2, VisitorController_0, "/")
 
@@ -51,6 +51,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/create/""", """controllers.RestaurantController.createRestaurant()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/create/""", """controllers.RestaurantController.saveRestaurantChanges()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/delete/""" + "$" + """restaurantName<[^/]+>""", """controllers.RestaurantController.destroyRestaurant(restaurantName:String)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/accept/""" + "$" + """visitorName<[^/]+>""", """controllers.RestaurantController.acceptVisitor(visitorName:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/""" + "$" + """visitorName<[^/]+>""", """controllers.VisitorController.showVisitorCard(visitorName:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/edit/""" + "$" + """visitorName<[^/]+>""", """controllers.VisitorController.editVisitor(visitorName:String)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/edit""", """controllers.VisitorController.updateVisitor()"""),
@@ -190,11 +191,29 @@ class Routes(
     )
   )
 
-  // @LINE:15
-  private[this] lazy val controllers_VisitorController_showVisitorCard7_route = Route("GET",
+  // @LINE:14
+  private[this] lazy val controllers_RestaurantController_acceptVisitor7_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("restaurant/accept/"), DynamicPart("visitorName", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_RestaurantController_acceptVisitor7_invoker = createInvoker(
+    RestaurantController_2.acceptVisitor(fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.RestaurantController",
+      "acceptVisitor",
+      Seq(classOf[String]),
+      "POST",
+      this.prefix + """restaurant/accept/""" + "$" + """visitorName<[^/]+>""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:16
+  private[this] lazy val controllers_VisitorController_showVisitorCard8_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("visitor/"), DynamicPart("visitorName", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_VisitorController_showVisitorCard7_invoker = createInvoker(
+  private[this] lazy val controllers_VisitorController_showVisitorCard8_invoker = createInvoker(
     VisitorController_0.showVisitorCard(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -208,11 +227,11 @@ class Routes(
     )
   )
 
-  // @LINE:16
-  private[this] lazy val controllers_VisitorController_editVisitor8_route = Route("GET",
+  // @LINE:17
+  private[this] lazy val controllers_VisitorController_editVisitor9_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("visitor/edit/"), DynamicPart("visitorName", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_VisitorController_editVisitor8_invoker = createInvoker(
+  private[this] lazy val controllers_VisitorController_editVisitor9_invoker = createInvoker(
     VisitorController_0.editVisitor(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -226,11 +245,11 @@ class Routes(
     )
   )
 
-  // @LINE:17
-  private[this] lazy val controllers_VisitorController_updateVisitor9_route = Route("POST",
+  // @LINE:18
+  private[this] lazy val controllers_VisitorController_updateVisitor10_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("visitor/edit")))
   )
-  private[this] lazy val controllers_VisitorController_updateVisitor9_invoker = createInvoker(
+  private[this] lazy val controllers_VisitorController_updateVisitor10_invoker = createInvoker(
     VisitorController_0.updateVisitor(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -244,11 +263,11 @@ class Routes(
     )
   )
 
-  // @LINE:18
-  private[this] lazy val controllers_VisitorController_createVisitor10_route = Route("GET",
+  // @LINE:19
+  private[this] lazy val controllers_VisitorController_createVisitor11_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("visitor/create/")))
   )
-  private[this] lazy val controllers_VisitorController_createVisitor10_invoker = createInvoker(
+  private[this] lazy val controllers_VisitorController_createVisitor11_invoker = createInvoker(
     VisitorController_0.createVisitor(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -262,11 +281,11 @@ class Routes(
     )
   )
 
-  // @LINE:19
-  private[this] lazy val controllers_VisitorController_saveVisitorChanges11_route = Route("POST",
+  // @LINE:20
+  private[this] lazy val controllers_VisitorController_saveVisitorChanges12_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("visitor/create/")))
   )
-  private[this] lazy val controllers_VisitorController_saveVisitorChanges11_invoker = createInvoker(
+  private[this] lazy val controllers_VisitorController_saveVisitorChanges12_invoker = createInvoker(
     VisitorController_0.saveVisitorChanges(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -280,11 +299,11 @@ class Routes(
     )
   )
 
-  // @LINE:20
-  private[this] lazy val controllers_VisitorController_destroyVisitor12_route = Route("GET",
+  // @LINE:21
+  private[this] lazy val controllers_VisitorController_destroyVisitor13_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("visitor/delete/"), DynamicPart("visitorName", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_VisitorController_destroyVisitor12_invoker = createInvoker(
+  private[this] lazy val controllers_VisitorController_destroyVisitor13_invoker = createInvoker(
     VisitorController_0.destroyVisitor(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -343,40 +362,46 @@ class Routes(
         controllers_RestaurantController_destroyRestaurant6_invoker.call(RestaurantController_2.destroyRestaurant(restaurantName))
       }
   
-    // @LINE:15
-    case controllers_VisitorController_showVisitorCard7_route(params@_) =>
+    // @LINE:14
+    case controllers_RestaurantController_acceptVisitor7_route(params@_) =>
       call(params.fromPath[String]("visitorName", None)) { (visitorName) =>
-        controllers_VisitorController_showVisitorCard7_invoker.call(VisitorController_0.showVisitorCard(visitorName))
+        controllers_RestaurantController_acceptVisitor7_invoker.call(RestaurantController_2.acceptVisitor(visitorName))
       }
   
     // @LINE:16
-    case controllers_VisitorController_editVisitor8_route(params@_) =>
+    case controllers_VisitorController_showVisitorCard8_route(params@_) =>
       call(params.fromPath[String]("visitorName", None)) { (visitorName) =>
-        controllers_VisitorController_editVisitor8_invoker.call(VisitorController_0.editVisitor(visitorName))
+        controllers_VisitorController_showVisitorCard8_invoker.call(VisitorController_0.showVisitorCard(visitorName))
       }
   
     // @LINE:17
-    case controllers_VisitorController_updateVisitor9_route(params@_) =>
-      call { 
-        controllers_VisitorController_updateVisitor9_invoker.call(VisitorController_0.updateVisitor())
+    case controllers_VisitorController_editVisitor9_route(params@_) =>
+      call(params.fromPath[String]("visitorName", None)) { (visitorName) =>
+        controllers_VisitorController_editVisitor9_invoker.call(VisitorController_0.editVisitor(visitorName))
       }
   
     // @LINE:18
-    case controllers_VisitorController_createVisitor10_route(params@_) =>
+    case controllers_VisitorController_updateVisitor10_route(params@_) =>
       call { 
-        controllers_VisitorController_createVisitor10_invoker.call(VisitorController_0.createVisitor())
+        controllers_VisitorController_updateVisitor10_invoker.call(VisitorController_0.updateVisitor())
       }
   
     // @LINE:19
-    case controllers_VisitorController_saveVisitorChanges11_route(params@_) =>
+    case controllers_VisitorController_createVisitor11_route(params@_) =>
       call { 
-        controllers_VisitorController_saveVisitorChanges11_invoker.call(VisitorController_0.saveVisitorChanges())
+        controllers_VisitorController_createVisitor11_invoker.call(VisitorController_0.createVisitor())
       }
   
     // @LINE:20
-    case controllers_VisitorController_destroyVisitor12_route(params@_) =>
+    case controllers_VisitorController_saveVisitorChanges12_route(params@_) =>
+      call { 
+        controllers_VisitorController_saveVisitorChanges12_invoker.call(VisitorController_0.saveVisitorChanges())
+      }
+  
+    // @LINE:21
+    case controllers_VisitorController_destroyVisitor13_route(params@_) =>
       call(params.fromPath[String]("visitorName", None)) { (visitorName) =>
-        controllers_VisitorController_destroyVisitor12_invoker.call(VisitorController_0.destroyVisitor(visitorName))
+        controllers_VisitorController_destroyVisitor13_invoker.call(VisitorController_0.destroyVisitor(visitorName))
       }
   }
 }

@@ -43,6 +43,7 @@ public class HomeController extends Controller {
         for (Visitor visitor : manager.getAllVisitors()) {
             manager.visitRestaurant(visitor, astoria);
         }
+
     }
 
 }
