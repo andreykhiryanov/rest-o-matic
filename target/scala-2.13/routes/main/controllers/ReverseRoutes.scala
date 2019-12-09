@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Mon Dec 09 17:44:58 GMT+03:00 2019
+// @DATE:Mon Dec 09 18:00:07 GMT+03:00 2019
 
 import play.api.mvc.Call
 
@@ -18,13 +18,13 @@ package controllers {
     }
 
   
-    // @LINE:17
+    // @LINE:19
     def saveVisitorChanges(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "visitor/create/")
     }
   
-    // @LINE:16
+    // @LINE:18
     def createVisitor(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "visitor/create/")
@@ -42,7 +42,7 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "visitor/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("visitorName", visitorName)))
     }
   
-    // @LINE:18
+    // @LINE:20
     def destroyVisitor(visitorName:String): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "visitor/delete/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("visitorName", visitorName)))
@@ -54,16 +54,22 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "restaurant/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("restaurantName", restaurantName)))
     }
   
-    // @LINE:10
-    def update(): Call = {
-      
-      Call("POST", _prefix + { _defaultPrefix } + "restaurant/edit")
-    }
-  
     // @LINE:11
     def createRestaurant(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "restaurant/create/")
+    }
+  
+    // @LINE:16
+    def editVisitor(visitorName:String): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "visitor/edit/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("visitorName", visitorName)))
+    }
+  
+    // @LINE:17
+    def updateVisitor(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "visitor/edit")
     }
   
     // @LINE:12
@@ -76,6 +82,12 @@ package controllers {
     def greetings(): Call = {
       
       Call("GET", _prefix)
+    }
+  
+    // @LINE:10
+    def updateRestaurant(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "restaurant/edit")
     }
   
     // @LINE:9

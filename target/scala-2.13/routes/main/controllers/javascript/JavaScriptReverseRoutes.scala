@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Mon Dec 09 17:44:58 GMT+03:00 2019
+// @DATE:Mon Dec 09 18:00:07 GMT+03:00 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -19,7 +19,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:17
+    // @LINE:19
     def saveVisitorChanges: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.saveVisitorChanges",
       """
@@ -29,7 +29,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:16
+    // @LINE:18
     def createVisitor: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.createVisitor",
       """
@@ -59,7 +59,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:18
+    // @LINE:20
     def destroyVisitor: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.destroyVisitor",
       """
@@ -79,22 +79,32 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:10
-    def update: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.update",
-      """
-        function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "restaurant/edit"})
-        }
-      """
-    )
-  
     // @LINE:11
     def createRestaurant: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.createRestaurant",
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "restaurant/create/"})
+        }
+      """
+    )
+  
+    // @LINE:16
+    def editVisitor: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.editVisitor",
+      """
+        function(visitorName0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "visitor/edit/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("visitorName", visitorName0))})
+        }
+      """
+    )
+  
+    // @LINE:17
+    def updateVisitor: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.updateVisitor",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "visitor/edit"})
         }
       """
     )
@@ -115,6 +125,16 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + """"})
+        }
+      """
+    )
+  
+    // @LINE:10
+    def updateRestaurant: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.updateRestaurant",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "restaurant/edit"})
         }
       """
     )

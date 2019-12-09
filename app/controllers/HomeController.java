@@ -25,7 +25,7 @@ public class HomeController extends Controller {
         // Fill in the test data only once.
         if (!hasStarted) {
             fillTestData();
-            hasStarted = true;
+//            hasStarted = true;
         }
 
         return ok(index.render(manager.getAllRestaurants(), manager.getAllVisitors()));
@@ -81,13 +81,22 @@ public class HomeController extends Controller {
 
     }
 
-    public Result update() {
+    public Result updateRestaurant() {
         return null;
     }
 
     public Result destroyRestaurant(String restaurantName) {
 
-        manager.getAllRestaurants().remove(manager.getRestaurantByName(restaurantName));
+        Restaurant destroyingRestaurant = manager.getRestaurantByName(restaurantName);
+
+        // Removing this restaurant from visitors' "visited restaurants".
+        for (Visitor visitor : manager.getAllVisitors()) {
+            visitor.getVisitedRestaurants().remove(destroyingRestaurant);
+        }
+
+        // Removing the restaurant at all.
+        manager.getAllRestaurants().remove(destroyingRestaurant);
+
         return redirect(routes.HomeController.greetings());
     }
 
@@ -134,9 +143,36 @@ public class HomeController extends Controller {
 
     }
 
+    public Result editVisitor(String visitorName) {
+
+        // Searching requested restaurant
+        Visitor visitor = manager.getVisitorByName(visitorName);
+
+        // If the requested restaurant was not found, the method 'getRestaurantByName' returns null.
+        if (visitor == null) {
+            return notFound("Visitor not found!");
+        }
+
+        Form<Visitor> visitorForm = formFactory.form(Visitor.class).fill(visitor);
+        return ok(editvisitor.render(visitorForm));
+
+    }
+
+    public Result updateVisitor() {
+        return null;
+    }
+
     public Result destroyVisitor(String visitorName) {
 
-        manager.getAllVisitors().remove(manager.getVisitorByName(visitorName));
+        Visitor destroyingVisitor = manager.getVisitorByName(visitorName);
+
+        //
+        for (Restaurant restaurant : manager.getAllRestaurants()) {
+            restaurant.getAcceptedVisitors().remove(destroyingVisitor);
+        }
+
+        manager.getAllVisitors().remove(destroyingVisitor);
+
         return redirect(routes.HomeController.greetings());
     }
 

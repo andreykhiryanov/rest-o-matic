@@ -13,7 +13,7 @@
 
         <h2>@visitor.getFirstName</h2>
 
-        <input value="Remove this visitor" type="submit" onclick="window.location.href='@routes.HomeController.destroyVisitor(visitor.getFirstName)'"/>
+        <input value="Edit visitor" type="button" onclick="window.location.href='@routes.HomeController.editVisitor(visitor.getFirstName)'"/> <input value="Remove visitor" type="submit" onclick="window.location.href='@routes.HomeController.destroyVisitor(visitor.getFirstName)'"/>
 
         <br><br>
 

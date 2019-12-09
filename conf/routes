@@ -7,14 +7,17 @@ GET /   controllers.HomeController.greetings()
 
 GET /restaurant/:restaurantName controllers.HomeController.showRestaurantCard(restaurantName : String)
 GET /restaurant/edit/:restaurantName controllers.HomeController.editRestaurant(restaurantName : String)
-POST /restaurant/edit controllers.HomeController.update()
+POST /restaurant/edit controllers.HomeController.updateRestaurant()
 GET /restaurant/create/ controllers.HomeController.createRestaurant()
 POST /restaurant/create/ controllers.HomeController.saveRestaurantChanges()
 GET /restaurant/delete/:restaurantName controllers.HomeController.destroyRestaurant(restaurantName : String)
 
 GET /visitor/:visitorName controllers.HomeController.showVisitorCard(visitorName : String)
+GET /visitor/edit/:visitorName controllers.HomeController.editVisitor(visitorName : String)
+POST /visitor/edit controllers.HomeController.updateVisitor()
 GET /visitor/create/ controllers.HomeController.createVisitor()
 POST /visitor/create/ controllers.HomeController.saveVisitorChanges()
 GET /visitor/delete/:visitorName controllers.HomeController.destroyVisitor(visitorName : String)
+
 # Map static resources from the /public folder to the /assets URL path
 #GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

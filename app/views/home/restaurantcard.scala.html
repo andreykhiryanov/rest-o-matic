@@ -12,7 +12,7 @@
 
         <h2>@restaurant.getRestaurantName</h2>
 
-        <input value="Remove this restaurant" type="button" onclick="window.location.href='@routes.HomeController.destroyRestaurant(restaurant.getRestaurantName)'"/>
+        <input value="Edit restaurant" type="button" onclick="window.location.href='@routes.HomeController.editRestaurant(restaurant.getRestaurantName)'"/> <input value="Remove restaurant" type="button" onclick="window.location.href='@routes.HomeController.destroyRestaurant(restaurant.getRestaurantName)'"/>
 
         <br><br>
 
@@ -45,7 +45,7 @@
         </table>
 
         <br>
-        <input value="Add visitor" type="submit" onclick=""/> <input value="Remove visitor" type="button" onclick="window.location.href='@routes.HomeController.createRestaurant()'"/>
+        <input value="Add visitor" type="submit" onclick=""/> <input value="Remove visitor" type="button" onclick=""/>
 
     </body>
 
