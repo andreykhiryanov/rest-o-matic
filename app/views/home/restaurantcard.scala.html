@@ -39,7 +39,7 @@
 
             @for(visitor <- restaurant.getAcceptedVisitors) {
                 <tr>
-                    <td colspan="5" style="text-align:center">@visitor.getFirstName @visitor.getLastName</td>
+                    <td colspan="5" style="text-align:center"><a href="@routes.HomeController.showVisitorCard(visitor.getFirstName)">@visitor.getFirstName @visitor.getLastName</a></td>
                 </tr>
             }
         </table>

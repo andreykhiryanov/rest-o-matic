@@ -13,7 +13,7 @@ import javax.inject.Inject;
 
 public class HomeController extends Controller {
 
-    private boolean hasStarted = false;
+    private boolean firstRun = true;
 
     private Manager manager = Manager.getManager();
 
@@ -23,9 +23,9 @@ public class HomeController extends Controller {
     public Result greetings() {
 
         // Fill in the test data only once.
-        if (!hasStarted) {
+        if (firstRun) {
             fillTestData();
-//            hasStarted = true;
+            firstRun = false;
         }
 
         return ok(index.render(manager.getAllRestaurants(), manager.getAllVisitors()));

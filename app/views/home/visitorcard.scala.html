@@ -40,7 +40,7 @@
 
             @for(restaurant <- visitor.getVisitedRestaurants) {
                 <tr>
-                    <td colspan="5" style="text-align:center">@restaurant.getRestaurantName</td>
+                    <td colspan="5" style="text-align:center"><a href="@routes.HomeController.showRestaurantCard(restaurant.getRestaurantName)">@restaurant.getRestaurantName</a></td>
                 </tr>
             }
         </table>
