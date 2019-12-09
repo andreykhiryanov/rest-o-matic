@@ -41,7 +41,7 @@ Seq[Any](format.raw/*2.36*/("""
     <body>
         <h1>Edit Restaurant</h1>
 
-        """),_display_(/*12.10*/helper/*12.16*/.form(action = routes.HomeController.updateRestaurant())/*12.72*/ {_display_(Seq[Any](format.raw/*12.74*/("""
+        """),_display_(/*12.10*/helper/*12.16*/.form(action = routes.RestaurantController.updateRestaurant())/*12.78*/ {_display_(Seq[Any](format.raw/*12.80*/("""
             """),_display_(/*13.14*/helper/*13.20*/.inputText(restaurantForm("restaurantName"))),format.raw/*13.64*/("""
             """),_display_(/*14.14*/helper/*14.20*/.inputText(restaurantForm("legalName"))),format.raw/*14.59*/("""
             """),_display_(/*15.14*/helper/*15.20*/.inputText(restaurantForm("inn"))),format.raw/*15.53*/("""
@@ -69,10 +69,10 @@ Seq[Any](format.raw/*2.36*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-09T19:50:15.710
+                  DATE: 2019-12-09T20:26:49.748
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/editrestaurant.scala.html
-                  HASH: 099749785090862a8bca35efdd8b1e4a889c5c8a
-                  MATRIX: 656->1|1006->30|1113->67|1158->64|1186->84|1214->86|1371->216|1386->222|1451->278|1491->280|1533->295|1548->301|1613->345|1655->360|1670->366|1730->405|1772->420|1787->426|1841->459|1883->474|1898->480|1956->517|2000->533|2111->613|2144->619
+                  HASH: b50c31c1977b01a11375e1404116ab0269efd714
+                  MATRIX: 656->1|1006->30|1113->67|1158->64|1186->84|1214->86|1371->216|1386->222|1457->284|1497->286|1539->301|1554->307|1619->351|1661->366|1676->372|1736->411|1778->426|1793->432|1847->465|1889->480|1904->486|1962->523|2006->539|2117->619|2150->625
                   LINES: 24->1|29->2|32->3|35->2|36->4|37->5|44->12|44->12|44->12|44->12|45->13|45->13|45->13|46->14|46->14|46->14|47->15|47->15|47->15|48->16|48->16|48->16|50->18|53->21|54->22
                   -- GENERATED --
               */

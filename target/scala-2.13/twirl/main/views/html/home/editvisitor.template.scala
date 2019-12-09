@@ -41,7 +41,7 @@ Seq[Any](format.raw/*2.30*/("""
     <body>
         <h1>Edit Visitor</h1>
 
-        """),_display_(/*12.10*/helper/*12.16*/.form(action = routes.HomeController.updateVisitor())/*12.69*/ {_display_(Seq[Any](format.raw/*12.71*/("""
+        """),_display_(/*12.10*/helper/*12.16*/.form(action = routes.VisitorController.updateVisitor())/*12.72*/ {_display_(Seq[Any](format.raw/*12.74*/("""
             """),_display_(/*13.14*/helper/*13.20*/.inputText(visitorForm("firstName"))),format.raw/*13.56*/("""
             """),_display_(/*14.14*/helper/*14.20*/.inputText(visitorForm("lastName"))),format.raw/*14.55*/("""
             """),_display_(/*15.14*/helper/*15.20*/.inputText(visitorForm("email"))),format.raw/*15.52*/("""
@@ -69,10 +69,10 @@ Seq[Any](format.raw/*2.30*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-09T17:57:19.354
+                  DATE: 2019-12-09T20:26:49.754
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/editvisitor.scala.html
-                  HASH: 843dfc0b27eef6feaba8ab1c70276bceb89ee5c3
-                  MATRIX: 656->1|997->27|1098->58|1143->55|1171->75|1199->77|1350->201|1365->207|1427->260|1467->262|1509->277|1524->283|1581->319|1623->334|1638->340|1694->375|1736->390|1751->396|1804->428|1846->443|1861->449|1920->487|1964->503|2072->580|2105->586
+                  HASH: 77f4e970aa9b98144332800f4e814bb3ce049a05
+                  MATRIX: 656->1|997->27|1098->58|1143->55|1171->75|1199->77|1350->201|1365->207|1430->263|1470->265|1512->280|1527->286|1584->322|1626->337|1641->343|1697->378|1739->393|1754->399|1807->431|1849->446|1864->452|1923->490|1967->506|2075->583|2108->589
                   LINES: 24->1|29->2|32->3|35->2|36->4|37->5|44->12|44->12|44->12|44->12|45->13|45->13|45->13|46->14|46->14|46->14|47->15|47->15|47->15|48->16|48->16|48->16|50->18|53->21|54->22
                   -- GENERATED --
               */

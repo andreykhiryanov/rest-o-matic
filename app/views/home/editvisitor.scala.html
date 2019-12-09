@@ -9,7 +9,7 @@
     <body>
         <h1>Edit Visitor</h1>
 
-        @helper.form(action = routes.HomeController.updateVisitor()) {
+        @helper.form(action = routes.VisitorController.updateVisitor()) {
             @helper.inputText(visitorForm("firstName"))
             @helper.inputText(visitorForm("lastName"))
             @helper.inputText(visitorForm("email"))

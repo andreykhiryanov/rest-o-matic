@@ -9,7 +9,7 @@
     <body>
         <h1>Create New Restaurant</h1>
 
-        @helper.form(action = routes.HomeController.saveRestaurantChanges()) {
+        @helper.form(action = routes.RestaurantController.saveRestaurantChanges()) {
             @helper.inputText(restaurantForm("restaurantName"))
             @helper.inputText(restaurantForm("legalName"))
             @helper.inputText(restaurantForm("inn"))

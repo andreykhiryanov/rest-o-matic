@@ -13,7 +13,7 @@
 
         <h2>@visitor.getFirstName</h2>
 
-        <input value="Edit visitor" type="button" onclick="window.location.href='@routes.HomeController.editVisitor(visitor.getFirstName)'"/> <input value="Remove visitor" type="submit" onclick="window.location.href='@routes.HomeController.destroyVisitor(visitor.getFirstName)'"/>
+        <input value="Edit visitor" type="button" onclick="window.location.href='@routes.VisitorController.editVisitor(visitor.getFirstName)'"/> <input value="Remove visitor" type="submit" onclick="window.location.href='@routes.VisitorController.destroyVisitor(visitor.getFirstName)'"/>
 
         <br><br>
 
@@ -40,7 +40,7 @@
 
             @for(restaurant <- visitor.getVisitedRestaurants) {
                 <tr>
-                    <td colspan="5" style="text-align:center"><a href="@routes.HomeController.showRestaurantCard(restaurant.getRestaurantName)">@restaurant.getRestaurantName</a></td>
+                    <td colspan="5" style="text-align:center"><a href="@routes.RestaurantController.showRestaurantCard(restaurant.getRestaurantName)">@restaurant.getRestaurantName</a></td>
                 </tr>
             }
         </table>

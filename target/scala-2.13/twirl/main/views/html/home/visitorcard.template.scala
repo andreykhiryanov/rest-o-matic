@@ -44,7 +44,7 @@ Seq[Any](format.raw/*4.21*/("""
 
         <h2>"""),_display_(/*14.14*/visitor/*14.21*/.getFirstName),format.raw/*14.34*/("""</h2>
 
-        <input value="Edit visitor" type="button" onclick="window.location.href='"""),_display_(/*16.83*/routes/*16.89*/.HomeController.editVisitor(visitor.getFirstName)),format.raw/*16.138*/("""'"/> <input value="Remove visitor" type="submit" onclick="window.location.href='"""),_display_(/*16.219*/routes/*16.225*/.HomeController.destroyVisitor(visitor.getFirstName)),format.raw/*16.277*/("""'"/>
+        <input value="Edit visitor" type="button" onclick="window.location.href='"""),_display_(/*16.83*/routes/*16.89*/.VisitorController.editVisitor(visitor.getFirstName)),format.raw/*16.141*/("""'"/> <input value="Remove visitor" type="submit" onclick="window.location.href='"""),_display_(/*16.222*/routes/*16.228*/.VisitorController.destroyVisitor(visitor.getFirstName)),format.raw/*16.283*/("""'"/>
 
         <br><br>
 
@@ -71,7 +71,7 @@ Seq[Any](format.raw/*4.21*/("""
 
             """),_display_(/*41.14*/for(restaurant <- visitor.getVisitedRestaurants) yield /*41.62*/ {_display_(Seq[Any](format.raw/*41.64*/("""
                 """),format.raw/*42.17*/("""<tr>
-                    <td colspan="5" style="text-align:center"><a href=""""),_display_(/*43.73*/routes/*43.79*/.HomeController.showRestaurantCard(restaurant.getRestaurantName)),format.raw/*43.143*/("""">"""),_display_(/*43.146*/restaurant/*43.156*/.getRestaurantName),format.raw/*43.174*/("""</a></td>
+                    <td colspan="5" style="text-align:center"><a href=""""),_display_(/*43.73*/routes/*43.79*/.RestaurantController.showRestaurantCard(restaurant.getRestaurantName)),format.raw/*43.149*/("""">"""),_display_(/*43.152*/restaurant/*43.162*/.getRestaurantName),format.raw/*43.180*/("""</a></td>
                 </tr>
             """)))}),format.raw/*45.14*/("""
         """),format.raw/*46.9*/("""</table>
@@ -97,10 +97,10 @@ Seq[Any](format.raw/*4.21*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-09T19:23:20.490
+                  DATE: 2019-12-09T20:26:49.780
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/visitorcard.scala.html
-                  HASH: 03adb5dff8fb18d6c8832b1a69bbe85dd7b5691e
-                  MATRIX: 656->1|687->27|1014->47|1128->66|1158->70|1222->108|1237->115|1270->128|1349->180|1365->187|1399->200|1517->291|1532->297|1603->346|1712->427|1728->433|1802->485|2120->776|2136->783|2169->795|2293->892|2309->899|2339->908|2463->1005|2479->1012|2515->1027|2706->1191|2770->1239|2810->1241|2856->1259|2961->1337|2976->1343|3062->1407|3093->1410|3113->1420|3153->1438|3231->1485|3268->1495
+                  HASH: 3b49c0f4722662b334c6d5aa6daa58afe0e58c5a
+                  MATRIX: 656->1|687->27|1014->47|1128->66|1158->70|1222->108|1237->115|1270->128|1349->180|1365->187|1399->200|1517->291|1532->297|1606->349|1715->430|1731->436|1808->491|2126->782|2142->789|2175->801|2299->898|2315->905|2345->914|2469->1011|2485->1018|2521->1033|2712->1197|2776->1245|2816->1247|2862->1265|2967->1343|2982->1349|3074->1419|3105->1422|3125->1432|3165->1450|3243->1497|3280->1507
                   LINES: 24->1|25->2|30->4|35->4|37->6|40->9|40->9|40->9|45->14|45->14|45->14|47->16|47->16|47->16|47->16|47->16|47->16|57->26|57->26|57->26|61->30|61->30|61->30|65->34|65->34|65->34|72->41|72->41|72->41|73->42|74->43|74->43|74->43|74->43|74->43|74->43|76->45|77->46
                   -- GENERATED --
               */

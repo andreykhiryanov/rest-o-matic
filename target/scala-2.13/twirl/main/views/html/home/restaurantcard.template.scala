@@ -43,7 +43,7 @@ Seq[Any](format.raw/*3.27*/("""
 
         <h2>"""),_display_(/*13.14*/restaurant/*13.24*/.getRestaurantName),format.raw/*13.42*/("""</h2>
 
-        <input value="Edit restaurant" type="button" onclick="window.location.href='"""),_display_(/*15.86*/routes/*15.92*/.HomeController.editRestaurant(restaurant.getRestaurantName)),format.raw/*15.152*/("""'"/> <input value="Remove restaurant" type="button" onclick="window.location.href='"""),_display_(/*15.236*/routes/*15.242*/.HomeController.destroyRestaurant(restaurant.getRestaurantName)),format.raw/*15.305*/("""'"/>
+        <input value="Edit restaurant" type="button" onclick="window.location.href='"""),_display_(/*15.86*/routes/*15.92*/.RestaurantController.editRestaurant(restaurant.getRestaurantName)),format.raw/*15.158*/("""'"/> <input value="Remove restaurant" type="button" onclick="window.location.href='"""),_display_(/*15.242*/routes/*15.248*/.RestaurantController.destroyRestaurant(restaurant.getRestaurantName)),format.raw/*15.317*/("""'"/>
 
         <br><br>
 
@@ -70,7 +70,7 @@ Seq[Any](format.raw/*3.27*/("""
 
             """),_display_(/*40.14*/for(visitor <- restaurant.getAcceptedVisitors) yield /*40.60*/ {_display_(Seq[Any](format.raw/*40.62*/("""
                 """),format.raw/*41.17*/("""<tr>
-                    <td colspan="5" style="text-align:center"><a href=""""),_display_(/*42.73*/routes/*42.79*/.HomeController.showVisitorCard(visitor.getFirstName)),format.raw/*42.132*/("""">"""),_display_(/*42.135*/visitor/*42.142*/.getFirstName),format.raw/*42.155*/(""" """),_display_(/*42.157*/visitor/*42.164*/.getLastName),format.raw/*42.176*/("""</a></td>
+                    <td colspan="5" style="text-align:center"><a href=""""),_display_(/*42.73*/routes/*42.79*/.VisitorController.showVisitorCard(visitor.getFirstName)),format.raw/*42.135*/("""">"""),_display_(/*42.138*/visitor/*42.145*/.getFirstName),format.raw/*42.158*/(""" """),_display_(/*42.160*/visitor/*42.167*/.getLastName),format.raw/*42.179*/("""</a></td>
                 </tr>
             """)))}),format.raw/*44.14*/("""
         """),format.raw/*45.9*/("""</table>
@@ -96,10 +96,10 @@ Seq[Any](format.raw/*3.27*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-09T19:24:13.840
+                  DATE: 2019-12-09T20:28:41.823
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/restaurantcard.scala.html
-                  HASH: ba51a22b539e494015cedfee825571c120e1159a
-                  MATRIX: 656->1|1000->32|1120->57|1150->61|1214->99|1232->109|1270->127|1349->179|1368->189|1407->207|1528->301|1543->307|1625->367|1737->451|1753->457|1838->520|2156->811|2175->821|2209->834|2331->929|2350->939|2378->946|2504->1045|2523->1055|2555->1066|2735->1219|2797->1265|2837->1267|2883->1285|2988->1363|3003->1369|3078->1422|3109->1425|3126->1432|3161->1445|3191->1447|3208->1454|3242->1466|3320->1513|3357->1523
+                  HASH: ac3289b9744efe9747923fccab9542804633152c
+                  MATRIX: 656->1|1000->32|1120->57|1150->61|1214->99|1232->109|1270->127|1349->179|1368->189|1407->207|1528->301|1543->307|1631->373|1743->457|1759->463|1850->532|2168->823|2187->833|2221->846|2343->941|2362->951|2390->958|2516->1057|2535->1067|2567->1078|2747->1231|2809->1277|2849->1279|2895->1297|3000->1375|3015->1381|3093->1437|3124->1440|3141->1447|3176->1460|3206->1462|3223->1469|3257->1481|3335->1528|3372->1538
                   LINES: 24->1|29->3|34->3|36->5|39->8|39->8|39->8|44->13|44->13|44->13|46->15|46->15|46->15|46->15|46->15|46->15|56->25|56->25|56->25|60->29|60->29|60->29|64->33|64->33|64->33|71->40|71->40|71->40|72->41|73->42|73->42|73->42|73->42|73->42|73->42|73->42|73->42|73->42|75->44|76->45
                   -- GENERATED --
               */
