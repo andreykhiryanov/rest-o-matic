@@ -33,27 +33,20 @@ object editrestaurant extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl
 
 
 Seq[Any](format.raw/*2.36*/("""
-"""),format.raw/*4.1*/("""
-"""),format.raw/*5.1*/("""<html>
-    <head>
-        <title>Edit Restaurant</title>
-    </head>
-    <body>
-        <h1>Edit Restaurant</h1>
+"""),_display_(/*4.2*/layout("Edit Restaurant")/*4.27*/{_display_(Seq[Any](format.raw/*4.28*/("""
+    """),format.raw/*5.5*/("""<h1>Edit Restaurant</h1>
 
-        """),_display_(/*12.10*/helper/*12.16*/.form(action = routes.RestaurantController.updateRestaurant())/*12.78*/ {_display_(Seq[Any](format.raw/*12.80*/("""
-            """),_display_(/*13.14*/helper/*13.20*/.inputText(restaurantForm("restaurantName"))),format.raw/*13.64*/("""
-            """),_display_(/*14.14*/helper/*14.20*/.inputText(restaurantForm("legalName"))),format.raw/*14.59*/("""
-            """),_display_(/*15.14*/helper/*15.20*/.inputText(restaurantForm("inn"))),format.raw/*15.53*/("""
-            """),_display_(/*16.14*/helper/*16.20*/.inputText(restaurantForm("address"))),format.raw/*16.57*/("""
+    """),_display_(/*7.6*/helper/*7.12*/.form(action = routes.RestaurantController.updateRestaurant())/*7.74*/ {_display_(Seq[Any](format.raw/*7.76*/("""
+        """),_display_(/*8.10*/helper/*8.16*/.inputText(restaurantForm("restaurantName"))),format.raw/*8.60*/("""
+        """),_display_(/*9.10*/helper/*9.16*/.inputText(restaurantForm("legalName"))),format.raw/*9.55*/("""
+        """),_display_(/*10.10*/helper/*10.16*/.inputText(restaurantForm("inn"))),format.raw/*10.49*/("""
+        """),_display_(/*11.10*/helper/*11.16*/.inputText(restaurantForm("address"))),format.raw/*11.53*/("""
 
-            """),format.raw/*18.13*/("""<br>
+        """),format.raw/*13.9*/("""<br>
 
-            <input type="submit" value="Edit Restaurant">
-            """)))}),format.raw/*21.14*/("""
-    """),format.raw/*22.5*/("""</body>
-
-</html>"""))
+        <input type="submit" value="Edit Restaurant">
+    """)))}),format.raw/*16.6*/("""
+""")))}))
       }
     }
   }
@@ -69,11 +62,11 @@ Seq[Any](format.raw/*2.36*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-09T20:26:49.748
+                  DATE: 2019-12-10T09:49:27.757
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/editrestaurant.scala.html
-                  HASH: b50c31c1977b01a11375e1404116ab0269efd714
-                  MATRIX: 656->1|1006->30|1113->67|1158->64|1186->84|1214->86|1371->216|1386->222|1457->284|1497->286|1539->301|1554->307|1619->351|1661->366|1676->372|1736->411|1778->426|1793->432|1847->465|1889->480|1904->486|1962->523|2006->539|2117->619|2150->625
-                  LINES: 24->1|29->2|32->3|35->2|36->4|37->5|44->12|44->12|44->12|44->12|45->13|45->13|45->13|46->14|46->14|46->14|47->15|47->15|47->15|48->16|48->16|48->16|50->18|53->21|54->22
+                  HASH: 38680f770d6b38176cd17614e3dfeab3f65fa760
+                  MATRIX: 656->1|1006->30|1113->67|1158->64|1186->85|1219->110|1257->111|1289->117|1347->150|1361->156|1431->218|1470->220|1507->231|1521->237|1585->281|1622->292|1636->298|1695->337|1733->348|1748->354|1802->387|1840->398|1855->404|1913->441|1952->453|2050->521
+                  LINES: 24->1|29->2|32->3|35->2|36->4|36->4|36->4|37->5|39->7|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|42->10|42->10|42->10|43->11|43->11|43->11|45->13|48->16
                   -- GENERATED --
               */
           

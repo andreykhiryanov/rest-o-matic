@@ -4,43 +4,35 @@
 
 @(restaurants : Set[Restaurant])(visitors : Set[Visitor])
 
-<html>
-    <head>
-        <title>Welcome!</title>
-    </head>
-    <body>
+@layout("Welcome!"){
+    <h1>Welcome to the Rest-o-matic!</h1>
 
-        <h1>Welcome to the Rest-o-matic!</h1>
+    <input value="New restaurant" type="button" onclick="window.location.href='@routes.RestaurantController.createRestaurant()'"/> <input value="New visitor" type="button" onclick="window.location.href='@routes.VisitorController.createVisitor()'"/>
+    <br>
 
-        <input value="New restaurant" type="button" onclick="window.location.href='@routes.RestaurantController.createRestaurant()'"/> <input value="New visitor" type="button" onclick="window.location.href='@routes.VisitorController.createVisitor()'"/>
-        <br>
+    <h2>All restaurants</h2>
 
-        <h2>All restaurants</h2>
-
-        <table border="1px solid grey" style="border-collapse: collapse">
+    <table border="1px solid grey" style="border-collapse: collapse">
+        <tr>
+            <th>Restaurants</th>
+        </tr>
+        @for(restaurant <- restaurants) {
             <tr>
-                <th>Restaurants</th>
+                <td style="text-align:center"><a href="@routes.RestaurantController.showRestaurantCard(restaurant.getRestaurantName)">@restaurant.getRestaurantName</a></td>
             </tr>
-            @for(restaurant <- restaurants) {
-                <tr>
-                    <td style="text-align:center"><a href="@routes.RestaurantController.showRestaurantCard(restaurant.getRestaurantName)">@restaurant.getRestaurantName</a></td>
-                </tr>
-                }
-        </table>
+        }
+    </table>
 
-        <h2>All visitors</h2>
+    <h2>All visitors</h2>
 
-        <table border="1px solid grey" style="border-collapse: collapse">
+    <table border="1px solid grey" style="border-collapse: collapse">
+        <tr>
+            <th>Visitors</th>
+        </tr>
+        @for(visitor <- visitors) {
             <tr>
-                <th>Visitors</th>
+                <td style="text-align:center"><a href="@routes.VisitorController.showVisitorCard(visitor.getFirstName)">@visitor.getFirstName @visitor.getLastName</a></td>
             </tr>
-            @for(visitor <- visitors) {
-                <tr>
-                    <td style="text-align:center"><a href="@routes.VisitorController.showVisitorCard(visitor.getFirstName)">@visitor.getFirstName @visitor.getLastName</a></td>
-                </tr>
-            }
-        </table>
-
-    </body>
-
-</html>
+        }
+    </table>
+}

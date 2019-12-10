@@ -34,57 +34,47 @@ object restaurantcard extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl
 
 Seq[Any](format.raw/*4.27*/("""
 
-"""),format.raw/*6.1*/("""<html>
+"""),_display_(/*6.2*/layout("@restaurant.getRestaurantName")/*6.41*/{_display_(Seq[Any](format.raw/*6.42*/("""
+    """),format.raw/*7.5*/("""<h2>"""),_display_(/*7.10*/restaurant/*7.20*/.getRestaurantName),format.raw/*7.38*/("""</h2>
 
-    <head>
-        <title>"""),_display_(/*9.17*/restaurant/*9.27*/.getRestaurantName),format.raw/*9.45*/("""</title>
-    </head>
+    <input value="Edit restaurant" type="button" onclick="window.location.href='"""),_display_(/*9.82*/routes/*9.88*/.RestaurantController.editRestaurant(restaurant.getRestaurantName)),format.raw/*9.154*/("""'"/> <input value="Remove restaurant" type="button" onclick="window.location.href='"""),_display_(/*9.238*/routes/*9.244*/.RestaurantController.destroyRestaurant(restaurant.getRestaurantName)),format.raw/*9.313*/("""'"/>
 
-    <body>
+    <br><br>
 
-        <h2>"""),_display_(/*14.14*/restaurant/*14.24*/.getRestaurantName),format.raw/*14.42*/("""</h2>
+    <table border="1px solid grey" style="border-collapse: collapse">
+        <tr>
+            <th colspan="5" style="text-align:center">Information</th>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td>"""),_display_(/*19.18*/restaurant/*19.28*/.getLegalName),format.raw/*19.41*/("""</td>
+        </tr>
+        <tr>
+            <td>INN</td>
+            <td>"""),_display_(/*23.18*/restaurant/*23.28*/.getInn),format.raw/*23.35*/("""</td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td>"""),_display_(/*27.18*/restaurant/*27.28*/.getAddress),format.raw/*27.39*/("""</td>
+        </tr>
+    </table>
 
-        <input value="Edit restaurant" type="button" onclick="window.location.href='"""),_display_(/*16.86*/routes/*16.92*/.RestaurantController.editRestaurant(restaurant.getRestaurantName)),format.raw/*16.158*/("""'"/> <input value="Remove restaurant" type="button" onclick="window.location.href='"""),_display_(/*16.242*/routes/*16.248*/.RestaurantController.destroyRestaurant(restaurant.getRestaurantName)),format.raw/*16.317*/("""'"/>
+    <h3>Accepted visitors</h3>
 
+    <form name="kick" method="post">
+        <select name='visitors' multiple size="5">
+        """),_display_(/*35.10*/for(visitor <- restaurant.getAcceptedVisitors) yield /*35.56*/ {_display_(Seq[Any](format.raw/*35.58*/("""
+            """),format.raw/*36.13*/("""<option value="""),_display_(/*36.28*/visitor/*36.35*/.getFirstName),format.raw/*36.48*/(""">"""),_display_(/*36.50*/visitor/*36.57*/.getFirstName),format.raw/*36.70*/(""" """),_display_(/*36.72*/visitor/*36.79*/.getLastName),format.raw/*36.91*/("""</option>
+        """)))}),format.raw/*37.10*/("""
+        """),format.raw/*38.9*/("""</select>
         <br><br>
+        <input type="submit" value="Kick visitor">
+    </form>
 
-        <table border="1px solid grey" style="border-collapse: collapse">
-            <tr>
-                <th colspan="5" style="text-align:center">Information</th>
-            </tr>
-            <tr>
-                <td>Last Name</td>
-                <td>"""),_display_(/*26.22*/restaurant/*26.32*/.getLegalName),format.raw/*26.45*/("""</td>
-            </tr>
-            <tr>
-                <td>INN</td>
-                <td>"""),_display_(/*30.22*/restaurant/*30.32*/.getInn),format.raw/*30.39*/("""</td>
-            </tr>
-            <tr>
-                <td>Address</td>
-                <td>"""),_display_(/*34.22*/restaurant/*34.32*/.getAddress),format.raw/*34.43*/("""</td>
-            </tr>
-        </table>
+    <h3>Have not visited</h3>
 
-        <h3>Accepted visitors</h3>
-
-        <form name="kick" method="post">
-            <select name='visitors' multiple size="5">
-                """),_display_(/*42.18*/for(visitor <- restaurant.getAcceptedVisitors) yield /*42.64*/ {_display_(Seq[Any](format.raw/*42.66*/("""
-                    """),format.raw/*43.21*/("""<option value="""),_display_(/*43.36*/visitor/*43.43*/.getFirstName),format.raw/*43.56*/(""">"""),_display_(/*43.58*/visitor/*43.65*/.getFirstName),format.raw/*43.78*/(""" """),_display_(/*43.80*/visitor/*43.87*/.getLastName),format.raw/*43.99*/("""</option>
-                """)))}),format.raw/*44.18*/("""
-            """),format.raw/*45.13*/("""</select>
-            <br><br>
-            <input type="submit" value="Kick visitor">
-        </form>
-
-        <h3>Have not visited</h3>
-
-        <input value="Accept visitor" type="button" onclick=""/>
-
-    </body>
-
-</html>"""))
+    <input value="Accept visitor" type="button" onclick=""/>
+""")))}))
       }
     }
   }
@@ -100,11 +90,11 @@ Seq[Any](format.raw/*4.27*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-09T22:30:25.858
+                  DATE: 2019-12-10T09:49:27.789
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/restaurantcard.scala.html
-                  HASH: c37d795c6bc69fbdcd688aa685d7632a004bfcad
-                  MATRIX: 656->1|690->30|1023->50|1143->75|1173->79|1237->117|1255->127|1293->145|1372->197|1391->207|1430->225|1551->319|1566->325|1654->391|1766->475|1782->481|1873->550|2191->841|2210->851|2244->864|2366->959|2385->969|2413->976|2539->1075|2558->1085|2590->1096|2816->1295|2878->1341|2918->1343|2968->1365|3010->1380|3026->1387|3060->1400|3089->1402|3105->1409|3139->1422|3168->1424|3184->1431|3217->1443|3276->1471|3318->1485
-                  LINES: 24->1|25->2|30->4|35->4|37->6|40->9|40->9|40->9|45->14|45->14|45->14|47->16|47->16|47->16|47->16|47->16|47->16|57->26|57->26|57->26|61->30|61->30|61->30|65->34|65->34|65->34|73->42|73->42|73->42|74->43|74->43|74->43|74->43|74->43|74->43|74->43|74->43|74->43|74->43|75->44|76->45
+                  HASH: 6d248c4d3245e8ba9628e5c5a96bc46989a20697
+                  MATRIX: 656->1|690->30|1023->50|1143->75|1173->80|1220->119|1258->120|1290->126|1321->131|1339->141|1377->159|1493->249|1507->255|1594->321|1705->405|1720->411|1810->480|2096->739|2115->749|2149->762|2255->841|2274->851|2302->858|2412->941|2431->951|2463->962|2661->1133|2723->1179|2763->1181|2805->1195|2847->1210|2863->1217|2897->1230|2926->1232|2942->1239|2976->1252|3005->1254|3021->1261|3054->1273|3105->1293|3142->1303
+                  LINES: 24->1|25->2|30->4|35->4|37->6|37->6|37->6|38->7|38->7|38->7|38->7|40->9|40->9|40->9|40->9|40->9|40->9|50->19|50->19|50->19|54->23|54->23|54->23|58->27|58->27|58->27|66->35|66->35|66->35|67->36|67->36|67->36|67->36|67->36|67->36|67->36|67->36|67->36|67->36|68->37|69->38
                   -- GENERATED --
               */
           

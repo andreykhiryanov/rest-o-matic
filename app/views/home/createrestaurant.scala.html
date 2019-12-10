@@ -2,23 +2,17 @@
 @(restaurantForm: Form[Restaurant])
 @import helper._
 
-<html>
-    <head>
-        <title>New Restaurant</title>
-    </head>
-    <body>
-        <h1>Create New Restaurant</h1>
+@layout("New Restaurant"){
+    <h1>Create New Restaurant</h1>
 
-        @helper.form(action = routes.RestaurantController.saveRestaurantChanges()) {
-            @helper.inputText(restaurantForm("restaurantName"))
-            @helper.inputText(restaurantForm("legalName"))
-            @helper.inputText(restaurantForm("inn"))
-            @helper.inputText(restaurantForm("address"))
+    @helper.form(action = routes.RestaurantController.saveRestaurantChanges()) {
+        @helper.inputText(restaurantForm("restaurantName"))
+        @helper.inputText(restaurantForm("legalName"))
+        @helper.inputText(restaurantForm("inn"))
+        @helper.inputText(restaurantForm("address"))
 
-            <br>
+        <br>
 
-            <input type="submit" value="Create Restaurant">
-            }
-    </body>
-
-</html>
+        <input type="submit" value="Create Restaurant">
+    }
+}

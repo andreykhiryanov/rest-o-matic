@@ -34,26 +34,20 @@ object editvisitor extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.ap
 
 Seq[Any](format.raw/*2.30*/("""
 """),format.raw/*4.1*/("""
-"""),format.raw/*5.1*/("""<html>
-    <head>
-        <title>Edit Visitor</title>
-    </head>
-    <body>
-        <h1>Edit Visitor</h1>
+"""),_display_(/*5.2*/layout("Edit Visitor")/*5.24*/{_display_(Seq[Any](format.raw/*5.25*/("""
+    """),format.raw/*6.5*/("""<h1>Edit Visitor</h1>
 
-        """),_display_(/*12.10*/helper/*12.16*/.form(action = routes.VisitorController.updateVisitor())/*12.72*/ {_display_(Seq[Any](format.raw/*12.74*/("""
-            """),_display_(/*13.14*/helper/*13.20*/.inputText(visitorForm("firstName"))),format.raw/*13.56*/("""
-            """),_display_(/*14.14*/helper/*14.20*/.inputText(visitorForm("lastName"))),format.raw/*14.55*/("""
-            """),_display_(/*15.14*/helper/*15.20*/.inputText(visitorForm("email"))),format.raw/*15.52*/("""
-            """),_display_(/*16.14*/helper/*16.20*/.inputText(visitorForm("phoneNumber"))),format.raw/*16.58*/("""
+    """),_display_(/*8.6*/helper/*8.12*/.form(action = routes.VisitorController.updateVisitor())/*8.68*/ {_display_(Seq[Any](format.raw/*8.70*/("""
+        """),_display_(/*9.10*/helper/*9.16*/.inputText(visitorForm("firstName"))),format.raw/*9.52*/("""
+        """),_display_(/*10.10*/helper/*10.16*/.inputText(visitorForm("lastName"))),format.raw/*10.51*/("""
+        """),_display_(/*11.10*/helper/*11.16*/.inputText(visitorForm("email"))),format.raw/*11.48*/("""
+        """),_display_(/*12.10*/helper/*12.16*/.inputText(visitorForm("phoneNumber"))),format.raw/*12.54*/("""
 
-            """),format.raw/*18.13*/("""<br>
+        """),format.raw/*14.9*/("""<br>
 
-            <input type="submit" value="Edit Visitor">
-            """)))}),format.raw/*21.14*/("""
-    """),format.raw/*22.5*/("""</body>
-
-</html>"""))
+        <input type="submit" value="Edit Visitor">
+    """)))}),format.raw/*17.6*/("""
+""")))}))
       }
     }
   }
@@ -69,11 +63,11 @@ Seq[Any](format.raw/*2.30*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-09T20:26:49.754
+                  DATE: 2019-12-10T09:49:27.774
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/editvisitor.scala.html
-                  HASH: 77f4e970aa9b98144332800f4e814bb3ce049a05
-                  MATRIX: 656->1|997->27|1098->58|1143->55|1171->75|1199->77|1350->201|1365->207|1430->263|1470->265|1512->280|1527->286|1584->322|1626->337|1641->343|1697->378|1739->393|1754->399|1807->431|1849->446|1864->452|1923->490|1967->506|2075->583|2108->589
-                  LINES: 24->1|29->2|32->3|35->2|36->4|37->5|44->12|44->12|44->12|44->12|45->13|45->13|45->13|46->14|46->14|46->14|47->15|47->15|47->15|48->16|48->16|48->16|50->18|53->21|54->22
+                  HASH: 5575d2586a3af85d63765a401d73fc147f44c04b
+                  MATRIX: 656->1|997->27|1098->58|1143->55|1171->75|1199->78|1229->100|1267->101|1299->107|1354->137|1368->143|1432->199|1471->201|1508->212|1522->218|1578->254|1616->265|1631->271|1687->306|1725->317|1740->323|1793->355|1831->366|1846->372|1905->410|1944->422|2039->487
+                  LINES: 24->1|29->2|32->3|35->2|36->4|37->5|37->5|37->5|38->6|40->8|40->8|40->8|40->8|41->9|41->9|41->9|42->10|42->10|42->10|43->11|43->11|43->11|44->12|44->12|44->12|46->14|49->17
                   -- GENERATED --
               */
           

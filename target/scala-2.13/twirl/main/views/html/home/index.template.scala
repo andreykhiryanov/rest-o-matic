@@ -35,46 +35,38 @@ object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Html
 
 Seq[Any](format.raw/*5.58*/("""
 
-"""),format.raw/*7.1*/("""<html>
-    <head>
-        <title>Welcome!</title>
-    </head>
-    <body>
+"""),_display_(/*7.2*/layout("Welcome!")/*7.20*/{_display_(Seq[Any](format.raw/*7.21*/("""
+    """),format.raw/*8.5*/("""<h1>Welcome to the Rest-o-matic!</h1>
 
-        <h1>Welcome to the Rest-o-matic!</h1>
+    <input value="New restaurant" type="button" onclick="window.location.href='"""),_display_(/*10.81*/routes/*10.87*/.RestaurantController.createRestaurant()),format.raw/*10.127*/("""'"/> <input value="New visitor" type="button" onclick="window.location.href='"""),_display_(/*10.205*/routes/*10.211*/.VisitorController.createVisitor()),format.raw/*10.245*/("""'"/>
+    <br>
 
-        <input value="New restaurant" type="button" onclick="window.location.href='"""),_display_(/*15.85*/routes/*15.91*/.RestaurantController.createRestaurant()),format.raw/*15.131*/("""'"/> <input value="New visitor" type="button" onclick="window.location.href='"""),_display_(/*15.209*/routes/*15.215*/.VisitorController.createVisitor()),format.raw/*15.249*/("""'"/>
-        <br>
+    <h2>All restaurants</h2>
 
-        <h2>All restaurants</h2>
-
-        <table border="1px solid grey" style="border-collapse: collapse">
-            <tr>
-                <th>Restaurants</th>
+    <table border="1px solid grey" style="border-collapse: collapse">
+        <tr>
+            <th>Restaurants</th>
+        </tr>
+        """),_display_(/*19.10*/for(restaurant <- restaurants) yield /*19.40*/ {_display_(Seq[Any](format.raw/*19.42*/("""
+            """),format.raw/*20.13*/("""<tr>
+                <td style="text-align:center"><a href=""""),_display_(/*21.57*/routes/*21.63*/.RestaurantController.showRestaurantCard(restaurant.getRestaurantName)),format.raw/*21.133*/("""">"""),_display_(/*21.136*/restaurant/*21.146*/.getRestaurantName),format.raw/*21.164*/("""</a></td>
             </tr>
-            """),_display_(/*24.14*/for(restaurant <- restaurants) yield /*24.44*/ {_display_(Seq[Any](format.raw/*24.46*/("""
-                """),format.raw/*25.17*/("""<tr>
-                    <td style="text-align:center"><a href=""""),_display_(/*26.61*/routes/*26.67*/.RestaurantController.showRestaurantCard(restaurant.getRestaurantName)),format.raw/*26.137*/("""">"""),_display_(/*26.140*/restaurant/*26.150*/.getRestaurantName),format.raw/*26.168*/("""</a></td>
-                </tr>
-                """)))}),format.raw/*28.18*/("""
-        """),format.raw/*29.9*/("""</table>
+        """)))}),format.raw/*23.10*/("""
+    """),format.raw/*24.5*/("""</table>
 
-        <h2>All visitors</h2>
+    <h2>All visitors</h2>
 
-        <table border="1px solid grey" style="border-collapse: collapse">
-            <tr>
-                <th>Visitors</th>
+    <table border="1px solid grey" style="border-collapse: collapse">
+        <tr>
+            <th>Visitors</th>
+        </tr>
+        """),_display_(/*32.10*/for(visitor <- visitors) yield /*32.34*/ {_display_(Seq[Any](format.raw/*32.36*/("""
+            """),format.raw/*33.13*/("""<tr>
+                <td style="text-align:center"><a href=""""),_display_(/*34.57*/routes/*34.63*/.VisitorController.showVisitorCard(visitor.getFirstName)),format.raw/*34.119*/("""">"""),_display_(/*34.122*/visitor/*34.129*/.getFirstName),format.raw/*34.142*/(""" """),_display_(/*34.144*/visitor/*34.151*/.getLastName),format.raw/*34.163*/("""</a></td>
             </tr>
-            """),_display_(/*37.14*/for(visitor <- visitors) yield /*37.38*/ {_display_(Seq[Any](format.raw/*37.40*/("""
-                """),format.raw/*38.17*/("""<tr>
-                    <td style="text-align:center"><a href=""""),_display_(/*39.61*/routes/*39.67*/.VisitorController.showVisitorCard(visitor.getFirstName)),format.raw/*39.123*/("""">"""),_display_(/*39.126*/visitor/*39.133*/.getFirstName),format.raw/*39.146*/(""" """),_display_(/*39.148*/visitor/*39.155*/.getLastName),format.raw/*39.167*/("""</a></td>
-                </tr>
-            """)))}),format.raw/*41.14*/("""
-        """),format.raw/*42.9*/("""</table>
-
-    </body>
-
-</html>"""))
+        """)))}),format.raw/*36.10*/("""
+    """),format.raw/*37.5*/("""</table>
+""")))}))
       }
     }
   }
@@ -90,11 +82,11 @@ Seq[Any](format.raw/*5.58*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-09T20:26:49.763
+                  DATE: 2019-12-10T09:49:27.782
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/index.scala.html
-                  HASH: 39cc33a20a7c781e5eca06fea3234b6fb995d721
-                  MATRIX: 656->1|690->30|721->56|1063->76|1214->132|1244->136|1484->349|1499->355|1561->395|1667->473|1683->479|1739->513|1987->734|2033->764|2073->766|2119->784|2212->850|2227->856|2319->926|2350->929|2370->939|2410->957|2492->1008|2529->1018|2761->1223|2801->1247|2841->1249|2887->1267|2980->1333|2995->1339|3073->1395|3104->1398|3121->1405|3156->1418|3186->1420|3203->1427|3237->1439|3315->1486|3352->1496
-                  LINES: 24->1|25->2|26->3|31->5|36->5|38->7|46->15|46->15|46->15|46->15|46->15|46->15|55->24|55->24|55->24|56->25|57->26|57->26|57->26|57->26|57->26|57->26|59->28|60->29|68->37|68->37|68->37|69->38|70->39|70->39|70->39|70->39|70->39|70->39|70->39|70->39|70->39|72->41|73->42
+                  HASH: 7dbfdcd95b51be15ef955f08047e00f154ef444a
+                  MATRIX: 656->1|690->30|721->56|1063->76|1214->132|1244->137|1270->155|1308->156|1340->162|1488->283|1503->289|1565->329|1671->407|1687->413|1743->447|1963->640|2009->670|2049->672|2091->686|2180->748|2195->754|2287->824|2318->827|2338->837|2378->855|2448->894|2481->900|2689->1081|2729->1105|2769->1107|2811->1121|2900->1183|2915->1189|2993->1245|3024->1248|3041->1255|3076->1268|3106->1270|3123->1277|3157->1289|3227->1328|3260->1334
+                  LINES: 24->1|25->2|26->3|31->5|36->5|38->7|38->7|38->7|39->8|41->10|41->10|41->10|41->10|41->10|41->10|50->19|50->19|50->19|51->20|52->21|52->21|52->21|52->21|52->21|52->21|54->23|55->24|63->32|63->32|63->32|64->33|65->34|65->34|65->34|65->34|65->34|65->34|65->34|65->34|65->34|67->36|68->37
                   -- GENERATED --
               */
           

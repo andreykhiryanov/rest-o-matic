@@ -34,69 +34,58 @@ object visitorcard extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.ap
 
 Seq[Any](format.raw/*4.21*/("""
 
-"""),format.raw/*6.1*/("""<html>
+"""),_display_(/*6.2*/layout("@visitor.getFirstName")/*6.33*/{_display_(Seq[Any](format.raw/*6.34*/("""
+    """),format.raw/*7.5*/("""<h2>"""),_display_(/*7.10*/visitor/*7.17*/.getFirstName),format.raw/*7.30*/("""</h2>
 
-    <head>
-        <title>"""),_display_(/*9.17*/visitor/*9.24*/.getFirstName),format.raw/*9.37*/("""</title>
-    </head>
+    <input value="Edit visitor" type="button" onclick="window.location.href='"""),_display_(/*9.79*/routes/*9.85*/.VisitorController.editVisitor(visitor.getFirstName)),format.raw/*9.137*/("""'"/> <input value="Remove visitor" type="submit" onclick="window.location.href='"""),_display_(/*9.218*/routes/*9.224*/.VisitorController.destroyVisitor(visitor.getFirstName)),format.raw/*9.279*/("""'"/>
 
-    <body>
+    <br><br>
 
-        <h2>"""),_display_(/*14.14*/visitor/*14.21*/.getFirstName),format.raw/*14.34*/("""</h2>
+    <table border="1px solid grey" style="border-collapse: collapse">
+        <tr>
+            <th colspan="5" style="text-align:center">Information</th>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td>"""),_display_(/*19.18*/visitor/*19.25*/.getLastName),format.raw/*19.37*/("""</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>"""),_display_(/*23.18*/visitor/*23.25*/.getEmail),format.raw/*23.34*/("""</td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td>"""),_display_(/*27.18*/visitor/*27.25*/.getPhoneNumber),format.raw/*27.40*/("""</td>
+        </tr>
 
-        <input value="Edit visitor" type="button" onclick="window.location.href='"""),_display_(/*16.83*/routes/*16.89*/.VisitorController.editVisitor(visitor.getFirstName)),format.raw/*16.141*/("""'"/> <input value="Remove visitor" type="submit" onclick="window.location.href='"""),_display_(/*16.222*/routes/*16.228*/.VisitorController.destroyVisitor(visitor.getFirstName)),format.raw/*16.283*/("""'"/>
+        """),format.raw/*30.17*/("""
+        """),format.raw/*31.79*/("""
+        """),format.raw/*32.18*/("""
 
+        """),_display_(/*34.10*/for(restaurant <- visitor.getVisitedRestaurants) yield /*34.58*/ {_display_(Seq[Any](format.raw/*34.60*/("""
+            """),format.raw/*35.21*/("""
+            """),format.raw/*36.185*/("""
+            """),format.raw/*37.22*/("""
+        """)))}),format.raw/*38.10*/("""
+    """),format.raw/*39.5*/("""</table>
+
+    <h3>Visited restaurants</h3>
+
+    <form name="restaurants" method="post">
+        <select name='restaurants' multiple size="5">
+        """),_display_(/*45.10*/for(restaurant <- visitor.getVisitedRestaurants) yield /*45.58*/ {_display_(Seq[Any](format.raw/*45.60*/("""
+            """),format.raw/*46.13*/("""<option value="""),_display_(/*46.28*/restaurant/*46.38*/.getRestaurantName),format.raw/*46.56*/(""">"""),_display_(/*46.58*/restaurant/*46.68*/.getRestaurantName),format.raw/*46.86*/("""</option>
+        """)))}),format.raw/*47.10*/("""
+        """),format.raw/*48.9*/("""</select>
         <br><br>
+        <input type="submit" value="Remove restaurant">
+    </form>
 
-        <table border="1px solid grey" style="border-collapse: collapse">
-            <tr>
-                <th colspan="5" style="text-align:center">Information</th>
-            </tr>
-            <tr>
-                <td>Last Name</td>
-                <td>"""),_display_(/*26.22*/visitor/*26.29*/.getLastName),format.raw/*26.41*/("""</td>
-            </tr>
-            <tr>
-                <td>Email</td>
-                <td>"""),_display_(/*30.22*/visitor/*30.29*/.getEmail),format.raw/*30.38*/("""</td>
-            </tr>
-            <tr>
-                <td>Phone</td>
-                <td>"""),_display_(/*34.22*/visitor/*34.29*/.getPhoneNumber),format.raw/*34.44*/("""</td>
-            </tr>
-
-            """),format.raw/*37.21*/("""
-                """),format.raw/*38.87*/("""
-            """),format.raw/*39.22*/("""
-
-            """),_display_(/*41.14*/for(restaurant <- visitor.getVisitedRestaurants) yield /*41.62*/ {_display_(Seq[Any](format.raw/*41.64*/("""
-                """),format.raw/*42.25*/("""
-                    """),format.raw/*43.193*/("""
-                """),format.raw/*44.26*/("""
-            """)))}),format.raw/*45.14*/("""
-        """),format.raw/*46.9*/("""</table>
-
-        <h3>Visited restaurants</h3>
-
-        <form name="restaurants" method="post">
-            <select name='restaurants' multiple size="5">
-            """),_display_(/*52.14*/for(restaurant <- visitor.getVisitedRestaurants) yield /*52.62*/ {_display_(Seq[Any](format.raw/*52.64*/("""
-                """),format.raw/*53.17*/("""<option value="""),_display_(/*53.32*/restaurant/*53.42*/.getRestaurantName),format.raw/*53.60*/(""">"""),_display_(/*53.62*/restaurant/*53.72*/.getRestaurantName),format.raw/*53.90*/("""</option>
-            """)))}),format.raw/*54.14*/("""
-            """),format.raw/*55.13*/("""</select>
-            <br><br>
-            <input type="submit" value="Remove restaurant">
-        </form>
-
-        <h3>Not visited restaurants</h3>
+    <h3>Not visited restaurants</h3>
 
 
-        <input value="Visit restaurant" type="button" onclick=""/>
-
-
-    </body>
-
-</html>"""))
+    <input value="Visit restaurant" type="button" onclick=""/>
+""")))}))
       }
     }
   }
@@ -112,11 +101,11 @@ Seq[Any](format.raw/*4.21*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-09T22:33:30.019
+                  DATE: 2019-12-10T09:49:27.798
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/visitorcard.scala.html
-                  HASH: ac122a47ecbe5bea604bbf49b47e7ce750ec5925
-                  MATRIX: 656->1|687->27|1014->47|1128->66|1158->70|1222->108|1237->115|1270->128|1349->180|1365->187|1399->200|1517->291|1532->297|1606->349|1715->430|1731->436|1808->491|2126->782|2142->789|2175->801|2299->898|2315->905|2345->914|2469->1011|2485->1018|2521->1033|2589->1081|2635->1169|2677->1192|2721->1209|2785->1257|2825->1259|2871->1285|2922->1479|2968->1506|3014->1521|3051->1531|3251->1704|3315->1752|3355->1754|3401->1772|3443->1787|3462->1797|3501->1815|3530->1817|3549->1827|3588->1845|3643->1869|3685->1883
-                  LINES: 24->1|25->2|30->4|35->4|37->6|40->9|40->9|40->9|45->14|45->14|45->14|47->16|47->16|47->16|47->16|47->16|47->16|57->26|57->26|57->26|61->30|61->30|61->30|65->34|65->34|65->34|68->37|69->38|70->39|72->41|72->41|72->41|73->42|74->43|75->44|76->45|77->46|83->52|83->52|83->52|84->53|84->53|84->53|84->53|84->53|84->53|84->53|85->54|86->55
+                  HASH: 42562b05b7631eeb7ed3e4a63849e15e4fbcb1b0
+                  MATRIX: 656->1|687->27|1014->47|1128->66|1158->71|1197->102|1235->103|1267->109|1298->114|1313->121|1346->134|1459->221|1473->227|1546->279|1654->360|1669->366|1745->421|2031->680|2047->687|2080->699|2188->780|2204->787|2234->796|2342->877|2358->884|2394->899|2454->939|2492->1019|2530->1038|2570->1051|2634->1099|2674->1101|2716->1123|2759->1309|2801->1332|2843->1343|2876->1349|3060->1506|3124->1554|3164->1556|3206->1570|3248->1585|3267->1595|3306->1613|3335->1615|3354->1625|3393->1643|3444->1663|3481->1673
+                  LINES: 24->1|25->2|30->4|35->4|37->6|37->6|37->6|38->7|38->7|38->7|38->7|40->9|40->9|40->9|40->9|40->9|40->9|50->19|50->19|50->19|54->23|54->23|54->23|58->27|58->27|58->27|61->30|62->31|63->32|65->34|65->34|65->34|66->35|67->36|68->37|69->38|70->39|76->45|76->45|76->45|77->46|77->46|77->46|77->46|77->46|77->46|77->46|78->47|79->48
                   -- GENERATED --
               */
           

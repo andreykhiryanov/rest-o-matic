@@ -3,54 +3,44 @@
 
 @(restaurant : Restaurant)
 
-<html>
+@layout("@restaurant.getRestaurantName"){
+    <h2>@restaurant.getRestaurantName</h2>
 
-    <head>
-        <title>@restaurant.getRestaurantName</title>
-    </head>
+    <input value="Edit restaurant" type="button" onclick="window.location.href='@routes.RestaurantController.editRestaurant(restaurant.getRestaurantName)'"/> <input value="Remove restaurant" type="button" onclick="window.location.href='@routes.RestaurantController.destroyRestaurant(restaurant.getRestaurantName)'"/>
 
-    <body>
+    <br><br>
 
-        <h2>@restaurant.getRestaurantName</h2>
+    <table border="1px solid grey" style="border-collapse: collapse">
+        <tr>
+            <th colspan="5" style="text-align:center">Information</th>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td>@restaurant.getLegalName</td>
+        </tr>
+        <tr>
+            <td>INN</td>
+            <td>@restaurant.getInn</td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td>@restaurant.getAddress</td>
+        </tr>
+    </table>
 
-        <input value="Edit restaurant" type="button" onclick="window.location.href='@routes.RestaurantController.editRestaurant(restaurant.getRestaurantName)'"/> <input value="Remove restaurant" type="button" onclick="window.location.href='@routes.RestaurantController.destroyRestaurant(restaurant.getRestaurantName)'"/>
+    <h3>Accepted visitors</h3>
 
+    <form name="kick" method="post">
+        <select name='visitors' multiple size="5">
+        @for(visitor <- restaurant.getAcceptedVisitors) {
+            <option value=@visitor.getFirstName>@visitor.getFirstName @visitor.getLastName</option>
+        }
+        </select>
         <br><br>
+        <input type="submit" value="Kick visitor">
+    </form>
 
-        <table border="1px solid grey" style="border-collapse: collapse">
-            <tr>
-                <th colspan="5" style="text-align:center">Information</th>
-            </tr>
-            <tr>
-                <td>Last Name</td>
-                <td>@restaurant.getLegalName</td>
-            </tr>
-            <tr>
-                <td>INN</td>
-                <td>@restaurant.getInn</td>
-            </tr>
-            <tr>
-                <td>Address</td>
-                <td>@restaurant.getAddress</td>
-            </tr>
-        </table>
+    <h3>Have not visited</h3>
 
-        <h3>Accepted visitors</h3>
-
-        <form name="kick" method="post">
-            <select name='visitors' multiple size="5">
-                @for(visitor <- restaurant.getAcceptedVisitors) {
-                    <option value=@visitor.getFirstName>@visitor.getFirstName @visitor.getLastName</option>
-                }
-            </select>
-            <br><br>
-            <input type="submit" value="Kick visitor">
-        </form>
-
-        <h3>Have not visited</h3>
-
-        <input value="Accept visitor" type="button" onclick=""/>
-
-    </body>
-
-</html>
+    <input value="Accept visitor" type="button" onclick=""/>
+}
