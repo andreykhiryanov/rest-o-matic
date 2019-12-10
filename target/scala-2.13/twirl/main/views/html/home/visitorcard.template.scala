@@ -34,7 +34,7 @@ object visitorcard extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.ap
 
 Seq[Any](format.raw/*4.21*/("""
 
-"""),_display_(/*6.2*/layout("@visitor.getFirstName")/*6.33*/{_display_(Seq[Any](format.raw/*6.34*/("""
+"""),_display_(/*6.2*/layout(visitor.getFirstName)/*6.30*/{_display_(Seq[Any](format.raw/*6.31*/("""
     """),format.raw/*7.5*/("""<h2>"""),_display_(/*7.10*/visitor/*7.17*/.getFirstName),format.raw/*7.30*/("""</h2>
 
     <input value="Edit visitor" type="button" onclick="window.location.href='"""),_display_(/*9.79*/routes/*9.85*/.VisitorController.editVisitor(visitor.getFirstName)),format.raw/*9.137*/("""'"/> <input value="Remove visitor" type="submit" onclick="window.location.href='"""),_display_(/*9.218*/routes/*9.224*/.VisitorController.destroyVisitor(visitor.getFirstName)),format.raw/*9.279*/("""'"/>
@@ -74,10 +74,10 @@ Seq[Any](format.raw/*4.21*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-10T15:48:18.905
+                  DATE: 2019-12-10T15:58:19.992
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/visitorcard.scala.html
-                  HASH: bc35b4175d2b3046c5ee21cde347e51f4b73faa2
-                  MATRIX: 656->1|685->25|1012->45|1126->64|1156->69|1195->100|1233->101|1265->107|1296->112|1311->119|1344->132|1457->219|1471->225|1544->277|1652->358|1667->364|1743->419|2029->678|2045->685|2078->697|2186->778|2202->785|2232->794|2340->875|2356->882|2392->897
+                  HASH: 4cbe784d4f9144f857a3e71d6e42d4304a888907
+                  MATRIX: 656->1|685->25|1012->45|1126->64|1156->69|1192->97|1230->98|1262->104|1293->109|1308->116|1341->129|1454->216|1468->222|1541->274|1649->355|1664->361|1740->416|2026->675|2042->682|2075->694|2183->775|2199->782|2229->791|2337->872|2353->879|2389->894
                   LINES: 24->1|25->2|30->4|35->4|37->6|37->6|37->6|38->7|38->7|38->7|38->7|40->9|40->9|40->9|40->9|40->9|40->9|50->19|50->19|50->19|54->23|54->23|54->23|58->27|58->27|58->27
                   -- GENERATED --
               */

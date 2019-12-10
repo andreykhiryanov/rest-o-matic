@@ -34,7 +34,7 @@ object restaurantcard extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl
 
 Seq[Any](format.raw/*4.27*/("""
 
-"""),_display_(/*6.2*/layout("@restaurant.getRestaurantName")/*6.41*/{_display_(Seq[Any](format.raw/*6.42*/("""
+"""),_display_(/*6.2*/layout(restaurant.getRestaurantName)/*6.38*/{_display_(Seq[Any](format.raw/*6.39*/("""
     """),format.raw/*7.5*/("""<h2>"""),_display_(/*7.10*/restaurant/*7.20*/.getRestaurantName),format.raw/*7.38*/("""</h2>
 
     <input value="Edit restaurant" type="button" onclick="window.location.href='"""),_display_(/*9.82*/routes/*9.88*/.RestaurantController.editRestaurant(restaurant.getRestaurantName)),format.raw/*9.154*/("""'"/> <input value="Remove restaurant" type="button" onclick="window.location.href='"""),_display_(/*9.238*/routes/*9.244*/.RestaurantController.destroyRestaurant(restaurant.getRestaurantName)),format.raw/*9.313*/("""'"/>
@@ -74,10 +74,10 @@ Seq[Any](format.raw/*4.27*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-10T15:46:00.269
+                  DATE: 2019-12-10T15:58:47.133
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/restaurantcard.scala.html
-                  HASH: a240d3420c7b45f703c958a4bde0e7f151dc7a4a
-                  MATRIX: 656->1|688->28|1021->48|1141->73|1171->78|1218->117|1256->118|1288->124|1319->129|1337->139|1375->157|1491->247|1505->253|1592->319|1703->403|1718->409|1808->478|2094->737|2113->747|2147->760|2253->839|2272->849|2300->856|2410->939|2429->949|2461->960
+                  HASH: 9e4d30087c381191f5b92ec321d5911e3e790b65
+                  MATRIX: 656->1|688->28|1021->48|1141->73|1171->78|1215->114|1253->115|1285->121|1316->126|1334->136|1372->154|1488->244|1502->250|1589->316|1700->400|1715->406|1805->475|2091->734|2110->744|2144->757|2250->836|2269->846|2297->853|2407->936|2426->946|2458->957
                   LINES: 24->1|25->2|30->4|35->4|37->6|37->6|37->6|38->7|38->7|38->7|38->7|40->9|40->9|40->9|40->9|40->9|40->9|50->19|50->19|50->19|54->23|54->23|54->23|58->27|58->27|58->27
                   -- GENERATED --
               */

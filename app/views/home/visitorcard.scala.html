@@ -3,7 +3,7 @@
 
 @(visitor : Visitor)
 
-@layout("@visitor.getFirstName"){
+@layout(visitor.getFirstName){
     <h2>@visitor.getFirstName</h2>
 
     <input value="Edit visitor" type="button" onclick="window.location.href='@routes.VisitorController.editVisitor(visitor.getFirstName)'"/> <input value="Remove visitor" type="submit" onclick="window.location.href='@routes.VisitorController.destroyVisitor(visitor.getFirstName)'"/>

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Mon Dec 09 22:00:37 GMT+03:00 2019
+// @DATE:Tue Dec 10 17:49:34 GMT+03:00 2019
 
 import play.api.mvc.Call
 
@@ -118,6 +118,21 @@ package controllers {
     def updateVisitor(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "visitor/edit")
+    }
+  
+  }
+
+  // @LINE:24
+  class ReverseAssets(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:24
+    def versioned(file:String): Call = {
+      implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public"))); _rrc
+      Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[String]].unbind("file", file))
     }
   
   }

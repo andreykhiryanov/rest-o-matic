@@ -2,8 +2,20 @@
 <html>
     <head>
         <title>@title</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/bootstrap.min.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/bootstrap-theme.min.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+
+        <link rel="icon" type="">
+
     </head>
     <body>
-        @body
+        <div class="container">
+            @body
+        </div>
+
+        <script src="@routes.Assets.versioned("javascripts/jquery-3.4.1.min.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/bootstrap.min.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/main.js")"></script>
     </body>
 </html>

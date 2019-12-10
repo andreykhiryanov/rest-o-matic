@@ -12,3 +12,6 @@ libraryDependencies += javaJdbc
 libraryDependencies ++= Seq(evolutions, jdbc)
 // https://mvnrepository.com/artifact/org.postgresql/postgresql
 libraryDependencies += "org.postgresql" % "postgresql" % "42.2.8"
+libraryDependencies ++= Seq(
+  "com.adrianhurt" %% "play-bootstrap" % "1.5.1-P27-B4"
+)
