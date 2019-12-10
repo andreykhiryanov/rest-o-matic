@@ -21,7 +21,7 @@ import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
-/*1.2*/import entities.Visitor
+/*1.2*/import models.Visitor
 
 object createvisitor extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[Form[Visitor],play.twirl.api.HtmlFormat.Appendable] {
 
@@ -63,10 +63,10 @@ Seq[Any](format.raw/*2.30*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-10T09:49:27.749
+                  DATE: 2019-12-10T12:36:49.957
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/createvisitor.scala.html
-                  HASH: 63e220f88f5217afe1ceb42a5ed1e5d295f69116
-                  MATRIX: 656->1|999->27|1100->58|1145->55|1173->75|1201->78|1230->99|1268->100|1300->106|1361->142|1375->148|1444->209|1483->211|1520->222|1534->228|1590->264|1628->275|1643->281|1699->316|1737->327|1752->333|1805->365|1843->376|1858->382|1917->420|1956->432|2053->499
+                  HASH: 5895eba6f26994408d14f66c54533c4cf884388c
+                  MATRIX: 656->1|997->25|1098->56|1143->53|1171->73|1199->76|1228->97|1266->98|1298->104|1359->140|1373->146|1442->207|1481->209|1518->220|1532->226|1588->262|1626->273|1641->279|1697->314|1735->325|1750->331|1803->363|1841->374|1856->380|1915->418|1954->430|2051->497
                   LINES: 24->1|29->2|32->3|35->2|36->4|37->5|37->5|37->5|38->6|40->8|40->8|40->8|40->8|41->9|41->9|41->9|42->10|42->10|42->10|43->11|43->11|43->11|44->12|44->12|44->12|46->14|49->17
                   -- GENERATED --
               */

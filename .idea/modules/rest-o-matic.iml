@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module type="JAVA_MODULE" version="4">
+<module external.linked.project.id="root [file:/D:/Java/Projects/rest-o-matic/]" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="SBT" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Spring" name="Spring">
       <configuration />
@@ -26,6 +26,29 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="sbt: aopalliance:aopalliance:1.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.postgresql:postgresql:42.2.8:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.yaml:snakeyaml:1.21:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.reflections:reflections:0.9.11:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.javassist:javassist:3.21.0-GA:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.avaje:avaje-classpath-scanner-api:2.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.avaje:avaje-classpath-scanner:3.1.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.antlr:antlr4-runtime:4.7.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: io.ebean:persistence-api:2.2.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: io.ebean:ebean-migration:11.13.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: io.ebean:ebean-datasource-api:4.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: io.ebean:ebean-datasource:4.3.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: io.ebean:ebean-annotation:4.5:jar" level="project" />
+    <orderEntry type="library" name="sbt: io.ebean:ebean-agent:11.27.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: io.ebean:ebean:11.33.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.typesafe.play:play-jdbc-evolutions_2.13:2.7.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.typesafe.play:play-enhancer:1.2.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.typesafe.play:play-ebean_2.13:5.0.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: tyrex:tyrex:1.0.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.zaxxer:HikariCP:3.3.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.typesafe.play:play-jdbc_2.13:2.7.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.typesafe.play:play-jdbc-api_2.13:2.7.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.typesafe.play:play-java-jdbc_2.13:2.7.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.googlecode.usc:jdbcdslog:1.0.6.2:jar" level="project" />
     <orderEntry type="module-library">
       <library name="sbt: unmanaged-sources-and-docs">
         <CLASSES />

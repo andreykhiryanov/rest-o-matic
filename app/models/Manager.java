@@ -1,11 +1,10 @@
 package models;
 
-import entities.Restaurant;
-import entities.Visitor;
+import io.ebean.Model;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Manager {
+public class Manager extends Model {
     private static Manager manager = new Manager();
 
     public static Manager getManager() {

@@ -21,7 +21,7 @@ import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
-/*1.2*/import entities.Restaurant
+/*1.2*/import models.Restaurant
 
 object createrestaurant extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[Form[Restaurant],play.twirl.api.HtmlFormat.Appendable] {
 
@@ -63,10 +63,10 @@ Seq[Any](format.raw/*2.36*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-10T09:49:27.740
+                  DATE: 2019-12-10T12:36:49.947
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/createrestaurant.scala.html
-                  HASH: 72611ab51b3ddb474c2f510cc25d0cf5d0a6afca
-                  MATRIX: 656->1|1008->30|1115->67|1160->64|1188->84|1216->87|1248->111|1286->112|1318->118|1382->157|1396->163|1471->230|1510->232|1547->243|1561->249|1625->293|1663->304|1678->310|1738->349|1776->360|1791->366|1845->399|1883->410|1898->416|1956->453|1995->465|2095->535
+                  HASH: 20c555019b7d5a1e2b3b2b105a6314fe5df9d23c
+                  MATRIX: 656->1|1006->28|1113->65|1158->62|1186->82|1214->85|1246->109|1284->110|1316->116|1380->155|1394->161|1469->228|1508->230|1545->241|1559->247|1623->291|1661->302|1676->308|1736->347|1774->358|1789->364|1843->397|1881->408|1896->414|1954->451|1993->463|2093->533
                   LINES: 24->1|29->2|32->3|35->2|36->4|37->5|37->5|37->5|38->6|40->8|40->8|40->8|40->8|41->9|41->9|41->9|42->10|42->10|42->10|43->11|43->11|43->11|44->12|44->12|44->12|46->14|49->17
                   -- GENERATED --
               */

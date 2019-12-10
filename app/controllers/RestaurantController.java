@@ -1,7 +1,7 @@
 package controllers;
 
-import entities.Restaurant;
-import entities.Visitor;
+import models.Restaurant;
+import models.Visitor;
 import models.Manager;
 import play.data.Form;
 import play.data.FormFactory;
