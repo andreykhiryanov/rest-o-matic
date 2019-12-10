@@ -1,15 +1,23 @@
 package models;
 
+import io.ebean.Finder;
+import io.ebean.Model;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Visitor {
+@Entity
+public class Visitor extends Model {
 
+    @Id
     private String firstName;
     private String lastName;
     private String email;
     private String phoneNumber;
     private Set<Restaurant> visitedRestaurants = new HashSet<>();
+
+    public static Finder<String, Visitor> visitorFinder = new Finder<>(Visitor.class);
 
     public Visitor() {
     }

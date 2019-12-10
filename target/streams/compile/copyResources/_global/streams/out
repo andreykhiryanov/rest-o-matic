@@ -2,3 +2,4 @@
 [0m[[0m[0mdebug[0m] [0m[0m	(D:\Java\Projects\rest-o-matic\conf\application.conf,D:\Java\Projects\rest-o-matic\target\scala-2.13\classes\application.conf)[0m
 [0m[[0m[0mdebug[0m] [0m[0m	(D:\Java\Projects\rest-o-matic\conf\logback.xml,D:\Java\Projects\rest-o-matic\target\scala-2.13\classes\logback.xml)[0m
 [0m[[0m[0mdebug[0m] [0m[0m	(D:\Java\Projects\rest-o-matic\conf\routes,D:\Java\Projects\rest-o-matic\target\scala-2.13\classes\routes)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(D:\Java\Projects\rest-o-matic\conf\evolutions\default\1.sql,D:\Java\Projects\rest-o-matic\target\scala-2.13\classes\evolutions\default\1.sql)[0m

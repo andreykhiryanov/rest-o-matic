@@ -1,14 +1,15 @@
 package controllers;
 
+import models.Manager;
 import models.Restaurant;
 import models.Visitor;
-import models.Manager;
 import play.data.FormFactory;
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.home.index;
 
 import javax.inject.Inject;
+import java.util.List;
 
 public class HomeController extends Controller {
 
@@ -21,13 +22,12 @@ public class HomeController extends Controller {
 
     public Result greetings() {
 
-        // Fill in the test data only once.
-        if (firstRun) {
-            fillTestData();
-            firstRun = false;
-        }
+        // Getting all restaurants from the data base.
+        List<Restaurant> restaurants = Restaurant.restaurantFinder.all();
+        // Getting all visitors from the data base.
+        List<Visitor> visitors = Visitor.visitorFinder.all();
 
-        return ok(index.render(manager.getAllRestaurants(), manager.getAllVisitors()));
+        return ok(index.render(restaurants, visitors));
     }
 
     private void fillTestData() {
@@ -44,6 +44,19 @@ public class HomeController extends Controller {
             manager.visitRestaurant(visitor, astoria);
         }
 
+        // Filling up the data base
+        manager.putDataToDb();
+
+        // Cleaning up our collections.
+        for (Visitor visitor : manager.getAllVisitors()) {
+            manager.getAllVisitors().remove(visitor);
+        }
+        for (Restaurant restaurant : manager.getAllRestaurants()) {
+            manager.getAllRestaurants().remove(restaurant);
+        }
+
+        // Filling up our collections from the data base.
+        manager.getDataFromDb();
     }
 
 }

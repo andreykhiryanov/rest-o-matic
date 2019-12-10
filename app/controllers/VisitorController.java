@@ -30,8 +30,8 @@ public class VisitorController extends Controller {
         // TODO: remove deprecated method bindFromRequest
         Form<Visitor> visitorForm = formFactory.form(Visitor.class).bindFromRequest();
 
-        // Transferring new restaurant to the manager for storage in the collection.
-        manager.addNewVisitor(visitorForm.get());
+        Visitor newVisitor = visitorForm.get();
+        newVisitor.save();
 
         return redirect(routes.HomeController.greetings());
     }
@@ -39,7 +39,7 @@ public class VisitorController extends Controller {
     public Result editVisitor(String visitorName) {
 
         // Searching requested restaurant
-        Visitor visitor = manager.getVisitorByName(visitorName);
+        Visitor visitor = Visitor.visitorFinder.byId(visitorName);
 
         // If the requested restaurant was not found, the method 'getRestaurantByName' returns null.
         if (visitor == null) {
@@ -54,7 +54,7 @@ public class VisitorController extends Controller {
     public Result updateVisitor() {
 
         Visitor visitor = formFactory.form(Visitor.class).bindFromRequest().get();
-        Visitor oldVisitor = manager.getVisitorByName(visitor.getFirstName());
+        Visitor oldVisitor = Visitor.visitorFinder.byId(visitor.getFirstName());
 
         if (oldVisitor == null) {
             return notFound("You cannot change the name of the visitor yet!");
@@ -64,26 +64,27 @@ public class VisitorController extends Controller {
         oldVisitor.setLastName(visitor.getLastName());
         oldVisitor.setEmail(visitor.getEmail());
         oldVisitor.setPhoneNumber(visitor.getPhoneNumber());
+        oldVisitor.update();
 
         return redirect(routes.VisitorController.showVisitorCard(visitor.getFirstName()));
     }
 
     public Result destroyVisitor(String visitorName) {
 
-        Visitor destroyingVisitor = manager.getVisitorByName(visitorName);
+        Visitor destroyingVisitor = Visitor.visitorFinder.byId(visitorName);
 
-        for (Restaurant restaurant : manager.getAllRestaurants()) {
-            restaurant.getAcceptedVisitors().remove(destroyingVisitor);
+        if (destroyingVisitor == null) {
+            return notFound("Visitor not found!");
         }
 
-        manager.getAllVisitors().remove(destroyingVisitor);
+        destroyingVisitor.delete();
 
         return redirect(routes.HomeController.greetings());
     }
 
     public Result showVisitorCard(String visitorName) {
 
-        Visitor visitor = manager.getVisitorByName(visitorName);
+        Visitor visitor = Visitor.visitorFinder.byId(visitorName);
 
         if (visitor == null) {
             return notFound("Visitor not found!");

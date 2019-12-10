@@ -1,12 +1,12 @@
-2019-12-10 12:59:59,785 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-2 - application.conf @ file:/D:/Java/Projects/rest-o-matic/target/scala-2.13/classes/application.conf: 19: user is deprecated, use username instead
-2019-12-10 12:59:59,787 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-2 - Database [default] initialized at jdbc:postgresql://127.0.0.1/postgres
-2019-12-10 12:59:59,795 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-2 - Creating Pool for datasource 'default'
-2019-12-10 13:00:00,878 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-2 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-12-10 15:52:25,192 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-10 - application.conf @ file:/D:/Java/Projects/rest-o-matic/target/scala-2.13/classes/application.conf: 19: user is deprecated, use username instead
+2019-12-10 15:52:25,194 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-10 - Database [default] initialized at jdbc:postgresql://127.0.0.1/postgres
+2019-12-10 15:52:25,201 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-10 - Creating Pool for datasource 'default'
+2019-12-10 15:52:26,273 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-10 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2019-12-10 13:00:00,883 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-2 - Application started (Dev) (no global state)
-2019-12-10 13:13:21,494 [INFO] from play.core.server.AkkaHttpServer in pool-12-thread-5 - Stopping server...
-2019-12-10 13:13:21,695 [INFO] from application in application-akka.actor.default-dispatcher-3 - Shutting down connection pool.
+2019-12-10 15:52:26,280 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-10 - Application started (Dev) (no global state)
+2019-12-10 15:53:49,646 [INFO] from play.core.server.AkkaHttpServer in pool-12-thread-6 - Stopping server...
+2019-12-10 15:53:49,661 [INFO] from application in application-akka.actor.default-dispatcher-4 - Shutting down connection pool.

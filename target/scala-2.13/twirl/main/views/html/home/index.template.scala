@@ -25,15 +25,15 @@ import play.core.j.PlayFormsMagicForJava._
 /*2.2*/import models.Visitor
 /*3.2*/import helper._
 
-object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[Set[Restaurant],Set[Visitor],play.twirl.api.HtmlFormat.Appendable] {
+object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[List[Restaurant],List[Visitor],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*5.2*/(restaurants : Set[Restaurant])(visitors : Set[Visitor]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*5.2*/(restaurants : List[Restaurant])(visitors : List[Visitor]):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*5.58*/("""
+Seq[Any](format.raw/*5.60*/("""
 
 """),_display_(/*7.2*/layout("Welcome!")/*7.20*/{_display_(Seq[Any](format.raw/*7.21*/("""
     """),format.raw/*8.5*/("""<h1>Welcome to the Rest-o-matic!</h1>
@@ -71,9 +71,9 @@ Seq[Any](format.raw/*5.58*/("""
     }
   }
 
-  def render(restaurants:Set[Restaurant],visitors:Set[Visitor]): play.twirl.api.HtmlFormat.Appendable = apply(restaurants)(visitors)
+  def render(restaurants:List[Restaurant],visitors:List[Visitor]): play.twirl.api.HtmlFormat.Appendable = apply(restaurants)(visitors)
 
-  def f:((Set[Restaurant]) => (Set[Visitor]) => play.twirl.api.HtmlFormat.Appendable) = (restaurants) => (visitors) => apply(restaurants)(visitors)
+  def f:((List[Restaurant]) => (List[Visitor]) => play.twirl.api.HtmlFormat.Appendable) = (restaurants) => (visitors) => apply(restaurants)(visitors)
 
   def ref: this.type = this
 
@@ -82,10 +82,10 @@ Seq[Any](format.raw/*5.58*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-10T12:36:49.980
+                  DATE: 2019-12-10T15:10:10.646
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/index.scala.html
-                  HASH: 09dbdc39b288be032477dcbe9515160457edd674
-                  MATRIX: 656->1|688->28|717->52|1059->72|1210->128|1240->133|1266->151|1304->152|1336->158|1484->279|1499->285|1561->325|1667->403|1683->409|1739->443|1959->636|2005->666|2045->668|2087->682|2176->744|2191->750|2283->820|2314->823|2334->833|2374->851|2444->890|2477->896|2685->1077|2725->1101|2765->1103|2807->1117|2896->1179|2911->1185|2989->1241|3020->1244|3037->1251|3072->1264|3102->1266|3119->1273|3153->1285|3223->1324|3256->1330
+                  HASH: 5c48c9f71119af095ce367810e94e691b2d9b882
+                  MATRIX: 656->1|688->28|717->52|1061->72|1214->130|1244->135|1270->153|1308->154|1340->160|1488->281|1503->287|1565->327|1671->405|1687->411|1743->445|1963->638|2009->668|2049->670|2091->684|2180->746|2195->752|2287->822|2318->825|2338->835|2378->853|2448->892|2481->898|2689->1079|2729->1103|2769->1105|2811->1119|2900->1181|2915->1187|2993->1243|3024->1246|3041->1253|3076->1266|3106->1268|3123->1275|3157->1287|3227->1326|3260->1332
                   LINES: 24->1|25->2|26->3|31->5|36->5|38->7|38->7|38->7|39->8|41->10|41->10|41->10|41->10|41->10|41->10|50->19|50->19|50->19|51->20|52->21|52->21|52->21|52->21|52->21|52->21|54->23|55->24|63->32|63->32|63->32|64->33|65->34|65->34|65->34|65->34|65->34|65->34|65->34|65->34|65->34|67->36|68->37
                   -- GENERATED --
               */

@@ -27,4 +27,20 @@
             <td>@restaurant.getAddress</td>
         </tr>
     </table>
+
+    <h3>Accepted visitors</h3>
+
+    <form name="kick" method="post">
+        <select name='visitors' multiple size="5">
+        @for(visitor <- restaurant.getAcceptedVisitors) {
+            <option value=@visitor.getFirstName>@visitor.getFirstName @visitor.getLastName</option>
+        }
+        </select>
+        <br><br>
+        <input type="submit" value="Kick visitor">
+    </form>
+
+    <h3>Have not visited</h3>
+
+    <input value="Accept visitor" type="button" onclick=""/>
 }

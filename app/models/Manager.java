@@ -1,10 +1,11 @@
 package models;
 
-import io.ebean.Model;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
-public class Manager extends Model {
+public class Manager {
+
     private static Manager manager = new Manager();
 
     public static Manager getManager() {
@@ -35,13 +36,44 @@ public class Manager extends Model {
         restaurant.getAcceptedVisitors().remove(visitor);
     }
 
-    // Restaurants' methods.
+    // Testing methods.
 
     public void fillTestRestaurants() {
         addNewRestaurant("Astoria", "ZAO GK Astoria", 783801001, "Bolshaya Morskaya, 39");
         addNewRestaurant("Legran", "OOO Legran", 784101001, "Millionnaya, 4/1");
         addNewRestaurant("Letuchiy Gollandec", "OOO Letuchiy Gollandec", 780101001, "Maliy, 63");
     }
+
+    public void fillTestVisitors() {
+        addNewVisitor("Zitella", "Menendes", "zmenendes0@bing.com", "239-924-2788");
+        addNewVisitor("Nico", "Drivers", "ndrivers0@buzzfeed.com", "693-566-8984");
+        addNewVisitor("Roderich", "Caulton", "rcaulton1@tripadvisor.com", "191-729-0261");
+        addNewVisitor("Deana", "Rodder", "drodder2@smugmug.com", "184-853-9441");
+        addNewVisitor("Shelby", "Gori", "sgori3@blogspot.com", "365-555-8407");
+        addNewVisitor("Myron", "Zannuto", "mzannuto4@usatoday.com", "233-524-4742");
+    }
+
+    public void getDataFromDb() {
+        // Getting all visitors from the data base.
+        List<Visitor> visitors = Visitor.visitorFinder.all();
+        // Getting all restaurants from the data base.
+        List<Restaurant> restaurants = Restaurant.restaurantFinder.all();
+
+        allVisitors.addAll(visitors);
+        allRestaurants.addAll(restaurants);
+    }
+
+    public void putDataToDb() {
+        for (Restaurant restaurant : allRestaurants) {
+            restaurant.save();
+        }
+
+        for (Visitor visitor : allVisitors) {
+            visitor.save();
+        }
+    }
+
+    // Restaurants' methods.
 
     public Restaurant getRestaurantByName(String requestedRestaurantName) {
         for (Restaurant restaurant : allRestaurants) {
@@ -62,15 +94,6 @@ public class Manager extends Model {
     }
 
     // Visitors' methods.
-
-    public void fillTestVisitors() {
-        addNewVisitor("Zitella", "Menendes", "zmenendes0@bing.com", "239-924-2788");
-        addNewVisitor("Nico", "Drivers", "ndrivers0@buzzfeed.com", "693-566-8984");
-        addNewVisitor("Roderich", "Caulton", "rcaulton1@tripadvisor.com", "191-729-0261");
-        addNewVisitor("Deana", "Rodder", "drodder2@smugmug.com", "184-853-9441");
-        addNewVisitor("Shelby", "Gori", "sgori3@blogspot.com", "365-555-8407");
-        addNewVisitor("Myron", "Zannuto", "mzannuto4@usatoday.com", "233-524-4742");
-    }
 
     public Visitor getVisitorByName(String requestedVisitorName) {
         for (Visitor visitor  : allVisitors) {

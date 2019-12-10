@@ -30,8 +30,8 @@ public class RestaurantController extends Controller {
         // TODO: remove deprecated method bindFromRequest
         Form<Restaurant> restaurantForm = formFactory.form(Restaurant.class).bindFromRequest();
 
-        // Transferring new restaurant to the manager for storage in the collection.
-        manager.addNewRestaurant(restaurantForm.get());
+        Restaurant newRestaurant = restaurantForm.get();
+        newRestaurant.save();
 
         return redirect(routes.HomeController.greetings());
 
@@ -40,7 +40,7 @@ public class RestaurantController extends Controller {
     public Result editRestaurant(String restaurantName) {
 
         // Searching requested restaurant
-        Restaurant restaurant = manager.getRestaurantByName(restaurantName);
+        Restaurant restaurant = Restaurant.restaurantFinder.byId(restaurantName);
 
         // If the requested restaurant was not found, the method 'getRestaurantByName' returns null.
         if (restaurant == null) {
@@ -55,10 +55,10 @@ public class RestaurantController extends Controller {
     public Result updateRestaurant() {
 
         Restaurant restaurant = formFactory.form(Restaurant.class).bindFromRequest().get();
-        Restaurant oldRestaurant = manager.getRestaurantByName(restaurant.getRestaurantName());
+        Restaurant oldRestaurant = Restaurant.restaurantFinder.byId(restaurant.getRestaurantName());
 
         if (oldRestaurant == null) {
-            return notFound("You cannot change the name of the restaurant yet!");
+            return notFound("You cannot change the name of the restaurant, because it is the ID of the restaurant!");
         }
 
         oldRestaurant.setRestaurantName(restaurant.getRestaurantName());
@@ -66,20 +66,20 @@ public class RestaurantController extends Controller {
         oldRestaurant.setInn(restaurant.getInn());
         oldRestaurant.setAddress(restaurant.getAddress());
 
+        oldRestaurant.update();
+
         return redirect(routes.RestaurantController.showRestaurantCard(restaurant.getRestaurantName()));
     }
 
     public Result destroyRestaurant(String restaurantName) {
 
-        Restaurant destroyingRestaurant = manager.getRestaurantByName(restaurantName);
+        Restaurant destroyingRestaurant = Restaurant.restaurantFinder.byId(restaurantName);
 
-        // Removing this restaurant from visitors' "visited restaurants".
-        for (Visitor visitor : manager.getAllVisitors()) {
-            visitor.getVisitedRestaurants().remove(destroyingRestaurant);
+        if (destroyingRestaurant == null) {
+            return notFound("Restaurant not found!");
         }
 
-        // Removing the restaurant at all.
-        manager.getAllRestaurants().remove(destroyingRestaurant);
+        destroyingRestaurant.delete();
 
         return redirect(routes.HomeController.greetings());
     }
@@ -87,7 +87,7 @@ public class RestaurantController extends Controller {
     public Result showRestaurantCard(String restaurantName) {
 
         // Searching requested restaurant
-        Restaurant restaurant = manager.getRestaurantByName(restaurantName);
+        Restaurant restaurant = Restaurant.restaurantFinder.byId(restaurantName);
 
         if (restaurant == null) {
             return notFound("Restaurant not found!");
