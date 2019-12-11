@@ -84,6 +84,11 @@ public class RestaurantController extends Controller {
             return notFound("Restaurant not found!");
         }
 
+        // Removing all restaurant's links.
+        for (Link link : Link.linkFinder.all()) {
+            if (link.getRestaurantName().equals(restaurantName)) link.delete();
+        }
+
         destroyingRestaurant.delete();
 
         return redirect(routes.HomeController.greetings());

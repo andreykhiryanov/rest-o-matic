@@ -1,7 +1,7 @@
 @import models.Visitor
 @import helper._
 
-@(visitor : Visitor)
+@(visitor : Visitor)(restaurants : List[Restaurant])
 
 @layout(visitor.getFirstName){
     <h2>@visitor.getFirstName</h2>
@@ -26,10 +26,21 @@
     </table>
     <h2>Visited Restaurants</h2>
     <br>
+    @if(restaurants.isEmpty) {
+        <table class="table table-striped">
+            <tr>
+                <td>@visitor.getFirstName has not visited any restaurants<td>
+            </tr>
+        </table>
+    }
+
     <table class="table table-striped">
-        <tr>
-            <td>@visitor.getFirstName has not visited any restaurants<td>
-        </tr>
+        @for(restaurant <- restaurants) {
+            <tr>
+                <td><a href="@routes.RestaurantController.showRestaurantCard(restaurant.getRestaurantName)">@restaurant.getRestaurantName</a></td>
+            </tr>
+        }
     </table>
+
     <a class="btn btn-primary" href="">Visit Restaurant</a> <a class="btn btn-danger" href="">Forget Restaurant</a>
 }

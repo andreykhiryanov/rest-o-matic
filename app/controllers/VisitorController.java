@@ -1,5 +1,6 @@
 package controllers;
 
+import models.Link;
 import models.Restaurant;
 import models.Visitor;
 import models.Manager;
@@ -11,6 +12,8 @@ import views.html.home.createvisitor;
 import views.html.home.editvisitor;
 import views.html.home.visitorcard;
 import javax.inject.Inject;
+import java.util.ArrayList;
+import java.util.List;
 
 public class VisitorController extends Controller {
 
@@ -79,6 +82,11 @@ public class VisitorController extends Controller {
             return notFound("Visitor not found!");
         }
 
+        // Removing all visitor's links.
+        for (Link link : Link.linkFinder.all()) {
+            if (link.getVisitorName().equals(visitorName)) link.delete();
+        }
+
         destroyingVisitor.delete();
 
         return redirect(routes.HomeController.greetings());
@@ -92,7 +100,16 @@ public class VisitorController extends Controller {
             return notFound("Visitor not found!");
         }
 
-        return ok(visitorcard.render(visitor));
+        List<Restaurant> restaurants = new ArrayList<>();
+
+        for (Link link : Link.linkFinder.all()) {
+            if (link.getVisitorName().equals(visitorName)) {
+                Restaurant restaurant = Restaurant.restaurantFinder.byId(link.getRestaurantName());
+                if (restaurant != null) restaurants.add(restaurant);
+            }
+        }
+
+        return ok(visitorcard.render(visitor, restaurants));
 
     }
 

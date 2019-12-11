@@ -36,10 +36,11 @@
             </tr>
         </table>
     }
+
     <table class="table table-striped">
     @for(visitor <- visitors) {
         <tr>
-            <td>@visitor.getFirstName @visitor.getLastName<td>
+            <td><a href="@routes.VisitorController.showVisitorCard(visitor.getFirstName)">@visitor.getFirstName @visitor.getLastName</a></td>
         </tr>
     }
     </table>

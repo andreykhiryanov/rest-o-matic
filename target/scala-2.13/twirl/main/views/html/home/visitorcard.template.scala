@@ -24,15 +24,15 @@ import play.core.j.PlayFormsMagicForJava._
 /*1.2*/import models.Visitor
 /*2.2*/import helper._
 
-object visitorcard extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[Visitor,play.twirl.api.HtmlFormat.Appendable] {
+object visitorcard extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[Visitor,List[Restaurant],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*4.2*/(visitor : Visitor):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*4.2*/(visitor : Visitor)(restaurants : List[Restaurant]):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*4.21*/("""
+Seq[Any](format.raw/*4.53*/("""
 
 """),_display_(/*6.2*/layout(visitor.getFirstName)/*6.30*/{_display_(Seq[Any](format.raw/*6.31*/("""
     """),format.raw/*7.5*/("""<h2>"""),_display_(/*7.10*/visitor/*7.17*/.getFirstName),format.raw/*7.30*/("""</h2>
@@ -57,20 +57,31 @@ Seq[Any](format.raw/*4.21*/("""
     </table>
     <h2>Visited Restaurants</h2>
     <br>
-    <table class="table table-striped">
-        <tr>
-            <td>"""),_display_(/*31.18*/visitor/*31.25*/.getFirstName),format.raw/*31.38*/(""" """),format.raw/*31.39*/("""has not visited any restaurants<td>
-        </tr>
-    </table>
+    """),_display_(/*29.6*/if(restaurants.isEmpty)/*29.29*/ {_display_(Seq[Any](format.raw/*29.31*/("""
+        """),format.raw/*30.9*/("""<table class="table table-striped">
+            <tr>
+                <td>"""),_display_(/*32.22*/visitor/*32.29*/.getFirstName),format.raw/*32.42*/(""" """),format.raw/*32.43*/("""has not visited any restaurants<td>
+            </tr>
+        </table>
+    """)))}),format.raw/*35.6*/("""
+
+    """),format.raw/*37.5*/("""<table class="table table-striped">
+        """),_display_(/*38.10*/for(restaurant <- restaurants) yield /*38.40*/ {_display_(Seq[Any](format.raw/*38.42*/("""
+            """),format.raw/*39.13*/("""<tr>
+                <td><a href=""""),_display_(/*40.31*/routes/*40.37*/.RestaurantController.showRestaurantCard(restaurant.getRestaurantName)),format.raw/*40.107*/("""">"""),_display_(/*40.110*/restaurant/*40.120*/.getRestaurantName),format.raw/*40.138*/("""</a></td>
+            </tr>
+        """)))}),format.raw/*42.10*/("""
+    """),format.raw/*43.5*/("""</table>
+
     <a class="btn btn-primary" href="">Visit Restaurant</a> <a class="btn btn-danger" href="">Forget Restaurant</a>
 """)))}))
       }
     }
   }
 
-  def render(visitor:Visitor): play.twirl.api.HtmlFormat.Appendable = apply(visitor)
+  def render(visitor:Visitor,restaurants:List[Restaurant]): play.twirl.api.HtmlFormat.Appendable = apply(visitor)(restaurants)
 
-  def f:((Visitor) => play.twirl.api.HtmlFormat.Appendable) = (visitor) => apply(visitor)
+  def f:((Visitor) => (List[Restaurant]) => play.twirl.api.HtmlFormat.Appendable) = (visitor) => (restaurants) => apply(visitor)(restaurants)
 
   def ref: this.type = this
 
@@ -79,11 +90,11 @@ Seq[Any](format.raw/*4.21*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-11T14:50:09.976
+                  DATE: 2019-12-11T18:21:19.099
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/visitorcard.scala.html
-                  HASH: 7bfbb3defb7ff88aacdc07a9ef12d2fd14d6781f
-                  MATRIX: 656->1|685->25|1012->45|1126->64|1156->69|1192->97|1230->98|1262->104|1293->109|1308->116|1341->129|1422->184|1436->190|1508->242|1587->294|1602->300|1678->355|1881->531|1897->538|1930->550|2038->631|2054->638|2084->647|2192->728|2208->735|2244->750|2423->902|2439->909|2473->922|2502->923
-                  LINES: 24->1|25->2|30->4|35->4|37->6|37->6|37->6|38->7|38->7|38->7|38->7|40->9|40->9|40->9|40->9|40->9|40->9|47->16|47->16|47->16|51->20|51->20|51->20|55->24|55->24|55->24|62->31|62->31|62->31|62->31
+                  HASH: 65366311a90345b16388cd445193fdf7ab12bfdc
+                  MATRIX: 656->1|685->25|1029->45|1175->96|1205->101|1241->129|1279->130|1311->136|1342->141|1357->148|1390->161|1471->216|1485->222|1557->274|1636->326|1651->332|1727->387|1930->563|1946->570|1979->582|2087->663|2103->670|2133->679|2241->760|2257->767|2293->782|2404->867|2436->890|2476->892|2513->902|2616->978|2632->985|2666->998|2695->999|2804->1078|2839->1086|2912->1132|2958->1162|2998->1164|3040->1178|3103->1214|3118->1220|3210->1290|3241->1293|3261->1303|3301->1321|3371->1360|3404->1366
+                  LINES: 24->1|25->2|30->4|35->4|37->6|37->6|37->6|38->7|38->7|38->7|38->7|40->9|40->9|40->9|40->9|40->9|40->9|47->16|47->16|47->16|51->20|51->20|51->20|55->24|55->24|55->24|60->29|60->29|60->29|61->30|63->32|63->32|63->32|63->32|66->35|68->37|69->38|69->38|69->38|70->39|71->40|71->40|71->40|71->40|71->40|71->40|73->42|74->43
                   -- GENERATED --
               */
           
