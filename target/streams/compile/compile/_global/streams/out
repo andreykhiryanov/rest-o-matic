@@ -1,19 +1,63 @@
-[0m[[0m[31merror[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\layout.scala.html:5:68: value versioned is not a member of controllers.ReverseAssets[0m
-[0m[[0m[31merror[0m] [0m[0m        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/bootstrap.min.css")">[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                   ^[0m
-[0m[[0m[31merror[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\layout.scala.html:6:68: value versioned is not a member of controllers.ReverseAssets[0m
-[0m[[0m[31merror[0m] [0m[0m        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/bootstrap-theme.min.css")">[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                   ^[0m
-[0m[[0m[31merror[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\layout.scala.html:7:68: value versioned is not a member of controllers.ReverseAssets[0m
-[0m[[0m[31merror[0m] [0m[0m        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                   ^[0m
-[0m[[0m[31merror[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\layout.scala.html:17:37: value versioned is not a member of controllers.ReverseAssets[0m
-[0m[[0m[31merror[0m] [0m[0m        <script src="@routes.Assets.versioned("javascripts/jquery-3.4.1.min.js")"></script>[0m
-[0m[[0m[31merror[0m] [0m[0m                                    ^[0m
-[0m[[0m[31merror[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\layout.scala.html:18:37: value versioned is not a member of controllers.ReverseAssets[0m
-[0m[[0m[31merror[0m] [0m[0m        <script src="@routes.Assets.versioned("javascripts/bootstrap.min.js")"></script>[0m
-[0m[[0m[31merror[0m] [0m[0m                                    ^[0m
-[0m[[0m[31merror[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\layout.scala.html:19:37: value versioned is not a member of controllers.ReverseAssets[0m
-[0m[[0m[31merror[0m] [0m[0m        <script src="@routes.Assets.versioned("javascripts/main.js")"></script>[0m
-[0m[[0m[31merror[0m] [0m[0m                                    ^[0m
-[0m[[0m[31merror[0m] [0m[0m6 errors found[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\createrestaurant.scala.html:10:61: symbol literal is deprecated; use Symbol("class") instead[0m
+[0m[[0m[33mwarn[0m] [0m[0m        @helper.inputText(restaurantForm("restaurantName"), 'class -> "form-control")[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\createrestaurant.scala.html:11:56: symbol literal is deprecated; use Symbol("class") instead[0m
+[0m[[0m[33mwarn[0m] [0m[0m        @helper.inputText(restaurantForm("legalName"), 'class -> "form-control")[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                       ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\createrestaurant.scala.html:12:50: symbol literal is deprecated; use Symbol("class") instead[0m
+[0m[[0m[33mwarn[0m] [0m[0m        @helper.inputText(restaurantForm("inn"), 'class -> "form-control")[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                 ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\createrestaurant.scala.html:13:54: symbol literal is deprecated; use Symbol("class") instead[0m
+[0m[[0m[33mwarn[0m] [0m[0m        @helper.inputText(restaurantForm("address"), 'class -> "form-control")[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                     ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\createrestaurant.scala.html:10:26: method implicitJavaMessages in object PlayMagicForJava is deprecated (since 2.7.0): See https://www.playframework.com/documentation/latest/JavaHttpContextMigration27[0m
+[0m[[0m[33mwarn[0m] [0m[0m        @helper.inputText(restaurantForm("restaurantName"), 'class -> "form-control")[0m
+[0m[[0m[33mwarn[0m] [0m[0m                         ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\createrestaurant.scala.html:11:26: method implicitJavaMessages in object PlayMagicForJava is deprecated (since 2.7.0): See https://www.playframework.com/documentation/latest/JavaHttpContextMigration27[0m
+[0m[[0m[33mwarn[0m] [0m[0m        @helper.inputText(restaurantForm("legalName"), 'class -> "form-control")[0m
+[0m[[0m[33mwarn[0m] [0m[0m                         ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\createrestaurant.scala.html:12:26: method implicitJavaMessages in object PlayMagicForJava is deprecated (since 2.7.0): See https://www.playframework.com/documentation/latest/JavaHttpContextMigration27[0m
+[0m[[0m[33mwarn[0m] [0m[0m        @helper.inputText(restaurantForm("inn"), 'class -> "form-control")[0m
+[0m[[0m[33mwarn[0m] [0m[0m                         ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\createrestaurant.scala.html:13:26: method implicitJavaMessages in object PlayMagicForJava is deprecated (since 2.7.0): See https://www.playframework.com/documentation/latest/JavaHttpContextMigration27[0m
+[0m[[0m[33mwarn[0m] [0m[0m        @helper.inputText(restaurantForm("address"), 'class -> "form-control")[0m
+[0m[[0m[33mwarn[0m] [0m[0m                         ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\createvisitor.scala.html:9:26: method implicitJavaMessages in object PlayMagicForJava is deprecated (since 2.7.0): See https://www.playframework.com/documentation/latest/JavaHttpContextMigration27[0m
+[0m[[0m[33mwarn[0m] [0m[0m        @helper.inputText(visitorForm("firstName"))[0m
+[0m[[0m[33mwarn[0m] [0m[0m                         ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\createvisitor.scala.html:10:26: method implicitJavaMessages in object PlayMagicForJava is deprecated (since 2.7.0): See https://www.playframework.com/documentation/latest/JavaHttpContextMigration27[0m
+[0m[[0m[33mwarn[0m] [0m[0m        @helper.inputText(visitorForm("lastName"))[0m
+[0m[[0m[33mwarn[0m] [0m[0m                         ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\createvisitor.scala.html:11:26: method implicitJavaMessages in object PlayMagicForJava is deprecated (since 2.7.0): See https://www.playframework.com/documentation/latest/JavaHttpContextMigration27[0m
+[0m[[0m[33mwarn[0m] [0m[0m        @helper.inputText(visitorForm("email"))[0m
+[0m[[0m[33mwarn[0m] [0m[0m                         ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\createvisitor.scala.html:12:26: method implicitJavaMessages in object PlayMagicForJava is deprecated (since 2.7.0): See https://www.playframework.com/documentation/latest/JavaHttpContextMigration27[0m
+[0m[[0m[33mwarn[0m] [0m[0m        @helper.inputText(visitorForm("phoneNumber"))[0m
+[0m[[0m[33mwarn[0m] [0m[0m                         ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\editrestaurant.scala.html:8:26: method implicitJavaMessages in object PlayMagicForJava is deprecated (since 2.7.0): See https://www.playframework.com/documentation/latest/JavaHttpContextMigration27[0m
+[0m[[0m[33mwarn[0m] [0m[0m        @helper.inputText(restaurantForm("restaurantName"))[0m
+[0m[[0m[33mwarn[0m] [0m[0m                         ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\editrestaurant.scala.html:9:26: method implicitJavaMessages in object PlayMagicForJava is deprecated (since 2.7.0): See https://www.playframework.com/documentation/latest/JavaHttpContextMigration27[0m
+[0m[[0m[33mwarn[0m] [0m[0m        @helper.inputText(restaurantForm("legalName"))[0m
+[0m[[0m[33mwarn[0m] [0m[0m                         ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\editrestaurant.scala.html:10:26: method implicitJavaMessages in object PlayMagicForJava is deprecated (since 2.7.0): See https://www.playframework.com/documentation/latest/JavaHttpContextMigration27[0m
+[0m[[0m[33mwarn[0m] [0m[0m        @helper.inputText(restaurantForm("inn"))[0m
+[0m[[0m[33mwarn[0m] [0m[0m                         ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\editrestaurant.scala.html:11:26: method implicitJavaMessages in object PlayMagicForJava is deprecated (since 2.7.0): See https://www.playframework.com/documentation/latest/JavaHttpContextMigration27[0m
+[0m[[0m[33mwarn[0m] [0m[0m        @helper.inputText(restaurantForm("address"))[0m
+[0m[[0m[33mwarn[0m] [0m[0m                         ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\editvisitor.scala.html:9:26: method implicitJavaMessages in object PlayMagicForJava is deprecated (since 2.7.0): See https://www.playframework.com/documentation/latest/JavaHttpContextMigration27[0m
+[0m[[0m[33mwarn[0m] [0m[0m        @helper.inputText(visitorForm("firstName"))[0m
+[0m[[0m[33mwarn[0m] [0m[0m                         ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\editvisitor.scala.html:10:26: method implicitJavaMessages in object PlayMagicForJava is deprecated (since 2.7.0): See https://www.playframework.com/documentation/latest/JavaHttpContextMigration27[0m
+[0m[[0m[33mwarn[0m] [0m[0m        @helper.inputText(visitorForm("lastName"))[0m
+[0m[[0m[33mwarn[0m] [0m[0m                         ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\editvisitor.scala.html:11:26: method implicitJavaMessages in object PlayMagicForJava is deprecated (since 2.7.0): See https://www.playframework.com/documentation/latest/JavaHttpContextMigration27[0m
+[0m[[0m[33mwarn[0m] [0m[0m        @helper.inputText(visitorForm("email"))[0m
+[0m[[0m[33mwarn[0m] [0m[0m                         ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\views\home\editvisitor.scala.html:12:26: method implicitJavaMessages in object PlayMagicForJava is deprecated (since 2.7.0): See https://www.playframework.com/documentation/latest/JavaHttpContextMigration27[0m
+[0m[[0m[33mwarn[0m] [0m[0m        @helper.inputText(visitorForm("phoneNumber"))[0m
+[0m[[0m[33mwarn[0m] [0m[0m                         ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m20 warnings found[0m
+[0m[[0m[0minfo[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\controllers\RestaurantController.java: Some input files use or override a deprecated API.[0m
+[0m[[0m[0minfo[0m] [0m[0mD:\Java\Projects\rest-o-matic\app\controllers\RestaurantController.java: Recompile with -Xlint:deprecation for details.[0m

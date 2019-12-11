@@ -35,7 +35,7 @@ object editrestaurant extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl
 Seq[Any](format.raw/*2.36*/("""
 """),_display_(/*4.2*/layout("Edit Restaurant")/*4.27*/{_display_(Seq[Any](format.raw/*4.28*/("""
     """),format.raw/*5.5*/("""<h1>Edit Restaurant</h1>
-
+    <br>
     """),_display_(/*7.6*/helper/*7.12*/.form(action = routes.RestaurantController.updateRestaurant())/*7.74*/ {_display_(Seq[Any](format.raw/*7.76*/("""
         """),_display_(/*8.10*/helper/*8.16*/.inputText(restaurantForm("restaurantName"))),format.raw/*8.60*/("""
         """),_display_(/*9.10*/helper/*9.16*/.inputText(restaurantForm("legalName"))),format.raw/*9.55*/("""
@@ -62,10 +62,10 @@ Seq[Any](format.raw/*2.36*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-10T12:36:49.965
+                  DATE: 2019-12-11T10:42:09.518
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/editrestaurant.scala.html
-                  HASH: 4cbe667d1611dd783487447a02fb3f6cfce18f8d
-                  MATRIX: 656->1|1004->28|1111->65|1156->62|1184->83|1217->108|1255->109|1287->115|1345->148|1359->154|1429->216|1468->218|1505->229|1519->235|1583->279|1620->290|1634->296|1693->335|1731->346|1746->352|1800->385|1838->396|1853->402|1911->439|1950->451|2048->519
+                  HASH: 52d6c8249d3aea67a59b25c75cfc9056e647b9dd
+                  MATRIX: 656->1|1004->28|1111->65|1156->62|1184->83|1217->108|1255->109|1287->115|1353->156|1367->162|1437->224|1476->226|1513->237|1527->243|1591->287|1628->298|1642->304|1701->343|1739->354|1754->360|1808->393|1846->404|1861->410|1919->447|1958->459|2056->527
                   LINES: 24->1|29->2|32->3|35->2|36->4|36->4|36->4|37->5|39->7|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|42->10|42->10|42->10|43->11|43->11|43->11|45->13|48->16
                   -- GENERATED --
               */

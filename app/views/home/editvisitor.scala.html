@@ -4,7 +4,7 @@
 
 @layout("Edit Visitor"){
     <h1>Edit Visitor</h1>
-
+    <br>
     @helper.form(action = routes.VisitorController.updateVisitor()) {
         @helper.inputText(visitorForm("firstName"))
         @helper.inputText(visitorForm("lastName"))

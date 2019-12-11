@@ -3,7 +3,7 @@
 @import helper._
 @layout("Edit Restaurant"){
     <h1>Edit Restaurant</h1>
-
+    <br>
     @helper.form(action = routes.RestaurantController.updateRestaurant()) {
         @helper.inputText(restaurantForm("restaurantName"))
         @helper.inputText(restaurantForm("legalName"))

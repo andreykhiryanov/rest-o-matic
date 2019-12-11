@@ -4,15 +4,16 @@
 
 @layout("New Restaurant"){
     <h1>Create New Restaurant</h1>
-
+    <br>
     @helper.form(action = routes.RestaurantController.saveRestaurantChanges()) {
-        @helper.inputText(restaurantForm("restaurantName"))
-        @helper.inputText(restaurantForm("legalName"))
-        @helper.inputText(restaurantForm("inn"))
-        @helper.inputText(restaurantForm("address"))
+
+        @helper.inputText(restaurantForm("restaurantName"), 'class -> "form-control")
+        @helper.inputText(restaurantForm("legalName"), 'class -> "form-control")
+        @helper.inputText(restaurantForm("inn"), 'class -> "form-control")
+        @helper.inputText(restaurantForm("address"), 'class -> "form-control")
 
         <br>
 
-        <input type="submit" value="Create Restaurant">
+        <button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-plus-sign"></i> Create Restaurant</button>
     }
 }

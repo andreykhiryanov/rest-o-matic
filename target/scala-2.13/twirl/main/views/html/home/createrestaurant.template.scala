@@ -36,17 +36,18 @@ Seq[Any](format.raw/*2.36*/("""
 """),format.raw/*4.1*/("""
 """),_display_(/*5.2*/layout("New Restaurant")/*5.26*/{_display_(Seq[Any](format.raw/*5.27*/("""
     """),format.raw/*6.5*/("""<h1>Create New Restaurant</h1>
-
+    <br>
     """),_display_(/*8.6*/helper/*8.12*/.form(action = routes.RestaurantController.saveRestaurantChanges())/*8.79*/ {_display_(Seq[Any](format.raw/*8.81*/("""
-        """),_display_(/*9.10*/helper/*9.16*/.inputText(restaurantForm("restaurantName"))),format.raw/*9.60*/("""
-        """),_display_(/*10.10*/helper/*10.16*/.inputText(restaurantForm("legalName"))),format.raw/*10.55*/("""
-        """),_display_(/*11.10*/helper/*11.16*/.inputText(restaurantForm("inn"))),format.raw/*11.49*/("""
-        """),_display_(/*12.10*/helper/*12.16*/.inputText(restaurantForm("address"))),format.raw/*12.53*/("""
 
-        """),format.raw/*14.9*/("""<br>
+        """),_display_(/*10.10*/helper/*10.16*/.inputText(restaurantForm("restaurantName"), 'class -> "form-control")),format.raw/*10.86*/("""
+        """),_display_(/*11.10*/helper/*11.16*/.inputText(restaurantForm("legalName"), 'class -> "form-control")),format.raw/*11.81*/("""
+        """),_display_(/*12.10*/helper/*12.16*/.inputText(restaurantForm("inn"), 'class -> "form-control")),format.raw/*12.75*/("""
+        """),_display_(/*13.10*/helper/*13.16*/.inputText(restaurantForm("address"), 'class -> "form-control")),format.raw/*13.79*/("""
 
-        <input type="submit" value="Create Restaurant">
-    """)))}),format.raw/*17.6*/("""
+        """),format.raw/*15.9*/("""<br>
+
+        <button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-plus-sign"></i> Create Restaurant</button>
+    """)))}),format.raw/*18.6*/("""
 """)))}))
       }
     }
@@ -63,11 +64,11 @@ Seq[Any](format.raw/*2.36*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-10T12:36:49.947
+                  DATE: 2019-12-11T11:02:17.579
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/createrestaurant.scala.html
-                  HASH: 20c555019b7d5a1e2b3b2b105a6314fe5df9d23c
-                  MATRIX: 656->1|1006->28|1113->65|1158->62|1186->82|1214->85|1246->109|1284->110|1316->116|1380->155|1394->161|1469->228|1508->230|1545->241|1559->247|1623->291|1661->302|1676->308|1736->347|1774->358|1789->364|1843->397|1881->408|1896->414|1954->451|1993->463|2093->533
-                  LINES: 24->1|29->2|32->3|35->2|36->4|37->5|37->5|37->5|38->6|40->8|40->8|40->8|40->8|41->9|41->9|41->9|42->10|42->10|42->10|43->11|43->11|43->11|44->12|44->12|44->12|46->14|49->17
+                  HASH: e9f2e07ec053c64f2667c80eba18a78141e245a5
+                  MATRIX: 656->1|1006->28|1113->65|1158->62|1186->82|1214->85|1246->109|1284->110|1316->116|1388->163|1402->169|1477->236|1516->238|1556->251|1571->257|1662->327|1700->338|1715->344|1801->409|1839->420|1854->426|1934->485|1972->496|1987->502|2071->565|2110->577|2281->718
+                  LINES: 24->1|29->2|32->3|35->2|36->4|37->5|37->5|37->5|38->6|40->8|40->8|40->8|40->8|42->10|42->10|42->10|43->11|43->11|43->11|44->12|44->12|44->12|45->13|45->13|45->13|47->15|50->18
                   -- GENERATED --
               */
           
