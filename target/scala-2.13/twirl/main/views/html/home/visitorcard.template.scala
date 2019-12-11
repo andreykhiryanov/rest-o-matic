@@ -73,7 +73,61 @@ Seq[Any](format.raw/*4.53*/("""
         """)))}),format.raw/*42.10*/("""
     """),format.raw/*43.5*/("""</table>
 
-    <a class="btn btn-primary" href="">Visit Restaurant</a> <a class="btn btn-danger" href="">Forget Restaurant</a>
+        <!-- Modal window "Visit" start button -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalVisit">
+        Visit Restaurant
+    </button>
+
+        <!-- Modal window "Forget" start button -->
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModalForget">
+        Forget Restaurant
+    </button>
+
+        <!-- Modal window "Visit" -->
+    <div class="modal fade" id="myModalVisit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Choose a restaurant to visit</h4>
+                </div>
+                <div class="modal-body">
+
+                    ...
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Visit Restaurant</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Modal window "Forget" -->
+    <div class="modal fade" id="myModalForget" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Choose a restaurant to forget</h4>
+                </div>
+                <div class="modal-body">
+
+                    ...
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Forget Restaurant</button>
+                </div>
+            </div>
+        </div>
+    </div>
 """)))}))
       }
     }
@@ -90,9 +144,9 @@ Seq[Any](format.raw/*4.53*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-11T18:21:19.099
+                  DATE: 2019-12-11T20:36:15.977
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/visitorcard.scala.html
-                  HASH: 65366311a90345b16388cd445193fdf7ab12bfdc
+                  HASH: b580044d57d43e94f39c4abfbfec078b0f205983
                   MATRIX: 656->1|685->25|1029->45|1175->96|1205->101|1241->129|1279->130|1311->136|1342->141|1357->148|1390->161|1471->216|1485->222|1557->274|1636->326|1651->332|1727->387|1930->563|1946->570|1979->582|2087->663|2103->670|2133->679|2241->760|2257->767|2293->782|2404->867|2436->890|2476->892|2513->902|2616->978|2632->985|2666->998|2695->999|2804->1078|2839->1086|2912->1132|2958->1162|2998->1164|3040->1178|3103->1214|3118->1220|3210->1290|3241->1293|3261->1303|3301->1321|3371->1360|3404->1366
                   LINES: 24->1|25->2|30->4|35->4|37->6|37->6|37->6|38->7|38->7|38->7|38->7|40->9|40->9|40->9|40->9|40->9|40->9|47->16|47->16|47->16|51->20|51->20|51->20|55->24|55->24|55->24|60->29|60->29|60->29|61->30|63->32|63->32|63->32|63->32|66->35|68->37|69->38|69->38|69->38|70->39|71->40|71->40|71->40|71->40|71->40|71->40|73->42|74->43
                   -- GENERATED --

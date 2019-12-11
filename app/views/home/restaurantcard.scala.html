@@ -45,5 +45,60 @@
     }
     </table>
 
-    <a class="btn btn-primary" href="">Accept Visitor</a> <a class="btn btn-danger" href="">Kick Out Visitor</a>
+        <!-- Modal window "Accept" start button -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalAccept">
+        Accept Visitor
+    </button>
+
+    <!-- Modal window "Kick" start button -->
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModalKick">
+        Kick Out Visitor
+    </button>
+
+        <!-- Modal window "Accept" -->
+    <div class="modal fade" id="myModalAccept" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Select a visitor to be accepted</h4>
+                </div>
+                <div class="modal-body">
+
+                      ...
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Accept Visitor</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal window "Kick" -->
+    <div class="modal fade" id="myModalKick" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Select the visitor to be kicked</h4>
+                </div>
+                <div class="modal-body">
+
+                    ...
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Kick Out Visitor</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 }

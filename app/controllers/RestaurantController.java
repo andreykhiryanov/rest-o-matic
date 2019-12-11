@@ -113,5 +113,4 @@ public class RestaurantController extends Controller {
 
         return ok(restaurantcard.render(restaurant, visitors));
     }
-
 }

@@ -76,7 +76,62 @@ Seq[Any](format.raw/*4.53*/("""
     """)))}),format.raw/*45.6*/("""
     """),format.raw/*46.5*/("""</table>
 
-    <a class="btn btn-primary" href="">Accept Visitor</a> <a class="btn btn-danger" href="">Kick Out Visitor</a>
+        <!-- Modal window "Accept" start button -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalAccept">
+        Accept Visitor
+    </button>
+
+    <!-- Modal window "Kick" start button -->
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModalKick">
+        Kick Out Visitor
+    </button>
+
+        <!-- Modal window "Accept" -->
+    <div class="modal fade" id="myModalAccept" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Select a visitor to be accepted</h4>
+                </div>
+                <div class="modal-body">
+
+                      ...
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Accept Visitor</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal window "Kick" -->
+    <div class="modal fade" id="myModalKick" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Select the visitor to be kicked</h4>
+                </div>
+                <div class="modal-body">
+
+                    ...
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Kick Out Visitor</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 """)))}))
       }
     }
@@ -93,9 +148,9 @@ Seq[Any](format.raw/*4.53*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-11T18:22:07.469
+                  DATE: 2019-12-11T20:31:07.823
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/restaurantcard.scala.html
-                  HASH: 9f9afcc04db648289bc47936c235067149bf776b
+                  HASH: a8280ae94762d0c3dc3ed7f508e3fc681ae13c22
                   MATRIX: 656->1|688->28|1035->48|1181->99|1211->104|1255->140|1293->141|1325->147|1356->152|1374->162|1412->180|1493->235|1507->241|1594->307|1676->362|1691->368|1781->437|2030->659|2049->669|2083->682|2189->761|2208->771|2236->778|2346->861|2365->871|2397->882|2506->965|2535->985|2575->987|2612->997|2715->1073|2734->1083|2773->1101|2802->1102|2909->1179|2944->1187|3012->1229|3052->1253|3092->1255|3129->1265|3188->1297|3203->1303|3280->1359|3310->1362|3326->1369|3361->1382|3391->1384|3408->1391|3442->1403|3503->1434|3536->1440
                   LINES: 24->1|25->2|30->4|35->4|37->6|37->6|37->6|38->7|38->7|38->7|38->7|40->9|40->9|40->9|40->9|40->9|40->9|50->19|50->19|50->19|54->23|54->23|54->23|58->27|58->27|58->27|63->32|63->32|63->32|64->33|66->35|66->35|66->35|66->35|69->38|71->40|72->41|72->41|72->41|73->42|74->43|74->43|74->43|74->43|74->43|74->43|74->43|74->43|74->43|76->45|77->46
                   -- GENERATED --

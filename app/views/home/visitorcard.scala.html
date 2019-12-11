@@ -42,5 +42,59 @@
         }
     </table>
 
-    <a class="btn btn-primary" href="">Visit Restaurant</a> <a class="btn btn-danger" href="">Forget Restaurant</a>
+        <!-- Modal window "Visit" start button -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalVisit">
+        Visit Restaurant
+    </button>
+
+        <!-- Modal window "Forget" start button -->
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModalForget">
+        Forget Restaurant
+    </button>
+
+        <!-- Modal window "Visit" -->
+    <div class="modal fade" id="myModalVisit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Choose a restaurant to visit</h4>
+                </div>
+                <div class="modal-body">
+
+                    ...
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Visit Restaurant</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Modal window "Forget" -->
+    <div class="modal fade" id="myModalForget" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Choose a restaurant to forget</h4>
+                </div>
+                <div class="modal-body">
+
+                    ...
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Forget Restaurant</button>
+                </div>
+            </div>
+        </div>
+    </div>
 }
