@@ -5,15 +5,17 @@
       <change beforePath="$PROJECT_DIR$/.idea/modules/rest-o-matic.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/rest-o-matic.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/play2_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/play2_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/RestaurantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/RestaurantController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home/restaurantcard.scala.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/restaurantcard.scala.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home/visitorcard.scala.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/visitorcard.scala.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/home/partials/_restaurantFormFields.scala.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/partials/_restaurantFormFields.scala.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/home/partials/_visitorFormFields.scala.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/partials/_visitorFormFields.scala.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/application.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/compileIncremental/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/compileIncremental/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/copyResources/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/copyResources/_global/streams/out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/.history" beforeDir="false" afterPath="$PROJECT_DIR$/target/.history" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/home/restaurantcard$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/home/restaurantcard$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/home/visitorcard$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/home/visitorcard$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/home/restaurantcard.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/home/restaurantcard.template.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/home/visitorcard.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/home/visitorcard.template.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/home/partials/_restaurantFormFields$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/home/partials/_restaurantFormFields$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/home/partials/_visitorFormFields$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/home/partials/_visitorFormFields$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/home/partials/_restaurantFormFields.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/home/partials/_restaurantFormFields.template.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/home/partials/_visitorFormFields.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/home/partials/_visitorFormFields.template.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/_global/_global/checkBuildSources/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/_global/_global/checkBuildSources/_global/streams/out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/_global/playCommonClassloader/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/_global/playCommonClassloader/_global/streams/out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/compile/_global/_global/compileSourceFileInputs/previous" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/_global/_global/compileSourceFileInputs/previous" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/compile/compile/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compile/_global/streams/out" afterDir="false" />
@@ -91,22 +93,22 @@
     <session id="886890923">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="56" />
-          <entry key="project.open.time.0" value="38" />
+          <entry key="project.closed" value="58" />
+          <entry key="project.open.time.0" value="40" />
           <entry key="project.open.time.1" value="7" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.2" value="3" />
           <entry key="project.open.time.9" value="4" />
-          <entry key="project.opened" value="56" />
+          <entry key="project.opened" value="58" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="conf" value="9" />
           <entry key="css" value="12" />
-          <entry key="html" value="112" />
+          <entry key="html" value="114" />
           <entry key="java" value="72" />
           <entry key="js" value="9" />
           <entry key="md" value="2" />
@@ -128,7 +130,7 @@
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="Play 2 routing" value="9" />
-          <entry key="Play2" value="112" />
+          <entry key="Play2" value="114" />
           <entry key="Properties" value="5" />
           <entry key="Scala" value="21" />
           <entry key="XML" value="2" />
@@ -139,7 +141,7 @@
         <counts>
           <entry key="conf" value="143" />
           <entry key="dummy" value="31" />
-          <entry key="html" value="2814" />
+          <entry key="html" value="2831" />
           <entry key="java" value="6429" />
           <entry key="md" value="89" />
           <entry key="routes" value="389" />
@@ -153,7 +155,7 @@
           <entry key="Markdown" value="89" />
           <entry key="PLAIN_TEXT" value="31" />
           <entry key="Play 2 routing" value="389" />
-          <entry key="Play2" value="2814" />
+          <entry key="Play2" value="2831" />
           <entry key="sbt" value="49" />
         </counts>
       </usages-collector>
@@ -164,13 +166,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/home/restaurantcard.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
+            <state relative-caret-position="1360">
               <caret line="81" column="43" selection-start-line="81" selection-start-column="43" selection-end-line="81" selection-end-column="43" />
-              <folding>
-                <element signature="e#1#25#0#Scala" expanded="true" />
-                <element signature="e#2213#2220#1#HTML" expanded="true" />
-                <element signature="e#2138#2145#1#HTML" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -179,11 +176,7 @@
         <entry file="file://$PROJECT_DIR$/app/views/home/visitorcard.scala.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="275">
-              <caret line="52" column="13" lean-forward="true" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
-              <folding>
-                <element signature="e#2149#2156#1#HTML" expanded="true" />
-                <element signature="e#3147#3154#1#HTML" expanded="true" />
-              </folding>
+              <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -222,11 +215,9 @@
         <option value="$PROJECT_DIR$/app/views/home/restaurant/layout.scala.html" />
         <option value="$PROJECT_DIR$/app/views/home/createrestaurant.scala.html" />
         <option value="$PROJECT_DIR$/app/views/home/editrestaurant.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/home/partials/_visitorFormFields.scala.html" />
         <option value="$PROJECT_DIR$/app/views/home/createvisitor.scala.html" />
         <option value="$PROJECT_DIR$/app/views/home/editvisitor.scala.html" />
         <option value="$PROJECT_DIR$/app/views/home/layout.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/home/partials/_restaurantFormFields.scala.html" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/conf/routes" />
         <option value="$PROJECT_DIR$/app/views/home/index.scala.html" />
@@ -240,6 +231,8 @@
         <option value="$PROJECT_DIR$/app/controllers/RestaurantController.java" />
         <option value="$PROJECT_DIR$/app/views/home/restaurantcard.scala.html" />
         <option value="$PROJECT_DIR$/app/views/home/visitorcard.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/home/partials/_restaurantFormFields.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/home/partials/_visitorFormFields.scala.html" />
       </list>
     </option>
   </component>
@@ -299,6 +292,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -334,7 +328,7 @@
               <item name="rest-o-matic" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="reserve" type="462c0819:PsiDirectoryNode" />
+              <item name="partials" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="rest-o-matic" type="b2602c69:ProjectViewProjectNode" />
@@ -360,7 +354,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -503,17 +496,18 @@
       <workItem from="1576068111980" duration="8697000" />
       <workItem from="1576076990696" duration="1259000" />
       <workItem from="1576078327619" duration="4969000" />
+      <workItem from="1576085901684" duration="340000" />
+      <workItem from="1576086284579" duration="45000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125255000" />
+    <option name="totallyTimeSpent" value="125640000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26066098" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -529,7 +523,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49946696" weight="0.32900432" />
       <window_info anchor="bottom" id="sbt-shell-toolwindow" order="8" weight="0.32900432" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49946696" visible="true" weight="0.26406926" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49946696" visible="true" weight="0.26406926" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053304" side_tool="true" weight="0.26406926" />
       <window_info anchor="bottom" id="Spring" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
@@ -685,13 +679,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/home/partials/_visitorFormFields.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="71" lean-forward="true" selection-start-line="5" selection-start-column="71" selection-end-line="5" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/home/editvisitor.scala.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -788,13 +775,6 @@
         <state relative-caret-position="-306" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/home/partials/_restaurantFormFields.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="77" lean-forward="true" selection-start-line="2" selection-start-column="77" selection-end-line="2" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/home/reserve/copyrestaurantcard.scala.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -843,26 +823,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home/partials/_restaurantFormFields.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="92" lean-forward="true" selection-start-line="5" selection-start-column="92" selection-end-line="5" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home/partials/_visitorFormFields.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="98" lean-forward="true" selection-start-line="5" selection-start-column="98" selection-end-line="5" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/home/restaurantcard.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
+        <state relative-caret-position="1360">
           <caret line="81" column="43" selection-start-line="81" selection-start-column="43" selection-end-line="81" selection-end-column="43" />
-          <folding>
-            <element signature="e#1#25#0#Scala" expanded="true" />
-            <element signature="e#2213#2220#1#HTML" expanded="true" />
-            <element signature="e#2138#2145#1#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/home/visitorcard.scala.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
-          <caret line="52" column="13" lean-forward="true" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
-          <folding>
-            <element signature="e#2149#2156#1#HTML" expanded="true" />
-            <element signature="e#3147#3154#1#HTML" expanded="true" />
-          </folding>
+          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
         </state>
       </provider>
     </entry>

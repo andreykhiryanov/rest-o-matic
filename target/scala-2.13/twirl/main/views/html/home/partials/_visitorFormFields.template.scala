@@ -32,10 +32,10 @@ object _visitorFormFields extends _root_.play.twirl.api.BaseScalaTemplate[play.t
 
 Seq[Any](format.raw/*1.30*/("""
 
-"""),_display_(/*3.2*/helper/*3.8*/.inputText(visitorForm("firstName"), 'class -> "form-control")),format.raw/*3.70*/("""
-"""),_display_(/*4.2*/helper/*4.8*/.inputText(visitorForm("lastName"), 'class -> "form-control")),format.raw/*4.69*/("""
-"""),_display_(/*5.2*/helper/*5.8*/.inputText(visitorForm("email"), 'class -> "form-control")),format.raw/*5.66*/("""
-"""),_display_(/*6.2*/helper/*6.8*/.inputText(visitorForm("phoneNumber"), 'class -> "form-control")))
+"""),_display_(/*3.2*/helper/*3.8*/.inputText(visitorForm("firstName"), '_label -> "First Name", 'class -> "form-control")),format.raw/*3.95*/("""
+"""),_display_(/*4.2*/helper/*4.8*/.inputText(visitorForm("lastName"), '_label -> "Last Name", 'class -> "form-control")),format.raw/*4.93*/("""
+"""),_display_(/*5.2*/helper/*5.8*/.inputText(visitorForm("email"), '_label -> "Email", 'class -> "form-control")),format.raw/*5.86*/("""
+"""),_display_(/*6.2*/helper/*6.8*/.inputText(visitorForm("phoneNumber"), '_label -> "Phone Number", 'class -> "form-control")))
       }
     }
   }
@@ -51,10 +51,10 @@ Seq[Any](format.raw/*1.30*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-11T12:54:51.555
+                  DATE: 2019-12-11T20:43:46.294
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/partials/_visitorFormFields.scala.html
-                  HASH: c007cfd7f460f5c93745c7b32b8f06f91052e824
-                  MATRIX: 982->1|1105->29|1135->34|1148->40|1230->102|1258->105|1271->111|1352->172|1380->175|1393->181|1471->239|1499->242|1512->248
+                  HASH: d52ebf663aa5bac9685a8644cfaec953ebd3536c
+                  MATRIX: 982->1|1105->29|1135->34|1148->40|1255->127|1283->130|1296->136|1401->221|1429->224|1442->230|1540->308|1568->311|1581->317
                   LINES: 28->1|33->1|35->3|35->3|35->3|36->4|36->4|36->4|37->5|37->5|37->5|38->6|38->6
                   -- GENERATED --
               */

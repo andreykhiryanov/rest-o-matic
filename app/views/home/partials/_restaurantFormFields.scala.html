@@ -1,6 +1,6 @@
 @(restaurantForm: Form[Restaurant])
 
-@helper.inputText(restaurantForm("restaurantName"), 'class -> "form-control")
-@helper.inputText(restaurantForm("legalName"), 'class -> "form-control")
-@helper.inputText(restaurantForm("inn"), 'class -> "form-control")
-@helper.inputText(restaurantForm("address"), 'class -> "form-control")
+@helper.inputText(restaurantForm("restaurantName"), '_label -> "Restaurant Name", 'class -> "form-control")
+@helper.inputText(restaurantForm("legalName"), '_label -> "Legal Name", 'class -> "form-control")
+@helper.inputText(restaurantForm("inn"), '_label -> "INN", 'class -> "form-control")
+@helper.inputText(restaurantForm("address"), '_label -> "Address", 'class -> "form-control")
