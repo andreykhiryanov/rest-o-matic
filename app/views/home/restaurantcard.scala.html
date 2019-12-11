@@ -1,7 +1,7 @@
 @import models.Restaurant
 @import helper._
 
-@(restaurant : Restaurant)
+@(restaurant : Restaurant)(visitors : List[Visitor])
 
 @layout(restaurant.getRestaurantName){
     <h2>@restaurant.getRestaurantName</h2>
@@ -29,10 +29,20 @@
     </table>
     <h2>Accepted Visitors</h2>
     <br>
+    @if(visitors.isEmpty) {
+        <table class="table table-striped">
+            <tr>
+                <td>@restaurant.getRestaurantName has not accepted any visitors<td>
+            </tr>
+        </table>
+    }
     <table class="table table-striped">
+    @for(visitor <- visitors) {
         <tr>
-            <td>@restaurant.getRestaurantName has not accepted any visitors<td>
+            <td>@visitor.getFirstName @visitor.getLastName<td>
         </tr>
+    }
     </table>
+
     <a class="btn btn-primary" href="">Accept Visitor</a> <a class="btn btn-danger" href="">Kick Out Visitor</a>
 }

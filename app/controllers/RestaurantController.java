@@ -1,5 +1,6 @@
 package controllers;
 
+import models.Link;
 import models.Restaurant;
 import models.Visitor;
 import models.Manager;
@@ -11,10 +12,10 @@ import views.html.home.createrestaurant;
 import views.html.home.editrestaurant;
 import views.html.home.restaurantcard;
 import javax.inject.Inject;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RestaurantController extends Controller {
-
-    private Manager manager = Manager.getManager();
 
     @Inject
     FormFactory formFactory;
@@ -97,36 +98,15 @@ public class RestaurantController extends Controller {
             return notFound("Restaurant not found!");
         }
 
-        return ok(restaurantcard.render(restaurant));
-    }
-
-    public Result acceptVisitor(String visitorName) {
-
-        Restaurant restaurant = formFactory.form(Restaurant.class).bindFromRequest().get();
-        Visitor visitor = manager.getVisitorByName(visitorName);
-
-        if (visitor == null) {
-            return notFound("Visitor not found!");
+        List<Visitor> visitors = new ArrayList<>();
+        for (Link link : Link.linkFinder.all()) {
+            if (link.getRestaurantName().equals(restaurantName)){
+                Visitor visitor = Visitor.visitorFinder.byId(link.getVisitorName());
+                if (visitor != null) visitors.add(visitor);
+            }
         }
 
-        manager.visitRestaurant(visitor, restaurant);
-
-        return redirect(routes.RestaurantController.showRestaurantCard(restaurant.getRestaurantName()));
-    }
-
-    public Result kickVisitor(String visitorName) {
-
-        Restaurant restaurant = formFactory.form(Restaurant.class).bindFromRequest().get();
-        Visitor visitor = manager.getVisitorByName(visitorName);
-
-        if (visitor == null) {
-            return notFound("Visitor not found!");
-        }
-
-        manager.unvisitRestaurant(visitor, restaurant);
-
-        return redirect(routes.RestaurantController.showRestaurantCard(restaurant.getRestaurantName()));
-
+        return ok(restaurantcard.render(restaurant, visitors));
     }
 
 }

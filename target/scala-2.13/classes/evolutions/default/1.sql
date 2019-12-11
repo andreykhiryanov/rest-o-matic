@@ -3,6 +3,11 @@
 
 # --- !Ups
 
+create table link (
+  restaurant_name               varchar(255),
+  visitor_name                  varchar(255)
+);
+
 create table restaurant (
   restaurant_name               varchar(255) not null,
   legal_name                    varchar(255),
@@ -21,6 +26,8 @@ create table visitor (
 
 
 # --- !Downs
+
+drop table if exists link cascade;
 
 drop table if exists restaurant cascade;
 

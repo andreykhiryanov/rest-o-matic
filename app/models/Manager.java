@@ -1,15 +1,15 @@
 package models;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
+
 
 public class Manager {
 
-    private static Manager manager = new Manager();
+    private static Manager ourManager = new Manager();
 
     public static Manager getManager() {
-        return manager;
+        return ourManager;
     }
 
     private Manager() {
@@ -26,91 +26,40 @@ public class Manager {
         return allVisitors;
     }
 
-    public void visitRestaurant(Visitor visitor, Restaurant restaurant) {
-        visitor.getVisitedRestaurants().add(restaurant);
-        restaurant.getAcceptedVisitors().add(visitor);
-    }
+    // Data method.
+    public void addDataToDb() {
+        new Restaurant("Astoria", "ZAO GK Astoria", 783801001, "Bolshaya Morskaya, 39").save();
+        new Restaurant("Legran", "OOO Legran", 784101001, "Millionnaya, 4/1").save();
+        new Restaurant("Letuchiy Gollandec", "OOO Letuchiy Gollandec", 780101001, "Maliy, 63").save();
 
-    public void unvisitRestaurant(Visitor visitor, Restaurant restaurant) {
-        visitor.getVisitedRestaurants().remove(restaurant);
-        restaurant.getAcceptedVisitors().remove(visitor);
-    }
+        new Visitor("Zitella", "Menendes", "zmenendes0@bing.com", "239-924-2788").save();
+        new Visitor("Nico", "Drivers", "ndrivers0@buzzfeed.com", "693-566-8984").save();
+        new Visitor("Roderich", "Caulton", "rcaulton1@tripadvisor.com", "191-729-0261").save();
+        new Visitor("Deana", "Rodder", "drodder2@smugmug.com", "184-853-9441").save();
+        new Visitor("Shelby", "Gori", "sgori3@blogspot.com", "365-555-8407").save();
+        new Visitor("Myron", "Zannuto", "mzannuto4@usatoday.com", "233-524-4742").save();
 
-    // Testing methods.
+        // Linking all visitors with Astoria.
+        Restaurant astoria = Restaurant.restaurantFinder.byId("Astoria");
 
-    public void fillTestRestaurants() {
-        addNewRestaurant("Astoria", "ZAO GK Astoria", 783801001, "Bolshaya Morskaya, 39");
-        addNewRestaurant("Legran", "OOO Legran", 784101001, "Millionnaya, 4/1");
-        addNewRestaurant("Letuchiy Gollandec", "OOO Letuchiy Gollandec", 780101001, "Maliy, 63");
-    }
+        if (astoria == null) return;
 
-    public void fillTestVisitors() {
-        addNewVisitor("Zitella", "Menendes", "zmenendes0@bing.com", "239-924-2788");
-        addNewVisitor("Nico", "Drivers", "ndrivers0@buzzfeed.com", "693-566-8984");
-        addNewVisitor("Roderich", "Caulton", "rcaulton1@tripadvisor.com", "191-729-0261");
-        addNewVisitor("Deana", "Rodder", "drodder2@smugmug.com", "184-853-9441");
-        addNewVisitor("Shelby", "Gori", "sgori3@blogspot.com", "365-555-8407");
-        addNewVisitor("Myron", "Zannuto", "mzannuto4@usatoday.com", "233-524-4742");
-    }
-
-    public void getDataFromDb() {
-        // Getting all visitors from the data base.
-        List<Visitor> visitors = Visitor.visitorFinder.all();
-        // Getting all restaurants from the data base.
-        List<Restaurant> restaurants = Restaurant.restaurantFinder.all();
-
-        allVisitors.addAll(visitors);
-        allRestaurants.addAll(restaurants);
-    }
-
-    public void putDataToDb() {
-        for (Restaurant restaurant : allRestaurants) {
-            restaurant.save();
-        }
-
-        for (Visitor visitor : allVisitors) {
-            visitor.save();
+        for (Visitor visitor : Visitor.visitorFinder.all()) {
+            new Link(astoria.getRestaurantName(), visitor.getFirstName()).save();
         }
     }
 
-    // Restaurants' methods.
+    // General methods.
 
-    public Restaurant getRestaurantByName(String requestedRestaurantName) {
-        for (Restaurant restaurant : allRestaurants) {
-            if (restaurant.getRestaurantName().equals(requestedRestaurantName)) {
-                return restaurant;
+    public void visitRestaurant(String restaurantName, String visitorName) {
+        new Link(restaurantName, visitorName).save();
+    }
+
+    public void forgetRestaurant(String restaurantName, String visitorName) {
+        for (Link link : Link.linkFinder.all()) {
+            if (link.getRestaurantName().equals(restaurantName)) {
+                if (link.getVisitorName().equals(visitorName)) link.delete();
             }
         }
-
-        return null;
     }
-
-    public void addNewRestaurant(String restaurantName, String legalName, int inn, String address) {
-        allRestaurants.add(new Restaurant(restaurantName, legalName, inn, address));
-    }
-
-    public void addNewRestaurant(Restaurant newRestaurant) {
-        allRestaurants.add(newRestaurant);
-    }
-
-    // Visitors' methods.
-
-    public Visitor getVisitorByName(String requestedVisitorName) {
-        for (Visitor visitor  : allVisitors) {
-            if (visitor.getFirstName().equals(requestedVisitorName)) {
-                return visitor;
-            }
-        }
-
-        return null;
-    }
-
-    public void addNewVisitor(String firstName, String lastName, String email, String phoneNumber) {
-        allVisitors.add(new Visitor(firstName, lastName, email, phoneNumber));
-    }
-
-    public void addNewVisitor(Visitor newVisitor) {
-        allVisitors.add(newVisitor);
-    }
-
 }

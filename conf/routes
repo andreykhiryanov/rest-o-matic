@@ -10,7 +10,6 @@ POST    /restaurant/edit                    controllers.RestaurantController.upd
 GET     /restaurant/create/                 controllers.RestaurantController.createRestaurant()
 POST    /restaurant/create/                 controllers.RestaurantController.saveRestaurantChanges()
 GET     /restaurant/delete/:restaurantName  controllers.RestaurantController.destroyRestaurant(restaurantName : String)
-POST    /restaurant/accept/:visitorName     controllers.RestaurantController.acceptVisitor(visitorName : String)
 
 GET     /visitor/:visitorName               controllers.VisitorController.showVisitorCard(visitorName : String)
 GET     /visitor/edit/:visitorName          controllers.VisitorController.editVisitor(visitorName : String)

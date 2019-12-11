@@ -13,20 +13,12 @@ import java.util.List;
 
 public class HomeController extends Controller {
 
-    private boolean firstRun = true;
-
     private Manager manager = Manager.getManager();
-
-    @Inject
-    FormFactory formFactory;
 
     public Result greetings() {
 
-        // Uncomment the following lines to infill the database.
-//        if (firstRun) {
-//            fillTestData();
-//            firstRun = false;
-//        }
+        // Filling up our database.
+//        manager.addDataToDb();
 
         // Getting all restaurants from the data base.
         List<Restaurant> restaurants = Restaurant.restaurantFinder.all();
@@ -34,24 +26,6 @@ public class HomeController extends Controller {
         List<Visitor> visitors = Visitor.visitorFinder.all();
 
         return ok(index.render(restaurants, visitors));
-    }
-
-    private void fillTestData() {
-        // Fill with test entities.
-        manager.fillTestRestaurants();
-        manager.fillTestVisitors();
-
-        Restaurant astoria = manager.getRestaurantByName("Astoria");
-
-        // All visitors go to the restaurant Astoria.
-        astoria.getAcceptedVisitors().addAll(manager.getAllVisitors());
-
-        for (Visitor visitor : manager.getAllVisitors()) {
-            manager.visitRestaurant(visitor, astoria);
-        }
-
-        // Filling up the data base
-        manager.putDataToDb();
     }
 
 }

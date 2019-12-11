@@ -69,28 +69,4 @@ public class Visitor extends Model {
     public Set<Restaurant> getVisitedRestaurants() {
         return visitedRestaurants;
     }
-
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//
-//        Visitor visitor = (Visitor) o;
-//
-//        if (!firstName.equals(visitor.firstName)) return false;
-//        if (!lastName.equals(visitor.lastName)) return false;
-//        if (!email.equals(visitor.email)) return false;
-//        if (!phoneNumber.equals(visitor.phoneNumber)) return false;
-//        return visitedRestaurants.equals(visitor.visitedRestaurants);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        int result = firstName.hashCode();
-//        result = 31 * result + lastName.hashCode();
-//        result = 31 * result + email.hashCode();
-//        result = 31 * result + phoneNumber.hashCode();
-//        result = 31 * result + visitedRestaurants.hashCode();
-//        return result;
-//    }
 }

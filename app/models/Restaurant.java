@@ -2,6 +2,7 @@ package models;
 
 import io.ebean.Finder;
 import io.ebean.Model;
+import io.ebeaninternal.server.lib.util.Str;
 import play.data.validation.Constraints;
 
 import javax.persistence.Entity;
@@ -68,28 +69,4 @@ public class Restaurant extends Model {
     public Set<Visitor> getAcceptedVisitors() {
         return acceptedVisitors;
     }
-
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//
-//        Restaurant that = (Restaurant) o;
-//
-//        if (inn != that.inn) return false;
-//        if (!restaurantName.equals(that.restaurantName)) return false;
-//        if (!legalName.equals(that.legalName)) return false;
-//        if (!address.equals(that.address)) return false;
-//        return acceptedVisitors.equals(that.acceptedVisitors);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        int result = restaurantName.hashCode();
-//        result = 31 * result + legalName.hashCode();
-//        result = 31 * result + inn;
-//        result = 31 * result + address.hashCode();
-//        result = 31 * result + acceptedVisitors.hashCode();
-//        return result;
-//    }
 }

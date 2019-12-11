@@ -14,8 +14,6 @@ import javax.inject.Inject;
 
 public class VisitorController extends Controller {
 
-    private Manager manager = Manager.getManager();
-
     @Inject
     FormFactory formFactory;
 

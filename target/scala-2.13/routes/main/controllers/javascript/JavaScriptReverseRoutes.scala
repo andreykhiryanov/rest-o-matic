@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Wed Dec 11 14:06:39 GMT+03:00 2019
+// @DATE:Wed Dec 11 16:47:45 GMT+03:00 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -35,16 +35,6 @@ package controllers.javascript {
       """
         function(restaurantName0) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "restaurant/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("restaurantName", restaurantName0))})
-        }
-      """
-    )
-  
-    // @LINE:13
-    def acceptVisitor: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.RestaurantController.acceptVisitor",
-      """
-        function(visitorName0) {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "restaurant/accept/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("visitorName", visitorName0))})
         }
       """
     )
@@ -111,7 +101,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:15
+  // @LINE:14
   class ReverseVisitorController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -119,7 +109,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:19
+    // @LINE:18
     def saveVisitorChanges: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.VisitorController.saveVisitorChanges",
       """
@@ -129,7 +119,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:18
+    // @LINE:17
     def createVisitor: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.VisitorController.createVisitor",
       """
@@ -139,7 +129,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:15
+    // @LINE:14
     def showVisitorCard: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.VisitorController.showVisitorCard",
       """
@@ -149,7 +139,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:20
+    // @LINE:19
     def destroyVisitor: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.VisitorController.destroyVisitor",
       """
@@ -159,7 +149,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:16
+    // @LINE:15
     def editVisitor: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.VisitorController.editVisitor",
       """
@@ -169,7 +159,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:17
+    // @LINE:16
     def updateVisitor: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.VisitorController.updateVisitor",
       """
@@ -181,7 +171,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:23
+  // @LINE:22
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -189,7 +179,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:23
+    // @LINE:22
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
