@@ -51,7 +51,7 @@ Seq[Any](format.raw/*1.36*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-11T12:50:50.026
+                  DATE: 2019-12-11T15:10:51.028
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/partials/_restaurantFormFields.scala.html
                   HASH: f9c2743339e870935325c802babe8487b1d057a7
                   MATRIX: 988->1|1117->35|1147->40|1160->46|1250->116|1278->119|1291->125|1376->190|1404->193|1417->199|1496->258|1524->261|1537->267

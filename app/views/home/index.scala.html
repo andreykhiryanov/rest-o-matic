@@ -7,7 +7,14 @@
 @layout("Welcome!"){
     <h2>All Restaurants</h2>
     <br>
-    <table border="1px solid grey" style="border-collapse: collapse">
+    @if(restaurants.isEmpty){
+        <table>
+            <tr>
+                <td>There are no restaurants yet.</td>
+            </tr>
+        </table>
+    }
+    <table class="table table-striped">
         @for(restaurant <- restaurants) {
             <tr>
                 <td><a href="@routes.RestaurantController.showRestaurantCard(restaurant.getRestaurantName)">@restaurant.getRestaurantName</a></td>
@@ -17,7 +24,14 @@
     <br>
     <h2>All Visitors</h2>
     <br>
-    <table border="1px solid grey" style="border-collapse: collapse">
+    @if(visitors.isEmpty){
+        <table>
+            <tr>
+                <td>There are no visitors yet.</td>
+            </tr>
+        </table>
+    }
+    <table class="table table-striped">
         @for(visitor <- visitors) {
             <tr>
                 <td><a href="@routes.VisitorController.showVisitorCard(visitor.getFirstName)">@visitor.getFirstName @visitor.getLastName</a></td>

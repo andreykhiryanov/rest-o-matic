@@ -39,24 +39,30 @@ Seq[Any](format.raw/*4.21*/("""
     <br>
     <a class="btn btn-primary" href=""""),_display_(/*9.39*/routes/*9.45*/.VisitorController.editVisitor(visitor.getFirstName)),format.raw/*9.97*/("""">Edit Visitor</a> <a class="btn btn-danger" href=""""),_display_(/*9.149*/routes/*9.155*/.VisitorController.destroyVisitor(visitor.getFirstName)),format.raw/*9.210*/("""">Remove Visitor</a>
     <br><br>
-
+    <h2>Information</h2>
+    <br>
     <table class="table table-striped">
         <tr>
-            <th colspan="5">Information</th>
-        </tr>
-        <tr>
             <td>Last Name</td>
-            <td>"""),_display_(/*18.18*/visitor/*18.25*/.getLastName),format.raw/*18.37*/("""</td>
+            <td>"""),_display_(/*16.18*/visitor/*16.25*/.getLastName),format.raw/*16.37*/("""</td>
         </tr>
         <tr>
             <td>Email</td>
-            <td>"""),_display_(/*22.18*/visitor/*22.25*/.getEmail),format.raw/*22.34*/("""</td>
+            <td>"""),_display_(/*20.18*/visitor/*20.25*/.getEmail),format.raw/*20.34*/("""</td>
         </tr>
         <tr>
             <td>Phone</td>
-            <td>"""),_display_(/*26.18*/visitor/*26.25*/.getPhoneNumber),format.raw/*26.40*/("""</td>
+            <td>"""),_display_(/*24.18*/visitor/*24.25*/.getPhoneNumber),format.raw/*24.40*/("""</td>
         </tr>
     </table>
+    <h2>Visited Restaurants</h2>
+    <br>
+    <table class="table table-striped">
+        <tr>
+            <td>"""),_display_(/*31.18*/visitor/*31.25*/.getFirstName),format.raw/*31.38*/(""" """),format.raw/*31.39*/("""has not visited any restaurants<td>
+        </tr>
+    </table>
+    <a class="btn btn-primary" href="">Visit Restaurant</a> <a class="btn btn-danger" href="">Forget Restaurant</a>
 """)))}))
       }
     }
@@ -73,11 +79,11 @@ Seq[Any](format.raw/*4.21*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-11T14:31:43.334
+                  DATE: 2019-12-11T14:50:09.976
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/visitorcard.scala.html
-                  HASH: b559b1911ff8f3e2f287efdf89d240ce08b66695
-                  MATRIX: 656->1|685->25|1012->45|1126->64|1156->69|1192->97|1230->98|1262->104|1293->109|1308->116|1341->129|1422->184|1436->190|1508->242|1587->294|1602->300|1678->355|1922->572|1938->579|1971->591|2079->672|2095->679|2125->688|2233->769|2249->776|2285->791
-                  LINES: 24->1|25->2|30->4|35->4|37->6|37->6|37->6|38->7|38->7|38->7|38->7|40->9|40->9|40->9|40->9|40->9|40->9|49->18|49->18|49->18|53->22|53->22|53->22|57->26|57->26|57->26
+                  HASH: 7bfbb3defb7ff88aacdc07a9ef12d2fd14d6781f
+                  MATRIX: 656->1|685->25|1012->45|1126->64|1156->69|1192->97|1230->98|1262->104|1293->109|1308->116|1341->129|1422->184|1436->190|1508->242|1587->294|1602->300|1678->355|1881->531|1897->538|1930->550|2038->631|2054->638|2084->647|2192->728|2208->735|2244->750|2423->902|2439->909|2473->922|2502->923
+                  LINES: 24->1|25->2|30->4|35->4|37->6|37->6|37->6|38->7|38->7|38->7|38->7|40->9|40->9|40->9|40->9|40->9|40->9|47->16|47->16|47->16|51->20|51->20|51->20|55->24|55->24|55->24|62->31|62->31|62->31|62->31
                   -- GENERATED --
               */
           

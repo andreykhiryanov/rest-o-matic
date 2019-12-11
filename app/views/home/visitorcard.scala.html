@@ -8,11 +8,9 @@
     <br>
     <a class="btn btn-primary" href="@routes.VisitorController.editVisitor(visitor.getFirstName)">Edit Visitor</a> <a class="btn btn-danger" href="@routes.VisitorController.destroyVisitor(visitor.getFirstName)">Remove Visitor</a>
     <br><br>
-
+    <h2>Information</h2>
+    <br>
     <table class="table table-striped">
-        <tr>
-            <th colspan="5">Information</th>
-        </tr>
         <tr>
             <td>Last Name</td>
             <td>@visitor.getLastName</td>
@@ -26,4 +24,12 @@
             <td>@visitor.getPhoneNumber</td>
         </tr>
     </table>
+    <h2>Visited Restaurants</h2>
+    <br>
+    <table class="table table-striped">
+        <tr>
+            <td>@visitor.getFirstName has not visited any restaurants<td>
+        </tr>
+    </table>
+    <a class="btn btn-primary" href="">Visit Restaurant</a> <a class="btn btn-danger" href="">Forget Restaurant</a>
 }
