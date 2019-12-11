@@ -22,6 +22,12 @@ public class HomeController extends Controller {
 
     public Result greetings() {
 
+        // Uncomment the following lines to infill the database.
+//        if (firstRun) {
+//            fillTestData();
+//            firstRun = false;
+//        }
+
         // Getting all restaurants from the data base.
         List<Restaurant> restaurants = Restaurant.restaurantFinder.all();
         // Getting all visitors from the data base.
@@ -46,17 +52,6 @@ public class HomeController extends Controller {
 
         // Filling up the data base
         manager.putDataToDb();
-
-        // Cleaning up our collections.
-        for (Visitor visitor : manager.getAllVisitors()) {
-            manager.getAllVisitors().remove(visitor);
-        }
-        for (Restaurant restaurant : manager.getAllRestaurants()) {
-            manager.getAllRestaurants().remove(restaurant);
-        }
-
-        // Filling up our collections from the data base.
-        manager.getDataFromDb();
     }
 
 }

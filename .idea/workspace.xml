@@ -3,27 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="bd0c3c7c-c581-4799-866a-b31d7000e0de" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/modules/rest-o-matic.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/rest-o-matic.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/play2_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/play2_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/Visitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Visitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home/index.scala.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/index.scala.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home/restaurantcard.scala.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/restaurantcard.scala.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home/visitorcard.scala.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/visitorcard.scala.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/application.conf" beforeDir="false" afterPath="$PROJECT_DIR$/conf/application.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/application.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/compileIncremental/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/compileIncremental/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/copyResources/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/copyResources/_global/streams/out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/.history" beforeDir="false" afterPath="$PROJECT_DIR$/target/.history" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/models/Visitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/models/Visitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/home/restaurantcard$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/home/restaurantcard$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/home/visitorcard$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/home/visitorcard$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/home/partials/_restaurantFormFields.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/home/partials/_restaurantFormFields.template.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/home/restaurantcard.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/home/restaurantcard.template.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/home/visitorcard.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/home/visitorcard.template.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/_global/playCommonClassloader/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/_global/playCommonClassloader/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/_global/_global/compileSourceFileInputs/previous" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/_global/_global/compileSourceFileInputs/previous" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/compile/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compile/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncSetup/_global/streams/inc_compile_2.13.zip" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncSetup/_global/streams/inc_compile_2.13.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/_global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/playEnhancerGenerateAccessors/_global/streams/play_instrumentation_2.13" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/playEnhancerGenerateAccessors/_global/streams/play_instrumentation_2.13" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/playEnhancerRewriteAccessors/_global/streams/play_instrumentation_2.13" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/playEnhancerRewriteAccessors/_global/streams/play_instrumentation_2.13" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/_global/_global/checkBuildSources/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/_global/_global/checkBuildSources/_global/streams/out" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/project/project/target/" />
@@ -94,25 +81,25 @@
     <session id="886890923">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="52" />
-          <entry key="project.open.time.0" value="34" />
+          <entry key="project.closed" value="53" />
+          <entry key="project.open.time.0" value="35" />
           <entry key="project.open.time.1" value="7" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.2" value="3" />
           <entry key="project.open.time.9" value="4" />
-          <entry key="project.opened" value="52" />
+          <entry key="project.opened" value="53" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="conf" value="7" />
+          <entry key="conf" value="8" />
           <entry key="css" value="12" />
           <entry key="html" value="100" />
-          <entry key="java" value="42" />
+          <entry key="java" value="44" />
           <entry key="js" value="8" />
-          <entry key="md" value="1" />
+          <entry key="md" value="2" />
           <entry key="name" value="2" />
           <entry key="properties" value="5" />
           <entry key="routes" value="8" />
@@ -125,10 +112,10 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="12" />
-          <entry key="HOCON" value="7" />
-          <entry key="JAVA" value="42" />
+          <entry key="HOCON" value="8" />
+          <entry key="JAVA" value="44" />
           <entry key="JavaScript" value="8" />
-          <entry key="Markdown" value="1" />
+          <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="Play 2 routing" value="8" />
           <entry key="Play2" value="100" />
@@ -140,20 +127,20 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="conf" value="123" />
+          <entry key="conf" value="133" />
           <entry key="dummy" value="31" />
           <entry key="html" value="2378" />
-          <entry key="java" value="5192" />
-          <entry key="md" value="37" />
+          <entry key="java" value="5282" />
+          <entry key="md" value="89" />
           <entry key="routes" value="388" />
           <entry key="sbt" value="49" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HOCON" value="123" />
-          <entry key="JAVA" value="5192" />
-          <entry key="Markdown" value="37" />
+          <entry key="HOCON" value="133" />
+          <entry key="JAVA" value="5282" />
+          <entry key="Markdown" value="89" />
           <entry key="PLAIN_TEXT" value="31" />
           <entry key="Play 2 routing" value="388" />
           <entry key="Play2" value="2378" />
@@ -168,16 +155,25 @@
         <entry file="file://$PROJECT_DIR$/app/views/home/index.scala.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="510">
-              <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+              <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conf/application.conf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/models/Manager.java">
+        <entry file="file://$PROJECT_DIR$/app/controllers/HomeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="49" column="87" selection-start-line="49" selection-start-column="75" selection-end-line="49" selection-end-column="87" />
+            <state relative-caret-position="527">
+              <caret line="56" column="1" lean-forward="true" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -199,7 +195,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/views/hello.scala.html" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.idea/.name" />
         <option value="$PROJECT_DIR$/app/utils/Util.java" />
         <option value="$PROJECT_DIR$/app/controllers/StudentController.java" />
@@ -210,12 +205,10 @@
         <option value="$PROJECT_DIR$/app/entities/Restaurant.java" />
         <option value="$PROJECT_DIR$/project/plugins.sbt" />
         <option value="$PROJECT_DIR$/app/models/Manager.java" />
-        <option value="$PROJECT_DIR$/app/controllers/HomeController.java" />
         <option value="$PROJECT_DIR$/app/views/home/restaurantcard.txt" />
         <option value="$PROJECT_DIR$/scriptFile.scala" />
         <option value="$PROJECT_DIR$/target/scala-2.13/classes/application.conf" />
         <option value="$PROJECT_DIR$/build.sbt" />
-        <option value="$PROJECT_DIR$/conf/application.conf" />
         <option value="$PROJECT_DIR$/app/views/home/restaurant/copyrestaurantcard.scala.html" />
         <option value="$PROJECT_DIR$/app/views/home/restaurant/layout.scala.html" />
         <option value="$PROJECT_DIR$/app/views/home/createrestaurant.scala.html" />
@@ -233,6 +226,9 @@
         <option value="$PROJECT_DIR$/app/views/home/restaurantcard.scala.html" />
         <option value="$PROJECT_DIR$/app/views/home/partials/_restaurantFormFields.scala.html" />
         <option value="$PROJECT_DIR$/app/views/home/index.scala.html" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/conf/application.conf" />
+        <option value="$PROJECT_DIR$/app/controllers/HomeController.java" />
       </list>
     </option>
   </component>
@@ -291,6 +287,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -335,76 +333,12 @@
             </path>
             <path>
               <item name="rest-o-matic" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rest-o-matic" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rest-o-matic" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rest-o-matic" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="javascripts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rest-o-matic" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rest-o-matic" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rest-o-matic" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rest-o-matic" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rest-o-matic" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rest-o-matic" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="scala-2.13" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rest-o-matic" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rest-o-matic" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="scala-2.13" type="462c0819:PsiDirectoryNode" />
-              <item name="twirl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rest-o-matic" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rest-o-matic" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="scala-2.13" type="462c0819:PsiDirectoryNode" />
-              <item name="twirl" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rest-o-matic" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rest-o-matic" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="scala-2.13" type="462c0819:PsiDirectoryNode" />
-              <item name="twirl" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rest-o-matic" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rest-o-matic" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="scala-2.13" type="462c0819:PsiDirectoryNode" />
-              <item name="twirl" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="partials" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rest-o-matic" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -543,16 +477,17 @@
       <workItem from="1576055499116" duration="6046000" />
       <workItem from="1576062473429" duration="1047000" />
       <workItem from="1576063996830" duration="3021000" />
+      <workItem from="1576067102661" duration="907000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109423000" />
+    <option name="totallyTimeSpent" value="110330000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24466951" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24733475" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -603,9 +538,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/conf/logback.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/home/create/restaurant.scala.html" />
     <entry file="file://$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/home/index.template.scala" />
     <entry file="file://$PROJECT_DIR$/public/stylesheets/main.css">
@@ -680,26 +612,12 @@
     <entry file="file://$PROJECT_DIR$/public/javascripts/main.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/HomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="27" column="61" selection-start-line="27" selection-start-column="61" selection-end-line="27" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scriptFile.scala" />
     <entry file="file://$PROJECT_DIR$/target/scala-2.13/classes/application.conf" />
     <entry file="file://$PROJECT_DIR$/build.sbt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="101" selection-start-line="5" selection-start-column="101" selection-end-line="5" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/application.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="34" column="60" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
         </state>
       </provider>
     </entry>
@@ -721,9 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
-          <folding>
-            <element signature="e#54#69#0#Scala" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -731,9 +646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="40" lean-forward="true" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
-          <folding>
-            <element signature="e#54#69#0#Scala" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -834,17 +746,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="34">
+            <caret line="2" column="76" lean-forward="true" selection-start-line="2" selection-start-column="76" selection-end-line="2" selection-end-column="76" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/home/index.scala.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
-          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Manager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
+        <state relative-caret-position="-527">
           <caret line="49" column="87" selection-start-line="49" selection-start-column="75" selection-end-line="49" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/application.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="56" column="1" lean-forward="true" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
         </state>
       </provider>
     </entry>
