@@ -30,6 +30,10 @@ public class VisitorController extends Controller {
         // TODO: remove deprecated method bindFromRequest
         Form<Visitor> visitorForm = formFactory.form(Visitor.class).bindFromRequest();
 
+        if (visitorForm.hasErrors()){
+            return badRequest(createvisitor.render(visitorForm));
+        }
+
         Visitor newVisitor = visitorForm.get();
         newVisitor.save();
 

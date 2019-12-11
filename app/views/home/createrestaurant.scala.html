@@ -1,16 +1,14 @@
 @import models.Restaurant
 @(restaurantForm: Form[Restaurant])
 @import helper._
+@import views.html.home.partials._restaurantFormFields
 
 @layout("New Restaurant"){
-    <h1>Create New Restaurant</h1>
+    <h2>Create New Restaurant</h2>
     <br>
     @helper.form(action = routes.RestaurantController.saveRestaurantChanges()) {
 
-        @helper.inputText(restaurantForm("restaurantName"), 'class -> "form-control")
-        @helper.inputText(restaurantForm("legalName"), 'class -> "form-control")
-        @helper.inputText(restaurantForm("inn"), 'class -> "form-control")
-        @helper.inputText(restaurantForm("address"), 'class -> "form-control")
+        @_restaurantFormFields(restaurantForm)
 
         <br>
 

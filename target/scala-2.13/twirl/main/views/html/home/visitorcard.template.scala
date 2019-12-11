@@ -37,8 +37,7 @@ Seq[Any](format.raw/*4.21*/("""
 """),_display_(/*6.2*/layout(visitor.getFirstName)/*6.30*/{_display_(Seq[Any](format.raw/*6.31*/("""
     """),format.raw/*7.5*/("""<h2>"""),_display_(/*7.10*/visitor/*7.17*/.getFirstName),format.raw/*7.30*/("""</h2>
     <br>
-    <input value="Edit visitor" type="button" onclick="window.location.href='"""),_display_(/*9.79*/routes/*9.85*/.VisitorController.editVisitor(visitor.getFirstName)),format.raw/*9.137*/("""'"/> <input value="Remove visitor" type="submit" onclick="window.location.href='"""),_display_(/*9.218*/routes/*9.224*/.VisitorController.destroyVisitor(visitor.getFirstName)),format.raw/*9.279*/("""'"/>
-
+    <a class="btn btn-primary" href=""""),_display_(/*9.39*/routes/*9.45*/.VisitorController.editVisitor(visitor.getFirstName)),format.raw/*9.97*/("""">Edit Visitor</a> <a class="btn btn-danger" href=""""),_display_(/*9.149*/routes/*9.155*/.VisitorController.destroyVisitor(visitor.getFirstName)),format.raw/*9.210*/("""">Remove Visitor</a>
     <br><br>
 
     <table border="1px solid grey" style="border-collapse: collapse">
@@ -47,15 +46,15 @@ Seq[Any](format.raw/*4.21*/("""
         </tr>
         <tr>
             <td>Last Name</td>
-            <td>"""),_display_(/*19.18*/visitor/*19.25*/.getLastName),format.raw/*19.37*/("""</td>
+            <td>"""),_display_(/*18.18*/visitor/*18.25*/.getLastName),format.raw/*18.37*/("""</td>
         </tr>
         <tr>
             <td>Email</td>
-            <td>"""),_display_(/*23.18*/visitor/*23.25*/.getEmail),format.raw/*23.34*/("""</td>
+            <td>"""),_display_(/*22.18*/visitor/*22.25*/.getEmail),format.raw/*22.34*/("""</td>
         </tr>
         <tr>
             <td>Phone</td>
-            <td>"""),_display_(/*27.18*/visitor/*27.25*/.getPhoneNumber),format.raw/*27.40*/("""</td>
+            <td>"""),_display_(/*26.18*/visitor/*26.25*/.getPhoneNumber),format.raw/*26.40*/("""</td>
         </tr>
     </table>
 """)))}))
@@ -74,11 +73,11 @@ Seq[Any](format.raw/*4.21*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-11T10:32:17.662
+                  DATE: 2019-12-11T12:56:57.718
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/visitorcard.scala.html
-                  HASH: 49599f949a4ec26caecaea9f588b66a49d286eee
-                  MATRIX: 656->1|685->25|1012->45|1126->64|1156->69|1192->97|1230->98|1262->104|1293->109|1308->116|1341->129|1462->224|1476->230|1549->282|1657->363|1672->369|1748->424|2034->683|2050->690|2083->702|2191->783|2207->790|2237->799|2345->880|2361->887|2397->902
-                  LINES: 24->1|25->2|30->4|35->4|37->6|37->6|37->6|38->7|38->7|38->7|38->7|40->9|40->9|40->9|40->9|40->9|40->9|50->19|50->19|50->19|54->23|54->23|54->23|58->27|58->27|58->27
+                  HASH: 3a166ffdf722afaff0a24655d5b40cdfd53d6429
+                  MATRIX: 656->1|685->25|1012->45|1126->64|1156->69|1192->97|1230->98|1262->104|1293->109|1308->116|1341->129|1422->184|1436->190|1508->242|1587->294|1602->300|1678->355|1978->628|1994->635|2027->647|2135->728|2151->735|2181->744|2289->825|2305->832|2341->847
+                  LINES: 24->1|25->2|30->4|35->4|37->6|37->6|37->6|38->7|38->7|38->7|38->7|40->9|40->9|40->9|40->9|40->9|40->9|49->18|49->18|49->18|53->22|53->22|53->22|57->26|57->26|57->26
                   -- GENERATED --
               */
           

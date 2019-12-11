@@ -37,7 +37,7 @@ Seq[Any](format.raw/*4.27*/("""
 """),_display_(/*6.2*/layout(restaurant.getRestaurantName)/*6.38*/{_display_(Seq[Any](format.raw/*6.39*/("""
     """),format.raw/*7.5*/("""<h2>"""),_display_(/*7.10*/restaurant/*7.20*/.getRestaurantName),format.raw/*7.38*/("""</h2>
     <br>
-    <input value="Edit restaurant" type="button" onclick="window.location.href='"""),_display_(/*9.82*/routes/*9.88*/.RestaurantController.editRestaurant(restaurant.getRestaurantName)),format.raw/*9.154*/("""'"/> <input value="Remove restaurant" type="button" onclick="window.location.href='"""),_display_(/*9.238*/routes/*9.244*/.RestaurantController.destroyRestaurant(restaurant.getRestaurantName)),format.raw/*9.313*/("""'"/>
+    <a class="btn btn-primary" href=""""),_display_(/*9.39*/routes/*9.45*/.RestaurantController.editRestaurant(restaurant.getRestaurantName)),format.raw/*9.111*/("""">Edit Restaurant</a> <a class="btn btn-danger" href=""""),_display_(/*9.166*/routes/*9.172*/.RestaurantController.destroyRestaurant(restaurant.getRestaurantName)),format.raw/*9.241*/("""">Remove Restaurant</a>
 
     <br><br>
 
@@ -74,10 +74,10 @@ Seq[Any](format.raw/*4.27*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-11T10:31:42.616
+                  DATE: 2019-12-11T12:56:57.713
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/restaurantcard.scala.html
-                  HASH: e1701aa1d3b3ec7017939309d2bbf85634804528
-                  MATRIX: 656->1|688->28|1021->48|1141->73|1171->78|1215->114|1253->115|1285->121|1316->126|1334->136|1372->154|1496->252|1510->258|1597->324|1708->408|1723->414|1813->483|2099->742|2118->752|2152->765|2258->844|2277->854|2305->861|2415->944|2434->954|2466->965
+                  HASH: 14b6361ad1f73469ffbbc5b090e203f288c6ef5e
+                  MATRIX: 656->1|688->28|1021->48|1141->73|1171->78|1215->114|1253->115|1285->121|1316->126|1334->136|1372->154|1453->209|1467->215|1554->281|1636->336|1651->342|1741->411|2046->689|2065->699|2099->712|2205->791|2224->801|2252->808|2362->891|2381->901|2413->912
                   LINES: 24->1|25->2|30->4|35->4|37->6|37->6|37->6|38->7|38->7|38->7|38->7|40->9|40->9|40->9|40->9|40->9|40->9|50->19|50->19|50->19|54->23|54->23|54->23|58->27|58->27|58->27
                   -- GENERATED --
               */

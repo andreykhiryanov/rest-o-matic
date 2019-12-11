@@ -5,7 +5,7 @@
 @(restaurants : List[Restaurant])(visitors : List[Visitor])
 
 @layout("Welcome!"){
-    <h2>All restaurants</h2>
+    <h2>All Restaurants</h2>
     <br>
     <table border="1px solid grey" style="border-collapse: collapse">
         @for(restaurant <- restaurants) {
@@ -15,7 +15,7 @@
         }
     </table>
     <br>
-    <h2>All visitors</h2>
+    <h2>All Visitors</h2>
     <br>
     <table border="1px solid grey" style="border-collapse: collapse">
         @for(visitor <- visitors) {

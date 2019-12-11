@@ -6,8 +6,7 @@
 @layout(visitor.getFirstName){
     <h2>@visitor.getFirstName</h2>
     <br>
-    <input value="Edit visitor" type="button" onclick="window.location.href='@routes.VisitorController.editVisitor(visitor.getFirstName)'"/> <input value="Remove visitor" type="submit" onclick="window.location.href='@routes.VisitorController.destroyVisitor(visitor.getFirstName)'"/>
-
+    <a class="btn btn-primary" href="@routes.VisitorController.editVisitor(visitor.getFirstName)">Edit Visitor</a> <a class="btn btn-danger" href="@routes.VisitorController.destroyVisitor(visitor.getFirstName)">Remove Visitor</a>
     <br><br>
 
     <table border="1px solid grey" style="border-collapse: collapse">

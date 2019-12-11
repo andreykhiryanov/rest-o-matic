@@ -2,6 +2,8 @@ package models;
 
 import io.ebean.Finder;
 import io.ebean.Model;
+import play.data.validation.Constraints;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.HashSet;
@@ -11,7 +13,9 @@ import java.util.Set;
 public class Visitor extends Model {
 
     @Id
+    @Constraints.Required
     private String firstName;
+    @Constraints.Required
     private String lastName;
     private String email;
     private String phoneNumber;

@@ -2,6 +2,8 @@ package models;
 
 import io.ebean.Finder;
 import io.ebean.Model;
+import play.data.validation.Constraints;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.HashSet;
@@ -11,9 +13,11 @@ import java.util.Set;
 public class Restaurant extends Model {
 
     @Id
+    @Constraints.Required
     private String restaurantName;
     private String legalName;
     private int inn;
+    @Constraints.Required
     private String address;
     private Set<Visitor> acceptedVisitors = new HashSet<>();
 

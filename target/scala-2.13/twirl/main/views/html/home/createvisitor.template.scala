@@ -30,23 +30,22 @@ object createvisitor extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.
     _display_ {
       {
 /*3.2*/import helper._
+/*4.2*/import views.html.home.partials._visitorFormFields
 
 
 Seq[Any](format.raw/*2.30*/("""
-"""),format.raw/*4.1*/("""
-"""),_display_(/*5.2*/layout("New Visitor")/*5.23*/{_display_(Seq[Any](format.raw/*5.24*/("""
-    """),format.raw/*6.5*/("""<h1>Create New Visitor</h1>
+"""),format.raw/*5.1*/("""
+"""),_display_(/*6.2*/layout("New Visitor")/*6.23*/{_display_(Seq[Any](format.raw/*6.24*/("""
+    """),format.raw/*7.5*/("""<h2>Create New Visitor</h2>
     <br>
-    """),_display_(/*8.6*/helper/*8.12*/.form(action = routes.VisitorController.saveVisitorChanges())/*8.73*/ {_display_(Seq[Any](format.raw/*8.75*/("""
-        """),_display_(/*9.10*/helper/*9.16*/.inputText(visitorForm("firstName"))),format.raw/*9.52*/("""
-        """),_display_(/*10.10*/helper/*10.16*/.inputText(visitorForm("lastName"))),format.raw/*10.51*/("""
-        """),_display_(/*11.10*/helper/*11.16*/.inputText(visitorForm("email"))),format.raw/*11.48*/("""
-        """),_display_(/*12.10*/helper/*12.16*/.inputText(visitorForm("phoneNumber"))),format.raw/*12.54*/("""
+    """),_display_(/*9.6*/helper/*9.12*/.form(action = routes.VisitorController.saveVisitorChanges())/*9.73*/ {_display_(Seq[Any](format.raw/*9.75*/("""
 
-        """),format.raw/*14.9*/("""<br>
+        """),_display_(/*11.10*/_visitorFormFields(visitorForm)),format.raw/*11.41*/("""
 
-        <input type="submit" value="Create Visitor">
-    """)))}),format.raw/*17.6*/("""
+        """),format.raw/*13.9*/("""<br>
+
+        <button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-plus-sign"></i> Create Visitor</button>
+    """)))}),format.raw/*16.6*/("""
 """)))}))
       }
     }
@@ -63,11 +62,11 @@ Seq[Any](format.raw/*2.30*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-11T10:42:09.510
+                  DATE: 2019-12-11T12:54:51.532
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/createvisitor.scala.html
-                  HASH: 27a758e34c840c9e93a185cb0708c3bd91a87216
-                  MATRIX: 656->1|997->25|1098->56|1143->53|1171->73|1199->76|1228->97|1266->98|1298->104|1367->148|1381->154|1450->215|1489->217|1526->228|1540->234|1596->270|1634->281|1649->287|1705->322|1743->333|1758->339|1811->371|1849->382|1864->388|1923->426|1962->438|2059->505
-                  LINES: 24->1|29->2|32->3|35->2|36->4|37->5|37->5|37->5|38->6|40->8|40->8|40->8|40->8|41->9|41->9|41->9|42->10|42->10|42->10|43->11|43->11|43->11|44->12|44->12|44->12|46->14|49->17
+                  HASH: 565eb93f599679bccee0d8858b955af697fcdeca
+                  MATRIX: 656->1|997->25|1098->56|1121->74|1201->53|1229->126|1257->129|1286->150|1324->151|1356->157|1425->201|1439->207|1508->268|1547->270|1587->283|1639->314|1678->326|1846->464
+                  LINES: 24->1|29->2|32->3|33->4|36->2|37->5|38->6|38->6|38->6|39->7|41->9|41->9|41->9|41->9|43->11|43->11|45->13|48->16
                   -- GENERATED --
               */
           

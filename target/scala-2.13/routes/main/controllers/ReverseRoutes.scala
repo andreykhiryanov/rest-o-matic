@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Wed Dec 11 11:41:07 GMT+03:00 2019
+// @DATE:Wed Dec 11 14:06:39 GMT+03:00 2019
 
 import play.api.mvc.Call
 
@@ -11,50 +11,50 @@ import _root_.play.libs.F
 // @LINE:5
 package controllers {
 
-  // @LINE:8
+  // @LINE:7
   class ReverseRestaurantController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:13
+    // @LINE:12
     def destroyRestaurant(restaurantName:String): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "restaurant/delete/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("restaurantName", restaurantName)))
     }
   
-    // @LINE:8
+    // @LINE:7
     def showRestaurantCard(restaurantName:String): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "restaurant/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("restaurantName", restaurantName)))
     }
   
-    // @LINE:14
+    // @LINE:13
     def acceptVisitor(visitorName:String): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "restaurant/accept/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("visitorName", visitorName)))
     }
   
-    // @LINE:11
+    // @LINE:10
     def createRestaurant(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "restaurant/create/")
     }
   
-    // @LINE:12
+    // @LINE:11
     def saveRestaurantChanges(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "restaurant/create/")
     }
   
-    // @LINE:10
+    // @LINE:9
     def updateRestaurant(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "restaurant/edit")
     }
   
-    // @LINE:9
+    // @LINE:8
     def editRestaurant(restaurantName:String): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "restaurant/edit/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("restaurantName", restaurantName)))
@@ -77,44 +77,44 @@ package controllers {
   
   }
 
-  // @LINE:16
+  // @LINE:15
   class ReverseVisitorController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:20
+    // @LINE:19
     def saveVisitorChanges(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "visitor/create/")
     }
   
-    // @LINE:19
+    // @LINE:18
     def createVisitor(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "visitor/create/")
     }
   
-    // @LINE:16
+    // @LINE:15
     def showVisitorCard(visitorName:String): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "visitor/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("visitorName", visitorName)))
     }
   
-    // @LINE:21
+    // @LINE:20
     def destroyVisitor(visitorName:String): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "visitor/delete/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("visitorName", visitorName)))
     }
   
-    // @LINE:17
+    // @LINE:16
     def editVisitor(visitorName:String): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "visitor/edit/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("visitorName", visitorName)))
     }
   
-    // @LINE:18
+    // @LINE:17
     def updateVisitor(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "visitor/edit")
@@ -122,14 +122,14 @@ package controllers {
   
   }
 
-  // @LINE:24
+  // @LINE:23
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:24
+    // @LINE:23
     def versioned(file:String): Call = {
       implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public"))); _rrc
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[String]].unbind("file", file))

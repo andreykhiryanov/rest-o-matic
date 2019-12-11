@@ -30,23 +30,22 @@ object editvisitor extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.ap
     _display_ {
       {
 /*3.2*/import helper._
+/*4.2*/import views.html.home.partials._visitorFormFields
 
 
 Seq[Any](format.raw/*2.30*/("""
-"""),format.raw/*4.1*/("""
-"""),_display_(/*5.2*/layout("Edit Visitor")/*5.24*/{_display_(Seq[Any](format.raw/*5.25*/("""
-    """),format.raw/*6.5*/("""<h1>Edit Visitor</h1>
+"""),format.raw/*5.1*/("""
+"""),_display_(/*6.2*/layout("Edit Visitor")/*6.24*/{_display_(Seq[Any](format.raw/*6.25*/("""
+    """),format.raw/*7.5*/("""<h2>Edit Visitor</h2>
     <br>
-    """),_display_(/*8.6*/helper/*8.12*/.form(action = routes.VisitorController.updateVisitor())/*8.68*/ {_display_(Seq[Any](format.raw/*8.70*/("""
-        """),_display_(/*9.10*/helper/*9.16*/.inputText(visitorForm("firstName"))),format.raw/*9.52*/("""
-        """),_display_(/*10.10*/helper/*10.16*/.inputText(visitorForm("lastName"))),format.raw/*10.51*/("""
-        """),_display_(/*11.10*/helper/*11.16*/.inputText(visitorForm("email"))),format.raw/*11.48*/("""
-        """),_display_(/*12.10*/helper/*12.16*/.inputText(visitorForm("phoneNumber"))),format.raw/*12.54*/("""
+    """),_display_(/*9.6*/helper/*9.12*/.form(action = routes.VisitorController.updateVisitor())/*9.68*/ {_display_(Seq[Any](format.raw/*9.70*/("""
 
-        """),format.raw/*14.9*/("""<br>
+        """),_display_(/*11.10*/_visitorFormFields(visitorForm)),format.raw/*11.41*/("""
 
-        <input type="submit" value="Edit Visitor">
-    """)))}),format.raw/*17.6*/("""
+        """),format.raw/*13.9*/("""<br>
+
+        <button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-check"></i> Edit Visitor</button>
+    """)))}),format.raw/*16.6*/("""
 """)))}))
       }
     }
@@ -63,11 +62,11 @@ Seq[Any](format.raw/*2.30*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-11T10:42:09.526
+                  DATE: 2019-12-11T12:54:51.539
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/editvisitor.scala.html
-                  HASH: 39b6ddaf3cf34a74e97378994cfa1660f0509caa
-                  MATRIX: 656->1|995->25|1096->56|1141->53|1169->73|1197->76|1227->98|1265->99|1297->105|1360->143|1374->149|1438->205|1477->207|1514->218|1528->224|1584->260|1622->271|1637->277|1693->312|1731->323|1746->329|1799->361|1837->372|1852->378|1911->416|1950->428|2045->493
-                  LINES: 24->1|29->2|32->3|35->2|36->4|37->5|37->5|37->5|38->6|40->8|40->8|40->8|40->8|41->9|41->9|41->9|42->10|42->10|42->10|43->11|43->11|43->11|44->12|44->12|44->12|46->14|49->17
+                  HASH: fdea320ee0c47f4207728dca35eddef22a29e27a
+                  MATRIX: 656->1|995->25|1096->56|1119->74|1199->53|1227->126|1255->129|1285->151|1323->152|1355->158|1418->196|1432->202|1496->258|1535->260|1575->273|1627->304|1666->316|1828->448
+                  LINES: 24->1|29->2|32->3|33->4|36->2|37->5|38->6|38->6|38->6|39->7|41->9|41->9|41->9|41->9|43->11|43->11|45->13|48->16
                   -- GENERATED --
               */
           

@@ -30,24 +30,22 @@ object createrestaurant extends _root_.play.twirl.api.BaseScalaTemplate[play.twi
     _display_ {
       {
 /*3.2*/import helper._
+/*4.2*/import views.html.home.partials._restaurantFormFields
 
 
 Seq[Any](format.raw/*2.36*/("""
-"""),format.raw/*4.1*/("""
-"""),_display_(/*5.2*/layout("New Restaurant")/*5.26*/{_display_(Seq[Any](format.raw/*5.27*/("""
-    """),format.raw/*6.5*/("""<h1>Create New Restaurant</h1>
+"""),format.raw/*5.1*/("""
+"""),_display_(/*6.2*/layout("New Restaurant")/*6.26*/{_display_(Seq[Any](format.raw/*6.27*/("""
+    """),format.raw/*7.5*/("""<h2>Create New Restaurant</h2>
     <br>
-    """),_display_(/*8.6*/helper/*8.12*/.form(action = routes.RestaurantController.saveRestaurantChanges())/*8.79*/ {_display_(Seq[Any](format.raw/*8.81*/("""
+    """),_display_(/*9.6*/helper/*9.12*/.form(action = routes.RestaurantController.saveRestaurantChanges())/*9.79*/ {_display_(Seq[Any](format.raw/*9.81*/("""
 
-        """),_display_(/*10.10*/helper/*10.16*/.inputText(restaurantForm("restaurantName"), 'class -> "form-control")),format.raw/*10.86*/("""
-        """),_display_(/*11.10*/helper/*11.16*/.inputText(restaurantForm("legalName"), 'class -> "form-control")),format.raw/*11.81*/("""
-        """),_display_(/*12.10*/helper/*12.16*/.inputText(restaurantForm("inn"), 'class -> "form-control")),format.raw/*12.75*/("""
-        """),_display_(/*13.10*/helper/*13.16*/.inputText(restaurantForm("address"), 'class -> "form-control")),format.raw/*13.79*/("""
+        """),_display_(/*11.10*/_restaurantFormFields(restaurantForm)),format.raw/*11.47*/("""
 
-        """),format.raw/*15.9*/("""<br>
+        """),format.raw/*13.9*/("""<br>
 
         <button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-plus-sign"></i> Create Restaurant</button>
-    """)))}),format.raw/*18.6*/("""
+    """)))}),format.raw/*16.6*/("""
 """)))}))
       }
     }
@@ -64,11 +62,11 @@ Seq[Any](format.raw/*2.36*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-11T11:02:17.579
+                  DATE: 2019-12-11T12:51:17.521
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/createrestaurant.scala.html
-                  HASH: e9f2e07ec053c64f2667c80eba18a78141e245a5
-                  MATRIX: 656->1|1006->28|1113->65|1158->62|1186->82|1214->85|1246->109|1284->110|1316->116|1388->163|1402->169|1477->236|1516->238|1556->251|1571->257|1662->327|1700->338|1715->344|1801->409|1839->420|1854->426|1934->485|1972->496|1987->502|2071->565|2110->577|2281->718
-                  LINES: 24->1|29->2|32->3|35->2|36->4|37->5|37->5|37->5|38->6|40->8|40->8|40->8|40->8|42->10|42->10|42->10|43->11|43->11|43->11|44->12|44->12|44->12|45->13|45->13|45->13|47->15|50->18
+                  HASH: 60fd46379571291d8645dcda1aa137fd3af9fe16
+                  MATRIX: 656->1|1006->28|1113->65|1136->83|1219->62|1247->138|1275->141|1307->165|1345->166|1377->172|1449->219|1463->225|1538->292|1577->294|1617->307|1675->344|1714->356|1885->497
+                  LINES: 24->1|29->2|32->3|33->4|36->2|37->5|38->6|38->6|38->6|39->7|41->9|41->9|41->9|41->9|43->11|43->11|45->13|48->16
                   -- GENERATED --
               */
           

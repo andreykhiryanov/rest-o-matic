@@ -36,7 +36,7 @@ object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Html
 Seq[Any](format.raw/*5.60*/("""
 
 """),_display_(/*7.2*/layout("Welcome!")/*7.20*/{_display_(Seq[Any](format.raw/*7.21*/("""
-    """),format.raw/*8.5*/("""<h2>All restaurants</h2>
+    """),format.raw/*8.5*/("""<h2>All Restaurants</h2>
     <br>
     <table border="1px solid grey" style="border-collapse: collapse">
         """),_display_(/*11.10*/for(restaurant <- restaurants) yield /*11.40*/ {_display_(Seq[Any](format.raw/*11.42*/("""
@@ -46,7 +46,7 @@ Seq[Any](format.raw/*5.60*/("""
         """)))}),format.raw/*15.10*/("""
     """),format.raw/*16.5*/("""</table>
     <br>
-    <h2>All visitors</h2>
+    <h2>All Visitors</h2>
     <br>
     <table border="1px solid grey" style="border-collapse: collapse">
         """),_display_(/*21.10*/for(visitor <- visitors) yield /*21.34*/ {_display_(Seq[Any](format.raw/*21.36*/("""
@@ -71,9 +71,9 @@ Seq[Any](format.raw/*5.60*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-11T10:31:00.859
+                  DATE: 2019-12-11T12:56:57.655
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/index.scala.html
-                  HASH: e5f40b1c70d222e0c5a0e08ac0fabbac66d00548
+                  HASH: 0de6aa30f4062741f554e5e9f1ea889beb4075e9
                   MATRIX: 656->1|688->28|717->52|1061->72|1214->130|1244->135|1270->153|1308->154|1340->160|1483->276|1529->306|1569->308|1611->322|1674->358|1689->364|1781->434|1812->437|1832->447|1872->465|1942->504|1975->510|2139->647|2179->671|2219->673|2261->687|2324->723|2339->729|2416->785|2446->788|2463->795|2498->808|2528->810|2545->817|2579->829|2649->868|2682->874
                   LINES: 24->1|25->2|26->3|31->5|36->5|38->7|38->7|38->7|39->8|42->11|42->11|42->11|43->12|44->13|44->13|44->13|44->13|44->13|44->13|46->15|47->16|52->21|52->21|52->21|53->22|54->23|54->23|54->23|54->23|54->23|54->23|54->23|54->23|54->23|56->25|57->26
                   -- GENERATED --

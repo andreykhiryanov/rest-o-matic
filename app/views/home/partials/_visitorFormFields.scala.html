@@ -1,0 +1,6 @@
+@(visitorForm: Form[Visitor])
+
+@helper.inputText(visitorForm("firstName"), 'class -> "form-control")
+@helper.inputText(visitorForm("lastName"), 'class -> "form-control")
+@helper.inputText(visitorForm("email"), 'class -> "form-control")
+@helper.inputText(visitorForm("phoneNumber"), 'class -> "form-control")

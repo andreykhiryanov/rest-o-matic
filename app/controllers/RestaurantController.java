@@ -30,6 +30,10 @@ public class RestaurantController extends Controller {
         // TODO: remove deprecated method bindFromRequest
         Form<Restaurant> restaurantForm = formFactory.form(Restaurant.class).bindFromRequest();
 
+        if (restaurantForm.hasErrors()) {
+            return badRequest(createrestaurant.render(restaurantForm));
+        }
+
         Restaurant newRestaurant = restaurantForm.get();
         newRestaurant.save();
 

@@ -30,21 +30,21 @@ object editrestaurant extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl
     _display_ {
       {
 /*3.2*/import helper._
+/*4.2*/import views.html.home.partials._restaurantFormFields
 
 
 Seq[Any](format.raw/*2.36*/("""
-"""),_display_(/*4.2*/layout("Edit Restaurant")/*4.27*/{_display_(Seq[Any](format.raw/*4.28*/("""
-    """),format.raw/*5.5*/("""<h1>Edit Restaurant</h1>
+"""),format.raw/*5.1*/("""
+"""),_display_(/*6.2*/layout("Edit Restaurant")/*6.27*/{_display_(Seq[Any](format.raw/*6.28*/("""
+    """),format.raw/*7.5*/("""<h2>Edit Restaurant</h2>
     <br>
-    """),_display_(/*7.6*/helper/*7.12*/.form(action = routes.RestaurantController.updateRestaurant())/*7.74*/ {_display_(Seq[Any](format.raw/*7.76*/("""
-        """),_display_(/*8.10*/helper/*8.16*/.inputText(restaurantForm("restaurantName"))),format.raw/*8.60*/("""
-        """),_display_(/*9.10*/helper/*9.16*/.inputText(restaurantForm("legalName"))),format.raw/*9.55*/("""
-        """),_display_(/*10.10*/helper/*10.16*/.inputText(restaurantForm("inn"))),format.raw/*10.49*/("""
-        """),_display_(/*11.10*/helper/*11.16*/.inputText(restaurantForm("address"))),format.raw/*11.53*/("""
+    """),_display_(/*9.6*/helper/*9.12*/.form(action = routes.RestaurantController.updateRestaurant())/*9.74*/ {_display_(Seq[Any](format.raw/*9.76*/("""
+
+        """),_display_(/*11.10*/_restaurantFormFields(restaurantForm)),format.raw/*11.47*/("""
 
         """),format.raw/*13.9*/("""<br>
 
-        <input type="submit" value="Edit Restaurant">
+        <button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-check"></i> Edit Restaurant</button>
     """)))}),format.raw/*16.6*/("""
 """)))}))
       }
@@ -62,11 +62,11 @@ Seq[Any](format.raw/*2.36*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-11T10:42:09.518
+                  DATE: 2019-12-11T12:51:58.796
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/editrestaurant.scala.html
-                  HASH: 52d6c8249d3aea67a59b25c75cfc9056e647b9dd
-                  MATRIX: 656->1|1004->28|1111->65|1156->62|1184->83|1217->108|1255->109|1287->115|1353->156|1367->162|1437->224|1476->226|1513->237|1527->243|1591->287|1628->298|1642->304|1701->343|1739->354|1754->360|1808->393|1846->404|1861->410|1919->447|1958->459|2056->527
-                  LINES: 24->1|29->2|32->3|35->2|36->4|36->4|36->4|37->5|39->7|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|42->10|42->10|42->10|43->11|43->11|43->11|45->13|48->16
+                  HASH: 425428a708a7b21281de3c7c63fcd7678c310516
+                  MATRIX: 656->1|1004->28|1111->65|1134->83|1217->62|1245->138|1273->141|1306->166|1344->167|1376->173|1442->214|1456->220|1526->282|1565->284|1605->297|1663->334|1702->346|1867->481
+                  LINES: 24->1|29->2|32->3|33->4|36->2|37->5|38->6|38->6|38->6|39->7|41->9|41->9|41->9|41->9|43->11|43->11|45->13|48->16
                   -- GENERATED --
               */
           

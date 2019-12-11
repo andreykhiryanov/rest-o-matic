@@ -1,0 +1,6 @@
+@(restaurantForm: Form[Restaurant])
+
+@helper.inputText(restaurantForm("restaurantName"), 'class -> "form-control")
+@helper.inputText(restaurantForm("legalName"), 'class -> "form-control")
+@helper.inputText(restaurantForm("inn"), 'class -> "form-control")
+@helper.inputText(restaurantForm("address"), 'class -> "form-control")

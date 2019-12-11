@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Wed Dec 11 11:41:07 GMT+03:00 2019
+// @DATE:Wed Dec 11 14:06:39 GMT+03:00 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -11,7 +11,7 @@ import _root_.play.libs.F
 // @LINE:5
 package controllers.javascript {
 
-  // @LINE:8
+  // @LINE:7
   class ReverseRestaurantController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -19,7 +19,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:13
+    // @LINE:12
     def destroyRestaurant: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.RestaurantController.destroyRestaurant",
       """
@@ -29,7 +29,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:8
+    // @LINE:7
     def showRestaurantCard: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.RestaurantController.showRestaurantCard",
       """
@@ -39,7 +39,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:14
+    // @LINE:13
     def acceptVisitor: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.RestaurantController.acceptVisitor",
       """
@@ -49,7 +49,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:11
+    // @LINE:10
     def createRestaurant: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.RestaurantController.createRestaurant",
       """
@@ -59,7 +59,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:12
+    // @LINE:11
     def saveRestaurantChanges: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.RestaurantController.saveRestaurantChanges",
       """
@@ -69,7 +69,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:10
+    // @LINE:9
     def updateRestaurant: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.RestaurantController.updateRestaurant",
       """
@@ -79,7 +79,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:9
+    // @LINE:8
     def editRestaurant: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.RestaurantController.editRestaurant",
       """
@@ -111,7 +111,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:16
+  // @LINE:15
   class ReverseVisitorController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -119,7 +119,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:20
+    // @LINE:19
     def saveVisitorChanges: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.VisitorController.saveVisitorChanges",
       """
@@ -129,7 +129,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:19
+    // @LINE:18
     def createVisitor: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.VisitorController.createVisitor",
       """
@@ -139,7 +139,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:16
+    // @LINE:15
     def showVisitorCard: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.VisitorController.showVisitorCard",
       """
@@ -149,7 +149,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:21
+    // @LINE:20
     def destroyVisitor: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.VisitorController.destroyVisitor",
       """
@@ -159,7 +159,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:17
+    // @LINE:16
     def editVisitor: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.VisitorController.editVisitor",
       """
@@ -169,7 +169,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:18
+    // @LINE:17
     def updateVisitor: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.VisitorController.updateVisitor",
       """
@@ -181,7 +181,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:24
+  // @LINE:23
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -189,7 +189,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:24
+    // @LINE:23
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
