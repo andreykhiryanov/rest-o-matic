@@ -36,7 +36,7 @@ Seq[Any](format.raw/*4.27*/("""
 
 """),_display_(/*6.2*/layout(restaurant.getRestaurantName)/*6.38*/{_display_(Seq[Any](format.raw/*6.39*/("""
     """),format.raw/*7.5*/("""<h2>"""),_display_(/*7.10*/restaurant/*7.20*/.getRestaurantName),format.raw/*7.38*/("""</h2>
-
+    <br>
     <input value="Edit restaurant" type="button" onclick="window.location.href='"""),_display_(/*9.82*/routes/*9.88*/.RestaurantController.editRestaurant(restaurant.getRestaurantName)),format.raw/*9.154*/("""'"/> <input value="Remove restaurant" type="button" onclick="window.location.href='"""),_display_(/*9.238*/routes/*9.244*/.RestaurantController.destroyRestaurant(restaurant.getRestaurantName)),format.raw/*9.313*/("""'"/>
 
     <br><br>
@@ -74,10 +74,10 @@ Seq[Any](format.raw/*4.27*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-10T15:58:47.133
+                  DATE: 2019-12-11T10:31:42.616
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/restaurantcard.scala.html
-                  HASH: 9e4d30087c381191f5b92ec321d5911e3e790b65
-                  MATRIX: 656->1|688->28|1021->48|1141->73|1171->78|1215->114|1253->115|1285->121|1316->126|1334->136|1372->154|1488->244|1502->250|1589->316|1700->400|1715->406|1805->475|2091->734|2110->744|2144->757|2250->836|2269->846|2297->853|2407->936|2426->946|2458->957
+                  HASH: e1701aa1d3b3ec7017939309d2bbf85634804528
+                  MATRIX: 656->1|688->28|1021->48|1141->73|1171->78|1215->114|1253->115|1285->121|1316->126|1334->136|1372->154|1496->252|1510->258|1597->324|1708->408|1723->414|1813->483|2099->742|2118->752|2152->765|2258->844|2277->854|2305->861|2415->944|2434->954|2466->965
                   LINES: 24->1|25->2|30->4|35->4|37->6|37->6|37->6|38->7|38->7|38->7|38->7|40->9|40->9|40->9|40->9|40->9|40->9|50->19|50->19|50->19|54->23|54->23|54->23|58->27|58->27|58->27
                   -- GENERATED --
               */

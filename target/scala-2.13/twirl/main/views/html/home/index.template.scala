@@ -36,36 +36,25 @@ object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Html
 Seq[Any](format.raw/*5.60*/("""
 
 """),_display_(/*7.2*/layout("Welcome!")/*7.20*/{_display_(Seq[Any](format.raw/*7.21*/("""
-    """),format.raw/*8.5*/("""<h1>Welcome to the Rest-o-matic!</h1>
-
-    <input value="New restaurant" type="button" onclick="window.location.href='"""),_display_(/*10.81*/routes/*10.87*/.RestaurantController.createRestaurant()),format.raw/*10.127*/("""'"/> <input value="New visitor" type="button" onclick="window.location.href='"""),_display_(/*10.205*/routes/*10.211*/.VisitorController.createVisitor()),format.raw/*10.245*/("""'"/>
+    """),format.raw/*8.5*/("""<h2>All restaurants</h2>
     <br>
-
-    <h2>All restaurants</h2>
-
     <table border="1px solid grey" style="border-collapse: collapse">
-        <tr>
-            <th>Restaurants</th>
-        </tr>
-        """),_display_(/*19.10*/for(restaurant <- restaurants) yield /*19.40*/ {_display_(Seq[Any](format.raw/*19.42*/("""
-            """),format.raw/*20.13*/("""<tr>
-                <td style="text-align:center"><a href=""""),_display_(/*21.57*/routes/*21.63*/.RestaurantController.showRestaurantCard(restaurant.getRestaurantName)),format.raw/*21.133*/("""">"""),_display_(/*21.136*/restaurant/*21.146*/.getRestaurantName),format.raw/*21.164*/("""</a></td>
+        """),_display_(/*11.10*/for(restaurant <- restaurants) yield /*11.40*/ {_display_(Seq[Any](format.raw/*11.42*/("""
+            """),format.raw/*12.13*/("""<tr>
+                <td><a href=""""),_display_(/*13.31*/routes/*13.37*/.RestaurantController.showRestaurantCard(restaurant.getRestaurantName)),format.raw/*13.107*/("""">"""),_display_(/*13.110*/restaurant/*13.120*/.getRestaurantName),format.raw/*13.138*/("""</a></td>
             </tr>
-        """)))}),format.raw/*23.10*/("""
-    """),format.raw/*24.5*/("""</table>
-
+        """)))}),format.raw/*15.10*/("""
+    """),format.raw/*16.5*/("""</table>
+    <br>
     <h2>All visitors</h2>
-
+    <br>
     <table border="1px solid grey" style="border-collapse: collapse">
-        <tr>
-            <th>Visitors</th>
-        </tr>
-        """),_display_(/*32.10*/for(visitor <- visitors) yield /*32.34*/ {_display_(Seq[Any](format.raw/*32.36*/("""
-            """),format.raw/*33.13*/("""<tr>
-                <td style="text-align:center"><a href=""""),_display_(/*34.57*/routes/*34.63*/.VisitorController.showVisitorCard(visitor.getFirstName)),format.raw/*34.119*/("""">"""),_display_(/*34.122*/visitor/*34.129*/.getFirstName),format.raw/*34.142*/(""" """),_display_(/*34.144*/visitor/*34.151*/.getLastName),format.raw/*34.163*/("""</a></td>
+        """),_display_(/*21.10*/for(visitor <- visitors) yield /*21.34*/ {_display_(Seq[Any](format.raw/*21.36*/("""
+            """),format.raw/*22.13*/("""<tr>
+                <td><a href=""""),_display_(/*23.31*/routes/*23.37*/.VisitorController.showVisitorCard(visitor.getFirstName)),format.raw/*23.93*/("""">"""),_display_(/*23.96*/visitor/*23.103*/.getFirstName),format.raw/*23.116*/(""" """),_display_(/*23.118*/visitor/*23.125*/.getLastName),format.raw/*23.137*/("""</a></td>
             </tr>
-        """)))}),format.raw/*36.10*/("""
-    """),format.raw/*37.5*/("""</table>
+        """)))}),format.raw/*25.10*/("""
+    """),format.raw/*26.5*/("""</table>
 """)))}))
       }
     }
@@ -82,11 +71,11 @@ Seq[Any](format.raw/*5.60*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-10T15:10:10.646
+                  DATE: 2019-12-11T10:31:00.859
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/index.scala.html
-                  HASH: 5c48c9f71119af095ce367810e94e691b2d9b882
-                  MATRIX: 656->1|688->28|717->52|1061->72|1214->130|1244->135|1270->153|1308->154|1340->160|1488->281|1503->287|1565->327|1671->405|1687->411|1743->445|1963->638|2009->668|2049->670|2091->684|2180->746|2195->752|2287->822|2318->825|2338->835|2378->853|2448->892|2481->898|2689->1079|2729->1103|2769->1105|2811->1119|2900->1181|2915->1187|2993->1243|3024->1246|3041->1253|3076->1266|3106->1268|3123->1275|3157->1287|3227->1326|3260->1332
-                  LINES: 24->1|25->2|26->3|31->5|36->5|38->7|38->7|38->7|39->8|41->10|41->10|41->10|41->10|41->10|41->10|50->19|50->19|50->19|51->20|52->21|52->21|52->21|52->21|52->21|52->21|54->23|55->24|63->32|63->32|63->32|64->33|65->34|65->34|65->34|65->34|65->34|65->34|65->34|65->34|65->34|67->36|68->37
+                  HASH: e5f40b1c70d222e0c5a0e08ac0fabbac66d00548
+                  MATRIX: 656->1|688->28|717->52|1061->72|1214->130|1244->135|1270->153|1308->154|1340->160|1483->276|1529->306|1569->308|1611->322|1674->358|1689->364|1781->434|1812->437|1832->447|1872->465|1942->504|1975->510|2139->647|2179->671|2219->673|2261->687|2324->723|2339->729|2416->785|2446->788|2463->795|2498->808|2528->810|2545->817|2579->829|2649->868|2682->874
+                  LINES: 24->1|25->2|26->3|31->5|36->5|38->7|38->7|38->7|39->8|42->11|42->11|42->11|43->12|44->13|44->13|44->13|44->13|44->13|44->13|46->15|47->16|52->21|52->21|52->21|53->22|54->23|54->23|54->23|54->23|54->23|54->23|54->23|54->23|54->23|56->25|57->26
                   -- GENERATED --
               */
           

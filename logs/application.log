@@ -1,12 +1,175 @@
-2019-12-10 17:49:39,497 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-10 - application.conf @ file:/D:/Java/Projects/rest-o-matic/target/scala-2.13/classes/application.conf: 19: user is deprecated, use username instead
-2019-12-10 17:49:39,498 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-10 - Database [default] initialized at jdbc:postgresql://127.0.0.1/postgres
-2019-12-10 17:49:39,508 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-10 - Creating Pool for datasource 'default'
-2019-12-10 17:49:40,809 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-10 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-12-11 10:04:57,492 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-8 - application.conf @ file:/D:/Java/Projects/rest-o-matic/target/scala-2.13/classes/application.conf: 19: user is deprecated, use username instead
+2019-12-11 10:04:57,493 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-8 - Database [default] initialized at jdbc:postgresql://127.0.0.1/postgres
+2019-12-11 10:04:57,502 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-8 - Creating Pool for datasource 'default'
+2019-12-11 10:05:00,044 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-8 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2019-12-10 17:49:40,816 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-10 - Application started (Dev) (no global state)
-2019-12-10 17:59:49,046 [INFO] from play.core.server.AkkaHttpServer in pool-12-thread-2 - Stopping server...
-2019-12-10 17:59:49,061 [INFO] from application in application-akka.actor.default-dispatcher-21 - Shutting down connection pool.
+2019-12-11 10:05:00,050 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-8 - Application started (Dev) (no global state)
+2019-12-11 10:05:37,394 [INFO] from application in application-akka.actor.default-dispatcher-6 - Shutting down connection pool.
+2019-12-11 10:05:37,560 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-7 - application.conf @ file:/D:/Java/Projects/rest-o-matic/target/scala-2.13/classes/application.conf: 19: user is deprecated, use username instead
+2019-12-11 10:05:37,560 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-7 - Database [default] initialized at jdbc:postgresql://127.0.0.1/postgres
+2019-12-11 10:05:37,561 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-7 - Creating Pool for datasource 'default'
+2019-12-11 10:05:37,759 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-7 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2019-12-11 10:05:37,761 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-7 - Application started (Dev) (no global state)
+2019-12-11 10:18:54,779 [INFO] from application in application-akka.actor.default-dispatcher-12 - Shutting down connection pool.
+2019-12-11 10:18:54,939 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-20 - application.conf @ file:/D:/Java/Projects/rest-o-matic/target/scala-2.13/classes/application.conf: 19: user is deprecated, use username instead
+2019-12-11 10:18:54,939 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-20 - Database [default] initialized at jdbc:postgresql://127.0.0.1/postgres
+2019-12-11 10:18:54,939 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-20 - Creating Pool for datasource 'default'
+2019-12-11 10:18:55,150 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-20 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2019-12-11 10:18:55,154 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-20 - Application started (Dev) (no global state)
+2019-12-11 10:19:50,676 [INFO] from application in application-akka.actor.default-dispatcher-5 - Shutting down connection pool.
+2019-12-11 10:19:50,849 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-22 - application.conf @ file:/D:/Java/Projects/rest-o-matic/target/scala-2.13/classes/application.conf: 19: user is deprecated, use username instead
+2019-12-11 10:19:50,849 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-22 - Database [default] initialized at jdbc:postgresql://127.0.0.1/postgres
+2019-12-11 10:19:50,849 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-22 - Creating Pool for datasource 'default'
+2019-12-11 10:19:51,000 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-22 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2019-12-11 10:19:51,002 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-22 - Application started (Dev) (no global state)
+2019-12-11 10:20:01,940 [INFO] from application in application-akka.actor.default-dispatcher-2 - Shutting down connection pool.
+2019-12-11 10:20:02,072 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-20 - application.conf @ file:/D:/Java/Projects/rest-o-matic/target/scala-2.13/classes/application.conf: 19: user is deprecated, use username instead
+2019-12-11 10:20:02,072 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-20 - Database [default] initialized at jdbc:postgresql://127.0.0.1/postgres
+2019-12-11 10:20:02,072 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-20 - Creating Pool for datasource 'default'
+2019-12-11 10:20:02,243 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-20 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2019-12-11 10:20:02,244 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-20 - Application started (Dev) (no global state)
+2019-12-11 10:26:12,298 [INFO] from application in application-akka.actor.default-dispatcher-2 - Shutting down connection pool.
+2019-12-11 10:26:12,419 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-27 - application.conf @ file:/D:/Java/Projects/rest-o-matic/target/scala-2.13/classes/application.conf: 19: user is deprecated, use username instead
+2019-12-11 10:26:12,419 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-27 - Database [default] initialized at jdbc:postgresql://127.0.0.1/postgres
+2019-12-11 10:26:12,419 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-27 - Creating Pool for datasource 'default'
+2019-12-11 10:26:12,547 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-27 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2019-12-11 10:26:12,548 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-27 - Application started (Dev) (no global state)
+2019-12-11 10:27:16,920 [INFO] from application in application-akka.actor.default-dispatcher-3 - Shutting down connection pool.
+2019-12-11 10:27:17,045 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-25 - application.conf @ file:/D:/Java/Projects/rest-o-matic/target/scala-2.13/classes/application.conf: 19: user is deprecated, use username instead
+2019-12-11 10:27:17,045 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-25 - Database [default] initialized at jdbc:postgresql://127.0.0.1/postgres
+2019-12-11 10:27:17,045 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-25 - Creating Pool for datasource 'default'
+2019-12-11 10:27:17,172 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-25 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2019-12-11 10:27:17,173 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-25 - Application started (Dev) (no global state)
+2019-12-11 10:28:29,930 [INFO] from application in application-akka.actor.default-dispatcher-10 - Shutting down connection pool.
+2019-12-11 10:28:30,037 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-30 - application.conf @ file:/D:/Java/Projects/rest-o-matic/target/scala-2.13/classes/application.conf: 19: user is deprecated, use username instead
+2019-12-11 10:28:30,037 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-30 - Database [default] initialized at jdbc:postgresql://127.0.0.1/postgres
+2019-12-11 10:28:30,037 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-30 - Creating Pool for datasource 'default'
+2019-12-11 10:28:30,170 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-30 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2019-12-11 10:28:30,171 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-30 - Application started (Dev) (no global state)
+2019-12-11 10:28:46,135 [INFO] from application in application-akka.actor.default-dispatcher-9 - Shutting down connection pool.
+2019-12-11 10:28:46,253 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-29 - application.conf @ file:/D:/Java/Projects/rest-o-matic/target/scala-2.13/classes/application.conf: 19: user is deprecated, use username instead
+2019-12-11 10:28:46,253 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-29 - Database [default] initialized at jdbc:postgresql://127.0.0.1/postgres
+2019-12-11 10:28:46,253 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-29 - Creating Pool for datasource 'default'
+2019-12-11 10:28:46,379 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-29 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2019-12-11 10:28:46,380 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-29 - Application started (Dev) (no global state)
+2019-12-11 10:29:32,999 [INFO] from application in application-akka.actor.default-dispatcher-9 - Shutting down connection pool.
+2019-12-11 10:29:33,116 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-30 - application.conf @ file:/D:/Java/Projects/rest-o-matic/target/scala-2.13/classes/application.conf: 19: user is deprecated, use username instead
+2019-12-11 10:29:33,116 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-30 - Database [default] initialized at jdbc:postgresql://127.0.0.1/postgres
+2019-12-11 10:29:33,116 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-30 - Creating Pool for datasource 'default'
+2019-12-11 10:29:33,603 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-30 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2019-12-11 10:29:33,604 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-30 - Application started (Dev) (no global state)
+2019-12-11 10:29:44,791 [INFO] from application in application-akka.actor.default-dispatcher-5 - Shutting down connection pool.
+2019-12-11 10:29:44,904 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-31 - application.conf @ file:/D:/Java/Projects/rest-o-matic/target/scala-2.13/classes/application.conf: 19: user is deprecated, use username instead
+2019-12-11 10:29:44,904 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-31 - Database [default] initialized at jdbc:postgresql://127.0.0.1/postgres
+2019-12-11 10:29:44,904 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-31 - Creating Pool for datasource 'default'
+2019-12-11 10:29:45,086 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-31 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2019-12-11 10:29:45,087 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-31 - Application started (Dev) (no global state)
+2019-12-11 10:31:01,614 [INFO] from application in application-akka.actor.default-dispatcher-8 - Shutting down connection pool.
+2019-12-11 10:31:01,721 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-22 - application.conf @ file:/D:/Java/Projects/rest-o-matic/target/scala-2.13/classes/application.conf: 19: user is deprecated, use username instead
+2019-12-11 10:31:01,722 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-22 - Database [default] initialized at jdbc:postgresql://127.0.0.1/postgres
+2019-12-11 10:31:01,722 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-22 - Creating Pool for datasource 'default'
+2019-12-11 10:31:02,163 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-22 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2019-12-11 10:31:02,164 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-22 - Application started (Dev) (no global state)
+2019-12-11 10:31:08,615 [INFO] from application in application-akka.actor.default-dispatcher-5 - Shutting down connection pool.
+2019-12-11 10:31:08,724 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-27 - application.conf @ file:/D:/Java/Projects/rest-o-matic/target/scala-2.13/classes/application.conf: 19: user is deprecated, use username instead
+2019-12-11 10:31:08,724 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-27 - Database [default] initialized at jdbc:postgresql://127.0.0.1/postgres
+2019-12-11 10:31:08,724 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-27 - Creating Pool for datasource 'default'
+2019-12-11 10:31:08,842 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-27 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2019-12-11 10:31:08,843 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-27 - Application started (Dev) (no global state)
+2019-12-11 10:31:17,643 [INFO] from application in application-akka.actor.default-dispatcher-3 - Shutting down connection pool.
+2019-12-11 10:31:17,750 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-31 - application.conf @ file:/D:/Java/Projects/rest-o-matic/target/scala-2.13/classes/application.conf: 19: user is deprecated, use username instead
+2019-12-11 10:31:17,750 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-31 - Database [default] initialized at jdbc:postgresql://127.0.0.1/postgres
+2019-12-11 10:31:17,750 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-31 - Creating Pool for datasource 'default'
+2019-12-11 10:31:17,868 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-31 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2019-12-11 10:31:17,869 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-31 - Application started (Dev) (no global state)
+2019-12-11 10:31:43,192 [INFO] from application in application-akka.actor.default-dispatcher-3 - Shutting down connection pool.
+2019-12-11 10:31:43,286 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-25 - application.conf @ file:/D:/Java/Projects/rest-o-matic/target/scala-2.13/classes/application.conf: 19: user is deprecated, use username instead
+2019-12-11 10:31:43,286 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-25 - Database [default] initialized at jdbc:postgresql://127.0.0.1/postgres
+2019-12-11 10:31:43,286 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-25 - Creating Pool for datasource 'default'
+2019-12-11 10:31:43,575 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-25 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2019-12-11 10:31:43,575 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-25 - Application started (Dev) (no global state)
+2019-12-11 10:32:18,287 [INFO] from application in application-akka.actor.default-dispatcher-10 - Shutting down connection pool.
+2019-12-11 10:32:18,379 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-29 - application.conf @ file:/D:/Java/Projects/rest-o-matic/target/scala-2.13/classes/application.conf: 19: user is deprecated, use username instead
+2019-12-11 10:32:18,379 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-29 - Database [default] initialized at jdbc:postgresql://127.0.0.1/postgres
+2019-12-11 10:32:18,379 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-29 - Creating Pool for datasource 'default'
+2019-12-11 10:32:18,717 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-29 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2019-12-11 10:32:18,718 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-29 - Application started (Dev) (no global state)

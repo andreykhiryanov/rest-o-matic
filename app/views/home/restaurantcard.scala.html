@@ -5,7 +5,7 @@
 
 @layout(restaurant.getRestaurantName){
     <h2>@restaurant.getRestaurantName</h2>
-
+    <br>
     <input value="Edit restaurant" type="button" onclick="window.location.href='@routes.RestaurantController.editRestaurant(restaurant.getRestaurantName)'"/> <input value="Remove restaurant" type="button" onclick="window.location.href='@routes.RestaurantController.destroyRestaurant(restaurant.getRestaurantName)'"/>
 
     <br><br>

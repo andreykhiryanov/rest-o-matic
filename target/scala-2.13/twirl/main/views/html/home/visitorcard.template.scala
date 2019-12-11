@@ -36,7 +36,7 @@ Seq[Any](format.raw/*4.21*/("""
 
 """),_display_(/*6.2*/layout(visitor.getFirstName)/*6.30*/{_display_(Seq[Any](format.raw/*6.31*/("""
     """),format.raw/*7.5*/("""<h2>"""),_display_(/*7.10*/visitor/*7.17*/.getFirstName),format.raw/*7.30*/("""</h2>
-
+    <br>
     <input value="Edit visitor" type="button" onclick="window.location.href='"""),_display_(/*9.79*/routes/*9.85*/.VisitorController.editVisitor(visitor.getFirstName)),format.raw/*9.137*/("""'"/> <input value="Remove visitor" type="submit" onclick="window.location.href='"""),_display_(/*9.218*/routes/*9.224*/.VisitorController.destroyVisitor(visitor.getFirstName)),format.raw/*9.279*/("""'"/>
 
     <br><br>
@@ -74,10 +74,10 @@ Seq[Any](format.raw/*4.21*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-10T15:58:19.992
+                  DATE: 2019-12-11T10:32:17.662
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/visitorcard.scala.html
-                  HASH: 4cbe784d4f9144f857a3e71d6e42d4304a888907
-                  MATRIX: 656->1|685->25|1012->45|1126->64|1156->69|1192->97|1230->98|1262->104|1293->109|1308->116|1341->129|1454->216|1468->222|1541->274|1649->355|1664->361|1740->416|2026->675|2042->682|2075->694|2183->775|2199->782|2229->791|2337->872|2353->879|2389->894
+                  HASH: 49599f949a4ec26caecaea9f588b66a49d286eee
+                  MATRIX: 656->1|685->25|1012->45|1126->64|1156->69|1192->97|1230->98|1262->104|1293->109|1308->116|1341->129|1462->224|1476->230|1549->282|1657->363|1672->369|1748->424|2034->683|2050->690|2083->702|2191->783|2207->790|2237->799|2345->880|2361->887|2397->902
                   LINES: 24->1|25->2|30->4|35->4|37->6|37->6|37->6|38->7|38->7|38->7|38->7|40->9|40->9|40->9|40->9|40->9|40->9|50->19|50->19|50->19|54->23|54->23|54->23|58->27|58->27|58->27
                   -- GENERATED --
               */

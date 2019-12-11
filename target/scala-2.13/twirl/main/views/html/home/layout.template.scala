@@ -42,13 +42,39 @@ Seq[Any](format.raw/*1.31*/("""
 
     </head>
     <body>
-        <div class="container">
-            """),_display_(/*14.14*/body),format.raw/*14.18*/("""
-        """),format.raw/*15.9*/("""</div>
 
-        <script src=""""),_display_(/*17.23*/routes/*17.29*/.Assets.versioned("javascripts/jquery-3.4.1.min.js")),format.raw/*17.81*/(""""></script>
-        <script src=""""),_display_(/*18.23*/routes/*18.29*/.Assets.versioned("javascripts/bootstrap.min.js")),format.raw/*18.78*/(""""></script>
-        <script src=""""),_display_(/*19.23*/routes/*19.29*/.Assets.versioned("javascripts/main.js")),format.raw/*19.69*/(""""></script>
+        <header>
+            <div class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#exnav">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href=""""),_display_(/*23.35*/routes/*23.41*/.HomeController.greetings()),format.raw/*23.68*/("""" class="navbar-brand">Rest-o-matic</a>
+                    </div>
+                    <div class="collapse navbar-collapse"  id="exnav">
+                        <ul class="nav navbar-nav navbar-left">
+                            <li><a href=""""),_display_(/*27.43*/routes/*27.49*/.RestaurantController.createRestaurant()),format.raw/*27.89*/("""">
+                                <i class="glyphicon glyphicon-plus"></i>
+                                Create restaurant</a></li>
+                            <li><a href=""""),_display_(/*30.43*/routes/*30.49*/.RestaurantController.createRestaurant()),format.raw/*30.89*/("""">
+                                <i class="glyphicon glyphicon-plus"></i>
+                                Create visitor</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <br><br><br><br><br><br>
+        <div class="container">
+            """),_display_(/*40.14*/body),format.raw/*40.18*/("""
+        """),format.raw/*41.9*/("""</div>
+
+        <script src=""""),_display_(/*43.23*/routes/*43.29*/.Assets.versioned("javascripts/jquery-3.4.1.min.js")),format.raw/*43.81*/(""""></script>
+        <script src=""""),_display_(/*44.23*/routes/*44.29*/.Assets.versioned("javascripts/bootstrap.min.js")),format.raw/*44.78*/(""""></script>
+        <script src=""""),_display_(/*45.23*/routes/*45.29*/.Assets.versioned("javascripts/main.js")),format.raw/*45.69*/(""""></script>
     </body>
 </html>"""))
       }
@@ -66,11 +92,11 @@ Seq[Any](format.raw/*1.31*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-10T17:49:10.823
+                  DATE: 2019-12-11T10:31:16.994
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/layout.scala.html
-                  HASH: fd0302f03da832f8679a7f028022839f43bb6b3a
-                  MATRIX: 959->1|1083->30|1111->32|1173->68|1198->73|1287->136|1301->142|1372->192|1455->249|1469->255|1546->311|1629->368|1643->374|1705->415|1846->529|1871->533|1908->543|1967->575|1982->581|2055->633|2117->668|2132->674|2202->723|2264->758|2279->764|2340->804
-                  LINES: 28->1|33->1|34->2|36->4|36->4|37->5|37->5|37->5|38->6|38->6|38->6|39->7|39->7|39->7|46->14|46->14|47->15|49->17|49->17|49->17|50->18|50->18|50->18|51->19|51->19|51->19
+                  HASH: f54b4510cd8d17082a34d86fc25891c640d7b142
+                  MATRIX: 959->1|1083->30|1111->32|1173->68|1198->73|1287->136|1301->142|1372->192|1455->249|1469->255|1546->311|1629->368|1643->374|1705->415|2322->1005|2337->1011|2385->1038|2660->1286|2675->1292|2736->1332|2943->1512|2958->1518|3019->1558|3383->1895|3408->1899|3445->1909|3504->1941|3519->1947|3592->1999|3654->2034|3669->2040|3739->2089|3801->2124|3816->2130|3877->2170
+                  LINES: 28->1|33->1|34->2|36->4|36->4|37->5|37->5|37->5|38->6|38->6|38->6|39->7|39->7|39->7|55->23|55->23|55->23|59->27|59->27|59->27|62->30|62->30|62->30|72->40|72->40|73->41|75->43|75->43|75->43|76->44|76->44|76->44|77->45|77->45|77->45
                   -- GENERATED --
               */
           
