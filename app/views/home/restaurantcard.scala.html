@@ -67,7 +67,11 @@
                 </div>
                 <div class="modal-body">
 
-                      ...
+                    <select name="accept" class="form-control">
+                        @for(visitor <- visitors) {
+                            <option value=@visitor.getFirstName>@visitor.getFirstName @visitor.getLastName</option>
+                        }
+                    </select>
 
                 </div>
                 <div class="modal-footer">
