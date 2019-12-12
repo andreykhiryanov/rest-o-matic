@@ -10,6 +10,7 @@ import views.html.home.createvisitor;
 import views.html.home.editvisitor;
 import views.html.home.visitorcard;
 import javax.inject.Inject;
+import java.util.List;
 
 public class VisitorController extends Controller {
 
@@ -91,7 +92,10 @@ public class VisitorController extends Controller {
             return notFound("Visitor not found!");
         }
 
-        return ok(visitorcard.render(visitor, Restaurant.restaurantFinder.all()));
+        List<Restaurant> newRestaurants = Restaurant.restaurantFinder.all();
+        newRestaurants.removeAll(visitor.getVisitedRestaurants());
+
+        return ok(visitorcard.render(visitor, newRestaurants));
 
     }
 

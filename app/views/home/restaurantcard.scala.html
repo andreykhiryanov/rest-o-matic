@@ -1,7 +1,7 @@
 @import models.Restaurant
 @import helper._
 
-@(restaurant : Restaurant)(allVisitors : List[Visitor])
+@(restaurant : Restaurant)(newVisitors : List[Visitor])
 
 @layout(restaurant.getRestaurantName){
     <h2>@restaurant.getRestaurantName</h2>
@@ -68,7 +68,7 @@
                 <div class="modal-body">
 
                     <select name="accept" class="form-control">
-                        @for(visitor <- allVisitors) {
+                        @for(visitor <- newVisitors) {
                             <option value=@visitor.getFirstName>@visitor.getFirstName @visitor.getLastName</option>
                         }
                     </select>
@@ -94,7 +94,11 @@
                 </div>
                 <div class="modal-body">
 
-                    ...
+                    <select name="kick" class="form-control">
+                    @for(visitor <- restaurant.getAcceptedVisitors) {
+                        <option value=@visitor.getFirstName>@visitor.getFirstName @visitor.getLastName</option>
+                    }
+                    </select>
 
                 </div>
                 <div class="modal-footer">
