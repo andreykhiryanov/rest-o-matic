@@ -8,38 +8,17 @@
       <change beforePath="$PROJECT_DIR$/app/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/RestaurantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/RestaurantController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/VisitorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/VisitorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/Link.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/Manager.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Restaurant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/Visitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Visitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home/restaurantcard.scala.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/restaurantcard.scala.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home/visitorcard.scala.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/visitorcard.scala.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/evolutions/default/1.sql" beforeDir="false" afterPath="$PROJECT_DIR$/conf/evolutions/default/1.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/application.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/.history" beforeDir="false" afterPath="$PROJECT_DIR$/target/.history" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/RestaurantController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/RestaurantController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/VisitorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/VisitorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/evolutions/default/1.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/evolutions/default/1.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/models/Link.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/models/Manager.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/models/Restaurant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/models/Restaurant.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/models/Visitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/models/Visitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/home/reserve/copyrestaurantcard$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/home/reserve/copyrestaurantcard$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/home/reserve/copyvisitorcard$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/home/reserve/copyvisitorcard$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/home/restaurantcard$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/home/restaurantcard$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/home/restaurantcard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/home/restaurantcard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/home/visitorcard$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/home/visitorcard$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/home/visitorcard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/home/visitorcard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/home/restaurantcard.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/home/restaurantcard.template.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/home/visitorcard.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/home/visitorcard.template.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/_global/playCommonClassloader/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/_global/playCommonClassloader/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/_global/_global/compileOutputs/previous" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/_global/_global/compileOutputs/previous" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/compile/_global/_global/compileSourceFileInputs/previous" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/_global/_global/compileSourceFileInputs/previous" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/compile/compile/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compile/_global/streams/out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncSetup/_global/streams/inc_compile_2.13.zip" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncSetup/_global/streams/inc_compile_2.13.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/_global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/copyResources/_global/streams/copy-resources" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/copyResources/_global/streams/copy-resources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/compile/playEnhancerGenerateAccessors/_global/streams/play_instrumentation_2.13" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/playEnhancerGenerateAccessors/_global/streams/play_instrumentation_2.13" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/compile/playEnhancerRewriteAccessors/_global/streams/play_instrumentation_2.13" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/playEnhancerRewriteAccessors/_global/streams/play_instrumentation_2.13" afterDir="false" />
     </list>
@@ -113,14 +92,14 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="61" />
-          <entry key="project.open.time.0" value="41" />
+          <entry key="project.open.time.0" value="42" />
           <entry key="project.open.time.1" value="8" />
           <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.2" value="3" />
           <entry key="project.open.time.9" value="4" />
-          <entry key="project.opened" value="61" />
+          <entry key="project.opened" value="62" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -128,7 +107,7 @@
           <entry key="conf" value="10" />
           <entry key="css" value="12" />
           <entry key="html" value="120" />
-          <entry key="java" value="89" />
+          <entry key="java" value="91" />
           <entry key="js" value="9" />
           <entry key="md" value="2" />
           <entry key="name" value="2" />
@@ -144,7 +123,7 @@
         <counts>
           <entry key="CSS" value="12" />
           <entry key="HOCON" value="10" />
-          <entry key="JAVA" value="89" />
+          <entry key="JAVA" value="91" />
           <entry key="JavaScript" value="9" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="4" />
@@ -161,7 +140,7 @@
           <entry key="conf" value="143" />
           <entry key="dummy" value="41" />
           <entry key="html" value="3003" />
-          <entry key="java" value="6850" />
+          <entry key="java" value="6879" />
           <entry key="md" value="89" />
           <entry key="routes" value="389" />
           <entry key="sbt" value="49" />
@@ -170,7 +149,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HOCON" value="143" />
-          <entry key="JAVA" value="6850" />
+          <entry key="JAVA" value="6879" />
           <entry key="Markdown" value="89" />
           <entry key="PLAIN_TEXT" value="41" />
           <entry key="Play 2 routing" value="389" />
@@ -185,11 +164,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/HomeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -197,11 +173,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/Restaurant.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1088">
-              <caret line="85" column="1" lean-forward="true" selection-start-line="85" selection-start-column="1" selection-end-line="85" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="16">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -209,8 +182,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/Visitor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="50" column="31" lean-forward="true" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
+            <state relative-caret-position="17">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/RestaurantController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/VisitorController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -258,15 +249,15 @@
         <option value="$PROJECT_DIR$/app/views/home/partials/_restaurantFormFields.scala.html" />
         <option value="$PROJECT_DIR$/app/views/home/partials/_visitorFormFields.scala.html" />
         <option value="$PROJECT_DIR$/app/views/home/index.scala.html" />
-        <option value="$PROJECT_DIR$/app/controllers/RestaurantController.java" />
         <option value="$PROJECT_DIR$/app/views/home/restaurantcard.scala.html" />
-        <option value="$PROJECT_DIR$/app/controllers/VisitorController.java" />
         <option value="$PROJECT_DIR$/app/views/home/visitorcard.scala.html" />
         <option value="$PROJECT_DIR$/conf/application.conf" />
+        <option value="$PROJECT_DIR$/app/models/Manager.java" />
         <option value="$PROJECT_DIR$/app/models/Restaurant.java" />
         <option value="$PROJECT_DIR$/app/models/Visitor.java" />
-        <option value="$PROJECT_DIR$/app/models/Manager.java" />
         <option value="$PROJECT_DIR$/app/controllers/HomeController.java" />
+        <option value="$PROJECT_DIR$/app/controllers/RestaurantController.java" />
+        <option value="$PROJECT_DIR$/app/controllers/VisitorController.java" />
       </list>
     </option>
   </component>
@@ -293,8 +284,8 @@
         <option value="play.core.j.PlayFormsMagicForJava._" />
         <option value="java.util._" />
         <option value="scala.collection.JavaConverters._" />
-        <option value="_root_.play.twirl.api.TwirlFeatureImports._" />
         <option value="play.mvc.Http.Context.Implicit._" />
+        <option value="_root_.play.twirl.api.TwirlFeatureImports._" />
       </array>
     </option>
   </component>
@@ -325,6 +316,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -413,7 +405,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -561,16 +552,17 @@
       <workItem from="1576086392690" duration="1787000" />
       <workItem from="1576128313335" duration="113000" />
       <workItem from="1576128513770" duration="6796000" />
+      <workItem from="1576136159805" duration="577000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134336000" />
+    <option name="totallyTimeSpent" value="134913000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26865673" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27132195" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -836,13 +828,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Link.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Link.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_221/src.zip!/java/lang/Long.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
@@ -854,20 +840,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="54" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/RestaurantController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="97" column="30" selection-start-line="97" selection-start-column="30" selection-end-line="97" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/VisitorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="93" column="24" lean-forward="true" selection-start-line="93" selection-start-column="24" selection-end-line="93" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -885,37 +857,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Manager.java">
+    <entry file="file://$PROJECT_DIR$/app/models/Manager.java" />
+    <entry file="file://$PROJECT_DIR$/app/controllers/VisitorController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Restaurant.java">
+    <entry file="file://$PROJECT_DIR$/app/controllers/RestaurantController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="85" column="1" lean-forward="true" selection-start-line="85" selection-start-column="1" selection-end-line="85" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Visitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="50" column="31" lean-forward="true" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Restaurant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>

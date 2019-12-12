@@ -58,7 +58,7 @@ public class VisitorController extends Controller {
         Visitor oldVisitor = Visitor.visitorFinder.byId(visitor.getFirstName());
 
         if (oldVisitor == null) {
-            return notFound("You cannot change the name of the visitor yet!");
+            return notFound("You cannot change the name of the visitor, because it is the ID!");
         }
 
         oldVisitor.setFirstName(visitor.getFirstName());

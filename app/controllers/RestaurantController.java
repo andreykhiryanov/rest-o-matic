@@ -59,7 +59,7 @@ public class RestaurantController extends Controller {
         Restaurant oldRestaurant = Restaurant.restaurantFinder.byId(restaurant.getRestaurantName());
 
         if (oldRestaurant == null) {
-            return notFound("You cannot change the name of the restaurant, because it is the ID of the restaurant!");
+            return notFound("You cannot change the name of the restaurant, because it is the ID!");
         }
 
         oldRestaurant.setRestaurantName(restaurant.getRestaurantName());
