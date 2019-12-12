@@ -76,16 +76,20 @@ Seq[Any](format.raw/*4.56*/("""
     """),format.raw/*45.5*/("""</table>
 
         <!-- Modal window "Visit" start button -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalVisit">
-        Visit Restaurant
-    </button>
+    """),_display_(/*48.6*/if(!newRestaurants.isEmpty)/*48.33*/{_display_(Seq[Any](format.raw/*48.34*/("""
+        """),format.raw/*49.9*/("""<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalVisit">
+            Visit Restaurant
+        </button>
+    """)))}),format.raw/*52.6*/("""
 
-        <!-- Modal window "Forget" start button -->
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModalForget">
-        Forget Restaurant
-    </button>
+        """),format.raw/*54.9*/("""<!-- Modal window "Forget" start button -->
+    """),_display_(/*55.6*/if(!visitor.getVisitedRestaurants().isEmpty)/*55.50*/ {_display_(Seq[Any](format.raw/*55.52*/("""
+        """),format.raw/*56.9*/("""<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModalForget">
+            Forget Restaurant
+        </button>
+    """)))}),format.raw/*59.6*/("""
 
-        <!-- Modal window "Visit" -->
+        """),format.raw/*61.9*/("""<!-- Modal window "Visit" -->
     <div class="modal fade" id="myModalVisit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -97,16 +101,16 @@ Seq[Any](format.raw/*4.56*/("""
                 </div>
                 <div class="modal-body">
 
-                    <select name="visit" class="form-control">
-                        """),_display_(/*70.26*/for(restaurant <- newRestaurants) yield /*70.59*/ {_display_(Seq[Any](format.raw/*70.61*/("""
-                            """),format.raw/*71.29*/("""<option value="""),_display_(/*71.44*/restaurant/*71.54*/.getRestaurantName),format.raw/*71.72*/(""">"""),_display_(/*71.74*/restaurant/*71.84*/.getRestaurantName),format.raw/*71.102*/("""</option>
-                        """)))}),format.raw/*72.26*/("""
-                    """),format.raw/*73.21*/("""</select>
+                    <select id="visitRestaurant" class="form-control">
+                        """),_display_(/*74.26*/for(restaurant <- newRestaurants) yield /*74.59*/ {_display_(Seq[Any](format.raw/*74.61*/("""
+                            """),format.raw/*75.29*/("""<option value="""),_display_(/*75.44*/restaurant/*75.54*/.getRestaurantName),format.raw/*75.72*/(""">"""),_display_(/*75.74*/restaurant/*75.84*/.getRestaurantName),format.raw/*75.102*/("""</option>
+                        """)))}),format.raw/*76.26*/("""
+                    """),format.raw/*77.21*/("""</select>
 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Visit Restaurant</button>
+                    <button type="button" class="btn btn-primary" onclick="visitRestaurantRequest('"""),_display_(/*82.101*/visitor/*82.108*/.getFirstName),format.raw/*82.121*/("""')">Visit Restaurant</button>
                 </div>
             </div>
         </div>
@@ -124,16 +128,16 @@ Seq[Any](format.raw/*4.56*/("""
                 </div>
                 <div class="modal-body">
 
-                    <select name="visit" class="form-control">
-                        """),_display_(/*97.26*/for(restaurant <- visitor.getVisitedRestaurants) yield /*97.74*/ {_display_(Seq[Any](format.raw/*97.76*/("""
-                            """),format.raw/*98.29*/("""<option value="""),_display_(/*98.44*/restaurant/*98.54*/.getRestaurantName),format.raw/*98.72*/(""">"""),_display_(/*98.74*/restaurant/*98.84*/.getRestaurantName),format.raw/*98.102*/("""</option>
-                        """)))}),format.raw/*99.26*/("""
-                    """),format.raw/*100.21*/("""</select>
+                    <select id="forgetRestaurant" class="form-control">
+                        """),_display_(/*101.26*/for(restaurant <- visitor.getVisitedRestaurants) yield /*101.74*/ {_display_(Seq[Any](format.raw/*101.76*/("""
+                            """),format.raw/*102.29*/("""<option value="""),_display_(/*102.44*/restaurant/*102.54*/.getRestaurantName),format.raw/*102.72*/(""">"""),_display_(/*102.74*/restaurant/*102.84*/.getRestaurantName),format.raw/*102.102*/("""</option>
+                        """)))}),format.raw/*103.26*/("""
+                    """),format.raw/*104.21*/("""</select>
 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Forget Restaurant</button>
+                    <button type="button" class="btn btn-primary" onclick="forgetRestaurantRequest('"""),_display_(/*109.102*/visitor/*109.109*/.getFirstName),format.raw/*109.122*/("""')">Forget Restaurant</button>
                 </div>
             </div>
         </div>
@@ -154,11 +158,11 @@ Seq[Any](format.raw/*4.56*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-12T23:00:31.862
+                  DATE: 2019-12-13T00:08:57.429
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/visitorcard.scala.html
-                  HASH: 3a8235bce5288f234b31ac86376c5489a40e091e
-                  MATRIX: 651->1|680->25|1024->45|1173->99|1203->104|1239->132|1277->133|1309->139|1340->144|1355->151|1388->164|1469->219|1483->225|1555->277|1639->334|1654->340|1730->395|1935->573|1951->580|1984->592|2092->673|2108->680|2138->689|2246->770|2262->777|2298->792|2409->877|2459->918|2499->920|2536->930|2639->1006|2655->1013|2689->1026|2718->1027|2827->1106|2862->1114|2935->1160|2999->1208|3039->1210|3081->1224|3144->1260|3159->1266|3251->1336|3282->1339|3302->1349|3342->1367|3412->1406|3445->1412|4626->2566|4675->2599|4715->2601|4773->2631|4815->2646|4834->2656|4873->2674|4902->2676|4921->2686|4961->2704|5028->2740|5078->2762|6211->3868|6275->3916|6315->3918|6373->3948|6415->3963|6434->3973|6473->3991|6502->3993|6521->4003|6561->4021|6628->4057|6679->4079
-                  LINES: 24->1|25->2|30->4|35->4|37->6|37->6|37->6|38->7|38->7|38->7|38->7|40->9|40->9|40->9|41->10|41->10|41->10|49->18|49->18|49->18|53->22|53->22|53->22|57->26|57->26|57->26|62->31|62->31|62->31|63->32|65->34|65->34|65->34|65->34|68->37|70->39|71->40|71->40|71->40|72->41|73->42|73->42|73->42|73->42|73->42|73->42|75->44|76->45|101->70|101->70|101->70|102->71|102->71|102->71|102->71|102->71|102->71|102->71|103->72|104->73|128->97|128->97|128->97|129->98|129->98|129->98|129->98|129->98|129->98|129->98|130->99|131->100
+                  HASH: 65f0e2360be9d08dc8db39770ac49968da84b034
+                  MATRIX: 651->1|680->25|1024->45|1173->99|1203->104|1239->132|1277->133|1309->139|1340->144|1355->151|1388->164|1469->219|1483->225|1555->277|1639->334|1654->340|1730->395|1935->573|1951->580|1984->592|2092->673|2108->680|2138->689|2246->770|2262->777|2298->792|2409->877|2459->918|2499->920|2536->930|2639->1006|2655->1013|2689->1026|2718->1027|2827->1106|2862->1114|2935->1160|2999->1208|3039->1210|3081->1224|3144->1260|3159->1266|3251->1336|3282->1339|3302->1349|3342->1367|3412->1406|3445->1412|3540->1481|3576->1508|3615->1509|3652->1519|3832->1669|3871->1681|3947->1731|4000->1775|4040->1777|4077->1787|4258->1938|4297->1950|5074->2700|5123->2733|5163->2735|5221->2765|5263->2780|5282->2790|5321->2808|5350->2810|5369->2820|5409->2838|5476->2874|5526->2896|5840->3182|5857->3189|5892->3202|6787->4069|6852->4117|6893->4119|6952->4149|6995->4164|7015->4174|7055->4192|7085->4194|7105->4204|7146->4222|7214->4258|7265->4280|7581->4567|7599->4574|7635->4587
+                  LINES: 24->1|25->2|30->4|35->4|37->6|37->6|37->6|38->7|38->7|38->7|38->7|40->9|40->9|40->9|41->10|41->10|41->10|49->18|49->18|49->18|53->22|53->22|53->22|57->26|57->26|57->26|62->31|62->31|62->31|63->32|65->34|65->34|65->34|65->34|68->37|70->39|71->40|71->40|71->40|72->41|73->42|73->42|73->42|73->42|73->42|73->42|75->44|76->45|79->48|79->48|79->48|80->49|83->52|85->54|86->55|86->55|86->55|87->56|90->59|92->61|105->74|105->74|105->74|106->75|106->75|106->75|106->75|106->75|106->75|106->75|107->76|108->77|113->82|113->82|113->82|132->101|132->101|132->101|133->102|133->102|133->102|133->102|133->102|133->102|133->102|134->103|135->104|140->109|140->109|140->109
                   -- GENERATED --
               */
           

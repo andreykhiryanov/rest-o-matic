@@ -45,14 +45,18 @@
     </table>
 
         <!-- Modal window "Visit" start button -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalVisit">
-        Visit Restaurant
-    </button>
+    @if(!newRestaurants.isEmpty){
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalVisit">
+            Visit Restaurant
+        </button>
+    }
 
         <!-- Modal window "Forget" start button -->
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModalForget">
-        Forget Restaurant
-    </button>
+    @if(!visitor.getVisitedRestaurants().isEmpty) {
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModalForget">
+            Forget Restaurant
+        </button>
+    }
 
         <!-- Modal window "Visit" -->
     <div class="modal fade" id="myModalVisit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -66,7 +70,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <select name="visit" class="form-control">
+                    <select id="visitRestaurant" class="form-control">
                         @for(restaurant <- newRestaurants) {
                             <option value=@restaurant.getRestaurantName>@restaurant.getRestaurantName</option>
                         }
@@ -75,7 +79,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Visit Restaurant</button>
+                    <button type="button" class="btn btn-primary" onclick="visitRestaurantRequest('@visitor.getFirstName')">Visit Restaurant</button>
                 </div>
             </div>
         </div>
@@ -93,7 +97,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <select name="visit" class="form-control">
+                    <select id="forgetRestaurant" class="form-control">
                         @for(restaurant <- visitor.getVisitedRestaurants) {
                             <option value=@restaurant.getRestaurantName>@restaurant.getRestaurantName</option>
                         }
@@ -102,7 +106,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Forget Restaurant</button>
+                    <button type="button" class="btn btn-primary" onclick="forgetRestaurantRequest('@visitor.getFirstName')">Forget Restaurant</button>
                 </div>
             </div>
         </div>

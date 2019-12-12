@@ -2,23 +2,24 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-GET     /                                   controllers.HomeController.greetings()
+GET     /                                       controllers.HomeController.greetings()
 
-GET     /restaurant/:restaurantName         controllers.RestaurantController.showRestaurantCard(restaurantName : String)
-GET     /restaurant/edit/:restaurantName    controllers.RestaurantController.editRestaurant(restaurantName : String)
-POST    /restaurant/edit                    controllers.RestaurantController.updateRestaurant()
-GET     /restaurant/create/                 controllers.RestaurantController.createRestaurant()
-POST    /restaurant/create/                 controllers.RestaurantController.saveRestaurantChanges()
-GET     /restaurant/delete/:restaurantName  controllers.RestaurantController.destroyRestaurant(restaurantName : String)
+GET     /restaurant/:restaurantName             controllers.RestaurantController.showRestaurantCard(restaurantName : String)
+GET     /restaurant/edit/:restaurantName        controllers.RestaurantController.editRestaurant(restaurantName : String)
+POST    /restaurant/edit                        controllers.RestaurantController.updateRestaurant()
+GET     /restaurant/create/                     controllers.RestaurantController.createRestaurant()
+POST    /restaurant/create/                     controllers.RestaurantController.saveRestaurantChanges()
+GET     /restaurant/delete/:restaurantName      controllers.RestaurantController.destroyRestaurant(restaurantName : String)
 
-GET     /visitor/:visitorName               controllers.VisitorController.showVisitorCard(visitorName : String)
-GET     /visitor/edit/:visitorName          controllers.VisitorController.editVisitor(visitorName : String)
-POST    /visitor/edit                       controllers.VisitorController.updateVisitor()
-GET     /visitor/create/                    controllers.VisitorController.createVisitor()
-POST    /visitor/create/                    controllers.VisitorController.saveVisitorChanges()
-GET     /visitor/delete/:visitorName        controllers.VisitorController.destroyVisitor(visitorName : String)
+GET     /visitor/:visitorName                   controllers.VisitorController.showVisitorCard(visitorName : String)
+GET     /visitor/edit/:visitorName              controllers.VisitorController.editVisitor(visitorName : String)
+POST    /visitor/edit                           controllers.VisitorController.updateVisitor()
+GET     /visitor/create/                        controllers.VisitorController.createVisitor()
+POST    /visitor/create/                        controllers.VisitorController.saveVisitorChanges()
+GET     /visitor/delete/:visitorName            controllers.VisitorController.destroyVisitor(visitorName : String)
 
-POST    /accept/:restaurantName/:visitorName     controllers.RestaurantController.acceptVisitor(restaurantName: String, visitorName: String)
+POST    /accept/:restaurantName/:visitorName    controllers.RestaurantController.acceptVisitor(restaurantName: String, visitorName: String)
+POST    /kick/:restaurantName/:visitorName      controllers.RestaurantController.kickVisitor(restaurantName: String, visitorName: String)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file                       controllers.Assets.versioned(path="/public", file)

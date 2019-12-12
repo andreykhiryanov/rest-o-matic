@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Thu Dec 12 23:34:55 GMT+03:00 2019
+// @DATE:Thu Dec 12 23:54:16 GMT+03:00 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -25,6 +25,16 @@ package controllers.javascript {
       """
         function(restaurantName0) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "restaurant/delete/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("restaurantName", restaurantName0))})
+        }
+      """
+    )
+  
+    // @LINE:22
+    def kickVisitor: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.RestaurantController.kickVisitor",
+      """
+        function(restaurantName0,visitorName1) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "kick/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("restaurantName", restaurantName0)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("visitorName", visitorName1))})
         }
       """
     )
@@ -181,7 +191,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:24
+  // @LINE:25
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -189,7 +199,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:24
+    // @LINE:25
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """

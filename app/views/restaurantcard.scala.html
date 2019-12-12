@@ -55,9 +55,11 @@
     }
 
     <!-- Modal window "Kick" start button -->
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModalKick">
-        Kick Out Visitor
-    </button>
+    @if(!restaurant.getAcceptedVisitors().isEmpty){
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModalKick">
+            Kick Out Visitor
+        </button>
+    }
 
         <!-- Modal window "Accept" -->
     <div class="modal fade" id="myModalAccept" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -98,7 +100,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <select name="kick" class="form-control">
+                    <select id="kickVisitor" class="form-control">
                     @for(visitor <- restaurant.getAcceptedVisitors) {
                         <option value=@visitor.getFirstName>@visitor.getFirstName @visitor.getLastName</option>
                     }
@@ -107,7 +109,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Kick Out Visitor</button>
+                    <button type="button" class="btn btn-primary" onclick="kickVisitorRequest('@restaurant.getRestaurantName')">Kick Out Visitor</button>
                 </div>
             </div>
         </div>

@@ -106,9 +106,6 @@ public class RestaurantController extends Controller {
 
     public Result acceptVisitor(String restaurantName, String visitorName) {
 
-//        Restaurant restaurant = formFactory.form(Restaurant.class).bindFromRequest().get();
-//        Visitor visitor = Visitor.visitorFinder.byId(visitorName);
-
         Restaurant restaurant = Restaurant.restaurantFinder.byId(restaurantName);
         Visitor visitor = Visitor.visitorFinder.byId(visitorName);
 
@@ -118,6 +115,23 @@ public class RestaurantController extends Controller {
 
         restaurant.getAcceptedVisitors().add(visitor);
         restaurant.update();
+        visitor.update();
+
+        return ok();
+    }
+
+    public Result kickVisitor(String restaurantName, String visitorName) {
+
+        Restaurant restaurant = Restaurant.restaurantFinder.byId(restaurantName);
+        Visitor visitor = Visitor.visitorFinder.byId(visitorName);
+
+        if (restaurant == null || visitor == null) {
+            return notFound("Method: error!");
+        }
+
+        restaurant.getAcceptedVisitors().remove(visitor);
+        restaurant.update();
+        visitor.update();
 
         return ok();
     }

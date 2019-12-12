@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Thu Dec 12 23:34:55 GMT+03:00 2019
+// @DATE:Thu Dec 12 23:54:16 GMT+03:00 2019
 
 import play.api.mvc.Call
 
@@ -22,6 +22,12 @@ package controllers {
     def destroyRestaurant(restaurantName:String): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "restaurant/delete/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("restaurantName", restaurantName)))
+    }
+  
+    // @LINE:22
+    def kickVisitor(restaurantName:String, visitorName:String): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "kick/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("restaurantName", restaurantName)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("visitorName", visitorName)))
     }
   
     // @LINE:7
@@ -122,14 +128,14 @@ package controllers {
   
   }
 
-  // @LINE:24
+  // @LINE:25
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:24
+    // @LINE:25
     def versioned(file:String): Call = {
       implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public"))); _rrc
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[String]].unbind("file", file))
