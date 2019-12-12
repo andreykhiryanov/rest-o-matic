@@ -27,12 +27,12 @@ import play.core.j.PlayFormsMagicForJava._
 object restaurantcard extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[Restaurant,List[Visitor],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*4.2*/(restaurant : Restaurant)(visitors : List[Visitor]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*4.2*/(restaurant : Restaurant)(allVisitors : List[Visitor]):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*4.53*/("""
+Seq[Any](format.raw/*4.56*/("""
 
 """),_display_(/*6.2*/layout(restaurant.getRestaurantName)/*6.38*/{_display_(Seq[Any](format.raw/*6.39*/("""
     """),format.raw/*7.5*/("""<h2>"""),_display_(/*7.10*/restaurant/*7.20*/.getRestaurantName),format.raw/*7.38*/("""</h2>
@@ -60,7 +60,7 @@ Seq[Any](format.raw/*4.53*/("""
     </table>
     <h2>Accepted Visitors</h2>
     <br>
-    """),_display_(/*32.6*/if(visitors.isEmpty)/*32.26*/ {_display_(Seq[Any](format.raw/*32.28*/("""
+    """),_display_(/*32.6*/if(restaurant.getAcceptedVisitors.isEmpty)/*32.48*/ {_display_(Seq[Any](format.raw/*32.50*/("""
         """),format.raw/*33.9*/("""<table class="table table-striped">
             <tr>
                 <td>"""),_display_(/*35.22*/restaurant/*35.32*/.getRestaurantName),format.raw/*35.50*/(""" """),format.raw/*35.51*/("""has not accepted any visitors<td>
@@ -69,7 +69,7 @@ Seq[Any](format.raw/*4.53*/("""
     """)))}),format.raw/*38.6*/("""
 
     """),format.raw/*40.5*/("""<table class="table table-striped">
-    """),_display_(/*41.6*/for(visitor <- visitors) yield /*41.30*/ {_display_(Seq[Any](format.raw/*41.32*/("""
+    """),_display_(/*41.6*/for(visitor <- restaurant.getAcceptedVisitors) yield /*41.52*/ {_display_(Seq[Any](format.raw/*41.54*/("""
         """),format.raw/*42.9*/("""<tr>
             <td><a href=""""),_display_(/*43.27*/routes/*43.33*/.VisitorController.showVisitorCard(visitor.getFirstName)),format.raw/*43.89*/("""">"""),_display_(/*43.92*/visitor/*43.99*/.getFirstName),format.raw/*43.112*/(""" """),_display_(/*43.114*/visitor/*43.121*/.getLastName),format.raw/*43.133*/("""</a></td>
         </tr>
@@ -99,7 +99,7 @@ Seq[Any](format.raw/*4.53*/("""
                 <div class="modal-body">
 
                     <select name="accept" class="form-control">
-                        """),_display_(/*71.26*/for(visitor <- visitors) yield /*71.50*/ {_display_(Seq[Any](format.raw/*71.52*/("""
+                        """),_display_(/*71.26*/for(visitor <- allVisitors) yield /*71.53*/ {_display_(Seq[Any](format.raw/*71.55*/("""
                             """),format.raw/*72.29*/("""<option value="""),_display_(/*72.44*/visitor/*72.51*/.getFirstName),format.raw/*72.64*/(""">"""),_display_(/*72.66*/visitor/*72.73*/.getFirstName),format.raw/*72.86*/(""" """),_display_(/*72.88*/visitor/*72.95*/.getLastName),format.raw/*72.107*/("""</option>
                         """)))}),format.raw/*73.26*/("""
                     """),format.raw/*74.21*/("""</select>
@@ -141,9 +141,9 @@ Seq[Any](format.raw/*4.53*/("""
     }
   }
 
-  def render(restaurant:Restaurant,visitors:List[Visitor]): play.twirl.api.HtmlFormat.Appendable = apply(restaurant)(visitors)
+  def render(restaurant:Restaurant,allVisitors:List[Visitor]): play.twirl.api.HtmlFormat.Appendable = apply(restaurant)(allVisitors)
 
-  def f:((Restaurant) => (List[Visitor]) => play.twirl.api.HtmlFormat.Appendable) = (restaurant) => (visitors) => apply(restaurant)(visitors)
+  def f:((Restaurant) => (List[Visitor]) => play.twirl.api.HtmlFormat.Appendable) = (restaurant) => (allVisitors) => apply(restaurant)(allVisitors)
 
   def ref: this.type = this
 
@@ -152,10 +152,10 @@ Seq[Any](format.raw/*4.53*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-11T21:11:07.463
+                  DATE: 2019-12-12T09:01:13.334
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/home/restaurantcard.scala.html
-                  HASH: ebb1ae89260fe8d64bf634b358d5d4a13e880bbf
-                  MATRIX: 656->1|688->28|1035->48|1181->99|1211->104|1255->140|1293->141|1325->147|1356->152|1374->162|1412->180|1493->235|1507->241|1594->307|1676->362|1691->368|1781->437|2030->659|2049->669|2083->682|2189->761|2208->771|2236->778|2346->861|2365->871|2397->882|2506->965|2535->985|2575->987|2612->997|2715->1073|2734->1083|2773->1101|2802->1102|2909->1179|2944->1187|3012->1229|3052->1253|3092->1255|3129->1265|3188->1297|3203->1303|3280->1359|3310->1362|3326->1369|3361->1382|3391->1384|3408->1391|3442->1403|3503->1434|3536->1440|4714->2591|4754->2615|4794->2617|4852->2647|4894->2662|4910->2669|4944->2682|4973->2684|4989->2691|5023->2704|5052->2706|5068->2713|5102->2725|5169->2761|5219->2783
+                  HASH: 5679781ab358755dbca1efa0bd9fc93398aea9a3
+                  MATRIX: 656->1|688->28|1035->48|1184->102|1214->107|1258->143|1296->144|1328->150|1359->155|1377->165|1415->183|1496->238|1510->244|1597->310|1679->365|1694->371|1784->440|2033->662|2052->672|2086->685|2192->764|2211->774|2239->781|2349->864|2368->874|2400->885|2509->968|2560->1010|2600->1012|2637->1022|2740->1098|2759->1108|2798->1126|2827->1127|2934->1204|2969->1212|3037->1254|3099->1300|3139->1302|3176->1312|3235->1344|3250->1350|3327->1406|3357->1409|3373->1416|3408->1429|3438->1431|3455->1438|3489->1450|3550->1481|3583->1487|4761->2638|4804->2665|4844->2667|4902->2697|4944->2712|4960->2719|4994->2732|5023->2734|5039->2741|5073->2754|5102->2756|5118->2763|5152->2775|5219->2811|5269->2833
                   LINES: 24->1|25->2|30->4|35->4|37->6|37->6|37->6|38->7|38->7|38->7|38->7|40->9|40->9|40->9|40->9|40->9|40->9|50->19|50->19|50->19|54->23|54->23|54->23|58->27|58->27|58->27|63->32|63->32|63->32|64->33|66->35|66->35|66->35|66->35|69->38|71->40|72->41|72->41|72->41|73->42|74->43|74->43|74->43|74->43|74->43|74->43|74->43|74->43|74->43|76->45|77->46|102->71|102->71|102->71|103->72|103->72|103->72|103->72|103->72|103->72|103->72|103->72|103->72|103->72|104->73|105->74
                   -- GENERATED --
               */

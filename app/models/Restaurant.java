@@ -2,25 +2,39 @@ package models;
 
 import io.ebean.Finder;
 import io.ebean.Model;
-import io.ebeaninternal.server.lib.util.Str;
 import play.data.validation.Constraints;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
+@Table(name = "RESTAURANT")
 public class Restaurant extends Model {
 
     @Id
     @Constraints.Required
+    @Column(name = "RESTAURANT_NAME", nullable = false)
     private String restaurantName;
+
+    @Column(name = "LEGAL_NAME", nullable = false)
     private String legalName;
+
+    @Column(name = "INN", nullable = false)
     private int inn;
+
     @Constraints.Required
+    @Column(name = "ADDRESS", nullable = false)
     private String address;
-    private Set<Visitor> acceptedVisitors = new HashSet<>();
+
+    @ManyToMany
+    @JoinTable(name = "HAS",
+            joinColumns = @JoinColumn(name = "RESTAURANT_ID", referencedColumnName = "RESTAURANT_NAME"),
+            inverseJoinColumns = @JoinColumn(name = "VISITOR_ID", referencedColumnName = "FIRST_NAME")
+    )
+    private List<Visitor> acceptedVisitors = new ArrayList<>();
 
     public static Finder<String, Restaurant> restaurantFinder = new Finder<>(Restaurant.class);
 
@@ -66,7 +80,7 @@ public class Restaurant extends Model {
         this.address = address;
     }
 
-    public Set<Visitor> getAcceptedVisitors() {
+    public List<Visitor> getAcceptedVisitors() {
         return acceptedVisitors;
     }
 }

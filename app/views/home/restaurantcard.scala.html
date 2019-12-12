@@ -1,7 +1,7 @@
 @import models.Restaurant
 @import helper._
 
-@(restaurant : Restaurant)(visitors : List[Visitor])
+@(restaurant : Restaurant)(allVisitors : List[Visitor])
 
 @layout(restaurant.getRestaurantName){
     <h2>@restaurant.getRestaurantName</h2>
@@ -29,7 +29,7 @@
     </table>
     <h2>Accepted Visitors</h2>
     <br>
-    @if(visitors.isEmpty) {
+    @if(restaurant.getAcceptedVisitors.isEmpty) {
         <table class="table table-striped">
             <tr>
                 <td>@restaurant.getRestaurantName has not accepted any visitors<td>
@@ -38,7 +38,7 @@
     }
 
     <table class="table table-striped">
-    @for(visitor <- visitors) {
+    @for(visitor <- restaurant.getAcceptedVisitors) {
         <tr>
             <td><a href="@routes.VisitorController.showVisitorCard(visitor.getFirstName)">@visitor.getFirstName @visitor.getLastName</a></td>
         </tr>
@@ -68,7 +68,7 @@
                 <div class="modal-body">
 
                     <select name="accept" class="form-control">
-                        @for(visitor <- visitors) {
+                        @for(visitor <- allVisitors) {
                             <option value=@visitor.getFirstName>@visitor.getFirstName @visitor.getLastName</option>
                         }
                     </select>

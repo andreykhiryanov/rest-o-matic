@@ -1,9 +1,7 @@
 package controllers;
 
-import models.Link;
 import models.Restaurant;
 import models.Visitor;
-import models.Manager;
 import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.Controller;
@@ -12,8 +10,6 @@ import views.html.home.createrestaurant;
 import views.html.home.editrestaurant;
 import views.html.home.restaurantcard;
 import javax.inject.Inject;
-import java.util.ArrayList;
-import java.util.List;
 
 public class RestaurantController extends Controller {
 
@@ -84,11 +80,6 @@ public class RestaurantController extends Controller {
             return notFound("Restaurant not found!");
         }
 
-        // Removing all restaurant's links.
-        for (Link link : Link.linkFinder.all()) {
-            if (link.getRestaurantName().equals(restaurantName)) link.delete();
-        }
-
         destroyingRestaurant.delete();
 
         return redirect(routes.HomeController.greetings());
@@ -103,14 +94,7 @@ public class RestaurantController extends Controller {
             return notFound("Restaurant not found!");
         }
 
-        List<Visitor> visitors = new ArrayList<>();
-        for (Link link : Link.linkFinder.all()) {
-            if (link.getRestaurantName().equals(restaurantName)){
-                Visitor visitor = Visitor.visitorFinder.byId(link.getVisitorName());
-                if (visitor != null) visitors.add(visitor);
-            }
-        }
-
-        return ok(restaurantcard.render(restaurant, visitors));
+        // Passing in the form a restaurant and a list of all visitors.
+        return ok(restaurantcard.render(restaurant, Visitor.visitorFinder.all()));
     }
 }

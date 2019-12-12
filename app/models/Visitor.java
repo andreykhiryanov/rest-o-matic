@@ -4,23 +4,33 @@ import io.ebean.Finder;
 import io.ebean.Model;
 import play.data.validation.Constraints;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
+@Table(name = "VISITOR")
 public class Visitor extends Model {
 
     @Id
     @Constraints.Required
+    @Column(name = "FIRST_NAME", nullable = false)
     private String firstName;
+
     @Constraints.Required
+    @Column(name = "LAST_NAME", nullable = false)
     private String lastName;
+
+    @Column(name = "EMAIL", nullable = false)
     private String email;
+
+    @Column(name = "PHONE_NUMBER", nullable = false)
     private String phoneNumber;
-    private Set<Restaurant> visitedRestaurants = new HashSet<>();
+
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "acceptedVisitors")
+    private List<Restaurant> visitedRestaurants = new ArrayList<>();
 
     public static Finder<String, Visitor> visitorFinder = new Finder<>(Visitor.class);
 
@@ -66,7 +76,7 @@ public class Visitor extends Model {
         this.phoneNumber = phoneNumber;
     }
 
-    public Set<Restaurant> getVisitedRestaurants() {
+    public List<Restaurant> getVisitedRestaurants() {
         return visitedRestaurants;
     }
 }
