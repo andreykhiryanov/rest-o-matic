@@ -6,9 +6,10 @@ import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.home.createrestaurant;
-import views.html.home.editrestaurant;
-import views.html.home.restaurantcard;
+import views.html.createrestaurant;
+import views.html.editrestaurant;
+import views.html.restaurantcard;
+
 import javax.inject.Inject;
 import java.util.List;
 
@@ -102,4 +103,23 @@ public class RestaurantController extends Controller {
         // Passing in the form a restaurant and a list of all visitors.
         return ok(restaurantcard.render(restaurant, newVisitors));
     }
+
+    public Result acceptVisitor(String restaurantName, String visitorName) {
+
+//        Restaurant restaurant = formFactory.form(Restaurant.class).bindFromRequest().get();
+//        Visitor visitor = Visitor.visitorFinder.byId(visitorName);
+
+        Restaurant restaurant = Restaurant.restaurantFinder.byId(restaurantName);
+        Visitor visitor = Visitor.visitorFinder.byId(visitorName);
+
+        if (restaurant == null || visitor == null) {
+            return notFound("Method: error!");
+        }
+
+        restaurant.getAcceptedVisitors().add(visitor);
+        restaurant.update();
+
+        return ok();
+    }
+
 }

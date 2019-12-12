@@ -4,7 +4,7 @@ import models.Restaurant;
 import models.Visitor;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.home.index;
+import views.html.index;
 import java.util.List;
 
 public class HomeController extends Controller {

@@ -1,0 +1,110 @@
+@import models.Visitor
+@import helper._
+
+@(visitor : Visitor)(newRestaurants : List[Restaurant])
+
+@layout(visitor.getFirstName){
+    <h2>@visitor.getFirstName</h2>
+    <br>
+    <a class="btn btn-primary" href="@routes.VisitorController.editVisitor(visitor.getFirstName)">Edit Visitor</a>
+    <a class="btn btn-danger" href="@routes.VisitorController.destroyVisitor(visitor.getFirstName)">Remove Visitor</a>
+
+    <br><br>
+    <h2>Information</h2>
+    <br>
+    <table class="table table-striped">
+        <tr>
+            <td>Last Name</td>
+            <td>@visitor.getLastName</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>@visitor.getEmail</td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td>@visitor.getPhoneNumber</td>
+        </tr>
+    </table>
+    <h2>Visited Restaurants</h2>
+    <br>
+    @if(visitor.getVisitedRestaurants.isEmpty) {
+        <table class="table table-striped">
+            <tr>
+                <td>@visitor.getFirstName has not visited any restaurants<td>
+            </tr>
+        </table>
+    }
+
+    <table class="table table-striped">
+        @for(restaurant <- visitor.getVisitedRestaurants) {
+            <tr>
+                <td><a href="@routes.RestaurantController.showRestaurantCard(restaurant.getRestaurantName)">@restaurant.getRestaurantName</a></td>
+            </tr>
+        }
+    </table>
+
+        <!-- Modal window "Visit" start button -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalVisit">
+        Visit Restaurant
+    </button>
+
+        <!-- Modal window "Forget" start button -->
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModalForget">
+        Forget Restaurant
+    </button>
+
+        <!-- Modal window "Visit" -->
+    <div class="modal fade" id="myModalVisit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Choose a restaurant to visit</h4>
+                </div>
+                <div class="modal-body">
+
+                    <select name="visit" class="form-control">
+                        @for(restaurant <- newRestaurants) {
+                            <option value=@restaurant.getRestaurantName>@restaurant.getRestaurantName</option>
+                        }
+                    </select>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Visit Restaurant</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Modal window "Forget" -->
+    <div class="modal fade" id="myModalForget" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Choose a restaurant to forget</h4>
+                </div>
+                <div class="modal-body">
+
+                    <select name="visit" class="form-control">
+                        @for(restaurant <- visitor.getVisitedRestaurants) {
+                            <option value=@restaurant.getRestaurantName>@restaurant.getRestaurantName</option>
+                        }
+                    </select>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Forget Restaurant</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

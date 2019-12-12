@@ -26,7 +26,7 @@ public class Restaurant extends Model {
     @Column(name = "ADDRESS", nullable = false)
     private String address;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "HAS",
             joinColumns = @JoinColumn(name = "RESTAURANT_ID", referencedColumnName = "RESTAURANT_NAME"),
             inverseJoinColumns = @JoinColumn(name = "VISITOR_ID", referencedColumnName = "FIRST_NAME")

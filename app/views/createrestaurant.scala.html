@@ -1,0 +1,17 @@
+@import models.Restaurant
+@(restaurantForm: Form[Restaurant])
+@import helper._
+@import views.html.partials._restaurantFormFields
+
+@layout("New Restaurant"){
+    <h2>Create New Restaurant</h2>
+    <br>
+    @helper.form(action = routes.RestaurantController.saveRestaurantChanges()) {
+
+        @_restaurantFormFields(restaurantForm)
+
+        <br>
+
+        <button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-plus-sign"></i> Create Restaurant</button>
+    }
+}

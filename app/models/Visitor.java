@@ -26,7 +26,7 @@ public class Visitor extends Model {
     @Column(name = "PHONE_NUMBER", nullable = false)
     private String phoneNumber;
 
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "acceptedVisitors")
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "acceptedVisitors")
     private List<Restaurant> visitedRestaurants = new ArrayList<>();
 
     public static Finder<String, Visitor> visitorFinder = new Finder<>(Visitor.class);

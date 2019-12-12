@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Wed Dec 11 16:47:45 GMT+03:00 2019
+// @DATE:Thu Dec 12 23:34:55 GMT+03:00 2019
 
 package router
 
@@ -20,7 +20,7 @@ class Routes(
   RestaurantController_3: controllers.RestaurantController,
   // @LINE:14
   VisitorController_1: controllers.VisitorController,
-  // @LINE:22
+  // @LINE:24
   Assets_0: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -33,7 +33,7 @@ class Routes(
     RestaurantController_3: controllers.RestaurantController,
     // @LINE:14
     VisitorController_1: controllers.VisitorController,
-    // @LINE:22
+    // @LINE:24
     Assets_0: controllers.Assets
   ) = this(errorHandler, HomeController_2, RestaurantController_3, VisitorController_1, Assets_0, "/")
 
@@ -61,6 +61,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/create/""", """controllers.VisitorController.createVisitor()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/create/""", """controllers.VisitorController.saveVisitorChanges()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/delete/""" + "$" + """visitorName<[^/]+>""", """controllers.VisitorController.destroyVisitor(visitorName:String)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """accept/""" + "$" + """restaurantName<[^/]+>/""" + "$" + """visitorName<[^/]+>""", """controllers.RestaurantController.acceptVisitor(restaurantName:String, visitorName:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:String)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -303,11 +304,29 @@ class Routes(
     )
   )
 
-  // @LINE:22
-  private[this] lazy val controllers_Assets_versioned13_route = Route("GET",
+  // @LINE:21
+  private[this] lazy val controllers_RestaurantController_acceptVisitor13_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("accept/"), DynamicPart("restaurantName", """[^/]+""",true), StaticPart("/"), DynamicPart("visitorName", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_RestaurantController_acceptVisitor13_invoker = createInvoker(
+    RestaurantController_3.acceptVisitor(fakeValue[String], fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.RestaurantController",
+      "acceptVisitor",
+      Seq(classOf[String], classOf[String]),
+      "POST",
+      this.prefix + """accept/""" + "$" + """restaurantName<[^/]+>/""" + "$" + """visitorName<[^/]+>""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:24
+  private[this] lazy val controllers_Assets_versioned14_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned13_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned14_invoker = createInvoker(
     Assets_0.versioned(fakeValue[String], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -402,10 +421,16 @@ class Routes(
         controllers_VisitorController_destroyVisitor12_invoker.call(VisitorController_1.destroyVisitor(visitorName))
       }
   
-    // @LINE:22
-    case controllers_Assets_versioned13_route(params@_) =>
+    // @LINE:21
+    case controllers_RestaurantController_acceptVisitor13_route(params@_) =>
+      call(params.fromPath[String]("restaurantName", None), params.fromPath[String]("visitorName", None)) { (restaurantName, visitorName) =>
+        controllers_RestaurantController_acceptVisitor13_invoker.call(RestaurantController_3.acceptVisitor(restaurantName, visitorName))
+      }
+  
+    // @LINE:24
+    case controllers_Assets_versioned14_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
-        controllers_Assets_versioned13_invoker.call(Assets_0.versioned(path, file))
+        controllers_Assets_versioned14_invoker.call(Assets_0.versioned(path, file))
       }
   }
 }

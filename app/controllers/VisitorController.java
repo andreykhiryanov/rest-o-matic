@@ -6,9 +6,9 @@ import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.home.createvisitor;
-import views.html.home.editvisitor;
-import views.html.home.visitorcard;
+import views.html.createvisitor;
+import views.html.editvisitor;
+import views.html.visitorcard;
 import javax.inject.Inject;
 import java.util.List;
 
