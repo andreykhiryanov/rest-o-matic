@@ -4,6 +4,7 @@ import models.Restaurant;
 import models.Visitor;
 import play.mvc.Controller;
 import play.mvc.Result;
+import views.html.errorpaige;
 import views.html.index;
 import java.util.List;
 
@@ -35,4 +36,7 @@ public class HomeController extends Controller {
         new Visitor("Myron", "Zannuto", "mzannuto4@usatoday.com", "233-524-4742").save();
     }
 
+    public Result showError(String message) {
+        return ok(errorpaige.render(message));
+    }
 }

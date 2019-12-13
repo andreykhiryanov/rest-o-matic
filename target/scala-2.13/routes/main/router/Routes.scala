@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Fri Dec 13 12:45:05 GMT+03:00 2019
+// @DATE:Fri Dec 13 18:26:14 GMT+03:00 2019
 
 package router
 
@@ -20,7 +20,7 @@ class Routes(
   RestaurantController_3: controllers.RestaurantController,
   // @LINE:14
   VisitorController_1: controllers.VisitorController,
-  // @LINE:25
+  // @LINE:27
   Assets_0: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -33,7 +33,7 @@ class Routes(
     RestaurantController_3: controllers.RestaurantController,
     // @LINE:14
     VisitorController_1: controllers.VisitorController,
-    // @LINE:25
+    // @LINE:27
     Assets_0: controllers.Assets
   ) = this(errorHandler, HomeController_2, RestaurantController_3, VisitorController_1, Assets_0, "/")
 
@@ -63,6 +63,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/delete/""" + "$" + """visitorName<[^/]+>""", """controllers.VisitorController.destroyVisitor(visitorName:String)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """accept/""" + "$" + """restaurantName<[^/]+>/""" + "$" + """visitorName<[^/]+>""", """controllers.RestaurantController.acceptVisitor(restaurantName:String, visitorName:String)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """kick/""" + "$" + """restaurantName<[^/]+>/""" + "$" + """visitorName<[^/]+>""", """controllers.RestaurantController.kickVisitor(restaurantName:String, visitorName:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """error""", """controllers.HomeController.showError(message:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:String)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -341,11 +342,29 @@ class Routes(
     )
   )
 
-  // @LINE:25
-  private[this] lazy val controllers_Assets_versioned15_route = Route("GET",
+  // @LINE:24
+  private[this] lazy val controllers_HomeController_showError15_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("error")))
+  )
+  private[this] lazy val controllers_HomeController_showError15_invoker = createInvoker(
+    HomeController_2.showError(fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "showError",
+      Seq(classOf[String]),
+      "GET",
+      this.prefix + """error""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:27
+  private[this] lazy val controllers_Assets_versioned16_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned15_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned16_invoker = createInvoker(
     Assets_0.versioned(fakeValue[String], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -452,10 +471,16 @@ class Routes(
         controllers_RestaurantController_kickVisitor14_invoker.call(RestaurantController_3.kickVisitor(restaurantName, visitorName))
       }
   
-    // @LINE:25
-    case controllers_Assets_versioned15_route(params@_) =>
+    // @LINE:24
+    case controllers_HomeController_showError15_route(params@_) =>
+      call(params.fromQuery[String]("message", None)) { (message) =>
+        controllers_HomeController_showError15_invoker.call(HomeController_2.showError(message))
+      }
+  
+    // @LINE:27
+    case controllers_Assets_versioned16_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
-        controllers_Assets_versioned15_invoker.call(Assets_0.versioned(path, file))
+        controllers_Assets_versioned16_invoker.call(Assets_0.versioned(path, file))
       }
   }
 }

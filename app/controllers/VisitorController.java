@@ -37,12 +37,12 @@ public class VisitorController extends Controller {
         // Checking the uniqueness of the INN.
         for (Visitor visitor : Visitor.visitorFinder.all()) {
             if (visitor.getPhoneNumber().equals(newVisitor.getPhoneNumber())) {
-                return badRequest("A visitor with this phone number already exists.");
+                return redirect(routes.HomeController.showError("A visitor with this phone number already exists!"));
             }
         }
         for (Visitor visitor : Visitor.visitorFinder.all()) {
             if (visitor.getEmail().equals(newVisitor.getEmail())) {
-                return badRequest("A visitor with this email already exists.");
+                return redirect(routes.HomeController.showError("A visitor with this email already exists!"));
             }
         }
 
@@ -57,7 +57,7 @@ public class VisitorController extends Controller {
         Visitor visitor = searchVisitorByName(visitorName);
 
         if (visitor == null) {
-            return notFound("Visitor not found!");
+            return redirect(routes.HomeController.showError("Editing error!"));
         }
 
         Form<Visitor> visitorForm = formFactory.form(Visitor.class).fill(visitor);
@@ -71,7 +71,7 @@ public class VisitorController extends Controller {
         Visitor oldVisitor = searchVisitorByName(visitorName);
 
         if (oldVisitor == null) {
-            return notFound("Updating error!");
+            return redirect(routes.HomeController.showError("Updating error!"));
         }
 
         // If the phone number has been changed, a check is performed.
@@ -79,7 +79,7 @@ public class VisitorController extends Controller {
             for (Visitor existingVisitor : Visitor.visitorFinder.all()) {
                 if (existingVisitor.getPhoneNumber().equals(updatedVisitor.getPhoneNumber()) &
                         !updatedVisitor.getPhoneNumber().equals(oldVisitor.getPhoneNumber())) {
-                    return badRequest("A visitor with this phone number already exists.");
+                    return redirect(routes.HomeController.showError("A visitor with this phone number already exists!"));
                 }
             }
         }
@@ -88,7 +88,7 @@ public class VisitorController extends Controller {
         if (!updatedVisitor.getEmail().equals(oldVisitor.getEmail())){
             for (Visitor existingVisitor : Visitor.visitorFinder.all()) {
                 if (existingVisitor.getEmail().equals(updatedVisitor.getEmail())) {
-                    return badRequest("A visitor with this email already exists.");
+                    return redirect(routes.HomeController.showError("A visitor with this email already exists!"));
                 }
             }
         }
@@ -107,7 +107,7 @@ public class VisitorController extends Controller {
         Visitor destroyingVisitor = searchVisitorByName(visitorName);
 
         if (destroyingVisitor == null) {
-            return notFound("Visitor not found!");
+            return redirect(routes.HomeController.showError("Deleting error!"));
         }
 
         destroyingVisitor.delete();
@@ -120,7 +120,7 @@ public class VisitorController extends Controller {
         Visitor visitor = searchVisitorByName(visitorName);
 
         if (visitor == null) {
-            return notFound("Visitor not found!");
+            return redirect(routes.HomeController.showError("Visitor not found!"));
         }
 
         List<Restaurant> newRestaurants = Restaurant.restaurantFinder.all();

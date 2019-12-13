@@ -37,7 +37,7 @@ public class RestaurantController extends Controller {
         // Checking the uniqueness of the INN.
         for (Restaurant restaurant : Restaurant.restaurantFinder.all()) {
             if (restaurant.getInn() == newRestaurant.getInn()) {
-                return badRequest("A restaurant with this INN already exists.");
+                return redirect(routes.HomeController.showError("A restaurant with this INN already exists!"));
             }
         }
 
@@ -54,7 +54,7 @@ public class RestaurantController extends Controller {
         Restaurant restaurant = searchRestByName(restaurantName);
 
         if (restaurant == null) {
-            return notFound("Restaurant not found!");
+            return redirect(routes.HomeController.showError("Editing error!"));
         }
 
         Form<Restaurant> restaurantForm = formFactory.form(Restaurant.class).fill(restaurant);
@@ -68,14 +68,15 @@ public class RestaurantController extends Controller {
         Restaurant oldRestaurant = searchRestByName(oldRestaurantName);
 
         if (oldRestaurant == null) {
-            return notFound("Updating error!");
+            return redirect(routes.HomeController.showError("Updating error!"));
         }
 
         // Checking the uniqueness of the INN.
-        for (Restaurant existingRestaurant : Restaurant.restaurantFinder.all()) {
-            if (existingRestaurant.getInn() == updatedRestaurant.getInn() &
-                    updatedRestaurant.getInn() != oldRestaurant.getInn()) {
-                return badRequest("A restaurant with this INN already exists.");
+        if (updatedRestaurant.getInn() != oldRestaurant.getInn()) {
+            for (Restaurant existingRestaurant : Restaurant.restaurantFinder.all()) {
+                if (existingRestaurant.getInn() == updatedRestaurant.getInn()) {
+                    return redirect(routes.HomeController.showError("A restaurant with this INN already exists!"));
+                }
             }
         }
 
@@ -94,7 +95,7 @@ public class RestaurantController extends Controller {
         Restaurant destroyingRestaurant = searchRestByName(restaurantName);
 
         if (destroyingRestaurant == null) {
-            return notFound("Restaurant not found!");
+            return redirect(routes.HomeController.showError("Deleting error!"));
         }
 
         destroyingRestaurant.delete();
@@ -108,7 +109,7 @@ public class RestaurantController extends Controller {
         Restaurant restaurant = searchRestByName(restaurantName);
 
         if (restaurant == null) {
-            return notFound("Restaurant not found!");
+            return redirect(routes.HomeController.showError("Restaurant not found!"));
         }
 
 
@@ -125,7 +126,7 @@ public class RestaurantController extends Controller {
         Visitor visitor = searchVisitorByName(visitorName);
 
         if (restaurant == null || visitor == null) {
-            return notFound("Method: error!");
+            return redirect(routes.HomeController.showError("Accept error!"));
         }
 
         restaurant.getAcceptedVisitors().add(visitor);
@@ -141,7 +142,7 @@ public class RestaurantController extends Controller {
         Visitor visitor = searchVisitorByName(visitorName);
 
         if (restaurant == null || visitor == null) {
-            return notFound("Method: error!");
+            return redirect(routes.HomeController.showError("Kicking error!"));
         }
 
         restaurant.getAcceptedVisitors().remove(visitor);

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Fri Dec 13 12:45:05 GMT+03:00 2019
+// @DATE:Fri Dec 13 18:26:14 GMT+03:00 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -109,6 +109,16 @@ package controllers.javascript {
     }
 
   
+    // @LINE:24
+    def showError: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.showError",
+      """
+        function(message0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "error" + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("message", message0)])})
+        }
+      """
+    )
+  
     // @LINE:5
     def greetings: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.greetings",
@@ -191,7 +201,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:25
+  // @LINE:27
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -199,7 +209,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:25
+    // @LINE:27
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """

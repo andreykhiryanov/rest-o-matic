@@ -1,29 +1,43 @@
-2019-12-13 17:23:41,245 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-4 - Database [default] initialized at jdbc:postgresql://127.0.0.1/rest
-2019-12-13 17:23:41,254 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
-2019-12-13 17:23:42,458 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-4 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-12-13 18:26:47,673 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-3 - Database [default] initialized at jdbc:postgresql://127.0.0.1/rest
+2019-12-13 18:26:47,679 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-3 - Creating Pool for datasource 'default'
+2019-12-13 18:26:48,735 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-3 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
 
-2019-12-13 17:23:42,526 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-4 - Application started (Dev) (no global state)
-2019-12-13 17:33:08,735 [INFO] from application in application-akka.actor.default-dispatcher-7 - Shutting down connection pool.
-2019-12-13 17:33:08,860 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-14 - Database [default] initialized at jdbc:postgresql://127.0.0.1/rest
-2019-12-13 17:33:08,860 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-14 - Creating Pool for datasource 'default'
-2019-12-13 17:33:08,961 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-14 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-12-13 18:26:48,796 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-3 - Application started (Dev) (no global state)
+2019-12-13 18:37:18,695 [INFO] from application in application-akka.actor.default-dispatcher-3 - Shutting down connection pool.
+2019-12-13 18:37:18,876 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-8 - Database [default] initialized at jdbc:postgresql://127.0.0.1/rest
+2019-12-13 18:37:18,876 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-8 - Creating Pool for datasource 'default'
+2019-12-13 18:37:18,978 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-8 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
 
-2019-12-13 17:33:09,023 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-14 - Application started (Dev) (no global state)
-2019-12-13 17:35:28,845 [INFO] from application in application-akka.actor.default-dispatcher-6 - Shutting down connection pool.
-2019-12-13 17:35:28,954 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-15 - Database [default] initialized at jdbc:postgresql://127.0.0.1/rest
-2019-12-13 17:35:28,955 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-15 - Creating Pool for datasource 'default'
-2019-12-13 17:35:29,082 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-15 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-12-13 18:37:19,102 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-8 - Application started (Dev) (no global state)
+2019-12-13 18:38:07,267 [INFO] from application in application-akka.actor.default-dispatcher-6 - Shutting down connection pool.
+2019-12-13 18:38:07,442 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-13 - Database [default] initialized at jdbc:postgresql://127.0.0.1/rest
+2019-12-13 18:38:07,442 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-13 - Creating Pool for datasource 'default'
+2019-12-13 18:38:07,540 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-13 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
 
-2019-12-13 17:35:29,142 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-15 - Application started (Dev) (no global state)
-2019-12-13 18:08:55,210 [INFO] from application in application-akka.actor.default-dispatcher-6 - Shutting down connection pool.
-2019-12-13 18:08:55,320 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-27 - Database [default] initialized at jdbc:postgresql://127.0.0.1/rest
-2019-12-13 18:08:55,320 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-27 - Creating Pool for datasource 'default'
-2019-12-13 18:08:55,409 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-27 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-12-13 18:38:07,600 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-13 - Application started (Dev) (no global state)
+2019-12-13 18:39:04,751 [INFO] from application in application-akka.actor.default-dispatcher-9 - Shutting down connection pool.
+2019-12-13 18:39:04,915 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-14 - Database [default] initialized at jdbc:postgresql://127.0.0.1/rest
+2019-12-13 18:39:04,915 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-14 - Creating Pool for datasource 'default'
+2019-12-13 18:39:05,012 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-14 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
 
-2019-12-13 18:08:55,464 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-27 - Application started (Dev) (no global state)
-2019-12-13 18:09:59,318 [INFO] from play.core.server.AkkaHttpServer in pool-12-thread-4 - Stopping server...
-2019-12-13 18:09:59,322 [INFO] from application in application-akka.actor.default-dispatcher-15 - Shutting down connection pool.
+2019-12-13 18:39:05,097 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-14 - Application started (Dev) (no global state)
+2019-12-13 18:44:43,104 [INFO] from application in application-akka.actor.default-dispatcher-10 - Shutting down connection pool.
+2019-12-13 18:44:43,248 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-20 - Database [default] initialized at jdbc:postgresql://127.0.0.1/rest
+2019-12-13 18:44:43,249 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-20 - Creating Pool for datasource 'default'
+2019-12-13 18:44:43,333 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-20 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+
+2019-12-13 18:44:43,627 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-20 - Application started (Dev) (no global state)
+2019-12-13 18:46:19,738 [INFO] from application in application-akka.actor.default-dispatcher-15 - Shutting down connection pool.
+2019-12-13 18:46:19,895 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-24 - Database [default] initialized at jdbc:postgresql://127.0.0.1/rest
+2019-12-13 18:46:19,895 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-24 - Creating Pool for datasource 'default'
+2019-12-13 18:46:20,005 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-24 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+
+2019-12-13 18:46:20,091 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-24 - Application started (Dev) (no global state)
+2019-12-13 18:46:59,772 [INFO] from play.core.server.AkkaHttpServer in pool-12-thread-2 - Stopping server...
+2019-12-13 18:46:59,776 [INFO] from application in application-akka.actor.default-dispatcher-11 - Shutting down connection pool.
