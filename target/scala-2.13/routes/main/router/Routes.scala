@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Thu Dec 12 23:54:16 GMT+03:00 2019
+// @DATE:Fri Dec 13 12:45:05 GMT+03:00 2019
 
 package router
 
@@ -51,13 +51,13 @@ class Routes(
     ("""GET""", this.prefix, """controllers.HomeController.greetings()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/""" + "$" + """restaurantName<[^/]+>""", """controllers.RestaurantController.showRestaurantCard(restaurantName:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/edit/""" + "$" + """restaurantName<[^/]+>""", """controllers.RestaurantController.editRestaurant(restaurantName:String)"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/edit""", """controllers.RestaurantController.updateRestaurant()"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/update/""" + "$" + """restaurantName<[^/]+>""", """controllers.RestaurantController.updateRestaurant(restaurantName:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/create/""", """controllers.RestaurantController.createRestaurant()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/create/""", """controllers.RestaurantController.saveRestaurantChanges()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/delete/""" + "$" + """restaurantName<[^/]+>""", """controllers.RestaurantController.destroyRestaurant(restaurantName:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/""" + "$" + """visitorName<[^/]+>""", """controllers.VisitorController.showVisitorCard(visitorName:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/edit/""" + "$" + """visitorName<[^/]+>""", """controllers.VisitorController.editVisitor(visitorName:String)"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/edit""", """controllers.VisitorController.updateVisitor()"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/update/""" + "$" + """visitorName<[^/]+>""", """controllers.VisitorController.updateVisitor(visitorName:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/create/""", """controllers.VisitorController.createVisitor()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/create/""", """controllers.VisitorController.saveVisitorChanges()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/delete/""" + "$" + """visitorName<[^/]+>""", """controllers.VisitorController.destroyVisitor(visitorName:String)"""),
@@ -127,17 +127,17 @@ class Routes(
 
   // @LINE:9
   private[this] lazy val controllers_RestaurantController_updateRestaurant3_route = Route("POST",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("restaurant/edit")))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("restaurant/update/"), DynamicPart("restaurantName", """[^/]+""",true)))
   )
   private[this] lazy val controllers_RestaurantController_updateRestaurant3_invoker = createInvoker(
-    RestaurantController_3.updateRestaurant(),
+    RestaurantController_3.updateRestaurant(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.RestaurantController",
       "updateRestaurant",
-      Nil,
+      Seq(classOf[String]),
       "POST",
-      this.prefix + """restaurant/edit""",
+      this.prefix + """restaurant/update/""" + "$" + """restaurantName<[^/]+>""",
       """""",
       Seq()
     )
@@ -235,17 +235,17 @@ class Routes(
 
   // @LINE:16
   private[this] lazy val controllers_VisitorController_updateVisitor9_route = Route("POST",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("visitor/edit")))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("visitor/update/"), DynamicPart("visitorName", """[^/]+""",true)))
   )
   private[this] lazy val controllers_VisitorController_updateVisitor9_invoker = createInvoker(
-    VisitorController_1.updateVisitor(),
+    VisitorController_1.updateVisitor(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.VisitorController",
       "updateVisitor",
-      Nil,
+      Seq(classOf[String]),
       "POST",
-      this.prefix + """visitor/edit""",
+      this.prefix + """visitor/update/""" + "$" + """visitorName<[^/]+>""",
       """""",
       Seq()
     )
@@ -382,8 +382,8 @@ class Routes(
   
     // @LINE:9
     case controllers_RestaurantController_updateRestaurant3_route(params@_) =>
-      call { 
-        controllers_RestaurantController_updateRestaurant3_invoker.call(RestaurantController_3.updateRestaurant())
+      call(params.fromPath[String]("restaurantName", None)) { (restaurantName) =>
+        controllers_RestaurantController_updateRestaurant3_invoker.call(RestaurantController_3.updateRestaurant(restaurantName))
       }
   
     // @LINE:10
@@ -418,8 +418,8 @@ class Routes(
   
     // @LINE:16
     case controllers_VisitorController_updateVisitor9_route(params@_) =>
-      call { 
-        controllers_VisitorController_updateVisitor9_invoker.call(VisitorController_1.updateVisitor())
+      call(params.fromPath[String]("visitorName", None)) { (visitorName) =>
+        controllers_VisitorController_updateVisitor9_invoker.call(VisitorController_1.updateVisitor(visitorName))
       }
   
     // @LINE:17

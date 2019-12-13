@@ -50,16 +50,14 @@ public class VisitorController extends Controller {
         }
 
         Form<Visitor> visitorForm = formFactory.form(Visitor.class).fill(visitor);
-        return ok(editvisitor.render(visitorForm));
+        return ok(editvisitor.render(visitorForm, visitorName));
 
     }
 
-    public Result updateVisitor() {
-
-        // TODO: Properly implement this method.
+    public Result updateVisitor(String visitorName) {
 
         Visitor visitor = formFactory.form(Visitor.class).bindFromRequest().get();
-        Visitor oldVisitor = searchVisitorByName(visitor.getFirstName());
+        Visitor oldVisitor = searchVisitorByName(visitorName);
 
         if (oldVisitor == null) {
             return notFound("You cannot change the name of the visitor, because it is the ID!");

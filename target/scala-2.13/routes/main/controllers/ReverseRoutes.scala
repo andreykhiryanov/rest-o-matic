@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Thu Dec 12 23:54:16 GMT+03:00 2019
+// @DATE:Fri Dec 13 12:45:05 GMT+03:00 2019
 
 import play.api.mvc.Call
 
@@ -36,6 +36,12 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "restaurant/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("restaurantName", restaurantName)))
     }
   
+    // @LINE:9
+    def updateRestaurant(restaurantName:String): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "restaurant/update/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("restaurantName", restaurantName)))
+    }
+  
     // @LINE:10
     def createRestaurant(): Call = {
       
@@ -52,12 +58,6 @@ package controllers {
     def saveRestaurantChanges(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "restaurant/create/")
-    }
-  
-    // @LINE:9
-    def updateRestaurant(): Call = {
-      
-      Call("POST", _prefix + { _defaultPrefix } + "restaurant/edit")
     }
   
     // @LINE:8
@@ -114,16 +114,16 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "visitor/delete/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("visitorName", visitorName)))
     }
   
+    // @LINE:16
+    def updateVisitor(visitorName:String): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "visitor/update/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("visitorName", visitorName)))
+    }
+  
     // @LINE:15
     def editVisitor(visitorName:String): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "visitor/edit/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("visitorName", visitorName)))
-    }
-  
-    // @LINE:16
-    def updateVisitor(): Call = {
-      
-      Call("POST", _prefix + { _defaultPrefix } + "visitor/edit")
     }
   
   }

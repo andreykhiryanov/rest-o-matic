@@ -51,16 +51,14 @@ public class RestaurantController extends Controller {
         }
 
         Form<Restaurant> restaurantForm = formFactory.form(Restaurant.class).fill(restaurant);
-        return ok(editrestaurant.render(restaurantForm));
+        return ok(editrestaurant.render(restaurantForm, restaurantName));
 
     }
 
-    public Result updateRestaurant() {
-
-        // TODO: Properly implement this method.
+    public Result updateRestaurant(String oldRestaurantName) {
 
         Restaurant restaurant = formFactory.form(Restaurant.class).bindFromRequest().get();
-        Restaurant oldRestaurant = searchRestByName(restaurant.getRestaurantName());
+        Restaurant oldRestaurant = searchRestByName(oldRestaurantName);
 
         if (oldRestaurant == null) {
             return notFound("You cannot change the name of the restaurant!");

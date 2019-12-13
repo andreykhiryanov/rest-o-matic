@@ -23,22 +23,22 @@ import play.data._
 import play.core.j.PlayFormsMagicForJava._
 /*1.2*/import models.Restaurant
 
-object editrestaurant extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[Form[Restaurant],play.twirl.api.HtmlFormat.Appendable] {
+object editrestaurant extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[Form[Restaurant],String,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*2.2*/(restaurantForm: Form[Restaurant]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*2.2*/(restaurantForm: Form[Restaurant])(restaurantName: String):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 /*3.2*/import helper._
 /*4.2*/import views.html.partials._restaurantFormFields
 
 
-Seq[Any](format.raw/*2.36*/("""
+Seq[Any](format.raw/*2.60*/("""
 """),format.raw/*5.1*/("""
 """),_display_(/*6.2*/layout("Edit Restaurant")/*6.27*/{_display_(Seq[Any](format.raw/*6.28*/("""
     """),format.raw/*7.5*/("""<h2>Edit Restaurant</h2>
     <br>
-    """),_display_(/*9.6*/helper/*9.12*/.form(action = routes.RestaurantController.updateRestaurant())/*9.74*/ {_display_(Seq[Any](format.raw/*9.76*/("""
+    """),_display_(/*9.6*/helper/*9.12*/.form(action = routes.RestaurantController.updateRestaurant(restaurantName))/*9.88*/ {_display_(Seq[Any](format.raw/*9.90*/("""
 
         """),_display_(/*11.10*/_restaurantFormFields(restaurantForm)),format.raw/*11.47*/("""
 
@@ -51,9 +51,9 @@ Seq[Any](format.raw/*2.36*/("""
     }
   }
 
-  def render(restaurantForm:Form[Restaurant]): play.twirl.api.HtmlFormat.Appendable = apply(restaurantForm)
+  def render(restaurantForm:Form[Restaurant],restaurantName:String): play.twirl.api.HtmlFormat.Appendable = apply(restaurantForm)(restaurantName)
 
-  def f:((Form[Restaurant]) => play.twirl.api.HtmlFormat.Appendable) = (restaurantForm) => apply(restaurantForm)
+  def f:((Form[Restaurant]) => (String) => play.twirl.api.HtmlFormat.Appendable) = (restaurantForm) => (restaurantName) => apply(restaurantForm)(restaurantName)
 
   def ref: this.type = this
 
@@ -62,10 +62,10 @@ Seq[Any](format.raw/*2.36*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-12T19:01:49.609
+                  DATE: 2019-12-13T12:40:44.744
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/editrestaurant.scala.html
-                  HASH: 1fc77e5e4f5b3efec155035b087a4ec6a8b438df
-                  MATRIX: 651->1|999->28|1106->65|1129->83|1207->62|1235->133|1263->136|1296->161|1334->162|1366->168|1432->209|1446->215|1516->277|1555->279|1595->292|1653->329|1692->341|1857->476
+                  HASH: 23e2fe40133737ef52547576ace4dfab116b076c
+                  MATRIX: 651->1|1006->28|1137->89|1160->107|1238->86|1266->157|1294->160|1327->185|1365->186|1397->192|1463->233|1477->239|1561->315|1600->317|1640->330|1698->367|1737->379|1902->514
                   LINES: 24->1|29->2|32->3|33->4|36->2|37->5|38->6|38->6|38->6|39->7|41->9|41->9|41->9|41->9|43->11|43->11|45->13|48->16
                   -- GENERATED --
               */

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Thu Dec 12 23:54:16 GMT+03:00 2019
+// @DATE:Fri Dec 13 12:45:05 GMT+03:00 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -49,6 +49,16 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:9
+    def updateRestaurant: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.RestaurantController.updateRestaurant",
+      """
+        function(restaurantName0) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "restaurant/update/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("restaurantName", restaurantName0))})
+        }
+      """
+    )
+  
     // @LINE:10
     def createRestaurant: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.RestaurantController.createRestaurant",
@@ -75,16 +85,6 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "restaurant/create/"})
-        }
-      """
-    )
-  
-    // @LINE:9
-    def updateRestaurant: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.RestaurantController.updateRestaurant",
-      """
-        function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "restaurant/edit"})
         }
       """
     )
@@ -169,22 +169,22 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:16
+    def updateVisitor: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.VisitorController.updateVisitor",
+      """
+        function(visitorName0) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "visitor/update/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("visitorName", visitorName0))})
+        }
+      """
+    )
+  
     // @LINE:15
     def editVisitor: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.VisitorController.editVisitor",
       """
         function(visitorName0) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "visitor/edit/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("visitorName", visitorName0))})
-        }
-      """
-    )
-  
-    // @LINE:16
-    def updateVisitor: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.VisitorController.updateVisitor",
-      """
-        function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "visitor/edit"})
         }
       """
     )

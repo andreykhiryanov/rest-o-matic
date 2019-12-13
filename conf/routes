@@ -6,14 +6,14 @@ GET     /                                       controllers.HomeController.greet
 
 GET     /restaurant/:restaurantName             controllers.RestaurantController.showRestaurantCard(restaurantName : String)
 GET     /restaurant/edit/:restaurantName        controllers.RestaurantController.editRestaurant(restaurantName : String)
-POST    /restaurant/edit                        controllers.RestaurantController.updateRestaurant()
+POST    /restaurant/update/:restaurantName      controllers.RestaurantController.updateRestaurant(restaurantName : String)
 GET     /restaurant/create/                     controllers.RestaurantController.createRestaurant()
 POST    /restaurant/create/                     controllers.RestaurantController.saveRestaurantChanges()
 GET     /restaurant/delete/:restaurantName      controllers.RestaurantController.destroyRestaurant(restaurantName : String)
 
 GET     /visitor/:visitorName                   controllers.VisitorController.showVisitorCard(visitorName : String)
 GET     /visitor/edit/:visitorName              controllers.VisitorController.editVisitor(visitorName : String)
-POST    /visitor/edit                           controllers.VisitorController.updateVisitor()
+POST    /visitor/update/:visitorName            controllers.VisitorController.updateVisitor(visitorName : String)
 GET     /visitor/create/                        controllers.VisitorController.createVisitor()
 POST    /visitor/create/                        controllers.VisitorController.saveVisitorChanges()
 GET     /visitor/delete/:visitorName            controllers.VisitorController.destroyVisitor(visitorName : String)
