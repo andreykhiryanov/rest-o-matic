@@ -58,7 +58,7 @@ function visitRestaurantRequest(visitorName) {
         },
         error: function() {
             window.location.reload();
-            alert("url");
+            alert(url);
         }
     });
 }
@@ -75,7 +75,7 @@ function forgetRestaurantRequest(visitorName) {
         },
         error: function() {
             window.location.reload();
-            alert("url");
+            alert(url);
         }
     });
 }

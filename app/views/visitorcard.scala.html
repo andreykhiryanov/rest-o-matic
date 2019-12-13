@@ -72,7 +72,7 @@
 
                     <select id="visitRestaurant" class="js-data-example-ajax" style="width: 570px">
                         @for(restaurant <- newRestaurants) {
-                            <option value=@restaurant.getRestaurantName>@restaurant.getRestaurantName</option>
+                            <option value='@restaurant.getRestaurantName'>@restaurant.getRestaurantName</option>
                         }
                     </select>
 
@@ -99,7 +99,7 @@
 
                     <select id="forgetRestaurant" class="js-data-example-ajax" style="width: 570px">
                         @for(restaurant <- visitor.getVisitedRestaurants) {
-                            <option value=@restaurant.getRestaurantName>@restaurant.getRestaurantName</option>
+                            <option value='@restaurant.getRestaurantName'>@restaurant.getRestaurantName</option>
                         }
                     </select>
 

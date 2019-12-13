@@ -75,7 +75,7 @@
 
                     <select id="acceptVisitor" class="js-data-example-ajax" style="width: 570px">
                         @for(visitor <- newVisitors) {
-                            <option value=@visitor.getFirstName>@visitor.getFirstName @visitor.getLastName</option>
+                            <option value='@visitor.getFirstName'>@visitor.getFirstName @visitor.getLastName</option>
                         }
                     </select>
 
@@ -102,7 +102,7 @@
 
                     <select id="kickVisitor" class="js-data-example-ajax" style="width: 570px">
                     @for(visitor <- restaurant.getAcceptedVisitors) {
-                        <option value=@visitor.getFirstName>@visitor.getFirstName @visitor.getLastName</option>
+                        <option value='@visitor.getFirstName'>@visitor.getFirstName @visitor.getLastName</option>
                     }
                     </select>
 
