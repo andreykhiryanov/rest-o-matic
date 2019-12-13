@@ -33,6 +33,19 @@ public class VisitorController extends Controller {
         }
 
         Visitor newVisitor = visitorForm.get();
+
+        // Checking the uniqueness of the INN.
+        for (Visitor visitor : Visitor.visitorFinder.all()) {
+            if (visitor.getPhoneNumber().equals(newVisitor.getPhoneNumber())) {
+                return badRequest("A visitor with this phone number already exists.");
+            }
+        }
+        for (Visitor visitor : Visitor.visitorFinder.all()) {
+            if (visitor.getEmail().equals(newVisitor.getEmail())) {
+                return badRequest("A visitor with this email already exists.");
+            }
+        }
+
         newVisitor.setId((long) (Math.random()*10000));
         newVisitor.save();
 
@@ -41,10 +54,8 @@ public class VisitorController extends Controller {
 
     public Result editVisitor(String visitorName) {
 
-        // Searching requested restaurant
         Visitor visitor = searchVisitorByName(visitorName);
 
-        // If the requested restaurant was not found, the method 'getRestaurantByName' returns null.
         if (visitor == null) {
             return notFound("Visitor not found!");
         }
@@ -56,20 +67,39 @@ public class VisitorController extends Controller {
 
     public Result updateVisitor(String visitorName) {
 
-        Visitor visitor = formFactory.form(Visitor.class).bindFromRequest().get();
+        Visitor updatedVisitor = formFactory.form(Visitor.class).bindFromRequest().get();
         Visitor oldVisitor = searchVisitorByName(visitorName);
 
         if (oldVisitor == null) {
-            return notFound("You cannot change the name of the visitor, because it is the ID!");
+            return notFound("Updating error!");
         }
 
-        oldVisitor.setFirstName(visitor.getFirstName());
-        oldVisitor.setLastName(visitor.getLastName());
-        oldVisitor.setEmail(visitor.getEmail());
-        oldVisitor.setPhoneNumber(visitor.getPhoneNumber());
+        // If the phone number has been changed, a check is performed.
+        if (!updatedVisitor.getPhoneNumber().equals(oldVisitor.getPhoneNumber())) {
+            for (Visitor existingVisitor : Visitor.visitorFinder.all()) {
+                if (existingVisitor.getPhoneNumber().equals(updatedVisitor.getPhoneNumber()) &
+                        !updatedVisitor.getPhoneNumber().equals(oldVisitor.getPhoneNumber())) {
+                    return badRequest("A visitor with this phone number already exists.");
+                }
+            }
+        }
+
+        // If the email has been changed, a check is performed.
+        if (!updatedVisitor.getEmail().equals(oldVisitor.getEmail())){
+            for (Visitor existingVisitor : Visitor.visitorFinder.all()) {
+                if (existingVisitor.getEmail().equals(updatedVisitor.getEmail())) {
+                    return badRequest("A visitor with this email already exists.");
+                }
+            }
+        }
+
+        oldVisitor.setFirstName(updatedVisitor.getFirstName());
+        oldVisitor.setLastName(updatedVisitor.getLastName());
+        oldVisitor.setEmail(updatedVisitor.getEmail());
+        oldVisitor.setPhoneNumber(updatedVisitor.getPhoneNumber());
         oldVisitor.update();
 
-        return redirect(routes.VisitorController.showVisitorCard(visitor.getFirstName()));
+        return redirect(routes.VisitorController.showVisitorCard(updatedVisitor.getFirstName()));
     }
 
     public Result destroyVisitor(String visitorName) {
