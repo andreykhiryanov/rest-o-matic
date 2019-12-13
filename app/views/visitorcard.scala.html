@@ -7,7 +7,7 @@
     <h2>@visitor.getFirstName</h2>
     <br>
     <a class="btn btn-primary" href="@routes.VisitorController.editVisitor(visitor.getFirstName)">Edit Visitor</a>
-    <a class="btn btn-danger" href="@routes.VisitorController.destroyVisitor(visitor.getFirstName)">Remove Visitor</a>
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletionConfirmModal">Remove Visitor</button>
 
     <br><br>
     <h2>Information</h2>
@@ -98,15 +98,37 @@
                 <div class="modal-body">
 
                     <select id="forgetRestaurant" class="js-data-example-ajax" style="width: 570px">
-                        @for(restaurant <- visitor.getVisitedRestaurants) {
-                            <option value='@restaurant.getRestaurantName'>@restaurant.getRestaurantName</option>
-                        }
+                    @for(restaurant <- visitor.getVisitedRestaurants) {
+                        <option value='@restaurant.getRestaurantName'>@restaurant.getRestaurantName</option>
+                    }
                     </select>
 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary" onclick="forgetRestaurantRequest('@visitor.getFirstName')">Forget Restaurant</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Modal window "Confirm" -->
+    <div class="modal fade" id="deletionConfirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <h2 class="modal-title" id="myModalLabel" align="center">Are you sure?</h2>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a class="btn btn-danger" href="@routes.VisitorController.destroyVisitor(visitor.getFirstName)">Remove Visitor</a>
                 </div>
             </div>
         </div>
