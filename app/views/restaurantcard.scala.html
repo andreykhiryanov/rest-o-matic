@@ -73,7 +73,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <select id="acceptVisitor" class="form-control">
+                    <select id="acceptVisitor" class="js-data-example-ajax" style="width: 570px">
                         @for(visitor <- newVisitors) {
                             <option value=@visitor.getFirstName>@visitor.getFirstName @visitor.getLastName</option>
                         }
@@ -100,7 +100,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <select id="kickVisitor" class="form-control">
+                    <select id="kickVisitor" class="js-data-example-ajax" style="width: 570px">
                     @for(visitor <- restaurant.getAcceptedVisitors) {
                         <option value=@visitor.getFirstName>@visitor.getFirstName @visitor.getLastName</option>
                     }
@@ -114,5 +114,4 @@
             </div>
         </div>
     </div>
-
 }

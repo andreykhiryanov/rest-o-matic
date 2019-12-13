@@ -70,7 +70,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <select id="visitRestaurant" class="form-control">
+                    <select id="visitRestaurant" class="js-data-example-ajax" style="width: 570px">
                         @for(restaurant <- newRestaurants) {
                             <option value=@restaurant.getRestaurantName>@restaurant.getRestaurantName</option>
                         }
@@ -97,7 +97,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <select id="forgetRestaurant" class="form-control">
+                    <select id="forgetRestaurant" class="js-data-example-ajax" style="width: 570px">
                         @for(restaurant <- visitor.getVisitedRestaurants) {
                             <option value=@restaurant.getRestaurantName>@restaurant.getRestaurantName</option>
                         }
