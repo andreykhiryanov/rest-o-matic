@@ -25,7 +25,7 @@ public class HomeController extends Controller {
     private void addDataToDb() {
         new Restaurant("Astoria", "ZAO GK Astoria", 783801001, "Bolshaya Morskaya, 39").save();
         new Restaurant("Legran", "OOO Legran", 784101001, "Millionnaya, 4/1").save();
-        new Restaurant("Letuchiy Gollandec", "OOO Letuchiy Gollandec", 780101001, "Maliy, 63").save();
+        new Restaurant("Gollandec", "OOO Letuchiy Gollandec", 780101001, "Maliy, 63").save();
 
         new Visitor("Zitella", "Menendes", "zmenendes0@bing.com", "239-924-2788").save();
         new Visitor("Nico", "Drivers", "ndrivers0@buzzfeed.com", "693-566-8984").save();
