@@ -12,6 +12,10 @@ import java.util.List;
 public class Visitor extends Model {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "VISITOR_ID", nullable = false)
+    private Long id;
+
     @Constraints.Required
     @Column(name = "FIRST_NAME", nullable = false)
     private String firstName;
@@ -29,16 +33,25 @@ public class Visitor extends Model {
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "acceptedVisitors")
     private List<Restaurant> visitedRestaurants = new ArrayList<>();
 
-    public static Finder<String, Visitor> visitorFinder = new Finder<>(Visitor.class);
+    public static Finder<Long, Visitor> visitorFinder = new Finder<>(Visitor.class);
 
     public Visitor() {
     }
 
     public Visitor(String firstName, String lastName, String email, String phoneNumber) {
+        this.id = (long) (Math.random()*10000);
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phoneNumber = phoneNumber;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getFirstName() {

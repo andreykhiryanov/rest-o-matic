@@ -33,6 +33,7 @@ public class VisitorController extends Controller {
         }
 
         Visitor newVisitor = visitorForm.get();
+        newVisitor.setId((long) (Math.random()*10000));
         newVisitor.save();
 
         return redirect(routes.HomeController.greetings());
@@ -41,7 +42,7 @@ public class VisitorController extends Controller {
     public Result editVisitor(String visitorName) {
 
         // Searching requested restaurant
-        Visitor visitor = Visitor.visitorFinder.byId(visitorName);
+        Visitor visitor = searchVisitorByName(visitorName);
 
         // If the requested restaurant was not found, the method 'getRestaurantByName' returns null.
         if (visitor == null) {
@@ -55,8 +56,10 @@ public class VisitorController extends Controller {
 
     public Result updateVisitor() {
 
+        // TODO: Properly implement this method.
+
         Visitor visitor = formFactory.form(Visitor.class).bindFromRequest().get();
-        Visitor oldVisitor = Visitor.visitorFinder.byId(visitor.getFirstName());
+        Visitor oldVisitor = searchVisitorByName(visitor.getFirstName());
 
         if (oldVisitor == null) {
             return notFound("You cannot change the name of the visitor, because it is the ID!");
@@ -73,7 +76,7 @@ public class VisitorController extends Controller {
 
     public Result destroyVisitor(String visitorName) {
 
-        Visitor destroyingVisitor = Visitor.visitorFinder.byId(visitorName);
+        Visitor destroyingVisitor = searchVisitorByName(visitorName);
 
         if (destroyingVisitor == null) {
             return notFound("Visitor not found!");
@@ -86,7 +89,7 @@ public class VisitorController extends Controller {
 
     public Result showVisitorCard(String visitorName) {
 
-        Visitor visitor = Visitor.visitorFinder.byId(visitorName);
+        Visitor visitor = searchVisitorByName(visitorName);
 
         if (visitor == null) {
             return notFound("Visitor not found!");
@@ -97,6 +100,16 @@ public class VisitorController extends Controller {
 
         return ok(visitorcard.render(visitor, newRestaurants));
 
+    }
+
+    private Visitor searchVisitorByName(String visitorName) {
+        long id = 0;
+
+        for (Visitor visitor : Visitor.visitorFinder.all()) {
+            if (visitor.getFirstName().equals(visitorName)) id = visitor.getId();
+        }
+
+        return Visitor.visitorFinder.byId(id);
     }
 
 }

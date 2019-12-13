@@ -12,6 +12,10 @@ import java.util.List;
 public class Restaurant extends Model {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "RESTAURANT_ID", nullable = false)
+    private Long id;
+
     @Constraints.Required
     @Column(name = "RESTAURANT_NAME", nullable = false)
     private String restaurantName;
@@ -28,21 +32,30 @@ public class Restaurant extends Model {
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "HAS",
-            joinColumns = @JoinColumn(name = "RESTAURANT_ID", referencedColumnName = "RESTAURANT_NAME"),
-            inverseJoinColumns = @JoinColumn(name = "VISITOR_ID", referencedColumnName = "FIRST_NAME")
+            joinColumns = @JoinColumn(name = "RESTAURANT_ID", referencedColumnName = "RESTAURANT_ID"),
+            inverseJoinColumns = @JoinColumn(name = "VISITOR_ID", referencedColumnName = "VISITOR_ID")
     )
     private List<Visitor> acceptedVisitors = new ArrayList<>();
 
-    public static Finder<String, Restaurant> restaurantFinder = new Finder<>(Restaurant.class);
+    public static Finder<Long, Restaurant> restaurantFinder = new Finder<>(Restaurant.class);
 
     public Restaurant() {
     }
 
     public Restaurant(String restaurantName, String legalName, int inn, String address) {
+        this.id = (long) (Math.random()*10000);
         this.restaurantName = restaurantName;
         this.legalName = legalName;
         this.inn = inn;
         this.address = address;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getRestaurantName() {

@@ -9,7 +9,6 @@ import play.mvc.Result;
 import views.html.createrestaurant;
 import views.html.editrestaurant;
 import views.html.restaurantcard;
-
 import javax.inject.Inject;
 import java.util.List;
 
@@ -34,6 +33,7 @@ public class RestaurantController extends Controller {
         }
 
         Restaurant newRestaurant = restaurantForm.get();
+        newRestaurant.setId((long) (Math.random()*10000));
         newRestaurant.save();
 
         return redirect(routes.HomeController.greetings());
@@ -43,7 +43,7 @@ public class RestaurantController extends Controller {
     public Result editRestaurant(String restaurantName) {
 
         // Searching requested restaurant
-        Restaurant restaurant = Restaurant.restaurantFinder.byId(restaurantName);
+        Restaurant restaurant = searchRestByName(restaurantName);
 
         // If the requested restaurant was not found, the method 'getRestaurantByName' returns null.
         if (restaurant == null) {
@@ -57,11 +57,13 @@ public class RestaurantController extends Controller {
 
     public Result updateRestaurant() {
 
+        // TODO: Properly implement this method.
+
         Restaurant restaurant = formFactory.form(Restaurant.class).bindFromRequest().get();
-        Restaurant oldRestaurant = Restaurant.restaurantFinder.byId(restaurant.getRestaurantName());
+        Restaurant oldRestaurant = searchRestByName(restaurant.getRestaurantName());
 
         if (oldRestaurant == null) {
-            return notFound("You cannot change the name of the restaurant, because it is the ID!");
+            return notFound("You cannot change the name of the restaurant!");
         }
 
         oldRestaurant.setRestaurantName(restaurant.getRestaurantName());
@@ -76,7 +78,7 @@ public class RestaurantController extends Controller {
 
     public Result destroyRestaurant(String restaurantName) {
 
-        Restaurant destroyingRestaurant = Restaurant.restaurantFinder.byId(restaurantName);
+        Restaurant destroyingRestaurant = searchRestByName(restaurantName);
 
         if (destroyingRestaurant == null) {
             return notFound("Restaurant not found!");
@@ -90,7 +92,7 @@ public class RestaurantController extends Controller {
     public Result showRestaurantCard(String restaurantName) {
 
         // Searching requested restaurant
-        Restaurant restaurant = Restaurant.restaurantFinder.byId(restaurantName);
+        Restaurant restaurant = searchRestByName(restaurantName);
 
         if (restaurant == null) {
             return notFound("Restaurant not found!");
@@ -106,8 +108,8 @@ public class RestaurantController extends Controller {
 
     public Result acceptVisitor(String restaurantName, String visitorName) {
 
-        Restaurant restaurant = Restaurant.restaurantFinder.byId(restaurantName);
-        Visitor visitor = Visitor.visitorFinder.byId(visitorName);
+        Restaurant restaurant = searchRestByName(restaurantName);
+        Visitor visitor = searchVisitorByName(visitorName);
 
         if (restaurant == null || visitor == null) {
             return notFound("Method: error!");
@@ -122,8 +124,8 @@ public class RestaurantController extends Controller {
 
     public Result kickVisitor(String restaurantName, String visitorName) {
 
-        Restaurant restaurant = Restaurant.restaurantFinder.byId(restaurantName);
-        Visitor visitor = Visitor.visitorFinder.byId(visitorName);
+        Restaurant restaurant = searchRestByName(restaurantName);
+        Visitor visitor = searchVisitorByName(visitorName);
 
         if (restaurant == null || visitor == null) {
             return notFound("Method: error!");
@@ -134,6 +136,26 @@ public class RestaurantController extends Controller {
         visitor.update();
 
         return ok();
+    }
+
+    private Restaurant searchRestByName(String restaurantName) {
+        long id = 0;
+
+        for (Restaurant restaurant : Restaurant.restaurantFinder.all()) {
+            if (restaurant.getRestaurantName().equals(restaurantName)) id = restaurant.getId();
+        }
+
+        return Restaurant.restaurantFinder.byId(id);
+    }
+
+    private Visitor searchVisitorByName(String visitorName) {
+        long id = 0;
+
+        for (Visitor visitor : Visitor.visitorFinder.all()) {
+            if (visitor.getFirstName().equals(visitorName)) id = visitor.getId();
+        }
+
+        return Visitor.visitorFinder.byId(id);
     }
 
 }
