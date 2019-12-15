@@ -23,7 +23,6 @@ public class RestaurantController extends Controller {
     }
 
     public Result saveRestaurantChanges() {
-
         // Getting created restaurant from the previous form.
         // TODO: remove deprecated method bindFromRequest
         Form<Restaurant> restaurantForm = formFactory.form(Restaurant.class).bindFromRequest();
@@ -49,7 +48,6 @@ public class RestaurantController extends Controller {
     }
 
     public Result editRestaurant(String restaurantName) {
-
         // Searching requested restaurant
         Restaurant restaurant = searchRestByName(restaurantName);
 
@@ -63,8 +61,14 @@ public class RestaurantController extends Controller {
     }
 
     public Result updateRestaurant(String oldRestaurantName) {
+        // TODO: remove deprecated method bindFromRequest
+        Form<Restaurant> restaurantForm = formFactory.form(Restaurant.class).bindFromRequest();
 
-        Restaurant updatedRestaurant = formFactory.form(Restaurant.class).bindFromRequest().get();
+        if (restaurantForm.hasErrors()) {
+            return redirect(routes.HomeController.showError("Updating error!"));
+        }
+
+        Restaurant updatedRestaurant = restaurantForm.get();
         Restaurant oldRestaurant = searchRestByName(oldRestaurantName);
 
         if (oldRestaurant == null) {
@@ -104,7 +108,6 @@ public class RestaurantController extends Controller {
     }
 
     public Result showRestaurantCard(String restaurantName) {
-
         // Searching requested restaurant
         Restaurant restaurant = searchRestByName(restaurantName);
 
@@ -116,7 +119,7 @@ public class RestaurantController extends Controller {
         List<Visitor> newVisitors = Visitor.visitorFinder.all();
         newVisitors.removeAll(restaurant.getAcceptedVisitors());
 
-        // Passing in the form a restaurant and a list of all visitors.
+        // Passing in the form of a restaurant and a list of all visitors.
         return ok(restaurantcard.render(restaurant, newVisitors));
     }
 

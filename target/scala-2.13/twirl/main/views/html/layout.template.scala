@@ -39,8 +39,7 @@ Seq[Any](format.raw/*1.31*/("""
         <link rel="stylesheet" media="screen" href=""""),_display_(/*7.54*/routes/*7.60*/.Assets.versioned("stylesheets/main.css")),format.raw/*7.101*/("""">
         <link rel="stylesheet" media="screen" href=""""),_display_(/*8.54*/routes/*8.60*/.Assets.versioned("stylesheets/select2.min.css")),format.raw/*8.108*/("""">
 
-        <link rel="shortcut icon" type="image/png" href='"""),_display_(/*10.59*/routes/*10.65*/.Assets.versioned("images/ico/restaurant-15-512-260813.png" +
-                "")),format.raw/*11.20*/("""'>
+        <link rel="shortcut icon" type="image/png" href='"""),_display_(/*10.59*/routes/*10.65*/.Assets.versioned("images/ico/restaurant-15-512-260813.png")),format.raw/*10.125*/("""'>
     </head>
     <body>
 
@@ -53,14 +52,14 @@ Seq[Any](format.raw/*1.31*/("""
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a href=""""),_display_(/*24.35*/routes/*24.41*/.HomeController.greetings()),format.raw/*24.68*/("""" class="navbar-brand">Rest-o-matic</a>
+                        <a href=""""),_display_(/*23.35*/routes/*23.41*/.HomeController.greetings()),format.raw/*23.68*/("""" class="navbar-brand">Rest-o-matic</a>
                     </div>
                     <div class="collapse navbar-collapse"  id="exnav">
                         <ul class="nav navbar-nav navbar-left">
-                            <li><a href=""""),_display_(/*28.43*/routes/*28.49*/.RestaurantController.createRestaurant()),format.raw/*28.89*/("""">
+                            <li><a href=""""),_display_(/*27.43*/routes/*27.49*/.RestaurantController.createRestaurant()),format.raw/*27.89*/("""">
                                 <i class="glyphicon glyphicon-plus"></i>
                                 Create Restaurant</a></li>
-                            <li><a href=""""),_display_(/*31.43*/routes/*31.49*/.VisitorController.createVisitor()),format.raw/*31.83*/("""">
+                            <li><a href=""""),_display_(/*30.43*/routes/*30.49*/.VisitorController.createVisitor()),format.raw/*30.83*/("""">
                                 <i class="glyphicon glyphicon-plus"></i>
                                 Create Visitor</a></li>
                         </ul>
@@ -70,13 +69,13 @@ Seq[Any](format.raw/*1.31*/("""
         </header>
         <br><br><br><br><br><br>
         <div class="container">
-            """),_display_(/*41.14*/body),format.raw/*41.18*/("""
-        """),format.raw/*42.9*/("""</div>
+            """),_display_(/*40.14*/body),format.raw/*40.18*/("""
+        """),format.raw/*41.9*/("""</div>
 
-        <script src=""""),_display_(/*44.23*/routes/*44.29*/.Assets.versioned("javascripts/jquery-3.4.1.min.js")),format.raw/*44.81*/(""""></script>
-        <script src=""""),_display_(/*45.23*/routes/*45.29*/.Assets.versioned("javascripts/bootstrap.min.js")),format.raw/*45.78*/(""""></script>
-        <script src=""""),_display_(/*46.23*/routes/*46.29*/.Assets.versioned("javascripts/main.js")),format.raw/*46.69*/(""""></script>
-        <script src=""""),_display_(/*47.23*/routes/*47.29*/.Assets.versioned("javascripts/select2.min.js")),format.raw/*47.76*/(""""></script>
+        <script src=""""),_display_(/*43.23*/routes/*43.29*/.Assets.versioned("javascripts/jquery-3.4.1.min.js")),format.raw/*43.81*/(""""></script>
+        <script src=""""),_display_(/*44.23*/routes/*44.29*/.Assets.versioned("javascripts/bootstrap.min.js")),format.raw/*44.78*/(""""></script>
+        <script src=""""),_display_(/*45.23*/routes/*45.29*/.Assets.versioned("javascripts/main.js")),format.raw/*45.69*/(""""></script>
+        <script src=""""),_display_(/*46.23*/routes/*46.29*/.Assets.versioned("javascripts/select2.min.js")),format.raw/*46.76*/(""""></script>
         <script>$("#acceptVisitor").select2()</script>
         <script>$("#kickVisitor").select2()</script>
         <script>$("#visitRestaurant").select2()</script>
@@ -98,11 +97,11 @@ Seq[Any](format.raw/*1.31*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-13T21:56:42.105
+                  DATE: 2019-12-13T22:24:44.478
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/layout.scala.html
-                  HASH: e8e75619cb744b12e0015c5711b8cc52bc714e02
-                  MATRIX: 954->1|1078->30|1106->32|1168->68|1193->73|1282->136|1296->142|1367->192|1450->249|1464->255|1541->311|1624->368|1638->374|1700->415|1783->472|1797->478|1866->526|1957->590|1972->596|2075->678|2653->1229|2668->1235|2716->1262|2991->1510|3006->1516|3067->1556|3274->1736|3289->1742|3344->1776|3708->2113|3733->2117|3770->2127|3829->2159|3844->2165|3917->2217|3979->2252|3994->2258|4064->2307|4126->2342|4141->2348|4202->2388|4264->2423|4279->2429|4347->2476
-                  LINES: 28->1|33->1|34->2|36->4|36->4|37->5|37->5|37->5|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|42->10|42->10|43->11|56->24|56->24|56->24|60->28|60->28|60->28|63->31|63->31|63->31|73->41|73->41|74->42|76->44|76->44|76->44|77->45|77->45|77->45|78->46|78->46|78->46|79->47|79->47|79->47
+                  HASH: 105d01ea7ba8793fbda7e2e665fe8bb1e7cf6ed9
+                  MATRIX: 954->1|1078->30|1106->32|1168->68|1193->73|1282->136|1296->142|1367->192|1450->249|1464->255|1541->311|1624->368|1638->374|1700->415|1783->472|1797->478|1866->526|1957->590|1972->596|2054->656|2632->1207|2647->1213|2695->1240|2970->1488|2985->1494|3046->1534|3253->1714|3268->1720|3323->1754|3687->2091|3712->2095|3749->2105|3808->2137|3823->2143|3896->2195|3958->2230|3973->2236|4043->2285|4105->2320|4120->2326|4181->2366|4243->2401|4258->2407|4326->2454
+                  LINES: 28->1|33->1|34->2|36->4|36->4|37->5|37->5|37->5|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|42->10|42->10|42->10|55->23|55->23|55->23|59->27|59->27|59->27|62->30|62->30|62->30|72->40|72->40|73->41|75->43|75->43|75->43|76->44|76->44|76->44|77->45|77->45|77->45|78->46|78->46|78->46
                   -- GENERATED --
               */
           

@@ -23,7 +23,6 @@ public class VisitorController extends Controller {
     }
 
     public Result saveVisitorChanges() {
-
         // Getting created visitor from the previous form.
         // TODO: remove deprecated method bindFromRequest
         Form<Visitor> visitorForm = formFactory.form(Visitor.class).bindFromRequest();
@@ -34,7 +33,7 @@ public class VisitorController extends Controller {
 
         Visitor newVisitor = visitorForm.get();
 
-        // Checking the uniqueness of the INN.
+        // Checking the uniqueness of the phone number & the email.
         for (Visitor visitor : Visitor.visitorFinder.all()) {
             if (visitor.getPhoneNumber().equals(newVisitor.getPhoneNumber())) {
                 return redirect(routes.HomeController.showError("A visitor with this phone number already exists!"));

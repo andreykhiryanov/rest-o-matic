@@ -24,9 +24,11 @@ public class Visitor extends Model {
     @Column(name = "LAST_NAME", nullable = false)
     private String lastName;
 
+    @Constraints.Required
     @Column(name = "EMAIL", nullable = false)
     private String email;
 
+    @Constraints.Required
     @Column(name = "PHONE_NUMBER", nullable = false)
     private String phoneNumber;
 

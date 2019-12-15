@@ -4,6 +4,7 @@ import io.ebean.Finder;
 import io.ebean.Model;
 import play.data.validation.Constraints;
 import javax.persistence.*;
+import javax.validation.Constraint;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,9 +21,11 @@ public class Restaurant extends Model {
     @Column(name = "RESTAURANT_NAME", nullable = false)
     private String restaurantName;
 
+    @Constraints.Required
     @Column(name = "LEGAL_NAME", nullable = false)
     private String legalName;
 
+    @Constraints.Required
     @Column(name = "INN", nullable = false)
     private int inn;
 
