@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Fri Dec 13 18:26:14 GMT+03:00 2019
+// @DATE:Tue Dec 17 21:05:26 GMT+03:00 2019
 
 package router
 
@@ -49,20 +49,20 @@ class Routes(
 
   def documentation = List(
     ("""GET""", this.prefix, """controllers.HomeController.greetings()"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/""" + "$" + """restaurantName<[^/]+>""", """controllers.RestaurantController.showRestaurantCard(restaurantName:String)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/edit/""" + "$" + """restaurantName<[^/]+>""", """controllers.RestaurantController.editRestaurant(restaurantName:String)"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/update/""" + "$" + """restaurantName<[^/]+>""", """controllers.RestaurantController.updateRestaurant(restaurantName:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/""" + "$" + """restaurantId<[^/]+>""", """controllers.RestaurantController.showRestaurantCard(restaurantId:Long)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/edit/""" + "$" + """restaurantId<[^/]+>""", """controllers.RestaurantController.editRestaurant(restaurantId:Long)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/update/""" + "$" + """restaurantId<[^/]+>""", """controllers.RestaurantController.updateRestaurant(restaurantId:Long)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/create/""", """controllers.RestaurantController.createRestaurant()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/create/""", """controllers.RestaurantController.saveRestaurantChanges()"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/delete/""" + "$" + """restaurantName<[^/]+>""", """controllers.RestaurantController.destroyRestaurant(restaurantName:String)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/""" + "$" + """visitorName<[^/]+>""", """controllers.VisitorController.showVisitorCard(visitorName:String)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/edit/""" + "$" + """visitorName<[^/]+>""", """controllers.VisitorController.editVisitor(visitorName:String)"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/update/""" + "$" + """visitorName<[^/]+>""", """controllers.VisitorController.updateVisitor(visitorName:String)"""),
+    ("""DELETE""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restaurant/delete/""" + "$" + """restaurantId<[^/]+>""", """controllers.RestaurantController.destroyRestaurant(restaurantId:Long)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/""" + "$" + """visitorId<[^/]+>""", """controllers.VisitorController.showVisitorCard(visitorId:Long)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/edit/""" + "$" + """visitorId<[^/]+>""", """controllers.VisitorController.editVisitor(visitorId:Long)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/update/""" + "$" + """visitorId<[^/]+>""", """controllers.VisitorController.updateVisitor(visitorId:Long)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/create/""", """controllers.VisitorController.createVisitor()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/create/""", """controllers.VisitorController.saveVisitorChanges()"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/delete/""" + "$" + """visitorName<[^/]+>""", """controllers.VisitorController.destroyVisitor(visitorName:String)"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """accept/""" + "$" + """restaurantName<[^/]+>/""" + "$" + """visitorName<[^/]+>""", """controllers.RestaurantController.acceptVisitor(restaurantName:String, visitorName:String)"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """kick/""" + "$" + """restaurantName<[^/]+>/""" + "$" + """visitorName<[^/]+>""", """controllers.RestaurantController.kickVisitor(restaurantName:String, visitorName:String)"""),
+    ("""DELETE""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """visitor/delete/""" + "$" + """visitorId<[^/]+>""", """controllers.VisitorController.destroyVisitor(visitorId:Long)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """accept/""" + "$" + """restaurantId<[^/]+>/""" + "$" + """visitorId<[^/]+>""", """controllers.RestaurantController.acceptVisitor(restaurantId:Long, visitorId:Long)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """kick/""" + "$" + """restaurantId<[^/]+>/""" + "$" + """visitorId<[^/]+>""", """controllers.RestaurantController.kickVisitor(restaurantId:Long, visitorId:Long)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """error""", """controllers.HomeController.showError(message:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:String)"""),
     Nil
@@ -92,17 +92,17 @@ class Routes(
 
   // @LINE:7
   private[this] lazy val controllers_RestaurantController_showRestaurantCard1_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("restaurant/"), DynamicPart("restaurantName", """[^/]+""",true)))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("restaurant/"), DynamicPart("restaurantId", """[^/]+""",true)))
   )
   private[this] lazy val controllers_RestaurantController_showRestaurantCard1_invoker = createInvoker(
-    RestaurantController_3.showRestaurantCard(fakeValue[String]),
+    RestaurantController_3.showRestaurantCard(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.RestaurantController",
       "showRestaurantCard",
-      Seq(classOf[String]),
+      Seq(classOf[Long]),
       "GET",
-      this.prefix + """restaurant/""" + "$" + """restaurantName<[^/]+>""",
+      this.prefix + """restaurant/""" + "$" + """restaurantId<[^/]+>""",
       """""",
       Seq()
     )
@@ -110,17 +110,17 @@ class Routes(
 
   // @LINE:8
   private[this] lazy val controllers_RestaurantController_editRestaurant2_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("restaurant/edit/"), DynamicPart("restaurantName", """[^/]+""",true)))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("restaurant/edit/"), DynamicPart("restaurantId", """[^/]+""",true)))
   )
   private[this] lazy val controllers_RestaurantController_editRestaurant2_invoker = createInvoker(
-    RestaurantController_3.editRestaurant(fakeValue[String]),
+    RestaurantController_3.editRestaurant(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.RestaurantController",
       "editRestaurant",
-      Seq(classOf[String]),
+      Seq(classOf[Long]),
       "GET",
-      this.prefix + """restaurant/edit/""" + "$" + """restaurantName<[^/]+>""",
+      this.prefix + """restaurant/edit/""" + "$" + """restaurantId<[^/]+>""",
       """""",
       Seq()
     )
@@ -128,17 +128,17 @@ class Routes(
 
   // @LINE:9
   private[this] lazy val controllers_RestaurantController_updateRestaurant3_route = Route("POST",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("restaurant/update/"), DynamicPart("restaurantName", """[^/]+""",true)))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("restaurant/update/"), DynamicPart("restaurantId", """[^/]+""",true)))
   )
   private[this] lazy val controllers_RestaurantController_updateRestaurant3_invoker = createInvoker(
-    RestaurantController_3.updateRestaurant(fakeValue[String]),
+    RestaurantController_3.updateRestaurant(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.RestaurantController",
       "updateRestaurant",
-      Seq(classOf[String]),
+      Seq(classOf[Long]),
       "POST",
-      this.prefix + """restaurant/update/""" + "$" + """restaurantName<[^/]+>""",
+      this.prefix + """restaurant/update/""" + "$" + """restaurantId<[^/]+>""",
       """""",
       Seq()
     )
@@ -181,18 +181,18 @@ class Routes(
   )
 
   // @LINE:12
-  private[this] lazy val controllers_RestaurantController_destroyRestaurant6_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("restaurant/delete/"), DynamicPart("restaurantName", """[^/]+""",true)))
+  private[this] lazy val controllers_RestaurantController_destroyRestaurant6_route = Route("DELETE",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("restaurant/delete/"), DynamicPart("restaurantId", """[^/]+""",true)))
   )
   private[this] lazy val controllers_RestaurantController_destroyRestaurant6_invoker = createInvoker(
-    RestaurantController_3.destroyRestaurant(fakeValue[String]),
+    RestaurantController_3.destroyRestaurant(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.RestaurantController",
       "destroyRestaurant",
-      Seq(classOf[String]),
-      "GET",
-      this.prefix + """restaurant/delete/""" + "$" + """restaurantName<[^/]+>""",
+      Seq(classOf[Long]),
+      "DELETE",
+      this.prefix + """restaurant/delete/""" + "$" + """restaurantId<[^/]+>""",
       """""",
       Seq()
     )
@@ -200,17 +200,17 @@ class Routes(
 
   // @LINE:14
   private[this] lazy val controllers_VisitorController_showVisitorCard7_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("visitor/"), DynamicPart("visitorName", """[^/]+""",true)))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("visitor/"), DynamicPart("visitorId", """[^/]+""",true)))
   )
   private[this] lazy val controllers_VisitorController_showVisitorCard7_invoker = createInvoker(
-    VisitorController_1.showVisitorCard(fakeValue[String]),
+    VisitorController_1.showVisitorCard(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.VisitorController",
       "showVisitorCard",
-      Seq(classOf[String]),
+      Seq(classOf[Long]),
       "GET",
-      this.prefix + """visitor/""" + "$" + """visitorName<[^/]+>""",
+      this.prefix + """visitor/""" + "$" + """visitorId<[^/]+>""",
       """""",
       Seq()
     )
@@ -218,17 +218,17 @@ class Routes(
 
   // @LINE:15
   private[this] lazy val controllers_VisitorController_editVisitor8_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("visitor/edit/"), DynamicPart("visitorName", """[^/]+""",true)))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("visitor/edit/"), DynamicPart("visitorId", """[^/]+""",true)))
   )
   private[this] lazy val controllers_VisitorController_editVisitor8_invoker = createInvoker(
-    VisitorController_1.editVisitor(fakeValue[String]),
+    VisitorController_1.editVisitor(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.VisitorController",
       "editVisitor",
-      Seq(classOf[String]),
+      Seq(classOf[Long]),
       "GET",
-      this.prefix + """visitor/edit/""" + "$" + """visitorName<[^/]+>""",
+      this.prefix + """visitor/edit/""" + "$" + """visitorId<[^/]+>""",
       """""",
       Seq()
     )
@@ -236,17 +236,17 @@ class Routes(
 
   // @LINE:16
   private[this] lazy val controllers_VisitorController_updateVisitor9_route = Route("POST",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("visitor/update/"), DynamicPart("visitorName", """[^/]+""",true)))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("visitor/update/"), DynamicPart("visitorId", """[^/]+""",true)))
   )
   private[this] lazy val controllers_VisitorController_updateVisitor9_invoker = createInvoker(
-    VisitorController_1.updateVisitor(fakeValue[String]),
+    VisitorController_1.updateVisitor(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.VisitorController",
       "updateVisitor",
-      Seq(classOf[String]),
+      Seq(classOf[Long]),
       "POST",
-      this.prefix + """visitor/update/""" + "$" + """visitorName<[^/]+>""",
+      this.prefix + """visitor/update/""" + "$" + """visitorId<[^/]+>""",
       """""",
       Seq()
     )
@@ -289,18 +289,18 @@ class Routes(
   )
 
   // @LINE:19
-  private[this] lazy val controllers_VisitorController_destroyVisitor12_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("visitor/delete/"), DynamicPart("visitorName", """[^/]+""",true)))
+  private[this] lazy val controllers_VisitorController_destroyVisitor12_route = Route("DELETE",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("visitor/delete/"), DynamicPart("visitorId", """[^/]+""",true)))
   )
   private[this] lazy val controllers_VisitorController_destroyVisitor12_invoker = createInvoker(
-    VisitorController_1.destroyVisitor(fakeValue[String]),
+    VisitorController_1.destroyVisitor(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.VisitorController",
       "destroyVisitor",
-      Seq(classOf[String]),
-      "GET",
-      this.prefix + """visitor/delete/""" + "$" + """visitorName<[^/]+>""",
+      Seq(classOf[Long]),
+      "DELETE",
+      this.prefix + """visitor/delete/""" + "$" + """visitorId<[^/]+>""",
       """""",
       Seq()
     )
@@ -308,17 +308,17 @@ class Routes(
 
   // @LINE:21
   private[this] lazy val controllers_RestaurantController_acceptVisitor13_route = Route("POST",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("accept/"), DynamicPart("restaurantName", """[^/]+""",true), StaticPart("/"), DynamicPart("visitorName", """[^/]+""",true)))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("accept/"), DynamicPart("restaurantId", """[^/]+""",true), StaticPart("/"), DynamicPart("visitorId", """[^/]+""",true)))
   )
   private[this] lazy val controllers_RestaurantController_acceptVisitor13_invoker = createInvoker(
-    RestaurantController_3.acceptVisitor(fakeValue[String], fakeValue[String]),
+    RestaurantController_3.acceptVisitor(fakeValue[Long], fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.RestaurantController",
       "acceptVisitor",
-      Seq(classOf[String], classOf[String]),
+      Seq(classOf[Long], classOf[Long]),
       "POST",
-      this.prefix + """accept/""" + "$" + """restaurantName<[^/]+>/""" + "$" + """visitorName<[^/]+>""",
+      this.prefix + """accept/""" + "$" + """restaurantId<[^/]+>/""" + "$" + """visitorId<[^/]+>""",
       """""",
       Seq()
     )
@@ -326,17 +326,17 @@ class Routes(
 
   // @LINE:22
   private[this] lazy val controllers_RestaurantController_kickVisitor14_route = Route("POST",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("kick/"), DynamicPart("restaurantName", """[^/]+""",true), StaticPart("/"), DynamicPart("visitorName", """[^/]+""",true)))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("kick/"), DynamicPart("restaurantId", """[^/]+""",true), StaticPart("/"), DynamicPart("visitorId", """[^/]+""",true)))
   )
   private[this] lazy val controllers_RestaurantController_kickVisitor14_invoker = createInvoker(
-    RestaurantController_3.kickVisitor(fakeValue[String], fakeValue[String]),
+    RestaurantController_3.kickVisitor(fakeValue[Long], fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.RestaurantController",
       "kickVisitor",
-      Seq(classOf[String], classOf[String]),
+      Seq(classOf[Long], classOf[Long]),
       "POST",
-      this.prefix + """kick/""" + "$" + """restaurantName<[^/]+>/""" + "$" + """visitorName<[^/]+>""",
+      this.prefix + """kick/""" + "$" + """restaurantId<[^/]+>/""" + "$" + """visitorId<[^/]+>""",
       """""",
       Seq()
     )
@@ -389,20 +389,20 @@ class Routes(
   
     // @LINE:7
     case controllers_RestaurantController_showRestaurantCard1_route(params@_) =>
-      call(params.fromPath[String]("restaurantName", None)) { (restaurantName) =>
-        controllers_RestaurantController_showRestaurantCard1_invoker.call(RestaurantController_3.showRestaurantCard(restaurantName))
+      call(params.fromPath[Long]("restaurantId", None)) { (restaurantId) =>
+        controllers_RestaurantController_showRestaurantCard1_invoker.call(RestaurantController_3.showRestaurantCard(restaurantId))
       }
   
     // @LINE:8
     case controllers_RestaurantController_editRestaurant2_route(params@_) =>
-      call(params.fromPath[String]("restaurantName", None)) { (restaurantName) =>
-        controllers_RestaurantController_editRestaurant2_invoker.call(RestaurantController_3.editRestaurant(restaurantName))
+      call(params.fromPath[Long]("restaurantId", None)) { (restaurantId) =>
+        controllers_RestaurantController_editRestaurant2_invoker.call(RestaurantController_3.editRestaurant(restaurantId))
       }
   
     // @LINE:9
     case controllers_RestaurantController_updateRestaurant3_route(params@_) =>
-      call(params.fromPath[String]("restaurantName", None)) { (restaurantName) =>
-        controllers_RestaurantController_updateRestaurant3_invoker.call(RestaurantController_3.updateRestaurant(restaurantName))
+      call(params.fromPath[Long]("restaurantId", None)) { (restaurantId) =>
+        controllers_RestaurantController_updateRestaurant3_invoker.call(RestaurantController_3.updateRestaurant(restaurantId))
       }
   
     // @LINE:10
@@ -419,26 +419,26 @@ class Routes(
   
     // @LINE:12
     case controllers_RestaurantController_destroyRestaurant6_route(params@_) =>
-      call(params.fromPath[String]("restaurantName", None)) { (restaurantName) =>
-        controllers_RestaurantController_destroyRestaurant6_invoker.call(RestaurantController_3.destroyRestaurant(restaurantName))
+      call(params.fromPath[Long]("restaurantId", None)) { (restaurantId) =>
+        controllers_RestaurantController_destroyRestaurant6_invoker.call(RestaurantController_3.destroyRestaurant(restaurantId))
       }
   
     // @LINE:14
     case controllers_VisitorController_showVisitorCard7_route(params@_) =>
-      call(params.fromPath[String]("visitorName", None)) { (visitorName) =>
-        controllers_VisitorController_showVisitorCard7_invoker.call(VisitorController_1.showVisitorCard(visitorName))
+      call(params.fromPath[Long]("visitorId", None)) { (visitorId) =>
+        controllers_VisitorController_showVisitorCard7_invoker.call(VisitorController_1.showVisitorCard(visitorId))
       }
   
     // @LINE:15
     case controllers_VisitorController_editVisitor8_route(params@_) =>
-      call(params.fromPath[String]("visitorName", None)) { (visitorName) =>
-        controllers_VisitorController_editVisitor8_invoker.call(VisitorController_1.editVisitor(visitorName))
+      call(params.fromPath[Long]("visitorId", None)) { (visitorId) =>
+        controllers_VisitorController_editVisitor8_invoker.call(VisitorController_1.editVisitor(visitorId))
       }
   
     // @LINE:16
     case controllers_VisitorController_updateVisitor9_route(params@_) =>
-      call(params.fromPath[String]("visitorName", None)) { (visitorName) =>
-        controllers_VisitorController_updateVisitor9_invoker.call(VisitorController_1.updateVisitor(visitorName))
+      call(params.fromPath[Long]("visitorId", None)) { (visitorId) =>
+        controllers_VisitorController_updateVisitor9_invoker.call(VisitorController_1.updateVisitor(visitorId))
       }
   
     // @LINE:17
@@ -455,20 +455,20 @@ class Routes(
   
     // @LINE:19
     case controllers_VisitorController_destroyVisitor12_route(params@_) =>
-      call(params.fromPath[String]("visitorName", None)) { (visitorName) =>
-        controllers_VisitorController_destroyVisitor12_invoker.call(VisitorController_1.destroyVisitor(visitorName))
+      call(params.fromPath[Long]("visitorId", None)) { (visitorId) =>
+        controllers_VisitorController_destroyVisitor12_invoker.call(VisitorController_1.destroyVisitor(visitorId))
       }
   
     // @LINE:21
     case controllers_RestaurantController_acceptVisitor13_route(params@_) =>
-      call(params.fromPath[String]("restaurantName", None), params.fromPath[String]("visitorName", None)) { (restaurantName, visitorName) =>
-        controllers_RestaurantController_acceptVisitor13_invoker.call(RestaurantController_3.acceptVisitor(restaurantName, visitorName))
+      call(params.fromPath[Long]("restaurantId", None), params.fromPath[Long]("visitorId", None)) { (restaurantId, visitorId) =>
+        controllers_RestaurantController_acceptVisitor13_invoker.call(RestaurantController_3.acceptVisitor(restaurantId, visitorId))
       }
   
     // @LINE:22
     case controllers_RestaurantController_kickVisitor14_route(params@_) =>
-      call(params.fromPath[String]("restaurantName", None), params.fromPath[String]("visitorName", None)) { (restaurantName, visitorName) =>
-        controllers_RestaurantController_kickVisitor14_invoker.call(RestaurantController_3.kickVisitor(restaurantName, visitorName))
+      call(params.fromPath[Long]("restaurantId", None), params.fromPath[Long]("visitorId", None)) { (restaurantId, visitorId) =>
+        controllers_RestaurantController_kickVisitor14_invoker.call(RestaurantController_3.kickVisitor(restaurantId, visitorId))
       }
   
     // @LINE:24

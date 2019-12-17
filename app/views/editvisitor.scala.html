@@ -1,12 +1,12 @@
 @import models.Visitor
-@(visitorForm: Form[Visitor])(visitorName: String)
+@(visitorForm: Form[Visitor])(visitorId: Long)
 @import helper._
 @import views.html.partials._visitorFormFields
 
 @layout("Edit Visitor"){
     <h2>Edit Visitor</h2>
     <br>
-    @helper.form(action = routes.VisitorController.updateVisitor(visitorName)) {
+    @helper.form(action = routes.VisitorController.updateVisitor(visitorId)) {
 
         @_visitorFormFields(visitorForm)
 

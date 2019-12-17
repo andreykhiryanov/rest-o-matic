@@ -6,7 +6,7 @@
 @layout(visitor.getFirstName){
     <h2>@visitor.getFirstName</h2>
     <br>
-    <a class="btn btn-primary" href="@routes.VisitorController.editVisitor(visitor.getFirstName)">Edit Visitor</a>
+    <a class="btn btn-primary" href="@routes.VisitorController.editVisitor(visitor.getId)">Edit Visitor</a>
     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletionConfirmModal">Remove Visitor</button>
 
     <br><br>
@@ -39,7 +39,7 @@
     <table class="table table-striped">
         @for(restaurant <- visitor.getVisitedRestaurants) {
             <tr>
-                <td><a href="@routes.RestaurantController.showRestaurantCard(restaurant.getRestaurantName)">@restaurant.getRestaurantName</a></td>
+                <td><a href="@routes.RestaurantController.showRestaurantCard(restaurant.getId)">@restaurant.getRestaurantName</a></td>
             </tr>
         }
     </table>
@@ -72,14 +72,14 @@
 
                     <select id="visitRestaurant" class="js-data-example-ajax" style="width: 570px">
                         @for(restaurant <- newRestaurants) {
-                            <option value='@restaurant.getRestaurantName'>@restaurant.getRestaurantName</option>
+                            <option value='@restaurant.getId'>@restaurant.getRestaurantName</option>
                         }
                     </select>
 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="visitRestaurantRequest('@visitor.getFirstName')">Visit Restaurant</button>
+                    <button type="button" class="btn btn-primary" onclick="visitRestaurantRequest('@visitor.getId')">Visit Restaurant</button>
                 </div>
             </div>
         </div>
@@ -99,14 +99,14 @@
 
                     <select id="forgetRestaurant" class="js-data-example-ajax" style="width: 570px">
                     @for(restaurant <- visitor.getVisitedRestaurants) {
-                        <option value='@restaurant.getRestaurantName'>@restaurant.getRestaurantName</option>
+                        <option value='@restaurant.getId'>@restaurant.getRestaurantName</option>
                     }
                     </select>
 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="forgetRestaurantRequest('@visitor.getFirstName')">Forget Restaurant</button>
+                    <button type="button" class="btn btn-primary" onclick="forgetRestaurantRequest('@visitor.getId')">Forget Restaurant</button>
                 </div>
             </div>
         </div>
@@ -128,7 +128,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <a class="btn btn-danger" href="@routes.VisitorController.destroyVisitor(visitor.getFirstName)">Remove Visitor</a>
+                    <button type="button" class="btn btn-danger" onclick="sendDeleteRequest('@routes.VisitorController.destroyVisitor(visitor.getId)', '@routes.HomeController.greetings()')">Remove Visitor</button>
                 </div>
             </div>
         </div>

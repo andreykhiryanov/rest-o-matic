@@ -1,54 +1,21 @@
-// function sendDeleteRequest(url, rUrl) {
-//     // alert(url);
-//     $.ajax({
-//         url: url,
-//         method: "DELETE",
-//         success: function() {
-//             window.location = rUrl;
-//         },
-//         error: function() {
-//             window.location.reload();
-//         }
-//     });
-// }
+function sendDeleteRequest(url, rUrl) {
+    // alert(url);
+    $.ajax({
+        url: url,
+        method: "DELETE",
+        success: function() {
+            window.location = rUrl;
+        },
+        error: function() {
+            window.location.reload();
+            alert("ASSSS!!!!!!!!\n" + url + "\n" + rUrl);
+        }
+    });
+}
 
-function acceptVisitorRequest(restaurant) {
+function acceptVisitorRequest(restaurantId) {
     var visitor = $("#acceptVisitor").val();
-    var url = '/accept/' + restaurant + '/' + visitor;
-    // alert(url);
-    $.ajax({
-        url: url,
-        method: "POST",
-        success: function() {
-            window.location.reload();
-        },
-        error: function() {
-            window.location.reload();
-            alert("url");
-        }
-    });
-}
-
-function kickVisitorRequest(restaurant) {
-    var visitor = $("#kickVisitor").val();
-    var url = '/kick/' + restaurant + '/' + visitor;
-    // alert(url);
-    $.ajax({
-        url: url,
-        method: "POST",
-        success: function() {
-            window.location.reload();
-        },
-        error: function() {
-            window.location.reload();
-            alert("url");
-        }
-    });
-}
-
-function visitRestaurantRequest(visitorName) {
-    var restaurantName = $("#visitRestaurant").val();
-    var url = '/accept/' + restaurantName + '/' + visitorName;
+    var url = '/accept/' + restaurantId + '/' + visitor;
     // alert(url);
     $.ajax({
         url: url,
@@ -63,9 +30,43 @@ function visitRestaurantRequest(visitorName) {
     });
 }
 
-function forgetRestaurantRequest(visitorName) {
+function kickVisitorRequest(restaurantId) {
+    var visitor = $("#kickVisitor").val();
+    var url = '/kick/' + restaurantId + '/' + visitor;
+    // alert(url);
+    $.ajax({
+        url: url,
+        method: "POST",
+        success: function() {
+            window.location.reload();
+        },
+        error: function() {
+            window.location.reload();
+            alert(url);
+        }
+    });
+}
+
+function visitRestaurantRequest(visitorId) {
+    var restaurantName = $("#visitRestaurant").val();
+    var url = '/accept/' + restaurantName + '/' + visitorId;
+    // alert(url);
+    $.ajax({
+        url: url,
+        method: "POST",
+        success: function() {
+            window.location.reload();
+        },
+        error: function() {
+            window.location.reload();
+            alert(url);
+        }
+    });
+}
+
+function forgetRestaurantRequest(visitorId) {
     var restaurantName = $("#forgetRestaurant").val();
-    var url = '/kick/' + restaurantName + '/' + visitorName;
+    var url = '/kick/' + restaurantName + '/' + visitorId;
     // alert(url);
     $.ajax({
         url: url,

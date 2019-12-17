@@ -17,7 +17,7 @@
     <table class="table table-striped">
         @for(restaurant <- restaurants) {
             <tr>
-                <td><a href="@routes.RestaurantController.showRestaurantCard(restaurant.getRestaurantName)">@restaurant.getRestaurantName</a></td>
+                <td><a href="@routes.RestaurantController.showRestaurantCard(restaurant.getId)">@restaurant.getRestaurantName</a></td>
             </tr>
         }
     </table>
@@ -34,7 +34,7 @@
     <table class="table table-striped">
         @for(visitor <- visitors) {
             <tr>
-                <td><a href="@routes.VisitorController.showVisitorCard(visitor.getFirstName)">@visitor.getFirstName @visitor.getLastName</a></td>
+                <td><a href="@routes.VisitorController.showVisitorCard(visitor.getId)">@visitor.getFirstName @visitor.getLastName</a></td>
             </tr>
         }
     </table>

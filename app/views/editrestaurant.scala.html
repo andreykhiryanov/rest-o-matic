@@ -1,12 +1,12 @@
 @import models.Restaurant
-@(restaurantForm: Form[Restaurant])(restaurantName: String)
+@(restaurantForm: Form[Restaurant])(restaurantId: Long)
 @import helper._
 @import views.html.partials._restaurantFormFields
 
 @layout("Edit Restaurant"){
     <h2>Edit Restaurant</h2>
     <br>
-    @helper.form(action = routes.RestaurantController.updateRestaurant(restaurantName)) {
+    @helper.form(action = routes.RestaurantController.updateRestaurant(restaurantId)) {
 
         @_restaurantFormFields(restaurantForm)
 

@@ -4,24 +4,24 @@
 
 GET     /                                       controllers.HomeController.greetings()
 
-GET     /restaurant/:restaurantName             controllers.RestaurantController.showRestaurantCard(restaurantName : String)
-GET     /restaurant/edit/:restaurantName        controllers.RestaurantController.editRestaurant(restaurantName : String)
-POST    /restaurant/update/:restaurantName      controllers.RestaurantController.updateRestaurant(restaurantName : String)
+GET     /restaurant/:restaurantId               controllers.RestaurantController.showRestaurantCard(restaurantId : Long)
+GET     /restaurant/edit/:restaurantId          controllers.RestaurantController.editRestaurant(restaurantId : Long)
+POST    /restaurant/update/:restaurantId        controllers.RestaurantController.updateRestaurant(restaurantId : Long)
 GET     /restaurant/create/                     controllers.RestaurantController.createRestaurant()
 POST    /restaurant/create/                     controllers.RestaurantController.saveRestaurantChanges()
-GET     /restaurant/delete/:restaurantName      controllers.RestaurantController.destroyRestaurant(restaurantName : String)
+DELETE  /restaurant/delete/:restaurantId        controllers.RestaurantController.destroyRestaurant(restaurantId : Long)
 
-GET     /visitor/:visitorName                   controllers.VisitorController.showVisitorCard(visitorName : String)
-GET     /visitor/edit/:visitorName              controllers.VisitorController.editVisitor(visitorName : String)
-POST    /visitor/update/:visitorName            controllers.VisitorController.updateVisitor(visitorName : String)
+GET     /visitor/:visitorId                     controllers.VisitorController.showVisitorCard(visitorId : Long)
+GET     /visitor/edit/:visitorId                controllers.VisitorController.editVisitor(visitorId : Long)
+POST    /visitor/update/:visitorId              controllers.VisitorController.updateVisitor(visitorId : Long)
 GET     /visitor/create/                        controllers.VisitorController.createVisitor()
 POST    /visitor/create/                        controllers.VisitorController.saveVisitorChanges()
-GET     /visitor/delete/:visitorName            controllers.VisitorController.destroyVisitor(visitorName : String)
+DELETE  /visitor/delete/:visitorId              controllers.VisitorController.destroyVisitor(visitorId : Long)
 
-POST    /accept/:restaurantName/:visitorName    controllers.RestaurantController.acceptVisitor(restaurantName: String, visitorName: String)
-POST    /kick/:restaurantName/:visitorName      controllers.RestaurantController.kickVisitor(restaurantName: String, visitorName: String)
+POST    /accept/:restaurantId/:visitorId        controllers.RestaurantController.acceptVisitor(restaurantId : Long, visitorId : Long)
+POST    /kick/:restaurantId/:visitorId          controllers.RestaurantController.kickVisitor(restaurantId : Long, visitorId : Long)
 
-GET    /error                                  controllers.HomeController.showError(message: String)
+GET     /error                                  controllers.HomeController.showError(message: String)
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file                       controllers.Assets.versioned(path="/public", file)
+GET     /assets/*file                           controllers.Assets.versioned(path="/public", file)

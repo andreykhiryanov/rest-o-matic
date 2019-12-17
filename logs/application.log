@@ -1,169 +1,36 @@
-2019-12-17 11:22:43,014 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-4 - Database [default] initialized at jdbc:postgresql://127.0.0.1/rest
-2019-12-17 11:22:43,024 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
-2019-12-17 11:22:45,338 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-4 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-12-17 20:59:32,270 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-4 - Database [default] initialized at jdbc:postgresql://127.0.0.1/rest
+2019-12-17 20:59:32,278 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
+2019-12-17 20:59:33,323 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-4 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
 
-2019-12-17 11:22:45,412 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-4 - Application started (Dev) (no global state)
-2019-12-17 11:22:45,470 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-4 - 
-
-! @7e7eg665i - Internal server error, for (GET) [/] ->
- 
-play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evolution![An SQL script need to be run on your database.]
-	at play.api.db.evolutions.EvolutionsWebCommands.$anonfun$handleWebCommand$5(ApplicationEvolutions.scala:529)
-	at play.api.db.evolutions.EvolutionsWebCommands.$anonfun$handleWebCommand$5$adapted(ApplicationEvolutions.scala:522)
-	at play.api.db.evolutions.ApplicationEvolutions$.$anonfun$runEvolutions$1(ApplicationEvolutions.scala:211)
-	at play.api.db.evolutions.ApplicationEvolutions$.withLock(ApplicationEvolutions.scala:232)
-	at play.api.db.evolutions.ApplicationEvolutions$.runEvolutions(ApplicationEvolutions.scala:202)
-	at play.api.db.evolutions.EvolutionsWebCommands.$anonfun$handleWebCommand$4(ApplicationEvolutions.scala:522)
-	at play.api.db.evolutions.EvolutionsWebCommands.$anonfun$handleWebCommand$4$adapted(ApplicationEvolutions.scala:517)
-	at scala.collection.immutable.List.foreach(List.scala:312)
-	at play.api.db.evolutions.EvolutionsWebCommands.handleWebCommand(ApplicationEvolutions.scala:517)
-	at play.core.DefaultWebCommands.$anonfun$handleWebCommand$1(WebCommands.scala:42)
-	at scala.collection.immutable.Stream.flatMap(Stream.scala:195)
-	at play.core.DefaultWebCommands.handleWebCommand(WebCommands.scala:42)
-	at play.api.http.DefaultHttpRequestHandler.$anonfun$handlerForRequest$4(HttpRequestHandler.scala:204)
-	at scala.Option.flatMap(Option.scala:284)
-	at play.api.http.DefaultHttpRequestHandler.handlerForRequest(HttpRequestHandler.scala:203)
-	at play.core.server.Server$.getHandlerFor(Server.scala:121)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:319)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:189)
-	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1261)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:523)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:409)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:606)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:485)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:581)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:749)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:764)
-	at akka.actor.Actor.aroundReceive(Actor.scala:539)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:537)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:671)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:612)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:581)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:268)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:229)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:241)
-	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2019-12-17 11:22:48,079 [INFO] from application in application-akka.actor.default-dispatcher-6 - Shutting down connection pool.
-2019-12-17 11:22:48,253 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-2 - Database [default] initialized at jdbc:postgresql://127.0.0.1/rest
-2019-12-17 11:22:48,253 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-2 - Creating Pool for datasource 'default'
-2019-12-17 11:22:48,416 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-2 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-12-17 20:59:33,392 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-4 - Application started (Dev) (no global state)
+2019-12-17 21:04:05,344 [INFO] from application in application-akka.actor.default-dispatcher-33 - Shutting down connection pool.
+2019-12-17 21:04:05,508 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-18 - Database [default] initialized at jdbc:postgresql://127.0.0.1/rest
+2019-12-17 21:04:05,508 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-18 - Creating Pool for datasource 'default'
+2019-12-17 21:04:05,607 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-18 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
 
-2019-12-17 11:22:48,462 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-2 - Application started (Dev) (no global state)
-2019-12-17 11:22:50,588 [INFO] from application in application-akka.actor.default-dispatcher-7 - Shutting down connection pool.
-2019-12-17 11:22:50,753 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-4 - Database [default] initialized at jdbc:postgresql://127.0.0.1/rest
-2019-12-17 11:22:50,753 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
-2019-12-17 11:22:50,868 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-4 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-12-17 21:04:05,686 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-18 - Application started (Dev) (no global state)
+2019-12-17 21:05:27,989 [INFO] from application in application-akka.actor.default-dispatcher-4 - Shutting down connection pool.
+2019-12-17 21:05:28,105 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-21 - Database [default] initialized at jdbc:postgresql://127.0.0.1/rest
+2019-12-17 21:05:28,105 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-21 - Creating Pool for datasource 'default'
+2019-12-17 21:05:28,236 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-21 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
 
-2019-12-17 11:22:50,911 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-4 - Application started (Dev) (no global state)
-2019-12-17 11:23:02,288 [INFO] from application in application-akka.actor.default-dispatcher-7 - Shutting down connection pool.
-2019-12-17 11:23:02,388 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-3 - Database [default] initialized at jdbc:postgresql://127.0.0.1/rest
-2019-12-17 11:23:02,388 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-3 - Creating Pool for datasource 'default'
-2019-12-17 11:23:02,489 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-3 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-12-17 21:05:28,293 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-21 - Application started (Dev) (no global state)
+2019-12-17 21:06:44,086 [INFO] from application in application-akka.actor.default-dispatcher-5 - Shutting down connection pool.
+2019-12-17 21:06:44,205 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-18 - Database [default] initialized at jdbc:postgresql://127.0.0.1/rest
+2019-12-17 21:06:44,205 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-18 - Creating Pool for datasource 'default'
+2019-12-17 21:06:44,313 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-18 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
 
-2019-12-17 11:23:02,586 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-3 - Application started (Dev) (no global state)
-2019-12-17 11:23:09,503 [INFO] from application in application-akka.actor.default-dispatcher-6 - Shutting down connection pool.
-2019-12-17 11:23:09,602 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-4 - Database [default] initialized at jdbc:postgresql://127.0.0.1/rest
-2019-12-17 11:23:09,603 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
-2019-12-17 11:23:09,729 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-4 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-12-17 21:06:44,364 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-18 - Application started (Dev) (no global state)
+2019-12-17 21:07:30,900 [INFO] from application in application-akka.actor.default-dispatcher-6 - Shutting down connection pool.
+2019-12-17 21:07:30,999 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-21 - Database [default] initialized at jdbc:postgresql://127.0.0.1/rest
+2019-12-17 21:07:31,000 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-21 - Creating Pool for datasource 'default'
+2019-12-17 21:07:31,098 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-21 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
 
-2019-12-17 11:23:09,801 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-4 - Application started (Dev) (no global state)
-2019-12-17 11:24:05,703 [INFO] from application in application-akka.actor.default-dispatcher-8 - Shutting down connection pool.
-2019-12-17 11:24:05,806 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-8 - Database [default] initialized at jdbc:postgresql://127.0.0.1/rest
-2019-12-17 11:24:05,806 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-8 - Creating Pool for datasource 'default'
-2019-12-17 11:24:05,929 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-8 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-
-2019-12-17 11:24:05,994 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-8 - Application started (Dev) (no global state)
-2019-12-17 11:24:15,018 [ERROR] from application in application-akka.actor.default-dispatcher-2 - 
-
-! @7e7egb8hp - Internal server error, for (POST) [/restaurant/create/] ->
- 
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[DuplicateKeyException: Error[ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "uq_restaurant_inn"   Подробности: Ключ "(inn)=(780101001)" уже существует.]]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:351)
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:267)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:448)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:446)
-	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:453)
-	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:92)
-	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:94)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:92)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:49)
-	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-Caused by: io.ebean.DuplicateKeyException: Error[ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "uq_restaurant_inn"   Подробности: Ключ "(inn)=(780101001)" уже существует.]
-	at io.ebean.config.dbplatform.SqlCodeTranslator.translate(SqlCodeTranslator.java:46)
-	at io.ebean.config.dbplatform.DatabasePlatform.translate(DatabasePlatform.java:219)
-	at io.ebeaninternal.server.persist.dml.DmlBeanPersister.execute(DmlBeanPersister.java:83)
-	at io.ebeaninternal.server.persist.dml.DmlBeanPersister.insert(DmlBeanPersister.java:49)
-	at io.ebeaninternal.server.core.PersistRequestBean.executeInsert(PersistRequestBean.java:1280)
-	at io.ebeaninternal.server.core.PersistRequestBean.executeNow(PersistRequestBean.java:790)
-	at io.ebeaninternal.server.core.PersistRequestBean.executeNoBatch(PersistRequestBean.java:845)
-	at io.ebeaninternal.server.core.PersistRequestBean.executeOrQueue(PersistRequestBean.java:836)
-	at io.ebeaninternal.server.persist.DefaultPersister.insert(DefaultPersister.java:507)
-	at io.ebeaninternal.server.persist.DefaultPersister.insert(DefaultPersister.java:455)
-	at io.ebeaninternal.server.persist.DefaultPersister.save(DefaultPersister.java:438)
-	at io.ebeaninternal.server.core.DefaultServer.save(DefaultServer.java:1745)
-	at io.ebeaninternal.server.core.DefaultServer.save(DefaultServer.java:1737)
-	at io.ebean.Model.save(Model.java:188)
-	at controllers.RestaurantController.saveRestaurantChanges(RestaurantController.java:44)
-	at router.Routes$$anonfun$routes$1.$anonfun$applyOrElse$12(Routes.scala:417)
-	at play.core.routing.HandlerInvokerFactory$$anon$6.resultCall(HandlerInvoker.scala:143)
-	at play.core.routing.HandlerInvokerFactory$$anon$6.resultCall(HandlerInvoker.scala:142)
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$3$$anon$4$$anon$5.invocation(HandlerInvoker.scala:116)
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:131)
-	at play.mvc.Action.lambda$call$0(Action.java:89)
-	at java.util.Optional.map(Optional.java:215)
-	at play.mvc.Action.call(Action.java:81)
-	at play.http.DefaultActionCreator$1.call(DefaultActionCreator.java:33)
-	at play.core.j.JavaAction.$anonfun$apply$8(JavaAction.scala:191)
-	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:660)
-	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:430)
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:79)
-	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:72)
-	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:71)
-	at scala.concurrent.impl.Promise$Transformation.submitWithValue(Promise.scala:392)
-	at scala.concurrent.impl.Promise$DefaultPromise.submitWithValue(Promise.scala:302)
-	at scala.concurrent.impl.Promise$DefaultPromise.dispatchOrAddCallbacks(Promise.scala:276)
-	at scala.concurrent.impl.Promise$DefaultPromise.map(Promise.scala:146)
-	at scala.concurrent.Future$.apply(Future.scala:660)
-	at play.core.j.JavaAction.apply(JavaAction.scala:192)
-	at play.api.mvc.Action.$anonfun$apply$2(Action.scala:98)
-	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:433)
-	... 11 common frames omitted
-Caused by: org.postgresql.util.PSQLException: ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "uq_restaurant_inn"
-  Подробности: Ключ "(inn)=(780101001)" уже существует.
-	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2497)
-	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2233)
-	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
-	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:446)
-	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:370)
-	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:149)
-	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:124)
-	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
-	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
-	at io.ebeaninternal.server.type.DataBind.executeUpdate(DataBind.java:92)
-	at io.ebeaninternal.server.persist.dml.InsertHandler.execute(InsertHandler.java:124)
-	at io.ebeaninternal.server.persist.dml.DmlBeanPersister.execute(DmlBeanPersister.java:73)
-	... 46 common frames omitted
-2019-12-17 11:24:34,767 [INFO] from application in application-akka.actor.default-dispatcher-5 - Shutting down connection pool.
-2019-12-17 11:24:34,889 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-7 - Database [default] initialized at jdbc:postgresql://127.0.0.1/rest
-2019-12-17 11:24:34,889 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-7 - Creating Pool for datasource 'default'
-2019-12-17 11:24:35,014 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-7 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-
-2019-12-17 11:24:35,065 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-7 - Application started (Dev) (no global state)
-2019-12-17 11:24:50,189 [INFO] from play.core.server.AkkaHttpServer in pool-12-thread-2 - Stopping server...
-2019-12-17 11:24:50,194 [INFO] from application in application-akka.actor.default-dispatcher-3 - Shutting down connection pool.
+2019-12-17 21:07:31,178 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-21 - Application started (Dev) (no global state)
+2019-12-17 21:07:54,751 [INFO] from play.core.server.AkkaHttpServer in pool-12-thread-5 - Stopping server...
+2019-12-17 21:07:54,756 [INFO] from application in application-akka.actor.default-dispatcher-7 - Shutting down connection pool.

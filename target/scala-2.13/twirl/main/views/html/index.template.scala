@@ -48,7 +48,7 @@ Seq[Any](format.raw/*5.60*/("""
     """),format.raw/*17.5*/("""<table class="table table-striped">
         """),_display_(/*18.10*/for(restaurant <- restaurants) yield /*18.40*/ {_display_(Seq[Any](format.raw/*18.42*/("""
             """),format.raw/*19.13*/("""<tr>
-                <td><a href=""""),_display_(/*20.31*/routes/*20.37*/.RestaurantController.showRestaurantCard(restaurant.getRestaurantName)),format.raw/*20.107*/("""">"""),_display_(/*20.110*/restaurant/*20.120*/.getRestaurantName),format.raw/*20.138*/("""</a></td>
+                <td><a href=""""),_display_(/*20.31*/routes/*20.37*/.RestaurantController.showRestaurantCard(restaurant.getId)),format.raw/*20.95*/("""">"""),_display_(/*20.98*/restaurant/*20.108*/.getRestaurantName),format.raw/*20.126*/("""</a></td>
             </tr>
         """)))}),format.raw/*22.10*/("""
     """),format.raw/*23.5*/("""</table>
@@ -65,7 +65,7 @@ Seq[Any](format.raw/*5.60*/("""
     """),format.raw/*34.5*/("""<table class="table table-striped">
         """),_display_(/*35.10*/for(visitor <- visitors) yield /*35.34*/ {_display_(Seq[Any](format.raw/*35.36*/("""
             """),format.raw/*36.13*/("""<tr>
-                <td><a href=""""),_display_(/*37.31*/routes/*37.37*/.VisitorController.showVisitorCard(visitor.getFirstName)),format.raw/*37.93*/("""">"""),_display_(/*37.96*/visitor/*37.103*/.getFirstName),format.raw/*37.116*/(""" """),_display_(/*37.118*/visitor/*37.125*/.getLastName),format.raw/*37.137*/("""</a></td>
+                <td><a href=""""),_display_(/*37.31*/routes/*37.37*/.VisitorController.showVisitorCard(visitor.getId)),format.raw/*37.86*/("""">"""),_display_(/*37.89*/visitor/*37.96*/.getFirstName),format.raw/*37.109*/(""" """),_display_(/*37.111*/visitor/*37.118*/.getLastName),format.raw/*37.130*/("""</a></td>
             </tr>
         """)))}),format.raw/*39.10*/("""
     """),format.raw/*40.5*/("""</table>
@@ -85,10 +85,10 @@ Seq[Any](format.raw/*5.60*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-12T19:00:50.819
+                  DATE: 2019-12-17T20:39:05.520
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/index.scala.html
-                  HASH: ce49b88894cf2b86413ad83ef42f50af80706557
-                  MATRIX: 651->1|683->28|712->52|1056->72|1209->130|1239->135|1269->157|1307->158|1339->164|1406->205|1438->228|1477->229|1514->239|1668->363|1701->369|1774->415|1820->445|1860->447|1902->461|1965->497|1980->503|2072->573|2103->576|2123->586|2163->604|2233->643|2266->649|2354->711|2383->731|2422->732|2459->742|2610->863|2643->869|2716->915|2756->939|2796->941|2838->955|2901->991|2916->997|2993->1053|3023->1056|3040->1063|3075->1076|3105->1078|3122->1085|3156->1097|3226->1136|3259->1142
+                  HASH: f2b43ac90cc5a1ef3f683c7e31f73ea781522bf1
+                  MATRIX: 651->1|683->28|712->52|1056->72|1209->130|1239->135|1269->157|1307->158|1339->164|1406->205|1438->228|1477->229|1514->239|1668->363|1701->369|1774->415|1820->445|1860->447|1902->461|1965->497|1980->503|2059->561|2089->564|2109->574|2149->592|2219->631|2252->637|2340->699|2369->719|2408->720|2445->730|2596->851|2629->857|2702->903|2742->927|2782->929|2824->943|2887->979|2902->985|2972->1034|3002->1037|3018->1044|3053->1057|3083->1059|3100->1066|3134->1078|3204->1117|3237->1123
                   LINES: 24->1|25->2|26->3|31->5|36->5|38->7|38->7|38->7|39->8|41->10|41->10|41->10|42->11|47->16|48->17|49->18|49->18|49->18|50->19|51->20|51->20|51->20|51->20|51->20|51->20|53->22|54->23|58->27|58->27|58->27|59->28|64->33|65->34|66->35|66->35|66->35|67->36|68->37|68->37|68->37|68->37|68->37|68->37|68->37|68->37|68->37|70->39|71->40
                   -- GENERATED --
               */

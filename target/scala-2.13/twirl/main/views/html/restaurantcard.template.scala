@@ -36,9 +36,8 @@ Seq[Any](format.raw/*4.56*/("""
 
 """),_display_(/*6.2*/layout(restaurant.getRestaurantName)/*6.38*/{_display_(Seq[Any](format.raw/*6.39*/("""
     """),format.raw/*7.5*/("""<h2>"""),_display_(/*7.10*/restaurant/*7.20*/.getRestaurantName),format.raw/*7.38*/("""</h2>
-    """),format.raw/*8.70*/("""
-    """),format.raw/*9.5*/("""<br>
-    <a class="btn btn-primary" href=""""),_display_(/*10.39*/routes/*10.45*/.RestaurantController.editRestaurant(restaurant.getRestaurantName)),format.raw/*10.111*/("""">Edit Restaurant</a>
+    <br>
+    <a class="btn btn-primary" href=""""),_display_(/*9.39*/routes/*9.45*/.RestaurantController.editRestaurant(restaurant.getId)),format.raw/*9.99*/("""">Edit Restaurant</a>
     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletionConfirmModal">Remove Restaurant</button>
 
     <br><br>
@@ -49,50 +48,50 @@ Seq[Any](format.raw/*4.56*/("""
         </tr>
         <tr>
             <td>Last Name</td>
-            <td>"""),_display_(/*21.18*/restaurant/*21.28*/.getLegalName),format.raw/*21.41*/("""</td>
+            <td>"""),_display_(/*20.18*/restaurant/*20.28*/.getLegalName),format.raw/*20.41*/("""</td>
         </tr>
         <tr>
             <td>INN</td>
-            <td>"""),_display_(/*25.18*/restaurant/*25.28*/.getInn),format.raw/*25.35*/("""</td>
+            <td>"""),_display_(/*24.18*/restaurant/*24.28*/.getInn),format.raw/*24.35*/("""</td>
         </tr>
         <tr>
             <td>Address</td>
-            <td>"""),_display_(/*29.18*/restaurant/*29.28*/.getAddress),format.raw/*29.39*/("""</td>
+            <td>"""),_display_(/*28.18*/restaurant/*28.28*/.getAddress),format.raw/*28.39*/("""</td>
         </tr>
     </table>
     <h2>Accepted Visitors</h2>
     <br>
-    """),_display_(/*34.6*/if(restaurant.getAcceptedVisitors.isEmpty)/*34.48*/ {_display_(Seq[Any](format.raw/*34.50*/("""
-        """),format.raw/*35.9*/("""<table class="table table-striped">
+    """),_display_(/*33.6*/if(restaurant.getAcceptedVisitors.isEmpty)/*33.48*/ {_display_(Seq[Any](format.raw/*33.50*/("""
+        """),format.raw/*34.9*/("""<table class="table table-striped">
             <tr>
-                <td>"""),_display_(/*37.22*/restaurant/*37.32*/.getRestaurantName),format.raw/*37.50*/(""" """),format.raw/*37.51*/("""has not accepted any visitors<td>
+                <td>"""),_display_(/*36.22*/restaurant/*36.32*/.getRestaurantName),format.raw/*36.50*/(""" """),format.raw/*36.51*/("""has not accepted any visitors<td>
             </tr>
         </table>
-    """)))}),format.raw/*40.6*/("""
+    """)))}),format.raw/*39.6*/("""
 
-    """),format.raw/*42.5*/("""<table class="table table-striped">
-    """),_display_(/*43.6*/for(visitor <- restaurant.getAcceptedVisitors) yield /*43.52*/ {_display_(Seq[Any](format.raw/*43.54*/("""
-        """),format.raw/*44.9*/("""<tr>
-            <td><a href=""""),_display_(/*45.27*/routes/*45.33*/.VisitorController.showVisitorCard(visitor.getFirstName)),format.raw/*45.89*/("""">"""),_display_(/*45.92*/visitor/*45.99*/.getFirstName),format.raw/*45.112*/(""" """),_display_(/*45.114*/visitor/*45.121*/.getLastName),format.raw/*45.133*/("""</a></td>
+    """),format.raw/*41.5*/("""<table class="table table-striped">
+    """),_display_(/*42.6*/for(visitor <- restaurant.getAcceptedVisitors) yield /*42.52*/ {_display_(Seq[Any](format.raw/*42.54*/("""
+        """),format.raw/*43.9*/("""<tr>
+            <td><a href=""""),_display_(/*44.27*/routes/*44.33*/.VisitorController.showVisitorCard(visitor.getId)),format.raw/*44.82*/("""">"""),_display_(/*44.85*/visitor/*44.92*/.getFirstName),format.raw/*44.105*/(""" """),_display_(/*44.107*/visitor/*44.114*/.getLastName),format.raw/*44.126*/("""</a></td>
         </tr>
-    """)))}),format.raw/*47.6*/("""
-    """),format.raw/*48.5*/("""</table>
+    """)))}),format.raw/*46.6*/("""
+    """),format.raw/*47.5*/("""</table>
 
         <!-- Modal window "Accept" start button -->
-    """),_display_(/*51.6*/if(!newVisitors.isEmpty())/*51.32*/{_display_(Seq[Any](format.raw/*51.33*/("""
-        """),format.raw/*52.9*/("""<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalAccept">
+    """),_display_(/*50.6*/if(!newVisitors.isEmpty())/*50.32*/{_display_(Seq[Any](format.raw/*50.33*/("""
+        """),format.raw/*51.9*/("""<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalAccept">
             Accept Visitor
         </button>
-    """)))}),format.raw/*55.6*/("""
+    """)))}),format.raw/*54.6*/("""
 
-    """),format.raw/*57.5*/("""<!-- Modal window "Kick" start button -->
-    """),_display_(/*58.6*/if(!restaurant.getAcceptedVisitors().isEmpty)/*58.51*/{_display_(Seq[Any](format.raw/*58.52*/("""
-        """),format.raw/*59.9*/("""<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModalKick">
+    """),format.raw/*56.5*/("""<!-- Modal window "Kick" start button -->
+    """),_display_(/*57.6*/if(!restaurant.getAcceptedVisitors().isEmpty)/*57.51*/{_display_(Seq[Any](format.raw/*57.52*/("""
+        """),format.raw/*58.9*/("""<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModalKick">
             Kick Out Visitor
         </button>
-    """)))}),format.raw/*62.6*/("""
+    """)))}),format.raw/*61.6*/("""
 
-        """),format.raw/*64.9*/("""<!-- Modal window "Accept" -->
+        """),format.raw/*63.9*/("""<!-- Modal window "Accept" -->
     <div class="modal fade" id="myModalAccept" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -105,15 +104,15 @@ Seq[Any](format.raw/*4.56*/("""
                 <div class="modal-body">
 
                     <select id="acceptVisitor" class="js-data-example-ajax" style="width: 570px">
-                        """),_display_(/*77.26*/for(visitor <- newVisitors) yield /*77.53*/ {_display_(Seq[Any](format.raw/*77.55*/("""
-                            """),format.raw/*78.29*/("""<option value='"""),_display_(/*78.45*/visitor/*78.52*/.getFirstName),format.raw/*78.65*/("""'>"""),_display_(/*78.68*/visitor/*78.75*/.getFirstName),format.raw/*78.88*/(""" """),_display_(/*78.90*/visitor/*78.97*/.getLastName),format.raw/*78.109*/("""</option>
-                        """)))}),format.raw/*79.26*/("""
-                    """),format.raw/*80.21*/("""</select>
+                        """),_display_(/*76.26*/for(visitor <- newVisitors) yield /*76.53*/ {_display_(Seq[Any](format.raw/*76.55*/("""
+                            """),format.raw/*77.29*/("""<option value='"""),_display_(/*77.45*/visitor/*77.52*/.getId),format.raw/*77.58*/("""'>"""),_display_(/*77.61*/visitor/*77.68*/.getFirstName),format.raw/*77.81*/(""" """),_display_(/*77.83*/visitor/*77.90*/.getLastName),format.raw/*77.102*/("""</option>
+                        """)))}),format.raw/*78.26*/("""
+                    """),format.raw/*79.21*/("""</select>
 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="acceptVisitorRequest('"""),_display_(/*85.99*/restaurant/*85.109*/.getRestaurantName),format.raw/*85.127*/("""')">Accept Visitor</button>
+                    <button type="button" class="btn btn-primary" onclick="acceptVisitorRequest('"""),_display_(/*84.99*/restaurant/*84.109*/.getId),format.raw/*84.115*/("""')">Accept Visitor</button>
                 </div>
             </div>
         </div>
@@ -132,15 +131,15 @@ Seq[Any](format.raw/*4.56*/("""
                 <div class="modal-body">
 
                     <select id="kickVisitor" class="js-data-example-ajax" style="width: 570px">
-                    """),_display_(/*104.22*/for(visitor <- restaurant.getAcceptedVisitors) yield /*104.68*/ {_display_(Seq[Any](format.raw/*104.70*/("""
-                        """),format.raw/*105.25*/("""<option value='"""),_display_(/*105.41*/visitor/*105.48*/.getFirstName),format.raw/*105.61*/("""'>"""),_display_(/*105.64*/visitor/*105.71*/.getFirstName),format.raw/*105.84*/(""" """),_display_(/*105.86*/visitor/*105.93*/.getLastName),format.raw/*105.105*/("""</option>
-                    """)))}),format.raw/*106.22*/("""
-                    """),format.raw/*107.21*/("""</select>
+                    """),_display_(/*103.22*/for(visitor <- restaurant.getAcceptedVisitors) yield /*103.68*/ {_display_(Seq[Any](format.raw/*103.70*/("""
+                        """),format.raw/*104.25*/("""<option value='"""),_display_(/*104.41*/visitor/*104.48*/.getId),format.raw/*104.54*/("""'>"""),_display_(/*104.57*/visitor/*104.64*/.getFirstName),format.raw/*104.77*/(""" """),_display_(/*104.79*/visitor/*104.86*/.getLastName),format.raw/*104.98*/("""</option>
+                    """)))}),format.raw/*105.22*/("""
+                    """),format.raw/*106.21*/("""</select>
 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="kickVisitorRequest('"""),_display_(/*112.97*/restaurant/*112.107*/.getRestaurantName),format.raw/*112.125*/("""')">Kick Out Visitor</button>
+                    <button type="button" class="btn btn-primary" onclick="kickVisitorRequest('"""),_display_(/*111.97*/restaurant/*111.107*/.getId),format.raw/*111.113*/("""')">Kick Out Visitor</button>
                 </div>
             </div>
         </div>
@@ -162,7 +161,7 @@ Seq[Any](format.raw/*4.56*/("""
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <a class="btn btn-danger" href=""""),_display_(/*134.54*/routes/*134.60*/.RestaurantController.destroyRestaurant(restaurant.getRestaurantName)),format.raw/*134.129*/("""">Remove Restaurant</a>
+                    <button type="button" class="btn btn-danger" onclick="sendDeleteRequest('"""),_display_(/*133.95*/routes/*133.101*/.RestaurantController.destroyRestaurant(restaurant.getId)),format.raw/*133.158*/("""', '"""),_display_(/*133.163*/routes/*133.169*/.HomeController.greetings()),format.raw/*133.196*/("""')">Remove Restaurant</button>
                 </div>
             </div>
         </div>
@@ -183,11 +182,11 @@ Seq[Any](format.raw/*4.56*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-13T16:27:34.701
+                  DATE: 2019-12-17T21:06:43.058
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/restaurantcard.scala.html
-                  HASH: 7c51a4ec06bce6a47d79ab080f0d8266acd0fb26
-                  MATRIX: 651->1|683->28|1030->48|1179->102|1209->107|1253->143|1291->144|1323->150|1354->155|1372->165|1410->183|1448->259|1480->265|1551->309|1566->315|1654->381|2034->734|2053->744|2087->757|2193->836|2212->846|2240->853|2350->936|2369->946|2401->957|2510->1040|2561->1082|2601->1084|2638->1094|2741->1170|2760->1180|2799->1198|2828->1199|2935->1276|2970->1284|3038->1326|3100->1372|3140->1374|3177->1384|3236->1416|3251->1422|3328->1478|3358->1481|3374->1488|3409->1501|3439->1503|3456->1510|3490->1522|3551->1553|3584->1559|3680->1629|3715->1655|3754->1656|3791->1666|3970->1815|4005->1823|4079->1871|4133->1916|4172->1917|4209->1927|4387->2075|4426->2087|5235->2869|5278->2896|5318->2898|5376->2928|5419->2944|5435->2951|5469->2964|5499->2967|5515->2974|5549->2987|5578->2989|5594->2996|5628->3008|5695->3044|5745->3066|6056->3350|6076->3360|6116->3378|7023->4257|7086->4303|7127->4305|7182->4331|7226->4347|7243->4354|7278->4367|7309->4370|7326->4377|7361->4390|7391->4392|7408->4399|7443->4411|7507->4443|7558->4465|7868->4747|7889->4757|7930->4775|8962->5779|8978->5785|9070->5854
-                  LINES: 24->1|25->2|30->4|35->4|37->6|37->6|37->6|38->7|38->7|38->7|38->7|39->8|40->9|41->10|41->10|41->10|52->21|52->21|52->21|56->25|56->25|56->25|60->29|60->29|60->29|65->34|65->34|65->34|66->35|68->37|68->37|68->37|68->37|71->40|73->42|74->43|74->43|74->43|75->44|76->45|76->45|76->45|76->45|76->45|76->45|76->45|76->45|76->45|78->47|79->48|82->51|82->51|82->51|83->52|86->55|88->57|89->58|89->58|89->58|90->59|93->62|95->64|108->77|108->77|108->77|109->78|109->78|109->78|109->78|109->78|109->78|109->78|109->78|109->78|109->78|110->79|111->80|116->85|116->85|116->85|135->104|135->104|135->104|136->105|136->105|136->105|136->105|136->105|136->105|136->105|136->105|136->105|136->105|137->106|138->107|143->112|143->112|143->112|165->134|165->134|165->134
+                  HASH: ee6a8d49d6f73b72cb0c1e74d59a5e84c113b935
+                  MATRIX: 651->1|683->28|1030->48|1179->102|1209->107|1253->143|1291->144|1323->150|1354->155|1372->165|1410->183|1491->238|1505->244|1579->298|1959->651|1978->661|2012->674|2118->753|2137->763|2165->770|2275->853|2294->863|2326->874|2435->957|2486->999|2526->1001|2563->1011|2666->1087|2685->1097|2724->1115|2753->1116|2860->1193|2895->1201|2963->1243|3025->1289|3065->1291|3102->1301|3161->1333|3176->1339|3246->1388|3276->1391|3292->1398|3327->1411|3357->1413|3374->1420|3408->1432|3469->1463|3502->1469|3598->1539|3633->1565|3672->1566|3709->1576|3888->1725|3923->1733|3997->1781|4051->1826|4090->1827|4127->1837|4305->1985|4344->1997|5153->2779|5196->2806|5236->2808|5294->2838|5337->2854|5353->2861|5380->2867|5410->2870|5426->2877|5460->2890|5489->2892|5505->2899|5539->2911|5606->2947|5656->2969|5967->3253|5987->3263|6015->3269|6922->4148|6985->4194|7026->4196|7081->4222|7125->4238|7142->4245|7170->4251|7201->4254|7218->4261|7253->4274|7283->4276|7300->4283|7334->4295|7398->4327|7449->4349|7759->4631|7780->4641|7809->4647|8882->5692|8899->5698|8979->5755|9013->5760|9030->5766|9080->5793
+                  LINES: 24->1|25->2|30->4|35->4|37->6|37->6|37->6|38->7|38->7|38->7|38->7|40->9|40->9|40->9|51->20|51->20|51->20|55->24|55->24|55->24|59->28|59->28|59->28|64->33|64->33|64->33|65->34|67->36|67->36|67->36|67->36|70->39|72->41|73->42|73->42|73->42|74->43|75->44|75->44|75->44|75->44|75->44|75->44|75->44|75->44|75->44|77->46|78->47|81->50|81->50|81->50|82->51|85->54|87->56|88->57|88->57|88->57|89->58|92->61|94->63|107->76|107->76|107->76|108->77|108->77|108->77|108->77|108->77|108->77|108->77|108->77|108->77|108->77|109->78|110->79|115->84|115->84|115->84|134->103|134->103|134->103|135->104|135->104|135->104|135->104|135->104|135->104|135->104|135->104|135->104|135->104|136->105|137->106|142->111|142->111|142->111|164->133|164->133|164->133|164->133|164->133|164->133
                   -- GENERATED --
               */
           

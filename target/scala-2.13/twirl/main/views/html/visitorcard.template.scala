@@ -37,7 +37,7 @@ Seq[Any](format.raw/*4.56*/("""
 """),_display_(/*6.2*/layout(visitor.getFirstName)/*6.30*/{_display_(Seq[Any](format.raw/*6.31*/("""
     """),format.raw/*7.5*/("""<h2>"""),_display_(/*7.10*/visitor/*7.17*/.getFirstName),format.raw/*7.30*/("""</h2>
     <br>
-    <a class="btn btn-primary" href=""""),_display_(/*9.39*/routes/*9.45*/.VisitorController.editVisitor(visitor.getFirstName)),format.raw/*9.97*/("""">Edit Visitor</a>
+    <a class="btn btn-primary" href=""""),_display_(/*9.39*/routes/*9.45*/.VisitorController.editVisitor(visitor.getId)),format.raw/*9.90*/("""">Edit Visitor</a>
     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletionConfirmModal">Remove Visitor</button>
 
     <br><br>
@@ -70,7 +70,7 @@ Seq[Any](format.raw/*4.56*/("""
     """),format.raw/*39.5*/("""<table class="table table-striped">
         """),_display_(/*40.10*/for(restaurant <- visitor.getVisitedRestaurants) yield /*40.58*/ {_display_(Seq[Any](format.raw/*40.60*/("""
             """),format.raw/*41.13*/("""<tr>
-                <td><a href=""""),_display_(/*42.31*/routes/*42.37*/.RestaurantController.showRestaurantCard(restaurant.getRestaurantName)),format.raw/*42.107*/("""">"""),_display_(/*42.110*/restaurant/*42.120*/.getRestaurantName),format.raw/*42.138*/("""</a></td>
+                <td><a href=""""),_display_(/*42.31*/routes/*42.37*/.RestaurantController.showRestaurantCard(restaurant.getId)),format.raw/*42.95*/("""">"""),_display_(/*42.98*/restaurant/*42.108*/.getRestaurantName),format.raw/*42.126*/("""</a></td>
             </tr>
         """)))}),format.raw/*44.10*/("""
     """),format.raw/*45.5*/("""</table>
@@ -103,14 +103,14 @@ Seq[Any](format.raw/*4.56*/("""
 
                     <select id="visitRestaurant" class="js-data-example-ajax" style="width: 570px">
                         """),_display_(/*74.26*/for(restaurant <- newRestaurants) yield /*74.59*/ {_display_(Seq[Any](format.raw/*74.61*/("""
-                            """),format.raw/*75.29*/("""<option value='"""),_display_(/*75.45*/restaurant/*75.55*/.getRestaurantName),format.raw/*75.73*/("""'>"""),_display_(/*75.76*/restaurant/*75.86*/.getRestaurantName),format.raw/*75.104*/("""</option>
+                            """),format.raw/*75.29*/("""<option value='"""),_display_(/*75.45*/restaurant/*75.55*/.getId),format.raw/*75.61*/("""'>"""),_display_(/*75.64*/restaurant/*75.74*/.getRestaurantName),format.raw/*75.92*/("""</option>
                         """)))}),format.raw/*76.26*/("""
                     """),format.raw/*77.21*/("""</select>
 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="visitRestaurantRequest('"""),_display_(/*82.101*/visitor/*82.108*/.getFirstName),format.raw/*82.121*/("""')">Visit Restaurant</button>
+                    <button type="button" class="btn btn-primary" onclick="visitRestaurantRequest('"""),_display_(/*82.101*/visitor/*82.108*/.getId),format.raw/*82.114*/("""')">Visit Restaurant</button>
                 </div>
             </div>
         </div>
@@ -130,14 +130,14 @@ Seq[Any](format.raw/*4.56*/("""
 
                     <select id="forgetRestaurant" class="js-data-example-ajax" style="width: 570px">
                     """),_display_(/*101.22*/for(restaurant <- visitor.getVisitedRestaurants) yield /*101.70*/ {_display_(Seq[Any](format.raw/*101.72*/("""
-                        """),format.raw/*102.25*/("""<option value='"""),_display_(/*102.41*/restaurant/*102.51*/.getRestaurantName),format.raw/*102.69*/("""'>"""),_display_(/*102.72*/restaurant/*102.82*/.getRestaurantName),format.raw/*102.100*/("""</option>
+                        """),format.raw/*102.25*/("""<option value='"""),_display_(/*102.41*/restaurant/*102.51*/.getId),format.raw/*102.57*/("""'>"""),_display_(/*102.60*/restaurant/*102.70*/.getRestaurantName),format.raw/*102.88*/("""</option>
                     """)))}),format.raw/*103.22*/("""
                     """),format.raw/*104.21*/("""</select>
 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="forgetRestaurantRequest('"""),_display_(/*109.102*/visitor/*109.109*/.getFirstName),format.raw/*109.122*/("""')">Forget Restaurant</button>
+                    <button type="button" class="btn btn-primary" onclick="forgetRestaurantRequest('"""),_display_(/*109.102*/visitor/*109.109*/.getId),format.raw/*109.115*/("""')">Forget Restaurant</button>
                 </div>
             </div>
         </div>
@@ -159,7 +159,7 @@ Seq[Any](format.raw/*4.56*/("""
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <a class="btn btn-danger" href=""""),_display_(/*131.54*/routes/*131.60*/.VisitorController.destroyVisitor(visitor.getFirstName)),format.raw/*131.115*/("""">Remove Visitor</a>
+                    <button type="button" class="btn btn-danger" onclick="sendDeleteRequest('"""),_display_(/*131.95*/routes/*131.101*/.VisitorController.destroyVisitor(visitor.getId)),format.raw/*131.149*/("""', '"""),_display_(/*131.154*/routes/*131.160*/.HomeController.greetings()),format.raw/*131.187*/("""')">Remove Visitor</button>
                 </div>
             </div>
         </div>
@@ -180,11 +180,11 @@ Seq[Any](format.raw/*4.56*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2019-12-13T16:31:14.117
+                  DATE: 2019-12-17T21:07:30.159
                   SOURCE: D:/Java/Projects/rest-o-matic/app/views/visitorcard.scala.html
-                  HASH: 201437ac98cdd0745f4f71d62070864baa1baafc
-                  MATRIX: 651->1|680->25|1024->45|1173->99|1203->104|1239->132|1277->133|1309->139|1340->144|1355->151|1388->164|1469->219|1483->225|1555->277|1888->583|1904->590|1937->602|2045->683|2061->690|2091->699|2199->780|2215->787|2251->802|2362->887|2412->928|2452->930|2489->940|2592->1016|2608->1023|2642->1036|2671->1037|2780->1116|2815->1124|2888->1170|2952->1218|2992->1220|3034->1234|3097->1270|3112->1276|3204->1346|3235->1349|3255->1359|3295->1377|3365->1416|3398->1422|3493->1491|3529->1518|3568->1519|3605->1529|3785->1679|3824->1691|3900->1741|3953->1785|3993->1787|4030->1797|4211->1948|4250->1960|5056->2739|5105->2772|5145->2774|5203->2804|5246->2820|5265->2830|5304->2848|5334->2851|5353->2861|5393->2879|5460->2915|5510->2937|5824->3223|5841->3230|5876->3243|6796->4135|6861->4183|6902->4185|6957->4211|7001->4227|7021->4237|7061->4255|7092->4258|7112->4268|7153->4286|7217->4318|7268->4340|7584->4627|7602->4634|7638->4647|8671->5652|8687->5658|8765->5713
-                  LINES: 24->1|25->2|30->4|35->4|37->6|37->6|37->6|38->7|38->7|38->7|38->7|40->9|40->9|40->9|49->18|49->18|49->18|53->22|53->22|53->22|57->26|57->26|57->26|62->31|62->31|62->31|63->32|65->34|65->34|65->34|65->34|68->37|70->39|71->40|71->40|71->40|72->41|73->42|73->42|73->42|73->42|73->42|73->42|75->44|76->45|79->48|79->48|79->48|80->49|83->52|85->54|86->55|86->55|86->55|87->56|90->59|92->61|105->74|105->74|105->74|106->75|106->75|106->75|106->75|106->75|106->75|106->75|107->76|108->77|113->82|113->82|113->82|132->101|132->101|132->101|133->102|133->102|133->102|133->102|133->102|133->102|133->102|134->103|135->104|140->109|140->109|140->109|162->131|162->131|162->131
+                  HASH: 7541f18188204b789684f9bba9d3f20c1f1df066
+                  MATRIX: 651->1|680->25|1024->45|1173->99|1203->104|1239->132|1277->133|1309->139|1340->144|1355->151|1388->164|1469->219|1483->225|1548->270|1881->576|1897->583|1930->595|2038->676|2054->683|2084->692|2192->773|2208->780|2244->795|2355->880|2405->921|2445->923|2482->933|2585->1009|2601->1016|2635->1029|2664->1030|2773->1109|2808->1117|2881->1163|2945->1211|2985->1213|3027->1227|3090->1263|3105->1269|3184->1327|3214->1330|3234->1340|3274->1358|3344->1397|3377->1403|3472->1472|3508->1499|3547->1500|3584->1510|3764->1660|3803->1672|3879->1722|3932->1766|3972->1768|4009->1778|4190->1929|4229->1941|5035->2720|5084->2753|5124->2755|5182->2785|5225->2801|5244->2811|5271->2817|5301->2820|5320->2830|5359->2848|5426->2884|5476->2906|5790->3192|5807->3199|5835->3205|6755->4097|6820->4145|6861->4147|6916->4173|6960->4189|6980->4199|7008->4205|7039->4208|7059->4218|7099->4236|7163->4268|7214->4290|7530->4577|7548->4584|7577->4590|8651->5636|8668->5642|8739->5690|8773->5695|8790->5701|8840->5728
+                  LINES: 24->1|25->2|30->4|35->4|37->6|37->6|37->6|38->7|38->7|38->7|38->7|40->9|40->9|40->9|49->18|49->18|49->18|53->22|53->22|53->22|57->26|57->26|57->26|62->31|62->31|62->31|63->32|65->34|65->34|65->34|65->34|68->37|70->39|71->40|71->40|71->40|72->41|73->42|73->42|73->42|73->42|73->42|73->42|75->44|76->45|79->48|79->48|79->48|80->49|83->52|85->54|86->55|86->55|86->55|87->56|90->59|92->61|105->74|105->74|105->74|106->75|106->75|106->75|106->75|106->75|106->75|106->75|107->76|108->77|113->82|113->82|113->82|132->101|132->101|132->101|133->102|133->102|133->102|133->102|133->102|133->102|133->102|134->103|135->104|140->109|140->109|140->109|162->131|162->131|162->131|162->131|162->131|162->131
                   -- GENERATED --
               */
           

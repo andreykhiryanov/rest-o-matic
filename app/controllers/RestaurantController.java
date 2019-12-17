@@ -47,20 +47,20 @@ public class RestaurantController extends Controller {
 
     }
 
-    public Result editRestaurant(String restaurantName) {
+    public Result editRestaurant(Long restaurantId) {
         // Searching requested restaurant
-        Restaurant restaurant = searchRestByName(restaurantName);
+        Restaurant restaurant = Restaurant.restaurantFinder.byId(restaurantId);
 
         if (restaurant == null) {
             return redirect(routes.HomeController.showError("Editing error!"));
         }
 
         Form<Restaurant> restaurantForm = formFactory.form(Restaurant.class).fill(restaurant);
-        return ok(editrestaurant.render(restaurantForm, restaurantName));
+        return ok(editrestaurant.render(restaurantForm, restaurantId));
 
     }
 
-    public Result updateRestaurant(String oldRestaurantName) {
+    public Result updateRestaurant(Long oldRestaurantId) {
         // TODO: remove deprecated method bindFromRequest
         Form<Restaurant> restaurantForm = formFactory.form(Restaurant.class).bindFromRequest();
 
@@ -69,7 +69,7 @@ public class RestaurantController extends Controller {
         }
 
         Restaurant updatedRestaurant = restaurantForm.get();
-        Restaurant oldRestaurant = searchRestByName(oldRestaurantName);
+        Restaurant oldRestaurant = Restaurant.restaurantFinder.byId(oldRestaurantId);
 
         if (oldRestaurant == null) {
             return redirect(routes.HomeController.showError("Updating error!"));
@@ -91,12 +91,12 @@ public class RestaurantController extends Controller {
 
         oldRestaurant.update();
 
-        return redirect(routes.RestaurantController.showRestaurantCard(updatedRestaurant.getRestaurantName()));
+        return redirect(routes.RestaurantController.showRestaurantCard(updatedRestaurant.getId()));
     }
 
-    public Result destroyRestaurant(String restaurantName) {
+    public Result destroyRestaurant(Long restaurantId) {
 
-        Restaurant destroyingRestaurant = searchRestByName(restaurantName);
+        Restaurant destroyingRestaurant = Restaurant.restaurantFinder.byId(restaurantId);
 
         if (destroyingRestaurant == null) {
             return redirect(routes.HomeController.showError("Deleting error!"));
@@ -107,14 +107,13 @@ public class RestaurantController extends Controller {
         return redirect(routes.HomeController.greetings());
     }
 
-    public Result showRestaurantCard(String restaurantName) {
+    public Result showRestaurantCard(Long restaurantId) {
         // Searching requested restaurant
-        Restaurant restaurant = searchRestByName(restaurantName);
+        Restaurant restaurant = Restaurant.restaurantFinder.byId(restaurantId);
 
         if (restaurant == null) {
             return redirect(routes.HomeController.showError("Restaurant not found!"));
         }
-
 
         List<Visitor> newVisitors = Visitor.visitorFinder.all();
         newVisitors.removeAll(restaurant.getAcceptedVisitors());
@@ -123,10 +122,10 @@ public class RestaurantController extends Controller {
         return ok(restaurantcard.render(restaurant, newVisitors));
     }
 
-    public Result acceptVisitor(String restaurantName, String visitorName) {
+    public Result acceptVisitor(Long restaurantId, Long visitorId) {
 
-        Restaurant restaurant = searchRestByName(restaurantName);
-        Visitor visitor = searchVisitorByName(visitorName);
+        Restaurant restaurant = Restaurant.restaurantFinder.byId(restaurantId);
+        Visitor visitor = Visitor.visitorFinder.byId(visitorId);
 
         if (restaurant == null || visitor == null) {
             return redirect(routes.HomeController.showError("Accept error!"));
@@ -139,10 +138,10 @@ public class RestaurantController extends Controller {
         return ok();
     }
 
-    public Result kickVisitor(String restaurantName, String visitorName) {
+    public Result kickVisitor(Long restaurantId, Long visitorId) {
 
-        Restaurant restaurant = searchRestByName(restaurantName);
-        Visitor visitor = searchVisitorByName(visitorName);
+        Restaurant restaurant = Restaurant.restaurantFinder.byId(restaurantId);
+        Visitor visitor = Visitor.visitorFinder.byId(visitorId);
 
         if (restaurant == null || visitor == null) {
             return redirect(routes.HomeController.showError("Kicking error!"));
@@ -154,25 +153,4 @@ public class RestaurantController extends Controller {
 
         return ok();
     }
-
-    private Restaurant searchRestByName(String restaurantName) {
-        long id = 0;
-
-        for (Restaurant restaurant : Restaurant.restaurantFinder.all()) {
-            if (restaurant.getRestaurantName().equals(restaurantName)) id = restaurant.getId();
-        }
-
-        return Restaurant.restaurantFinder.byId(id);
-    }
-
-    private Visitor searchVisitorByName(String visitorName) {
-        long id = 0;
-
-        for (Visitor visitor : Visitor.visitorFinder.all()) {
-            if (visitor.getFirstName().equals(visitorName)) id = visitor.getId();
-        }
-
-        return Visitor.visitorFinder.byId(id);
-    }
-
 }

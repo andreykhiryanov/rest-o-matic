@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Fri Dec 13 18:26:14 GMT+03:00 2019
+// @DATE:Tue Dec 17 21:05:26 GMT+03:00 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -19,12 +19,22 @@ package controllers.javascript {
     }
 
   
-    // @LINE:12
-    def destroyRestaurant: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.RestaurantController.destroyRestaurant",
+    // @LINE:8
+    def editRestaurant: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.RestaurantController.editRestaurant",
       """
-        function(restaurantName0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "restaurant/delete/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("restaurantName", restaurantName0))})
+        function(restaurantId0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "restaurant/edit/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("restaurantId", restaurantId0))})
+        }
+      """
+    )
+  
+    // @LINE:21
+    def acceptVisitor: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.RestaurantController.acceptVisitor",
+      """
+        function(restaurantId0,visitorId1) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "accept/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("restaurantId", restaurantId0)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("visitorId", visitorId1))})
         }
       """
     )
@@ -33,8 +43,8 @@ package controllers.javascript {
     def kickVisitor: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.RestaurantController.kickVisitor",
       """
-        function(restaurantName0,visitorName1) {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "kick/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("restaurantName", restaurantName0)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("visitorName", visitorName1))})
+        function(restaurantId0,visitorId1) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "kick/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("restaurantId", restaurantId0)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("visitorId", visitorId1))})
         }
       """
     )
@@ -43,8 +53,18 @@ package controllers.javascript {
     def showRestaurantCard: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.RestaurantController.showRestaurantCard",
       """
-        function(restaurantName0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "restaurant/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("restaurantName", restaurantName0))})
+        function(restaurantId0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "restaurant/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("restaurantId", restaurantId0))})
+        }
+      """
+    )
+  
+    // @LINE:12
+    def destroyRestaurant: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.RestaurantController.destroyRestaurant",
+      """
+        function(restaurantId0) {
+          return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + "restaurant/delete/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("restaurantId", restaurantId0))})
         }
       """
     )
@@ -53,8 +73,8 @@ package controllers.javascript {
     def updateRestaurant: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.RestaurantController.updateRestaurant",
       """
-        function(restaurantName0) {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "restaurant/update/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("restaurantName", restaurantName0))})
+        function(restaurantId0) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "restaurant/update/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("restaurantId", restaurantId0))})
         }
       """
     )
@@ -69,32 +89,12 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:21
-    def acceptVisitor: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.RestaurantController.acceptVisitor",
-      """
-        function(restaurantName0,visitorName1) {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "accept/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("restaurantName", restaurantName0)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("visitorName", visitorName1))})
-        }
-      """
-    )
-  
     // @LINE:11
     def saveRestaurantChanges: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.RestaurantController.saveRestaurantChanges",
       """
         function() {
           return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "restaurant/create/"})
-        }
-      """
-    )
-  
-    // @LINE:8
-    def editRestaurant: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.RestaurantController.editRestaurant",
-      """
-        function(restaurantName0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "restaurant/edit/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("restaurantName", restaurantName0))})
         }
       """
     )
@@ -163,28 +163,8 @@ package controllers.javascript {
     def showVisitorCard: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.VisitorController.showVisitorCard",
       """
-        function(visitorName0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "visitor/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("visitorName", visitorName0))})
-        }
-      """
-    )
-  
-    // @LINE:19
-    def destroyVisitor: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.VisitorController.destroyVisitor",
-      """
-        function(visitorName0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "visitor/delete/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("visitorName", visitorName0))})
-        }
-      """
-    )
-  
-    // @LINE:16
-    def updateVisitor: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.VisitorController.updateVisitor",
-      """
-        function(visitorName0) {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "visitor/update/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("visitorName", visitorName0))})
+        function(visitorId0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "visitor/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("visitorId", visitorId0))})
         }
       """
     )
@@ -193,8 +173,28 @@ package controllers.javascript {
     def editVisitor: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.VisitorController.editVisitor",
       """
-        function(visitorName0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "visitor/edit/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("visitorName", visitorName0))})
+        function(visitorId0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "visitor/edit/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("visitorId", visitorId0))})
+        }
+      """
+    )
+  
+    // @LINE:19
+    def destroyVisitor: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.VisitorController.destroyVisitor",
+      """
+        function(visitorId0) {
+          return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + "visitor/delete/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("visitorId", visitorId0))})
+        }
+      """
+    )
+  
+    // @LINE:16
+    def updateVisitor: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.VisitorController.updateVisitor",
+      """
+        function(visitorId0) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "visitor/update/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("visitorId", visitorId0))})
         }
       """
     )

@@ -5,9 +5,8 @@
 
 @layout(restaurant.getRestaurantName){
     <h2>@restaurant.getRestaurantName</h2>
-    @*<var id="restName" hidden>@restaurant.getRestaurantName</var>*@
     <br>
-    <a class="btn btn-primary" href="@routes.RestaurantController.editRestaurant(restaurant.getRestaurantName)">Edit Restaurant</a>
+    <a class="btn btn-primary" href="@routes.RestaurantController.editRestaurant(restaurant.getId)">Edit Restaurant</a>
     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletionConfirmModal">Remove Restaurant</button>
 
     <br><br>
@@ -42,7 +41,7 @@
     <table class="table table-striped">
     @for(visitor <- restaurant.getAcceptedVisitors) {
         <tr>
-            <td><a href="@routes.VisitorController.showVisitorCard(visitor.getFirstName)">@visitor.getFirstName @visitor.getLastName</a></td>
+            <td><a href="@routes.VisitorController.showVisitorCard(visitor.getId)">@visitor.getFirstName @visitor.getLastName</a></td>
         </tr>
     }
     </table>
@@ -75,14 +74,14 @@
 
                     <select id="acceptVisitor" class="js-data-example-ajax" style="width: 570px">
                         @for(visitor <- newVisitors) {
-                            <option value='@visitor.getFirstName'>@visitor.getFirstName @visitor.getLastName</option>
+                            <option value='@visitor.getId'>@visitor.getFirstName @visitor.getLastName</option>
                         }
                     </select>
 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="acceptVisitorRequest('@restaurant.getRestaurantName')">Accept Visitor</button>
+                    <button type="button" class="btn btn-primary" onclick="acceptVisitorRequest('@restaurant.getId')">Accept Visitor</button>
                 </div>
             </div>
         </div>
@@ -102,14 +101,14 @@
 
                     <select id="kickVisitor" class="js-data-example-ajax" style="width: 570px">
                     @for(visitor <- restaurant.getAcceptedVisitors) {
-                        <option value='@visitor.getFirstName'>@visitor.getFirstName @visitor.getLastName</option>
+                        <option value='@visitor.getId'>@visitor.getFirstName @visitor.getLastName</option>
                     }
                     </select>
 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="kickVisitorRequest('@restaurant.getRestaurantName')">Kick Out Visitor</button>
+                    <button type="button" class="btn btn-primary" onclick="kickVisitorRequest('@restaurant.getId')">Kick Out Visitor</button>
                 </div>
             </div>
         </div>
@@ -131,7 +130,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <a class="btn btn-danger" href="@routes.RestaurantController.destroyRestaurant(restaurant.getRestaurantName)">Remove Restaurant</a>
+                    <button type="button" class="btn btn-danger" onclick="sendDeleteRequest('@routes.RestaurantController.destroyRestaurant(restaurant.getId)', '@routes.HomeController.greetings()')">Remove Restaurant</button>
                 </div>
             </div>
         </div>

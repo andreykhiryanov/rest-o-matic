@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Java/Projects/rest-o-matic/conf/routes
-// @DATE:Fri Dec 13 18:26:14 GMT+03:00 2019
+// @DATE:Tue Dec 17 21:05:26 GMT+03:00 2019
 
 import play.api.mvc.Call
 
@@ -18,28 +18,40 @@ package controllers {
     }
 
   
-    // @LINE:12
-    def destroyRestaurant(restaurantName:String): Call = {
+    // @LINE:8
+    def editRestaurant(restaurantId:Long): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + "restaurant/delete/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("restaurantName", restaurantName)))
+      Call("GET", _prefix + { _defaultPrefix } + "restaurant/edit/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("restaurantId", restaurantId)))
+    }
+  
+    // @LINE:21
+    def acceptVisitor(restaurantId:Long, visitorId:Long): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "accept/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("restaurantId", restaurantId)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("visitorId", visitorId)))
     }
   
     // @LINE:22
-    def kickVisitor(restaurantName:String, visitorName:String): Call = {
+    def kickVisitor(restaurantId:Long, visitorId:Long): Call = {
       
-      Call("POST", _prefix + { _defaultPrefix } + "kick/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("restaurantName", restaurantName)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("visitorName", visitorName)))
+      Call("POST", _prefix + { _defaultPrefix } + "kick/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("restaurantId", restaurantId)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("visitorId", visitorId)))
     }
   
     // @LINE:7
-    def showRestaurantCard(restaurantName:String): Call = {
+    def showRestaurantCard(restaurantId:Long): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + "restaurant/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("restaurantName", restaurantName)))
+      Call("GET", _prefix + { _defaultPrefix } + "restaurant/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("restaurantId", restaurantId)))
+    }
+  
+    // @LINE:12
+    def destroyRestaurant(restaurantId:Long): Call = {
+      
+      Call("DELETE", _prefix + { _defaultPrefix } + "restaurant/delete/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("restaurantId", restaurantId)))
     }
   
     // @LINE:9
-    def updateRestaurant(restaurantName:String): Call = {
+    def updateRestaurant(restaurantId:Long): Call = {
       
-      Call("POST", _prefix + { _defaultPrefix } + "restaurant/update/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("restaurantName", restaurantName)))
+      Call("POST", _prefix + { _defaultPrefix } + "restaurant/update/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("restaurantId", restaurantId)))
     }
   
     // @LINE:10
@@ -48,22 +60,10 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "restaurant/create/")
     }
   
-    // @LINE:21
-    def acceptVisitor(restaurantName:String, visitorName:String): Call = {
-      
-      Call("POST", _prefix + { _defaultPrefix } + "accept/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("restaurantName", restaurantName)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("visitorName", visitorName)))
-    }
-  
     // @LINE:11
     def saveRestaurantChanges(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "restaurant/create/")
-    }
-  
-    // @LINE:8
-    def editRestaurant(restaurantName:String): Call = {
-      
-      Call("GET", _prefix + { _defaultPrefix } + "restaurant/edit/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("restaurantName", restaurantName)))
     }
   
   }
@@ -109,27 +109,27 @@ package controllers {
     }
   
     // @LINE:14
-    def showVisitorCard(visitorName:String): Call = {
+    def showVisitorCard(visitorId:Long): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + "visitor/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("visitorName", visitorName)))
-    }
-  
-    // @LINE:19
-    def destroyVisitor(visitorName:String): Call = {
-      
-      Call("GET", _prefix + { _defaultPrefix } + "visitor/delete/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("visitorName", visitorName)))
-    }
-  
-    // @LINE:16
-    def updateVisitor(visitorName:String): Call = {
-      
-      Call("POST", _prefix + { _defaultPrefix } + "visitor/update/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("visitorName", visitorName)))
+      Call("GET", _prefix + { _defaultPrefix } + "visitor/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("visitorId", visitorId)))
     }
   
     // @LINE:15
-    def editVisitor(visitorName:String): Call = {
+    def editVisitor(visitorId:Long): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + "visitor/edit/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("visitorName", visitorName)))
+      Call("GET", _prefix + { _defaultPrefix } + "visitor/edit/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("visitorId", visitorId)))
+    }
+  
+    // @LINE:19
+    def destroyVisitor(visitorId:Long): Call = {
+      
+      Call("DELETE", _prefix + { _defaultPrefix } + "visitor/delete/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("visitorId", visitorId)))
+    }
+  
+    // @LINE:16
+    def updateVisitor(visitorId:Long): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "visitor/update/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("visitorId", visitorId)))
     }
   
   }
