@@ -26,7 +26,7 @@ public class Restaurant extends Model {
     private String legalName;
 
     @Constraints.Required
-    @Column(name = "INN", nullable = false)
+    @Column(name = "INN", nullable = false, unique = true)
     private int inn;
 
     @Constraints.Required

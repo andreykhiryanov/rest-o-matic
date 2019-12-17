@@ -25,11 +25,11 @@ public class Visitor extends Model {
     private String lastName;
 
     @Constraints.Required
-    @Column(name = "EMAIL", nullable = false)
+    @Column(name = "EMAIL", nullable = false, unique = true)
     private String email;
 
     @Constraints.Required
-    @Column(name = "PHONE_NUMBER", nullable = false)
+    @Column(name = "PHONE_NUMBER", nullable = false, unique = true)
     private String phoneNumber;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "acceptedVisitors")

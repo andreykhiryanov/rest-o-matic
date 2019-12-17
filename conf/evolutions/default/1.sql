@@ -9,6 +9,7 @@ create table restaurant (
   legal_name                    varchar(255) not null,
   inn                           integer not null,
   address                       varchar(255) not null,
+  constraint uq_restaurant_inn unique (inn),
   constraint pk_restaurant primary key (restaurant_id)
 );
 
@@ -24,6 +25,8 @@ create table visitor (
   last_name                     varchar(255) not null,
   email                         varchar(255) not null,
   phone_number                  varchar(255) not null,
+  constraint uq_visitor_email unique (email),
+  constraint uq_visitor_phone_number unique (phone_number),
   constraint pk_visitor primary key (visitor_id)
 );
 
